@@ -1,0 +1,21 @@
+#build object ignore
+
+#bin folder ignore
+
+#config file 
+.config
+.config.old
+
+#Build Object Folder
+build
+
+
+#OBJECT FOLDER
+obj.makeProject
+
+#build Folder
+bin.makeProject
+board/.DS_Store
+
+### visual code ###
+.vscode/
