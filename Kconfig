@@ -4,4 +4,9 @@
 
 mainmenu "Make Project"
 
+# Board Select menu
+menu "Select MCU Board Menu"
+    source "MCU-Board/Kconfig"
+endmenu
+
 ###############################################################################

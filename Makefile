@@ -50,7 +50,7 @@ vpath %.s $(SUB_DIRS)
 vpath %.cpp %(SUB_DIRS)
 
 # sub folder makefile add 
-sinclude $(addsuffix /Makefile.inc, $(SUB_DIRS))
+sinclude $(addsuffix /Makefile, $(SUB_DIRS))
 
 # float printf add libs nano.spec
 # linker lib add float library add -spec=nano.spec -u_printf_float not use system file syscall file _write _read _getpid _close
