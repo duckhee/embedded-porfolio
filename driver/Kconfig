@@ -1,0 +1,14 @@
+###############################################################################
+# SPDX-License-Identifier: GPL-3.0-or-later
+###############################################################################
+
+config STANDARD_DRIVER
+    bool "Standard Driver Select"
+    default n
+
+config HAL_DRIVER
+    bool "Hal Driver Select"
+    default n
+
+
+###############################################################################
