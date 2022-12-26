@@ -12,6 +12,10 @@
 #    -Map:      create map file
 #    --cref:    add cross reference to  map file
 # LDFLAGS = -Map=$(TARGET).map --cref
+
+# default linker script STM-M3
+FLASH_LDSCRIPT = LinkerScripts/stm32f10x/STM32F103RBTx_FLASH.ld
+
 # Linker script flash
 ifeq ($(CONFIG_MANGO_M3), y)
 # Flash LinkerScript setting

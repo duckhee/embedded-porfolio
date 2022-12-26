@@ -124,7 +124,7 @@ CFLAGS += -Wredundant-decls -Wreturn-type -Wshadow -Wunused
 CFLAGS += $(COMFILE_COMMON_FLAGS)
 
 # add Include File
-CFLAGS += $(patsubst %,-I%,$(EXTRA_INCDIRS))
+CFLAGS += $(patsubst %,-I%,$(EXTRAINCDIRS))
 ASFLAGS = $(COMFILE_COMMON_FLAGS)
 
 # Flags only for C

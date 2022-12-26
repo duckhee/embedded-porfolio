@@ -38,8 +38,10 @@ ASM_SOURCES =
 
 # sub folder setting
 SUB_DIRS :=
+# core start up code 
+SUB_DIRS += CMSIS 
+# driver code
 SUB_DIRS += driver
-SUB_DIRS += CMSIS
 
 # sub directory add
 SUB_DIRS := $(addprefix $(TOP)/, $(SUB_DIRS))
@@ -62,10 +64,13 @@ LDFLAGS += $(patsubst %,-L%, $(EXTRA_LIBDIRS))
 LDFLAGS += $(patsubst %,-L%, $(EXTRA_LIBS))
 # Flash Linker Script add Setting
 LDFLAGS += -T$(FLASH_LDSCRIPT)
+
+
+all: project-version compiler-version build elf-size
+
+
 # include makefile rule file
 sinclude  $(TOP)/Rule.mk
-
-all: project-version gccversion build elf-size
 
 # Build Command Do
 build: clean createdirs elf bin lss sym elf-size
@@ -74,6 +79,11 @@ build: clean createdirs elf bin lss sym elf-size
 project-version:
 	@(echo $(PROJECT_NAME) $(CUSTOMVERSION))
 
+link-source:
+	@echo "Include Folder list -> $(SUB_DIRS)"
+	@echo "link source Files -> $(SRCS)"
+	@echo "Assembler Source Files -> $(ASM_SOURCES)"
+	@echo "Include Header Files -> $(EXTRAINCDIRS)"
 
 
 # common make command
@@ -90,14 +100,14 @@ distclean:
 
 # Help Command explain
 help:
-	@echo "----$(CUSTOMVERSION)--- "
+	@echo "----$(PROJECT_NAME) $(CUSTOMVERSION)--- "
 	@echo menuconfig - "GUI Config Sample Code, Select Board "
 	@echo distclean - "All Object File, Folder Delete"
 	@echo clean - "Folder Delete"
 	@echo version - "Show this project Version"
 	@echo file - "Get Inlclude Folder and Source File"
 	@echo elf-size - "Get Binaray File Size"
-	@echo gccversion - "Get arm-none-eabi-gcc version Check"
+	@echo compiler-version - "Get arm-none-eabi-gcc version Check"
 	@echo createdirs - "Make Object, Binary, hex file In Folder Name"	
 	@$(MAKE) -f scripts/Makefile help
 
