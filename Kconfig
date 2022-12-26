@@ -1,0 +1,23 @@
+###############################################################################
+# SPDX-License-Identifier: GPL-3.0-or-later
+###############################################################################
+
+mainmenu "Make Project"
+
+# Board Select menu
+menu "Select MCU Board Menu"
+    source "MCU-Board/Kconfig"
+endmenu
+
+# MCU Board Select Core Architecture 
+menu "Select MCU Core Architecture Menu"
+    source "CMSIS/Kconfig"
+endmenu
+
+# Driver Select Menu
+menu "Select Driver"
+    source "driver/Kconfig"
+endmenu
+
+
+###############################################################################

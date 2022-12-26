@@ -1,0 +1,30 @@
+###############################################################################
+# SPDX-License-Identifier: GPL-3.0-or-later
+###############################################################################
+
+config MANGO_M3
+    bool "Select mango-M3 Board (Embedded Crazy Boys)"
+    default n
+    select ARCH_M3
+
+config MANGO_Z1
+    bool "Select mango-Z1 Board (Embedded Crazy Boys)"
+    default n
+    select ARCH_M3
+
+config MANGO_M32F2
+    bool "Select mango-M32F2 Board (Embedded Crazy Boys)"
+    default n
+    select ARCH_M3
+
+config MANGO_M32F4
+    bool "Select mango-M32F4 Board (Embedded Crazy Boys)"
+    default n
+    select ARCH_M4
+
+config M_HIVE
+    bool "Select STM32F407V EduBoard V1.2 (ChrisP)"
+    default n
+    select ARCH_M4
+
+###############################################################################
