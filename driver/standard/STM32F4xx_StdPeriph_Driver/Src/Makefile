@@ -48,6 +48,6 @@ DRIVER_SOURCES += stm32f4xx_tim.c
 DRIVER_SOURCES += stm32f4xx_usart.c
 DRIVER_SOURCES += stm32f4xx_wwdg.c
 
-EXTRAINCDIRS += $(TOP)/driver/STM32F4xx_StdPeriph_Driver/Inc
+EXTRAINCDIRS += $(TOP)/driver/standard/STM32F4xx_StdPeriph_Driver/Inc
 
 C_SOURCES += $(DRIVER_SOURCES)

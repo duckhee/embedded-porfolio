@@ -96,7 +96,7 @@ DRIVER_SOURCES += stm32f4xx_ll_usb.c
 
 
 
-EXTRAINCDIRS += $(TOP)/driver/STM32F4xx_HAL_Driver/Inc \
-$(TOP)/driver/STM32F4xx_HAL_Driver/Inc/Legacy
+EXTRAINCDIRS += $(TOP)/driver/hal/STM32F4xx_HAL_Driver/Inc \
+$(TOP)/driver/hal/STM32F4xx_HAL_Driver/Inc/Legacy
 
 C_SOURCES += $(DRIVER_SOURCES)

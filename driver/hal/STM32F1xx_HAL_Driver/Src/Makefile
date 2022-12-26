@@ -63,8 +63,8 @@ DRIVER_SOURCES += stm32f1xx_ll_usb.c
 DRIVER_SOURCES += stm32f1xx_ll_utils.c
 
 #Include Header file
-EXTRAINCDIRS += $(TOP)/driver/STM32F1xx_HAL_Driver/Inc \
-$(TOP)/driver/STM32F1xx_HAL_Driver/Legacy/Inc
+EXTRAINCDIRS += $(TOP)/driver/hal/STM32F1xx_HAL_Driver/Inc \
+$(TOP)/driver/hal/STM32F1xx_HAL_Driver/Inc/Legacy
 
 #include C source 
 C_SOURCES += $(DRIVER_SOURCES)

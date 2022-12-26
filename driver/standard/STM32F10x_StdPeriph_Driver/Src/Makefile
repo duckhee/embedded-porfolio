@@ -27,6 +27,6 @@ DRIVER_SOURCES += stm32f10x_tim.c
 DRIVER_SOURCES += stm32f10x_usart.c
 DRIVER_SOURCES += stm32f10x_wwdg.c
 
-EXTRAINCDIRS += $(TOP)/driver/STM32F10x_StdPeriph_Driver/Inc
+EXTRAINCDIRS += $(TOP)/driver/standard/STM32F10x_StdPeriph_Driver/Inc
 
 C_SOURCES += $(DRIVER_SOURCES)
