@@ -14,4 +14,7 @@
     </option>
   </component>
   <component name="MakefileWorkspace" PROJECT_DIR="$PROJECT_DIR$" />
+  <component name="elmot.OpenOcdPlugin">
+    <option name="openOcdHome" value="/usr/local" />
+  </component>
 </project>
