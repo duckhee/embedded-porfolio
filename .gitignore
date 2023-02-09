@@ -19,3 +19,6 @@ board/.DS_Store
 
 ### visual code ###
 .vscode/
+
+### C Lion folder ###
+.idea/
