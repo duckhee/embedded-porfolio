@@ -17,10 +17,10 @@ sp := $(e) $(e)
 qs = $(subst ?,$(sp),$1)
 sq = $(subst $(sp),?,$1)
 
-# Get name of this Makefile (avoid getting word 0 and a starting space)
+# Get name of this Makefile.inc.inc (avoid getting word 0 and a starting space)
 makefile_name := $(wordlist 1,1000,$(MAKEFILE_LIST))
 
-# Get path of this Makefile
+# Get path of this Makefile.inc.inc
 makefile_path := $(call qs,$(dir $(call sq,$(abspath $(call sq,$(makefile_name))))))
 
 # Get path where the Application is

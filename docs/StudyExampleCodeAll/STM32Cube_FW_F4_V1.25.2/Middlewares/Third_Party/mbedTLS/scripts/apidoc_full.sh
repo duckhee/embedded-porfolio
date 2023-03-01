@@ -4,7 +4,7 @@
 # available flag is documented, and avoids warnings about documentation
 # without a corresponding #define).
 #
-# /!\ This must not be a Makefile target, as it would create a race condition
+# /!\ This must not be a Makefile.inc.inc target, as it would create a race condition
 # when multiple targets are invoked in the same parallel build.
 
 set -eu
