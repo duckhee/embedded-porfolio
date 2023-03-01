@@ -25,7 +25,7 @@
  * For 12-bit JPEG data, we either downscale the values to 8 bits
  * (to write standard byte-per-sample PPM/PGM files), or output
  * nonstandard word-per-sample PPM/PGM files.  Downscaling is done
- * if PPM_NORAWWORD is defined (this can be done in the Makefile
+ * if PPM_NORAWWORD is defined (this can be done in the Makefile.inc.inc
  * or in jconfig.h).
  * (When the core library supports data precision reduction, a cleaner
  * implementation will be to ask for that instead.)

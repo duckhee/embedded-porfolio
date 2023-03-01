@@ -24,7 +24,7 @@
 # configurations, and can and will arbitrarily change the current CMake
 # configuration. The following files must be committed into git:
 #    * include/mbedtls/config.h
-#    * Makefile, library/Makefile, programs/Makefile, tests/Makefile
+#    * Makefile.inc.inc, library/Makefile.inc.inc, programs/Makefile.inc.inc, tests/Makefile.inc.inc
 # After running this script, the CMake cache will be lost and CMake
 # will no longer be initialised.
 #
@@ -75,8 +75,8 @@
 # * Run `make clean`.
 # * Restore `include/mbedtks/config.h` from a backup made before running
 #   the component.
-# * Check out `Makefile`, `library/Makefile`, `programs/Makefile` and
-#   `tests/Makefile` from git. This cleans up after an in-tree use of
+# * Check out `Makefile.inc.inc`, `library/Makefile.inc.inc`, `programs/Makefile.inc.inc` and
+#   `tests/Makefile.inc.inc` from git. This cleans up after an in-tree use of
 #   CMake.
 #
 # Any command that is expected to fail must be protected so that the

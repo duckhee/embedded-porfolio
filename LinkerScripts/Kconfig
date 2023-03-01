@@ -2,11 +2,14 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 ###############################################################################
 
-# select Mango-M3 Board Simple LED On
-config MANGO_M3_BOARD_SIMPLE_LED_ON
-    bool "select mango-M3 Board Simple LED On Sample"
-    default n
-    select ARCH_M3
+# select Linker
 
+config STM32F10x
+bool "STM32F10x Linker"
+default n
+
+config STM32F407
+bool "STM32F407 Linker"
+default n
 
 ###############################################################################

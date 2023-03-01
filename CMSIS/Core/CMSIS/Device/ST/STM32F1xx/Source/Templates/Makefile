@@ -10,6 +10,6 @@ SUB_ARCH := $(addprefix $(TOP)/CMSIS/Core/CMSIS/Device/ST/STM32F1xx/Source/Templ
 vpath %.s $(SUB_ARCH)
 vpath %.c $(SUB_ARCH)
 
-sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
+sinclude $(addsuffix /Makefile, $(SUB_ARCH))
 
 EXTRAINCDIRS += $(TOP)/CMSIS/Core/CMSIS/Device/ST/STM32F1xx/Inc

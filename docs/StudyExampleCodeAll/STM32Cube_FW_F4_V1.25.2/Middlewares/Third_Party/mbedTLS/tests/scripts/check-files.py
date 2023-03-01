@@ -145,7 +145,7 @@ class TabIssueTracker(LineIssueTracker):
 
     heading = "Tabs present:"
     files_exemptions = frozenset([
-        "Makefile",
+        "Makefile.inc.inc",
         "generate_visualc_files.pl",
     ])
 
@@ -196,7 +196,7 @@ class IntegrityChecker(object):
         self.setup_logger(log_file)
         self.files_to_check = (
             ".c", ".h", ".sh", ".pl", ".py", ".md", ".function", ".data",
-            "Makefile", "CMakeLists.txt", "ChangeLog"
+            "Makefile.inc.inc", "CMakeLists.txt", "ChangeLog"
         )
         self.excluded_directories = ['.git', 'mbed-os']
         self.excluded_paths = list(map(os.path.normpath, [

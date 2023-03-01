@@ -64,7 +64,7 @@
 #include <Script.h>     /* for smSystemScript */
 #include <Gestalt.h>    /* we use Gestalt to test for specific functionality */
 
-#ifndef TEMP_FILE_NAME		/* can override from jconfig.h or Makefile */
+#ifndef TEMP_FILE_NAME		/* can override from jconfig.h or Makefile.inc.inc */
 #define TEMP_FILE_NAME  "JPG%03d.TMP"
 #endif
 

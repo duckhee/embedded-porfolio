@@ -685,7 +685,7 @@ int main(int ac, char **av)
 		 * Create auto.conf if it does not exist.
 		 * This prevents GNU Make 4.1 or older from emitting
 		 * "include/config/auto.conf: No such file or directory"
-		 * in the top-level Makefile
+		 * in the top-level Makefile.inc.inc
 		 *
 		 * syncconfig always creates or updates auto.conf because it is
 		 * used during the build.
