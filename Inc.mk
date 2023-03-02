@@ -63,6 +63,8 @@ C_DEFS :=
 # Micro Controller variable setting
 MCU = $(CPU) -mthumb $(FPU) $(FLOAT-ABI)
 
+# include linkber script select makefile
+-include $(TOP)/Linker.mk
 # output file format setting (using ihex or binary)
 ## Output format. (can be ihex or binary)
 ## (binary i.e. for openocd and SAM-BA, hex i.e. for lpc21isp and uVision)

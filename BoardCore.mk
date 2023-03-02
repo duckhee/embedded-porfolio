@@ -3,10 +3,9 @@
 ###########################################################
 
 # include makefile 
--include $(TOP)/Inc.mk
+# -include $(TOP)/Inc.mk
 
-# include linkber script select makefile
--include $(TOP)/Linker.mk
+
 
 # shell if 
 
