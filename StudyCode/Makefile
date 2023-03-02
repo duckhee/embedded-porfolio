@@ -4,8 +4,8 @@
 
 SUB_ARCH :=
 SUB_ARCH += MSTORY2.0
-SUB_ARCH += MSTORY3.0
-SUB_ARCH += M-HIVE-EduBoard
+# SUB_ARCH += MSTORY3.0
+# SUB_ARCH += M-HIVE-EduBoard
 
 SUB_ARCH := $(addprefix $(TOP)/StudyCode/, $(SUB_ARCH))
 

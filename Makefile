@@ -45,7 +45,7 @@ SUB_DIRS += StudyCode
 SUB_DIRS += driver
 
 # SUB_DIR addprefix Setting
-SUB_DIRS := $(addprefix $(TOP)/, $(SUB_DIRS))
+SUB_DIRS := $(addprefix $(TOP)/,$(SUB_DIRS))
 
 # Source File add compling
 vpath %.c $(SUB_DIRS)
@@ -71,9 +71,6 @@ LDFLAGS += -T$(FLASH_LDSCRIPT)
 
 all: project-version compiler-version build elf-size
 
-
-# include makefile rule file
-include  $(TOP)/Rule.mk
 
 # Build Command Do
 build: clean createdirs elf bin lss sym elf-size
@@ -118,3 +115,6 @@ lss: $(BUILD_DIR)/$(TARGET).lss
 bin: $(BUILD_DIR)/$(TARGET).bin
 sym: $(BUILD_DIR)/$(TARGET).sym
 
+
+# include makefile rule file
+include  $(TOP)/rule.mk
