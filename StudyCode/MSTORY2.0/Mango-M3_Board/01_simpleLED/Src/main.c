@@ -21,7 +21,7 @@ int main() {
     /** PortB RESET(HIGHT) */
     /**  GPIO_CRH */
     /** 9Pin RESET 0 */
-    (*(volatile unsigned *)0x40010C04) &= 0xFFFFFF0F;
+    (*(volatile unsigned *) 0x40010C04) &= 0xFFFFFF0F;
     /** Pin9 General purpose output push-pull Mode Output mode, Max speed 10MHz */
 //    (*(volatile unsigned *)0x40010C04) |= 0x10;
     /** Pin9 General purpose output Open-drain Mode Output mode, Max speed 10MHz */
@@ -29,10 +29,10 @@ int main() {
     /** Pin9 Alternate function output Push-pull Mode Output mode, Max speed 10MHz */
 //    (*(volatile unsigned *)0x40010C04) |= 0x90;
     /** Pin9 Alternate function output Open-drain Mode Output mode, Max speed 10MHz */
-    (*(volatile unsigned *)0x40010C04) |= 0xD0;
+    (*(volatile unsigned *) 0x40010C04) |= 0xD0;
     /** PortB RESET(LOW) */
     /**  GPIO_CRL */
-    (*(volatile unsigned *)0x40010C00) &= 0xFF0FFFFF;
+    (*(volatile unsigned *) 0x40010C00) &= 0xFF0FFFFF;
     /** LED YELLOW PIN5 ON */
     //(*(volatile unsigned *)0x40010C00) |= 0x100000;
     /** LED RED ON */

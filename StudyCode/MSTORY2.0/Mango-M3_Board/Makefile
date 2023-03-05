@@ -4,6 +4,7 @@
 
 SUB_ARCH :=
 SUB_ARCH += 01_simpleLED/Src
+SUB_ARCH += 02_simpleLED_OFF/Src
 
 SUB_ARCH := $(addprefix  $(TOP)/StudyCode/MSTORY2.0/Mango-M3_Board/,$(SUB_ARCH))
 
