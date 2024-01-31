@@ -9,20 +9,22 @@
 
 //retargetting _write
 //해당 객체 또는 함수가 참조되지 않아도 사용하는 것처럼 컴파일러로 하여금 삭제되지 않도록 한다. __attribute__((used))
-__attribute__ ((used)) int _write(int fd, char *ptr, int len)
-{
+__attribute__ ((used)) int _write(int fd, char *ptr, int len) {
     /* Write "len" of char from "ptr" to file id "fd"
    * Return number of char written.
    * Need implementing with UART here. */
     size_t i;
-    for(i = 0; i < len; i++)
-    {
+    for (i = 0; i < len; i++) {
         USART_SendData(USART1, ptr[i]);
-        while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
+        while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
     }
     return len;
 }
 
+__attribute__ ((used)) int _read(int fd, char *ptr, int len) {
+    while ((USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET));
+    return USART_ReceiveData(USART1);
+}
 
 /*
 __attribute__ ((used)) int _read(int fd, char *ptr, int len)
@@ -79,8 +81,7 @@ __attribute__ ((used)) int _read(int file, int ptr, int dir)
 }
 */
 
-__attribute__ ((used)) int _close(int file)
-{
+__attribute__ ((used)) int _close(int file) {
     return -1;
 }
 
@@ -159,25 +160,25 @@ __attribute__ ((used)) int _write(int fd, char *ptr, int len)
 //  (void)fd;                            /* Parameter is not used, suppress unused argument warning */
 //  for (;count &gt; 0x00; --count) {
 //    if ((UART0_PDD_ReadInterruptStatusReg(UART0_BASE_PTR)  UART0_S1_RDRF_MASK) == 0x00) { /* Any data in receiver buffer */
-      /* Clear error flags */
- //     UART0_PDD_ClearInterruptFlags(UART0_BASE_PTR,0x1FU);
- //     if (CharCnt != 0x00) {           /* No, at least one char received? */
- //       break;                         /* Yes, return received char(s) */
- //     } else {                         /* Wait until a char is received */
- //       while ((UART0_PDD_ReadInterruptStatusReg(UART0_BASE_PTR)  UART0_S1_RDRF_MASK) == 0x00) {};
- //     }
- //   }
- //   CharCnt++;                         /* Increase char counter */
- //   /* Save character received by UARTx device into the receive buffer */
- //   *(uint8_t*)buf = (unsigned char)UART0_PDD_GetChar8(UART0_BASE_PTR);
- //   /* Stop reading if CR (Ox0D) character is received */
- //  if (*(uint8_t*)buf == 0x0DU) {     /* New line character (CR) received ? */
- //     *(uint8_t*)buf = '\n';           /* Yes, convert LF to '\n' char. */
- //     break;                           /* Stop loop and return received char(s) */
- //   }
- //   (uint8_t*)buf++;                   /* Increase buffer pointer */
- // }
-  //return 1; /* WRONG! */
- // return CharCnt;
+/* Clear error flags */
+//     UART0_PDD_ClearInterruptFlags(UART0_BASE_PTR,0x1FU);
+//     if (CharCnt != 0x00) {           /* No, at least one char received? */
+//       break;                         /* Yes, return received char(s) */
+//     } else {                         /* Wait until a char is received */
+//       while ((UART0_PDD_ReadInterruptStatusReg(UART0_BASE_PTR)  UART0_S1_RDRF_MASK) == 0x00) {};
+//     }
+//   }
+//   CharCnt++;                         /* Increase char counter */
+//   /* Save character received by UARTx device into the receive buffer */
+//   *(uint8_t*)buf = (unsigned char)UART0_PDD_GetChar8(UART0_BASE_PTR);
+//   /* Stop reading if CR (Ox0D) character is received */
+//  if (*(uint8_t*)buf == 0x0DU) {     /* New line character (CR) received ? */
+//     *(uint8_t*)buf = '\n';           /* Yes, convert LF to '\n' char. */
+//     break;                           /* Stop loop and return received char(s) */
+//   }
+//   (uint8_t*)buf++;                   /* Increase buffer pointer */
+// }
+//return 1; /* WRONG! */
+// return CharCnt;
 //}
 //*/
