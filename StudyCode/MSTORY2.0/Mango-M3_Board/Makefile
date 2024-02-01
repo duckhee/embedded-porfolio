@@ -3,9 +3,11 @@
 ###########################################################
 
 SUB_ARCH :=
+ifeq ($(CONFIG_MANGO_M3_BOARD_SIMPLE_LED_ON),y)
 SUB_ARCH += 01_simpleLED/Src
+else ifeq ($(CONFIG_MANGO_M3_BOARD_SIMPLE_LED_BLINK_ONCE),y)
 SUB_ARCH += 02_simpleLED_OFF/Src
-
+endif
 SUB_ARCH := $(addprefix  $(TOP)/StudyCode/MSTORY2.0/Mango-M3_Board/,$(SUB_ARCH))
 
 vpath %.s $(SUB_ARCH)

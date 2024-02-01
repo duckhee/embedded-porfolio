@@ -8,5 +8,10 @@ config MANGO_M3_BOARD_SIMPLE_LED_ON
     default n
     select ARCH_M3
 
+# select Mango-M3 Board Simple LED Blink
+config MANGO_M3_BOARD_SIMPLE_LED_BLINK_ONCE
+    bool "select mango-M3 Board Simple LED Blink Once"
+    default n
+    select ARCH_M3
 
 ###############################################################################

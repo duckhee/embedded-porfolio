@@ -29,7 +29,7 @@ int main() {
     /** Pin9 Alternate function output Push-pull Mode Output mode, Max speed 10MHz */
 //    (*(volatile unsigned *)0x40010C04) |= 0x90;
     /** Pin9 Alternate function output Open-drain Mode Output mode, Max speed 10MHz */
-    (*(volatile unsigned *) 0x40010C04) |= 0xD0;
+//    (*(volatile unsigned *) 0x40010C04) |= 0xD0;
     /** PortB RESET(LOW) */
     /**  GPIO_CRL */
     (*(volatile unsigned *) 0x40010C00) &= 0xFF0FFFFF;
