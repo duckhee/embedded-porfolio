@@ -104,7 +104,7 @@ help:
 	@echo menuconfig - "GUI Config Sample Code, Select Board "
 	@echo distclean - "All Object File, Folder Delete"
 	@echo clean - "Folder Delete"
-	@echo version - "Show this project Version"
+	@echo project-version - "Show this project Version"
 	@echo link-source - "Get Inlclude Folder and Source File"
 	@echo elf-size - "Get Binaray File Size"
 	@echo compiler-version - "Get arm-none-eabi-gcc version Check"
