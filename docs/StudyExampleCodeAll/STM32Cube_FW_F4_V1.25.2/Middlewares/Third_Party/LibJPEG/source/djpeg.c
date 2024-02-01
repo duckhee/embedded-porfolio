@@ -67,7 +67,7 @@ typedef enum {
 	FMT_TIFF		/* TIFF format */
 } IMAGE_FORMATS;
 
-#ifndef DEFAULT_FMT		/* so can override from CFLAGS in Makefile */
+#ifndef DEFAULT_FMT		/* so can override from CFLAGS in Makefile.inc.inc */
 #define DEFAULT_FMT	FMT_PPM
 #endif
 

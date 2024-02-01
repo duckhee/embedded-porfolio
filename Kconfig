@@ -19,5 +19,10 @@ menu "Select Driver"
     source "driver/Kconfig"
 endmenu
 
+# Study Sample Code
+menu "Lecture or Study Sample Code Menu"
+    source "StudyCode/Kconfig"
+endmenu
+
 
 ###############################################################################

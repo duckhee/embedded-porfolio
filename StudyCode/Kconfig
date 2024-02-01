@@ -2,5 +2,19 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 ###############################################################################
 
+# mstory2.0 Book
+menu "Mstory2.0 Book Chapter Code"
+    source "StudyCode/MSTORY2.0/Kconfig"
+endmenu
+
+# mstory3.0 Book
+menu "Mstory3.0 Book Chapter Code"
+    source "StudyCode/MSTORY3.0/Kconfig"
+endmenu
+
+# M-Hive Edu Board Lecture Code
+menu "M-HIVE EduBoard Lecture Code M4 Core"
+    source "StudyCode/M-HIVE-EduBoard/Kconfig"
+endmenu
 
 ###############################################################################

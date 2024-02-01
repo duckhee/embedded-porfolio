@@ -1,0 +1,23 @@
+###############################################################################
+# SPDX-License-Identifier: GPL-3.0-or-later
+###############################################################################
+
+# select Mango-M3 Board Simple LED On
+config MANGO_M3_BOARD_SIMPLE_LED_ON
+    bool "select mango-M3 Board Simple LED On Sample"
+    default n
+    select ARCH_M3
+
+# select Mango-M3 Board Simple LED Blink
+config MANGO_M3_BOARD_SIMPLE_LED_BLINK_ONCE
+    bool "select mango-M3 Board Simple LED Blink Once"
+    default n
+    select ARCH_M3
+
+# select Mango-M3 Board Simple All LED Blink 
+config MANGO_M3_BOARD_SIMPLE_ALL_LED_BLINK
+    bool "select mango-M3 Board Simple LED All Blink"
+    default n
+    select ARCH_M3
+
+###############################################################################

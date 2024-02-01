@@ -1,0 +1,15 @@
+###############################################################################
+# SPDX-License-Identifier: GPL-3.0-or-later
+###############################################################################
+
+# select MCU Develop Board
+
+menu "Mango M-3 Board Sample Code in Mstroy2.0 Book"
+    source "StudyCode/MSTORY2.0/Mango-M3_Board/Kconfig"
+endmenu
+
+menu "Mango Z-1 Board Sample Code in Mstory2.0 Book"
+    source "StudyCode/MSTORY2.0/Mango-Z1_Board/Kconfig"
+endmenu
+
+###############################################################################

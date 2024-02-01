@@ -66,7 +66,7 @@ extern void free JPP((void *ptr));
  *      will cause the temp files to be removed if you stop the program early.
  */
 
-#ifndef TEMP_DIRECTORY		/* can override from jconfig.h or Makefile */
+#ifndef TEMP_DIRECTORY		/* can override from jconfig.h or Makefile.inc.inc */
 #define TEMP_DIRECTORY  "/usr/tmp/" /* recommended setting for Unix */
 #endif
 
@@ -74,7 +74,7 @@ static int next_file_num;	/* to distinguish among several temp files */
 
 #ifdef NO_MKTEMP
 
-#ifndef TEMP_FILE_NAME		/* can override from jconfig.h or Makefile */
+#ifndef TEMP_FILE_NAME		/* can override from jconfig.h or Makefile.inc.inc */
 #define TEMP_FILE_NAME  "%sJPG%03d.TMP"
 #endif
 
@@ -118,7 +118,7 @@ select_file_name (char * fname)
 #else /* ! NO_MKTEMP */
 
 /* Note that mktemp() requires the initial filename to end in six X's */
-#ifndef TEMP_FILE_NAME		/* can override from jconfig.h or Makefile */
+#ifndef TEMP_FILE_NAME		/* can override from jconfig.h or Makefile.inc.inc */
 #define TEMP_FILE_NAME  "%sJPG%dXXXXXX"
 #endif
 

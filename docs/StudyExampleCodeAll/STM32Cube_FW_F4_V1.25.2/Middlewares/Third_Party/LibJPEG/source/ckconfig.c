@@ -387,7 +387,7 @@ int main (argc, argv)
   printf("Configuration check for Independent JPEG Group's software done.\n");
   printf("\nI have written the jconfig.h file for you.\n\n");
 #ifdef HAVE_PROTOTYPES
-  printf("You should use makefile.ansi as the starting point for your Makefile.\n");
+  printf("You should use makefile.ansi as the starting point for your Makefile.inc.inc.\n");
 #else
   printf("You should use makefile.unix as the starting point for your Makefile.\n");
 #endif

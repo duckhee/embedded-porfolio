@@ -1,11 +1,11 @@
 # SPDX-License-Identifier: GPL-2.0-only
 ###
-# This Makefile lists the most basic programs used during the build process.
+# This Makefile.inc.inc lists the most basic programs used during the build process.
 # The programs listed herein are what are needed to do the basic stuff,
 # such as fix file dependencies.
 # This initial step is needed to avoid files to be recompiled
 # when kernel configuration changes (which is what happens when
-# .config is included by main Makefile.
+# .config is included by main Makefile.inc.inc.
 # ---------------------------------------------------------------------------
 # fixdep: 	 Used to generate dependency information during build process
 

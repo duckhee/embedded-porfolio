@@ -29,34 +29,33 @@ NM = $(COMPILER_PREFIX)nm
 
 # Kconfig file add -> setting information include
 -include .config
-
 #####################################################################
 # CFLAGS
 #####################################################################
 
-# default cpu architecture is m3
-DEFAULT_CPU = -mcpu=cortex-m3
+# default cpu arch is m3
+# DEFAULT_CPU = -mcpu=cortex-m3
+CPU :=
 
 # architecture M3
 M3_CPU = -mcpu=cortex-m3
 # architecture M4
 M4_CPU = -mcpu=cortex-m4
 
+# Setting Default CPU
+CPU := $(DEFAULT_CPU)
+
+# Floating point unit Setting
+FPU := 
+
+# Floating ABI Setting
+FLOAT-ABI := 
+# define setting
+C_DEFS :=
+
 #####################################################################
 # Board Core module setting 
 #####################################################################
-
-# default CPU setting
-CPU := $(DEFAULT_CPU)
-
-# floating point unit Setting
-FPU :=
-
-# Floating ABI Setting
-FLOAT-ABI :=
-
-# define setting
-C_DEFS :=
 
 # Board Select CPU and Define, FPU, FLOAT-ABI setting
 -include $(TOP)/BoardCore.mk
@@ -64,6 +63,8 @@ C_DEFS :=
 # Micro Controller variable setting
 MCU = $(CPU) -mthumb $(FPU) $(FLOAT-ABI)
 
+# include linkber script select makefile
+-include $(TOP)/Linker.mk
 # output file format setting (using ihex or binary)
 ## Output format. (can be ihex or binary)
 ## (binary i.e. for openocd and SAM-BA, hex i.e. for lpc21isp and uVision)
@@ -87,12 +88,12 @@ DEBUG = dwarf-2
 ifeq ($(CONFIG_STANDARD_DRIVER), y)
 # driver setting flag 
 C_DEFS += \
--D USE_STDPERIPH_DRIVER \
+-D USE_STDPERIPH_DRIVER
 
 else ifeq ($(CONFIG_HAL_DRIVER), y)
 # driver setting flag 
 C_DEFS += \
--D USE_HAL_DRIVER \
+-D USE_HAL_DRIVER
 
 endif
 
@@ -104,7 +105,7 @@ endif
 ADEFS = 
 
 # comile option common 
-COMFILE_COMMON_FLAGS = -Wall -fdata-sections -ffunction-sections
+
 
 # Compiler flags.
 #  -g*:          generate debugging information
@@ -114,7 +115,7 @@ COMFILE_COMMON_FLAGS = -Wall -fdata-sections -ffunction-sections
 #  -Wa,...:      tell GCC to pass this to the assembler.
 #    -adhlns...: create assembler listing
 #
-
+COMFILE_COMMON_FLAGS = -Wall -fdata-sections -ffunction-sections
 # Flags for C and C++ (arm-elf-gcc/arm-elf-g++)
 CFLAGS = -g$(DEBUG)
 CFLAGS += $(C_DEFS) $(C_INCLUDES)

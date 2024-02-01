@@ -4,18 +4,43 @@
 
 #config file 
 .config
+.config/
 .config.old
+.config.old/
 
 #Build Object Folder
 build
+build/
 
 
 #OBJECT FOLDER
 obj.makeProject
+obj.makeProject/
 
 #build Folder
 bin.makeProject
+bin.makeProject/
 board/.DS_Store
 
 ### visual code ###
 .vscode/
+
+### C Lion folder ###
+.idea/
+
+### configuration include file remove ###
+./include
+
+### make result folder ###
+obj.build
+obj.build/
+./ob.build
+./ob.build/
+bin.build
+bin.build/
+./bin.build
+./bin.build/
+lib.build
+lib.build/
+./lib.build
+./lib.build/

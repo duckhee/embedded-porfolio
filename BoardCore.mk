@@ -3,10 +3,9 @@
 ###########################################################
 
 # include makefile 
--include $(TOP)/Inc.mk
+# -include $(TOP)/Inc.mk
 
-# include linkber script select makefile
--include $(TOP)/Linker.mk
+
 
 # shell if 
 
@@ -15,14 +14,14 @@ CPU = $(M3_CPU)
 FLOAT-ABI = 
 C_DEFS = \
 -D STM32F103xB \
--D BOARD_DEF_MANGO_M32 \
+-D BOARD_DEF_MANGO_M32 
 
 else ifeq ($(CONFIG_MANGO_Z1), y)
 CPU = $(M3_CPU)
 FPU = 
 FLOAT-ABI = 
 C_DEFS = \
--D STM32F103xB \
+-D STM32F103xB 
 
 else ifeq ($(CONFIG_MANGO_M32F2), y)
 
