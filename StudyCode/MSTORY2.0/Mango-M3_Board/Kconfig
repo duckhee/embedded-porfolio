@@ -20,4 +20,10 @@ config MANGO_M3_BOARD_SIMPLE_ALL_LED_BLINK
     default n
     select ARCH_M3
 
+# select Mango-M3 Board led control with mango register define header file
+config MANGO_M3_BOARD_LED_CONTROL_WITH_DEFINE
+    bool "select mango-M3 Board LED Control define register map by header file"
+    default n
+    select ARCH_M3
+
 ###############################################################################
