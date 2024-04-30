@@ -1,4 +1,4 @@
-#include "mango_m3.h"
+#include "platform_config.h"
 
 // software delay time
 void soft_delay_int(volatile unsigned int delayTime) {

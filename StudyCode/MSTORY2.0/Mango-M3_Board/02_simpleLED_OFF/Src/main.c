@@ -1,4 +1,4 @@
-#include "mango_m3.h"
+#include "platform_config.h"
 
 /** 
  * volatile 는 최적화를 하지 말라는 지시어 효과와 값이 무엇인지 모르기 때문에 volatile 로 선언된 변수들을 계산할 때 순서등 명확히 명시 해줘야 한다.
