@@ -44,7 +44,7 @@ void LED_On_Blue(void) {
 }
 
 void LED_Off_Blue(void) {
-    GPIOB_BSRR |= GPIO_LED2_PIN;
+    GPIOB_BSRR |= GPIO_LED3_PIN;
 }
 
 
@@ -87,6 +87,6 @@ void LED_Test(void) {
     delay_1_second();
     LED_On_All();
 #else
-    LED_OnOffAll_Mult(30);
+    LED_OnOffAll_Multi(30);
 #endif
 }

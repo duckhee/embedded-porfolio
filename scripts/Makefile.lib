@@ -195,6 +195,9 @@ quiet_cmd_flex = LEX     $@
 $(obj)/%.lex.c: $(src)/%.l FORCE
 	$(call if_changed,flex)
 
+# update do
+#LEX = flex
+YACC = bison
 # YACC
 # ---------------------------------------------------------------------------
 quiet_cmd_bison = YACC    $@

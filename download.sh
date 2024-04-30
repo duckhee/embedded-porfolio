@@ -24,9 +24,9 @@ if [ -z "${ttys[0]}" ]
         then
             if [ -z "${BinFile}" ]
             then
-                ~/stm32ld ${ttys[0]} 115200 bin.makeProject/Sample.bin
+                ~/stm32ld ${ttys[0]} 115200 bin.build/embeddedProject.bin
             else
-                ~/stm32ld ${ttys[0]} 115200 bin.makeProject/${BinFile}.bin
+                ~/stm32ld ${ttys[0]} 115200 bin.build/${BinFile}.bin
             fi
         else
         ~/stm32ld ${ttys[0]} 115200 ${BinFolder}/${BinFile}.bin
@@ -47,9 +47,9 @@ commandDownload()
         then
             if [ -z "${BinFile}" ]
             then
-                ~/stm32ld ${ttys[1]} 115200 bin.makeProject/Sample.bin
+                ~/stm32ld ${ttys[1]} 115200 bin.build/embeddedProject.bin
             else
-                ~/stm32ld ${ttys[1]} 115200 bin.makeProject/${BinFile}.bin
+                ~/stm32ld ${ttys[1]} 115200 bin.build/${BinFile}.bin
             fi
         else
         ~/stm32ld ${ttys[1]} 115200 ${BinFolder}/${BinFile}.bin

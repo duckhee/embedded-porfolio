@@ -27,7 +27,7 @@ void GPIO_B_Output_Init(uint16_t pinNum, GPIOSpeed_t speedValE, GPIO_Output_Mode
                 /** 초기화 진행하는 코드 */
                 GPIOB_CRL &= ~(0xF << pinPos);
                 /** 값을 입력하는 코드 */
-                CPIOB_CRL |= tempValue << pinPos;
+                GPIOB_CRL |= tempValue << pinPos;
                 break;
             }
         }
@@ -54,9 +54,9 @@ int main(void) {
 
     RCC_APB2ENR |= RCC_APB2Periph_GPIOB;
 
-    GPIO_B_Output_Init(GPIO_LED1_PIN, GPIO_Speed_10MHz, GPIO_Mode_Out_PP);
-    GPIO_B_Output_Init(GPIO_LED2_PIN, GPIO_Speed_10MHz, GPIO_Mode_Out_PP);
-    GPIO_B_Output_Init(GPIO_LED3_PIN, GPIO_Speed_10MHz, GPIO_Mode_Out_PP);
+    GPIO_B_Output_Init(GPIO_LED1_PIN, GPIO_Speed_10MHz, GPIO_Mode_Out_PushPull);
+    GPIO_B_Output_Init(GPIO_LED2_PIN, GPIO_Speed_10MHz, GPIO_Mode_Out_PushPull);
+    GPIO_B_Output_Init(GPIO_LED3_PIN, GPIO_Speed_10MHz, GPIO_Mode_Out_PushPull);
 
     LED_Test();
 
