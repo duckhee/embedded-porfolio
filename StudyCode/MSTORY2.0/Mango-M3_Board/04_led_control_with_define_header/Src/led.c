@@ -77,6 +77,7 @@ void LED_OnOffAll_Multi(uint32_t count) {
         LED_Off_Blue();
         delay_1_second();
     }
+    LED_Off_All();
 }
 
 void LED_Test(void) {
