@@ -189,17 +189,20 @@ endef
 
 # LEX
 # ---------------------------------------------------------------------------
+# update do
+#LEX = flex
+
 quiet_cmd_flex = LEX     $@
       cmd_flex = $(LEX) -o$@ -L $<
 
 $(obj)/%.lex.c: $(src)/%.l FORCE
 	$(call if_changed,flex)
 
-# update do
-#LEX = flex
-YACC = bison
+
 # YACC
 # ---------------------------------------------------------------------------
+# update do
+YACC = bison
 quiet_cmd_bison = YACC    $@
       cmd_bison = $(YACC) -o$@ -t -l $<
 
