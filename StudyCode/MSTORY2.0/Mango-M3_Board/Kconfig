@@ -26,4 +26,10 @@ config MANGO_M3_BOARD_LED_CONTROL_WITH_DEFINE
     default n
     select ARCH_M3
 
+# select Mango-M3 Board led control with mango register map setting define using address offset
+config MANGO_BOARD_LED_CONTROL_ADDRESS_OFFSET
+    bool "select mango-M3 Board LED Control using address offset using memory map define"
+    default n
+    select ARCH_M3
+
 ###############################################################################
