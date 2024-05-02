@@ -3,28 +3,28 @@
 
 void LED_On_Red(void) {
     /** set led 1 pin */
-    GPIOB_BRR |= GPIO_LED1_PIN;
+    GPIO_LED->BRR |= GPIO_LED1_PIN;
 }
 
 void LED_Off_Red(void) {
     /** reset led 1 pin */
-    GPIOB_BSRR |= GPIO_LED1_PIN;
+    GPIO_LED->BSRR |= GPIO_LED1_PIN;
 }
 
 void LED_On_Yellow(void) {
-    GPIOB_BRR |= GPIO_LED2_PIN;
+    GPIO_LED->BRR |= GPIO_LED2_PIN;
 }
 
 void LED_Off_Yellow(void) {
-    GPIOB_BSRR |= GPIO_LED2_PIN;
+    GPIO_LED->BSRR |= GPIO_LED2_PIN;
 }
 
 void LED_On_Blue(void) {
-    GPIOB_BRR |= GPIO_LED3_PIN;
+    GPIO_LED->BRR |= GPIO_LED3_PIN;
 }
 
 void LED_Off_Blue(void) {
-    GPIOB_BSRR |= GPIO_LED3_PIN;
+    GPIO_LED->BSRR |= GPIO_LED3_PIN;
 }
 
 

@@ -3,7 +3,7 @@
 ###########################################################
 
 
-ifeq ($(CONFIG_MANGO_M3_BOARD_SIMPLE_ALL_LED_BLINK), y)
+#ifeq ($(CONFIG_MANGO_M3_BOARD_SIMPLE_ALL_LED_BLINK), y)
   	MANGO_BOARD_LED_ALL_BLINK_SOURCES :=
     MANGO_BOARD_LED_ALL_BLINK_SOURCES += main.c
     DEFAULT_ASMSOURCES :=
@@ -14,4 +14,6 @@ ifeq ($(CONFIG_MANGO_M3_BOARD_SIMPLE_ALL_LED_BLINK), y)
     ASM_SOURCES += $(DEFAULT_ASMSOURCES)
 
     C_SOURCES += $(MANGO_BOARD_LED_ALL_BLINK_SOURCES)
-endif
+
+
+#endif

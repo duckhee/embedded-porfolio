@@ -32,4 +32,10 @@ config MANGO_BOARD_LED_CONTROL_ADDRESS_OFFSET
     default n
     select ARCH_M3
 
+# select Mango-M3 Board key press
+config MANGO_BOARD_KEY_PRESS
+    bool "select mango-M3 Board Key Press Tests"
+    default n
+    select ARCH_M3
+
 ###############################################################################

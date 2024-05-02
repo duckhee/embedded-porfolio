@@ -5,18 +5,53 @@
 SUB_ARCH :=
 ifeq ($(CONFIG_MANGO_M3_BOARD_SIMPLE_LED_ON),y)
 SUB_ARCH += 01_simpleLED/Src
-else ifeq ($(CONFIG_MANGO_M3_BOARD_SIMPLE_LED_BLINK_ONCE),y)
-SUB_ARCH += 02_simpleLED_OFF/Src
-else ifeq ($(CONFIG_MANGO_M3_BOARD_SIMPLE_ALL_LED_BLINK),y)
-SUB_ARCH += 03_simple_all_blink_LED/Src
-else ifeq ($(CONFIG_MANGO_M3_BOARD_LED_CONTROL_WITH_DEFINE),y)
-SUB_ARCH += 04_led_control_with_define_header/Src
-else ifeq ($(CONFIG_MANGO_BOARD_LED_CONTROL_ADDRESS_OFFSET),y)
-SUB_ARCH += 05_led_control_with_address_offset/Src
-endif
+
 SUB_ARCH := $(addprefix  $(TOP)/StudyCode/MSTORY2.0/Mango-M3_Board/,$(SUB_ARCH))
 
 vpath %.s $(SUB_ARCH)
 vpath %.c $(SUB_ARCH)
+
+else ifeq ($(CONFIG_MANGO_M3_BOARD_SIMPLE_LED_BLINK_ONCE),y)
+SUB_ARCH += 02_simpleLED_OFF/Src
+
+SUB_ARCH := $(addprefix  $(TOP)/StudyCode/MSTORY2.0/Mango-M3_Board/,$(SUB_ARCH))
+
+vpath %.s $(SUB_ARCH)
+vpath %.c $(SUB_ARCH)
+
+else ifeq ($(CONFIG_MANGO_M3_BOARD_SIMPLE_ALL_LED_BLINK),y)
+SUB_ARCH += 03_simple_all_blink_LED/Src
+
+SUB_ARCH := $(addprefix  $(TOP)/StudyCode/MSTORY2.0/Mango-M3_Board/,$(SUB_ARCH))
+
+vpath %.s $(SUB_ARCH)
+vpath %.c $(SUB_ARCH)
+
+else ifeq ($(CONFIG_MANGO_M3_BOARD_LED_CONTROL_WITH_DEFINE),y)
+SUB_ARCH += 04_led_control_with_define_header/Src
+
+SUB_ARCH := $(addprefix  $(TOP)/StudyCode/MSTORY2.0/Mango-M3_Board/,$(SUB_ARCH))
+
+vpath %.s $(SUB_ARCH)
+vpath %.c $(SUB_ARCH)
+
+else ifeq ($(CONFIG_MANGO_BOARD_LED_CONTROL_ADDRESS_OFFSET),y)
+SUB_ARCH += 05_led_control_with_address_offset/Src
+
+SUB_ARCH := $(addprefix  $(TOP)/StudyCode/MSTORY2.0/Mango-M3_Board/,$(SUB_ARCH))
+
+vpath %.s $(SUB_ARCH)
+vpath %.c $(SUB_ARCH)
+
+else ifeq ($(CONFIG_MANGO_BOARD_KEY_PRESS),y)
+SUB_ARCH += 06_key_press/Src
+
+SUB_ARCH := $(addprefix  $(TOP)/StudyCode/MSTORY2.0/Mango-M3_Board/,$(SUB_ARCH))
+
+vpath %.s $(SUB_ARCH)
+vpath %.c $(SUB_ARCH)
+
+endif
+
 
 sinclude $(addsuffix  /Makefile,$(SUB_ARCH))

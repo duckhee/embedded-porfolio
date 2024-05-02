@@ -4,7 +4,7 @@
 
 SUB_ARCH :=
 SUB_ARCH += Mango-M3_Board
-# SUB_ARCH += Mango-Z1_Board
+SUB_ARCH += Mango-Z1_Board
 
 SUB_ARCH := $(addprefix $(TOP)/StudyCode/MSTORY2.0/, $(SUB_ARCH))
 
