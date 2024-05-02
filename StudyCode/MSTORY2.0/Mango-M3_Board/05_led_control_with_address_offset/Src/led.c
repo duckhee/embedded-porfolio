@@ -1,26 +1,5 @@
 #include "platform_config.h"
 
-void LED_On_Red(void);
-
-void LED_Off_Red(void);
-
-void LED_On_Yellow(void);
-
-void LED_Off_Yellow(void);
-
-void LED_On_Blue(void);
-
-void LED_Off_Blue(void);
-
-void LED_On_All(void);
-
-void LED_Off_All(void);
-
-void LED_OnOffAll_Multi(uint32_t count);
-
-void LED_Test(void);
-
-
 void LED_On_Red(void) {
     /** set led 1 pin */
     GPIO_LED->BRR |= GPIO_LED1_PIN;

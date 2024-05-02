@@ -2,7 +2,7 @@
 # GCC template makefile
 ###########################################################
 
-ifeq ($(CONFIG_MANGO_M3_BOARD_SIMPLE_LED_BLINK_ONCE), y)
+#ifeq ($(CONFIG_MANGO_M3_BOARD_SIMPLE_LED_BLINK_ONCE), y)
   	MANGO_BOARD_LED_OFF_SOURCES :=
     MANGO_BOARD_LED_OFF_SOURCES += main.c
     DEFAULT_ASMSOURCES :=
@@ -13,4 +13,6 @@ ifeq ($(CONFIG_MANGO_M3_BOARD_SIMPLE_LED_BLINK_ONCE), y)
     ASM_SOURCES += $(DEFAULT_ASMSOURCES)
 
     C_SOURCES += $(MANGO_BOARD_LED_OFF_SOURCES)
-endif
+
+
+#endif

@@ -33,7 +33,7 @@ SRCS += $(C_SOURCES)
 # source file %.cpp
 CPPSRCS += $(CPP_SOURCES)
 # assmebler source file add
-ASM_SOURCES = 
+ASM_SOURCES =
 
 # sub folder setting
 SUB_DIRS :=
