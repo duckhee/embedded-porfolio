@@ -23,7 +23,7 @@ void KEY_Test(void) {
     while (1) {
         delay_100_milli_second();
         /** */
-        if ((i++ & 0x01) == 0x00) {
+        if ((i++ & 0x1) == 0x00) {
             LED_On_Blue();
         }
             /** */
