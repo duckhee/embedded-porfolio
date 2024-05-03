@@ -38,4 +38,10 @@ config MANGO_BOARD_KEY_PRESS
     default n
     select ARCH_M3
 
+# select Mango-M3 Board Hello World UART
+config UART_HELLO_WORLD
+    bool "select mango-M3 Board UART Hello World"
+    default n
+    select ARCH_M3
+
 ###############################################################################
