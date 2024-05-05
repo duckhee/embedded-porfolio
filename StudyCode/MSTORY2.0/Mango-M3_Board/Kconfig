@@ -44,4 +44,10 @@ config UART_HELLO_WORLD
     default n
     select ARCH_M3
 
+# select Mango-M3 Board Hello World Using redefine standardIO
+config USART_STANDARD_IO_HELLO_WORLD
+    bool "select mango-M3 Board USART Set Standard IO"
+    default n
+    select ARCH_M3
+
 ###############################################################################

@@ -104,7 +104,7 @@ endif
 #Assembler Define Flag 
 ADEFS = 
 
-# comile option common 
+# compile option common
 
 
 # Compiler flags.
