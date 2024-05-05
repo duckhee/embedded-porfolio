@@ -50,4 +50,9 @@ config USART_STANDARD_IO_HELLO_WORLD
     default n
     select ARCH_M3
 
+config RECEIVE_USART_DATA
+    bool "select mango-M3 Board USART Receive Data"
+    default n
+    select ARCH_M3
+
 ###############################################################################
