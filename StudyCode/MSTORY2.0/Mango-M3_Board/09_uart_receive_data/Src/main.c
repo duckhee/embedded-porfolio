@@ -399,11 +399,10 @@ __attribute__((used)) int _write(int fd, char *ptr, int len) {
 
 __attribute__((used)) int _read(int fd, char *ptr, int len) {
     size_t i;
-    for (i = 0; i < len - 1; ++i) {
+    for (i = 0; i < len; ++i) {
         while ((USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET));
-        ptr[i] = USART_ReceiveData(USART1);
-        if (ptr[i] == '\n') {
-            ptr[i + 1] = NULL;
+        *ptr++ = USART_ReceiveData(USART1);
+        if (*ptr == '\n') {
             break;
         }
     }
