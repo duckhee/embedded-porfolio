@@ -59,6 +59,15 @@ SUB_ARCH := $(addprefix  $(TOP)/StudyCode/MSTORY2.0/Mango-M3_Board/,$(SUB_ARCH))
 vpath %.s $(SUB_ARCH)
 vpath %.c $(SUB_ARCH)
 
+else ifeq ($(CONFIG_USART_STANDARD_IO_HELLO_WORLD), y)
+
+SUB_ARCH += 08_lib_printf_hello_world/Src
+
+SUB_ARCH := $(addprefix  $(TOP)/StudyCode/MSTORY2.0/Mango-M3_Board/,$(SUB_ARCH))
+
+vpath %.s $(SUB_ARCH)
+vpath %.c $(SUB_ARCH)
+
 endif
 
 
