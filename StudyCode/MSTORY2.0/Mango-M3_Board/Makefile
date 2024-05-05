@@ -68,6 +68,14 @@ SUB_ARCH := $(addprefix  $(TOP)/StudyCode/MSTORY2.0/Mango-M3_Board/,$(SUB_ARCH))
 vpath %.s $(SUB_ARCH)
 vpath %.c $(SUB_ARCH)
 
+else ifeq ($(CONFIG_RECEIVE_USART_DATA),y)
+
+SUB_ARCH += 09_uart_receive_data/Src
+SUB_ARCH := $(addprefix  $(TOP)/StudyCode/MSTORY2.0/Mango-M3_Board/,$(SUB_ARCH))
+
+vpath %.s $(SUB_ARCH)
+vpath %.c $(SUB_ARCH)
+
 endif
 
 
