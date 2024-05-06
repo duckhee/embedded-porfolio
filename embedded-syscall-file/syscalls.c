@@ -8,7 +8,7 @@
 #include <sys/time.h>
 #include <sys/times.h>
 
-#include "stm32f10x.h"
+#include "../CMSIS/Core/CM3/stm32f10x.h"
 
 #define  U1_BUFFER_SIZE  100
 
