@@ -8,5 +8,6 @@ config H_HIVE_EDU_BOARD_SIMPLE_LED
     default n
     select ARCH_M4
     select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
 
 ###############################################################################

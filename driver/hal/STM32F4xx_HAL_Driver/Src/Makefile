@@ -22,6 +22,7 @@ DRIVER_SOURCES += stm32f4xx_hal_dma.c
 DRIVER_SOURCES += stm32f4xx_hal_dma_ex.c
 DRIVER_SOURCES += stm32f4xx_hal_dma2d.c
 DRIVER_SOURCES += stm32f4xx_hal_dsi.c
+DRIVER_SOURCES += stm32f4xx_hal_exti.c
 DRIVER_SOURCES += stm32f4xx_hal_eth.c
 DRIVER_SOURCES += stm32f4xx_hal_flash.c
 DRIVER_SOURCES += stm32f4xx_hal_flash_ex.c

@@ -22,7 +22,7 @@ config MANGO_M32F4
     default n
     select ARCH_M4
 
-config M_HIVE
+config M_HIVE_EDU_BOARD
     bool "Select STM32F407V EduBoard V1.2 (ChrisP)"
     default n
     select ARCH_M4
