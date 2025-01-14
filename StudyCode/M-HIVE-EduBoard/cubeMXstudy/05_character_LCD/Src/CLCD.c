@@ -33,12 +33,13 @@ void CLCD_GPIO_Init(void) {
 }
 
 void CLCD_Write_Instruction(unsigned char b) {
-    //���� 4��Ʈ
+    /** 4bit mode write data */
     GPIO_D7->ODR = (b & 0x80) ? GPIO_D7->ODR | GPIO_PIN_D7 : GPIO_D7->ODR & ~GPIO_PIN_D7; //D7
     GPIO_D6->ODR = (b & 0x40) ? GPIO_D6->ODR | GPIO_PIN_D6 : GPIO_D6->ODR & ~GPIO_PIN_D6; //D6
     GPIO_D5->ODR = (b & 0x20) ? GPIO_D5->ODR | GPIO_PIN_D5 : GPIO_D5->ODR & ~GPIO_PIN_D5; //D5
     GPIO_D4->ODR = (b & 0x10) ? GPIO_D4->ODR | GPIO_PIN_D4 : GPIO_D4->ODR & ~GPIO_PIN_D4; //D4
 
+    /** RS Low, RW Low setting Instruction WRite Operation Mode -> MPU write Instruction Code int IR(Command Write) */
     GPIO_RS->ODR = GPIO_RS->ODR & ~GPIO_PIN_RS; //RS�� Low
     GPIO_RW->ODR = GPIO_RW->ODR & ~GPIO_PIN_RW; //RW�� Low
     GPIO_EN->ODR = GPIO_EN->ODR & ~GPIO_PIN_EN; //EN�� Low
@@ -46,12 +47,13 @@ void CLCD_Write_Instruction(unsigned char b) {
     GPIO_EN->ODR = GPIO_EN->ODR | GPIO_PIN_EN; //EN�� High
     GPIO_EN->ODR = GPIO_EN->ODR & ~GPIO_PIN_EN; //EN�� Low
 
-    //���� 4��Ʈ
+    /** 4bit mode write data */
     GPIO_D7->ODR = (b & 0x08) ? GPIO_D7->ODR | GPIO_PIN_D7 : GPIO_D7->ODR & ~GPIO_PIN_D7; //D7
     GPIO_D6->ODR = (b & 0x04) ? GPIO_D6->ODR | GPIO_PIN_D6 : GPIO_D6->ODR & ~GPIO_PIN_D6; //D6
     GPIO_D5->ODR = (b & 0x02) ? GPIO_D5->ODR | GPIO_PIN_D5 : GPIO_D5->ODR & ~GPIO_PIN_D5; //D5
     GPIO_D4->ODR = (b & 0x01) ? GPIO_D4->ODR | GPIO_PIN_D4 : GPIO_D4->ODR & ~GPIO_PIN_D4; //D4
 
+    /** RS Low, RW Low setting Instruction WRite Operation Mode -> MPU write Instruction Code int IR(Command Write) */
     GPIO_RS->ODR = GPIO_RS->ODR & ~GPIO_PIN_RS; //RS�� Low
     GPIO_RW->ODR = GPIO_RW->ODR & ~GPIO_PIN_RW; //RW�� Low
     GPIO_EN->ODR = GPIO_EN->ODR & ~GPIO_PIN_EN; //EN�� Low
@@ -63,12 +65,14 @@ void CLCD_Write_Instruction(unsigned char b) {
 }
 
 void CLCD_Write_Display(unsigned char b) {
+    /** 4bit mode write data */
     //���� 4��Ʈ
     GPIO_D7->ODR = (b & 0x80) ? GPIO_D7->ODR | GPIO_PIN_D7 : GPIO_D7->ODR & ~GPIO_PIN_D7; //D7
     GPIO_D6->ODR = (b & 0x40) ? GPIO_D6->ODR | GPIO_PIN_D6 : GPIO_D6->ODR & ~GPIO_PIN_D6; //D6
     GPIO_D5->ODR = (b & 0x20) ? GPIO_D5->ODR | GPIO_PIN_D5 : GPIO_D5->ODR & ~GPIO_PIN_D5; //D5
     GPIO_D4->ODR = (b & 0x10) ? GPIO_D4->ODR | GPIO_PIN_D4 : GPIO_D4->ODR & ~GPIO_PIN_D4; //D4
 
+    /** RS High  RE Low setting DR mode -> MPU writes data into DR(Data Write) */
     GPIO_RS->ODR = GPIO_RS->ODR | GPIO_PIN_RS; //RS�� High
     GPIO_RW->ODR = GPIO_RW->ODR & ~GPIO_PIN_RW; //RW�� Low
     GPIO_EN->ODR = GPIO_EN->ODR & ~GPIO_PIN_EN; //EN�� Low
@@ -76,13 +80,14 @@ void CLCD_Write_Display(unsigned char b) {
     GPIO_EN->ODR = GPIO_EN->ODR | GPIO_PIN_EN; //EN�� High
     GPIO_EN->ODR = GPIO_EN->ODR & ~GPIO_PIN_EN; //EN�� Low
 
-    //** 4bit mode write data */
+    /** 4bit mode write data */
     //���� 4��Ʈ
     GPIO_D7->ODR = (b & 0x08) ? GPIO_D7->ODR | GPIO_PIN_D7 : GPIO_D7->ODR & ~GPIO_PIN_D7; //D7
     GPIO_D6->ODR = (b & 0x04) ? GPIO_D6->ODR | GPIO_PIN_D6 : GPIO_D6->ODR & ~GPIO_PIN_D6; //D6
     GPIO_D5->ODR = (b & 0x02) ? GPIO_D5->ODR | GPIO_PIN_D5 : GPIO_D5->ODR & ~GPIO_PIN_D5; //D5
     GPIO_D4->ODR = (b & 0x01) ? GPIO_D4->ODR | GPIO_PIN_D4 : GPIO_D4->ODR & ~GPIO_PIN_D4; //D4
 
+    /** RS High  RE Low setting DR mode -> MPU writes data into DR(Data Write) */
     GPIO_RS->ODR = GPIO_RS->ODR | GPIO_PIN_RS; //RS�� High
     GPIO_RW->ODR = GPIO_RW->ODR & ~GPIO_PIN_RW; //RW�� Low
     GPIO_EN->ODR = GPIO_EN->ODR & ~GPIO_PIN_EN; //EN�� Low
@@ -125,9 +130,9 @@ void CLCD_Init(void) {
     HAL_Delay(10);
     CLCD_Write_Instruction(0x0C); // display on
     CLCD_Write_Instruction(0x06); // auto increment setting
-    CLCD_Write_Instruction(0x02);
-    CLCD_Write_Instruction(0x01); // clrscr
-    CLCD_Write_Instruction(0x01);
+    CLCD_Write_Instruction(0x02); // return home
+    CLCD_Write_Instruction(0x01); // clear display
+    CLCD_Write_Instruction(0x01); // clear display
 }
 
 void CLCD_Clear(void) {
