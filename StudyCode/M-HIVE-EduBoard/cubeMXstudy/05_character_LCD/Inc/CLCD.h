@@ -13,29 +13,36 @@
 /*		CLCD_D7 	PE7			*/
 ////////////////////////////////*/
 
-#define GPIO_RS GPIOE
-#define GPIO_RW GPIOE
-#define GPIO_EN GPIOE
-#define GPIO_D4	GPIOE
-#define GPIO_D5	GPIOE
-#define GPIO_D6	GPIOE
-#define GPIO_D7	GPIOE
+#define GPIO_RS                 GPIOE
+#define GPIO_RW                 GPIOE
+#define GPIO_EN                 GPIOE
+#define GPIO_D4                 GPIOE
+#define GPIO_D5                 GPIOE
+#define GPIO_D6                 GPIOE
+#define GPIO_D7                 GPIOE
 
-#define GPIO_PIN_RS	GPIO_PIN_0
-#define GPIO_PIN_RW	GPIO_PIN_1
-#define GPIO_PIN_EN	GPIO_PIN_2
-#define GPIO_PIN_D4	GPIO_PIN_4
-#define GPIO_PIN_D5	GPIO_PIN_5
-#define GPIO_PIN_D6	GPIO_PIN_6
-#define GPIO_PIN_D7	GPIO_PIN_7
+#define GPIO_PIN_RS             GPIO_PIN_0 // Select Registers 0 => Instruction Register (for write) Busy Flag : address counter (for read), 1=> Data register(for write and read)
+#define GPIO_PIN_RW             GPIO_PIN_1 // Select Read or Write 0 => write, 1 => read
+#define GPIO_PIN_EN             GPIO_PIN_2  // start dat read/write
+// Used for data transfer and receive between the MPU and the ST7066U
+#define GPIO_PIN_D4             GPIO_PIN_4
+#define GPIO_PIN_D5             GPIO_PIN_5
+#define GPIO_PIN_D6             GPIO_PIN_6
+#define GPIO_PIN_D7             GPIO_PIN_7 // can be used as a busy flag
 
 
 void CLCD_GPIO_Init(void);
+
 void CLCD_Write_Instruction(unsigned char b);
+
 void CLCD_Write_Display(unsigned char b);
+
 void CLCD_Gotoxy(unsigned char x, unsigned char y);
+
 void CLCD_Puts(unsigned char x, unsigned char y, unsigned char *str);
+
 void CLCD_Init(void);
+
 void CLCD_Clear(void);
 //static void Delay(__IO uint32_t nCount);
 
