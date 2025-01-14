@@ -36,4 +36,13 @@ ifeq ($(CONFIG_H_HIVE_EDU_BOARD_UART_RECEIVE_INTERRUPT),y)
     	vpath %.c $(SUB_ARCH)
 endif
 
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_CHARACTER_LCD_OUTPUT), y)
+
+	SUB_ARCH += 05_character_LCD/Src
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
 sinclude $(addsuffix /Makefile, $(SUB_ARCH))
