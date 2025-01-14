@@ -35,6 +35,7 @@ void CLCD_GPIO_Init(void) {
 void CLCD_Write_Instruction(unsigned char b) {
     /** 4bit mode write data */
     GPIO_D7->ODR = (b & 0x80) ? GPIO_D7->ODR | GPIO_PIN_D7 : GPIO_D7->ODR & ~GPIO_PIN_D7; //D7
+    /** high bit send -> data */
     GPIO_D6->ODR = (b & 0x40) ? GPIO_D6->ODR | GPIO_PIN_D6 : GPIO_D6->ODR & ~GPIO_PIN_D6; //D6
     GPIO_D5->ODR = (b & 0x20) ? GPIO_D5->ODR | GPIO_PIN_D5 : GPIO_D5->ODR & ~GPIO_PIN_D5; //D5
     GPIO_D4->ODR = (b & 0x10) ? GPIO_D4->ODR | GPIO_PIN_D4 : GPIO_D4->ODR & ~GPIO_PIN_D4; //D4
@@ -106,7 +107,7 @@ void CLCD_Gotoxy(unsigned char x, unsigned char y) {
             CLCD_Write_Instruction(0x80 + x);
             break;
         case 1 :
-            CLCD_Write_Instruction(0xC0 + x);
+            CLCD_Write_Instruction(0xC0 + x); // 한줄 증가
             break;
             //case 2 : instruction_out(0x90+x); break;
             //case 3 : instruction_out(0xd0+x); break;
@@ -129,7 +130,7 @@ void CLCD_Init(void) {
     CLCD_Write_Instruction(0x28); // 4bit mode
     HAL_Delay(10);
     CLCD_Write_Instruction(0x0C); // display on
-    CLCD_Write_Instruction(0x06); // auto increment setting
+    CLCD_Write_Instruction(0x06); // auto increment setting cursor move right
     CLCD_Write_Instruction(0x02); // return home
     CLCD_Write_Instruction(0x01); // clear display
     CLCD_Write_Instruction(0x01); // clear display
