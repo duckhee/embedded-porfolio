@@ -10,4 +10,25 @@ config H_HIVE_EDU_BOARD_SIMPLE_LED
     select HAL_DRIVER
     select M_HIVE_EDU_BOARD
 
+config H_HIVE_EDU_BOARD_SIMPLE_UART
+    bool "select EduBoard M-Hive Simple UART Communication"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
+config H_HIVE_EDU_BOARD_SIMPLE_UART_PRINTF
+    bool "select EduBoard M-Hive Simple UART PRINTF"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
+config H_HIVE_EDU_BOARD_UART_RECEIVE_INTERRUPT
+    bool "select EduBoard M-Hive UART Receive Interrupt"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
 ###############################################################################
