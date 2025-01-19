@@ -45,4 +45,11 @@ config H_HIVE_EDU_BOARD_TIME_TIMER
     select HAL_DRIVER
     select M_HIVE_EDU_BOARD
 
+config H_HIVE_EDU_BOARD_TIME_TIMER_SEG
+    bool "select EduBoard M-Hive TIM Timer Segment Count"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
 ###############################################################################
