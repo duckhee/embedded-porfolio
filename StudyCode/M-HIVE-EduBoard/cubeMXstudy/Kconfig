@@ -52,4 +52,11 @@ config H_HIVE_EDU_BOARD_TIME_TIMER_SEG
     select HAL_DRIVER
     select M_HIVE_EDU_BOARD
 
+config H_HIVE_EDU_BOARD_EXTI_INPUT
+    bool "select EduBoard M-Hive EXTI GPIO Input"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
 ###############################################################################

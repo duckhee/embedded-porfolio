@@ -57,7 +57,17 @@ endif
 
 ifeq ($(CONFIG_H_HIVE_EDU_BOARD_TIME_TIMER_SEG),y)
 
-SUB_ARCH += 07_TIM_Timer_SEG/Src
+	SUB_ARCH += 07_TIM_Timer_SEG/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_EXTI_INPUT),y)
+
+	SUB_ARCH += 08_EXTI_InputInterrupt/Src
 
 	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
 
