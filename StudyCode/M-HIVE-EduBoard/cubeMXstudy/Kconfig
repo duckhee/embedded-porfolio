@@ -59,4 +59,11 @@ config H_HIVE_EDU_BOARD_EXTI_INPUT
     select HAL_DRIVER
     select M_HIVE_EDU_BOARD
 
+config H_HIVE_EDU_BOARD_PWM_BASIC
+    bool "select EduBoard M-Hive PWM Basic Pulse Width"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
 ###############################################################################
