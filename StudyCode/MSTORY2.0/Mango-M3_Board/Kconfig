@@ -27,31 +27,36 @@ config MANGO_M3_BOARD_LED_CONTROL_WITH_DEFINE
     select ARCH_M3
 
 # select Mango-M3 Board led control with mango register map setting define using address offset
-config MANGO_BOARD_LED_CONTROL_ADDRESS_OFFSET
+config MANGO_M3_BOARD_LED_CONTROL_ADDRESS_OFFSET
     bool "select mango-M3 Board LED Control using address offset using memory map define"
     default n
     select ARCH_M3
 
 # select Mango-M3 Board key press
-config MANGO_BOARD_KEY_PRESS
+config MANGO_M3_BOARD_KEY_PRESS
     bool "select mango-M3 Board Key Press Tests"
     default n
     select ARCH_M3
 
 # select Mango-M3 Board Hello World UART
-config UART_HELLO_WORLD
+config MANGO_M3_BOARD_UART_HELLO_WORLD
     bool "select mango-M3 Board UART Hello World"
     default n
     select ARCH_M3
 
 # select Mango-M3 Board Hello World Using redefine standardIO
-config USART_STANDARD_IO_HELLO_WORLD
+config MANGO_M3_BOARD_USART_STANDARD_IO_HELLO_WORLD
     bool "select mango-M3 Board USART Set Standard IO"
     default n
     select ARCH_M3
 
-config RECEIVE_USART_DATA
+config MANGO_M3_BOARD_RECEIVE_USART_DATA
     bool "select mango-M3 Board USART Receive Data"
+    default n
+    select ARCH_M3
+
+config MANGO_M3_BOARD_SEGMENT
+    bool "select mango-M3 Board 7 Segment"
     default n
     select ARCH_M3
 
