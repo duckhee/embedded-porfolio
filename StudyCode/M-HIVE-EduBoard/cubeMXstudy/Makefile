@@ -84,4 +84,14 @@ ifeq ($(CONFIG_H_HIVE_EDU_BOARD_PWM_BASIC), y)
 	vpath %.c $(SUB_ARCH)
 endif
 
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_PWM_SERVO_MOTOR), y)
+	SUB_ARCH += 10_PWM_SERVO_90/Src
+	SUB_ARCH += 10_PWM_SERVO_90/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
 sinclude $(addsuffix /Makefile, $(SUB_ARCH))

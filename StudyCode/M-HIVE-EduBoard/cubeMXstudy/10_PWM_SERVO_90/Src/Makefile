@@ -1,0 +1,23 @@
+###########################################################
+# GCC template makefile
+###########################################################
+
+  	EDU_BOARD_SIMPLE_PWM_SERVO_PWM_MOTOR :=
+  	EDU_BOARD_SIMPLE_PWM_SERVO_PWM_MOTOR += stm32f4xx_hal_msp.c
+  	EDU_BOARD_SIMPLE_PWM_SERVO_PWM_MOTOR += stm32f4xx_it.c
+  	EDU_BOARD_SIMPLE_PWM_SERVO_PWM_MOTOR += syscalls.c
+  	EDU_BOARD_SIMPLE_PWM_SERVO_PWM_MOTOR += sysmem.c
+  	EDU_BOARD_SIMPLE_PWM_SERVO_PWM_MOTOR += system_stm32f4xx.c
+  	EDU_BOARD_SIMPLE_PWM_SERVO_PWM_MOTOR += gpio.c
+  	EDU_BOARD_SIMPLE_PWM_SERVO_PWM_MOTOR += tim.c
+  	EDU_BOARD_SIMPLE_PWM_SERVO_PWM_MOTOR += usart.c
+  	EDU_BOARD_SIMPLE_PWM_SERVO_PWM_MOTOR += CLCD.c
+  	EDU_BOARD_SIMPLE_PWM_SERVO_PWM_MOTOR += 7SEG.c
+    EDU_BOARD_SIMPLE_PWM_SERVO_PWM_MOTOR += main.c
+
+
+    EXTRAINCDIRS += $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMXstudy/10_PWM_SERVO_90/Inc
+
+    ASM_SOURCES += $(DEFAULT_ASMSOURCES)
+
+    C_SOURCES += $(EDU_BOARD_SIMPLE_PWM_SERVO_PWM_MOTOR)
