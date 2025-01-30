@@ -86,7 +86,6 @@ endif
 
 ifeq ($(CONFIG_H_HIVE_EDU_BOARD_PWM_SERVO_MOTOR), y)
 	SUB_ARCH += 10_PWM_SERVO_90/Src
-	SUB_ARCH += 10_PWM_SERVO_90/Src
 
 	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
 
@@ -95,7 +94,6 @@ ifeq ($(CONFIG_H_HIVE_EDU_BOARD_PWM_SERVO_MOTOR), y)
 endif
 
 ifeq ($(CONFIG_H_HIVE_EDU_BOARD_PWM_BUZZER), y)
-	SUB_ARCH += 11_PWM_passive_buzzer/Src
 	SUB_ARCH += 11_PWM_passive_buzzer/Src
 
 	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
@@ -106,7 +104,15 @@ endif
 
 ifeq ($(CONFIG_H_HIVE_EDU_BOARD_PWM_MOTOR), y)
 	SUB_ARCH += 12_PWM_DC_Motor/Src
-	SUB_ARCH += 12_PWM_DC_Motor/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_PWM_REPEAT_CYCLE), y)
+	SUB_ARCH += 13_PWM_repeat_Cycle/Src
 
 	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
 

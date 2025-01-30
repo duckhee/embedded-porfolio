@@ -87,4 +87,11 @@ config H_HIVE_EDU_BOARD_PWM_MOTOR
     select HAL_DRIVER
     select M_HIVE_EDU_BOARD
 
+config H_HIVE_EDU_BOARD_PWM_REPEAT_CYCLE
+    bool "Select EduBoard M-Hive PWM repeat cycle -> safe change pre scaler"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
 ###############################################################################
