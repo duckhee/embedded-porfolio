@@ -147,6 +147,7 @@ int main(void) {
     /** pulse width 를 변경하기 위한 변수 */
     uint16_t ccrValue = 0;
     /** 0.2ms => 100 , 3ms => 1500 */
+    /** servo position 90 degree => 150 0.3ms end position => 400  */
     uint16_t servoValue = 100;
     /* USER CODE END 2 */
 
@@ -168,9 +169,9 @@ int main(void) {
         }
         HAL_Delay(50);
 
-        TIM10->CCR1 = servoValue;
+//        TIM10->CCR1 = servoValue;
         HAL_Delay(100);
-        TIM10->CCR1 = 1500;
+        TIM10->CCR1 = 150;
         HAL_Delay(100);
 
     }
