@@ -1,0 +1,302 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Main program body
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2025 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include "adc.h"
+#include "dma.h"
+#include "tim.h"
+#include "usart.h"
+#include "gpio.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+#include <stdio.h>
+#include "CLCD.h"
+#include "7SEG.h"
+/* USER CODE END Includes */
+
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
+
+/* Private variables ---------------------------------------------------------*/
+
+/* USER CODE BEGIN PV */
+uint8_t rx_data;
+
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+static void MX_NVIC_Init(void);
+/* USER CODE BEGIN PFP */
+int _write(int fd, char *ptr, int len){
+	HAL_UART_Transmit(&huart3, (char *)&ptr, len, 0xFF);
+	return len;
+}
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
+int main(void)
+{
+
+  /* USER CODE BEGIN 1 */
+
+  /* USER CODE END 1 */
+
+  /* MCU Configuration--------------------------------------------------------*/
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
+
+  /* USER CODE BEGIN Init */
+
+  /* USER CODE END Init */
+
+  /* Configure the system clock */
+  SystemClock_Config();
+
+  /* USER CODE BEGIN SysInit */
+
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_DMA_Init();
+  MX_USART3_UART_Init();
+  MX_TIM7_Init();
+  MX_TIM3_Init();
+  MX_TIM4_Init();
+  MX_TIM10_Init();
+  MX_TIM5_Init();
+  MX_TIM2_Init();
+  MX_ADC1_Init();
+
+  /* Initialize interrupts */
+  MX_NVIC_Init();
+  /* USER CODE BEGIN 2 */
+  CLCD_GPIO_Init();
+
+     /** LCD Initialized */
+     CLCD_Init();
+
+     /** LCD x position, y position and write str */
+     CLCD_Puts(0, 0, "Welcome to ");
+     CLCD_Puts(0, 1, "M-Hive");
+     CLCD_Clear();
+     /** UART3 IT Initialized */
+    HAL_UART_Receive_IT(&huart3, &rx_data, 1);
+
+     /** Timer 에 대한 시작을 알리는 함수 실행 */
+     HAL_TIM_Base_Start_IT(&htim7);
+
+     _7SEG_GPIO_Init();
+
+     /** PWM에 대한 신호를 만들기 위해서 실행을 하는 함수 */
+     HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+     HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
+     HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
+
+     HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
+     HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2);
+     HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
+
+     /** PWM 신호를 발생을 시키기 위한 함수 */
+     HAL_TIM_PWM_Start(&htim10, TIM_CHANNEL_1);
+     /** passive buzzer 동작 */
+     HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+     /** Motor를 동작 시키기 위한 PWM 활성화 */
+     HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+     HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_4);
+
+     /** 모터에 대한 동작 방향을 변경을 하기 위한 Pulse width 변경 */
+     TIM5->CCR1 = 0;
+     TIM5->CCR4 = 5000;
+     /** pulse width 를 변경하기 위한 변수 */
+     uint16_t ccrValue = 0;
+     /** 0.2ms => 100 , 3ms => 1500 */
+     uint16_t servoValue = 100;
+     /** buzzer 에 대한 펄스의 주기 변경 */
+//     TIM2->ARR = 500;
+  //   TIM2->CCR1 = 250;
+//     TIM2->CCR1 = TIM2->ARR / 2;
+     /** 주기를 변경을 하면서 Buzzer에 대한 음 변경 variable */
+     /** 1000 -> 500Hz */
+     uint16_t arrValue = 1000;
+     /** 증가 감소 설정 변수 */
+     uint8_t ud_flag = 0;
+
+     uint16_t prescalerValue = 1000-1;
+     /** 출력하기 위한 값을 담아줄 템플릿 변수 */
+     uint8_t str[20];
+     /** ADC에 대한 값을 저장하기 위한 변수 */
+     volatile uint32_t adcValue[4] = {0};
+     /** ADC를 이용하기 위해서 호출 하는 함수 */
+     HAL_ADC_Start_DMA(&hadc1, &adcValue[0], 4);
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+	  sprintf(str, "%4d %4d", adcValue[0], adcValue[1]);
+	  CLCD_Puts(0, 0, str);
+	  sprintf(str, "%4d %4d", adcValue[2], adcValue[3]);
+	  CLCD_Puts(0, 1, str);
+
+
+	  HAL_Delay(1);
+
+  }
+  /* USER CODE END 3 */
+}
+
+/**
+  * @brief System Clock Configuration
+  * @retval None
+  */
+void SystemClock_Config(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+
+  /** Configure the main internal regulator output voltage
+  */
+  __HAL_RCC_PWR_CLK_ENABLE();
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
+  */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLM = 25;
+  RCC_OscInitStruct.PLL.PLLN = 336;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+  RCC_OscInitStruct.PLL.PLLQ = 4;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Initializes the CPU, AHB and APB buses clocks
+  */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
+
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+/**
+  * @brief NVIC Configuration.
+  * @retval None
+  */
+static void MX_NVIC_Init(void)
+{
+  /* USART3_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(USART3_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(USART3_IRQn);
+  /* TIM7_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(TIM7_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(TIM7_IRQn);
+}
+
+/* USER CODE BEGIN 4 */
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *hUart){
+	if(hUart->Instance == USART3){
+		HAL_UART_Receive_IT(&huart3, &rx_data, 1);
+		HAL_UART_Transmit(&huart3, (const uint8_t*)&rx_data, 1, 10);
+	}
+}
+
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *hTim){
+	static unsigned char cnt = 0;
+	if(hTim->Instance == TIM7){
+		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
+		_7SEG_SetNumber(DGT1, cnt/10, OFF);
+		_7SEG_SetNumber(DGT2, cnt%10, ON);
+		cnt++;
+	}
+}
+/* USER CODE END 4 */
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
+  __disable_irq();
+  while (1)
+  {
+  }
+  /* USER CODE END Error_Handler_Debug */
+}
+
+#ifdef  USE_FULL_ASSERT
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(uint8_t *file, uint32_t line)
+{
+  /* USER CODE BEGIN 6 */
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  /* USER CODE END 6 */
+}
+#endif /* USE_FULL_ASSERT */

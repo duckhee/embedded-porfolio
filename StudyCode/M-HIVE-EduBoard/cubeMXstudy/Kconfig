@@ -94,4 +94,11 @@ config H_HIVE_EDU_BOARD_PWM_REPEAT_CYCLE
     select HAL_DRIVER
     select M_HIVE_EDU_BOARD
 
+config H_HIVE_EDU_BOARD_ADC_WITH_DMA
+    bool "Select EduBoard M-Hive ADC with DMA"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
 ###############################################################################
