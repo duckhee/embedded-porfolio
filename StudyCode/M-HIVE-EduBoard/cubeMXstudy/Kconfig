@@ -101,4 +101,11 @@ config H_HIVE_EDU_BOARD_ADC_WITH_DMA
     select HAL_DRIVER
     select M_HIVE_EDU_BOARD
 
+config H_HIVE_EDU_BOARD_DAC
+    bool "Select EduBoard M-Hive DAC Sin pulse out"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
 ###############################################################################
