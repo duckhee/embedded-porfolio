@@ -115,4 +115,11 @@ config H_HIVE_EDU_BOARD_I2C_EEPROM
     select HAL_DRIVER
     select M_HIVE_EDU_BOARD
 
+config H_HIVE_EDU_BOARD_SPI_VS1003
+    bool "Select EduBoard M-Hive SPI VS1003 Audio Codec"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
 ###############################################################################

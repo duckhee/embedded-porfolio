@@ -150,4 +150,14 @@ ifeq ($(CONFIG_H_HIVE_EDU_BOARD_I2C_EEPROM), y)
 	vpath %.c $(SUB_ARCH)
 endif
 
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_SPI_VS1003), y)
+
+	SUB_ARCH += 17_SPI_VS1003/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
 sinclude $(addsuffix /Makefile, $(SUB_ARCH))
