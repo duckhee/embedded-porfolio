@@ -43,6 +43,8 @@ SUB_DIRS += CMSIS
 SUB_DIRS += StudyCode
 # driver code
 SUB_DIRS += driver
+# Library code
+SUB_DIRS += library
 
 # SUB_DIR addprefix Setting
 SUB_DIRS := $(addprefix $(TOP)/,$(SUB_DIRS))

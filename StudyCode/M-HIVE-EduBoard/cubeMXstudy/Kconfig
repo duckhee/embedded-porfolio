@@ -122,4 +122,12 @@ config H_HIVE_EDU_BOARD_SPI_VS1003
     select HAL_DRIVER
     select M_HIVE_EDU_BOARD
 
+config H_HIVE_EDU_BOARD_SDIO_SD_CARD
+    bool "Select EduBoard M-Hive SDIO SD Card"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+    select FAT_FS
+
 ###############################################################################
