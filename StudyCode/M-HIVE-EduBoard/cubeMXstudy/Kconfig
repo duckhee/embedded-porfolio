@@ -130,4 +130,12 @@ config H_HIVE_EDU_BOARD_SDIO_SD_CARD
     select M_HIVE_EDU_BOARD
     select FAT_FS
 
+config H_HIVE_EDU_BOARD_SDIO_SD_CARD_MP3
+    bool "Select EduBoard M-Hive SDIO SD Card MP3 Player"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+    select FAT_FS
+
 ###############################################################################
