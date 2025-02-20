@@ -37,6 +37,7 @@
 #include "MP3Sample.h"
 #include "VS1003.h"
 #include <math.h>
+#include <string.h>
 #include "udp_echoserver.h"
 /* USER CODE END Includes */
 
@@ -135,7 +136,7 @@ int main(void)
      CLCD_Puts(0, 1, "M-Hive");
      CLCD_Clear();
      /** UART3 IT Initialized */
-     HAL_UARTEx_ReceiveToIdle_IT(&huart3, &rx_data, 1);
+    HAL_UART_Receive_IT(&huart3, &rx_data, 1);
 
      /** Timer 에 대한 시작을 알리는 함수 실행 */
      HAL_TIM_Base_Start_IT(&htim7);
@@ -180,7 +181,7 @@ int main(void)
      /** 출력하기 위한 값을 담아줄 템플릿 변수 */
      uint8_t str[20];
      /** ADC에 대한 값을 저장하기 위한 변수 */
-     volatile uint16_t adcValue[4] = {0};
+     volatile uint32_t adcValue[4] = {0};
      /** ADC를 이용하기 위해서 호출 하는 함수 */
      HAL_ADC_Start_DMA(&hadc1, &adcValue[0], 4);
 
@@ -216,7 +217,7 @@ int main(void)
      /** SD Card에 쓰기 위한 텍스트 */
      BYTE buf[32] = "Hello World";
      unsigned char readBuffer[32] = {0};
-     uint32_t bw, br;
+     UINT bw, br;
      /** SD Card에 대한 Mount */
 //     if((retSD = f_mount(&SDFatFS, "0:/", 1)) == FR_OK){
      if((retSD = f_mount(&SDFatFS, &SDPath[0], 1)) == FR_OK){
@@ -255,7 +256,7 @@ int main(void)
      uint16_t mp3_idx = 0;
 
      /** 파일 열기 */
-     if((retSD = f_open(&SDFatFS, filename, FA_OPEN_EXISTING | FA_READ)) == FR_OK){
+     if((retSD = f_open(&SDFile, filename, FA_OPEN_EXISTING | FA_READ)) == FR_OK){
     	 	CLCD_Clear();
     	 	sprintf(str, "%s opened", filename);
     	 	CLCD_Puts(0, 0, str);
@@ -373,7 +374,7 @@ int main(void)
   	  ethernetif_input(&gnetif);
 
   	  /** timer에 대한 동작 핸들러 */
-  	  sys_check_timeout();
+    sys_check_timeouts();
 
 
    /* USER CODE END 3 */

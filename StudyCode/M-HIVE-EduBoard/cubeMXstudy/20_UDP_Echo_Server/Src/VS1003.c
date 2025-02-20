@@ -6,6 +6,7 @@
 uint8_t vs1003ram[5] = { 0 , 0 , 0 , 0 , 250 };
 
 extern SPI_HandleTypeDef hspi2;
+extern void Error_Handler();
 
 /* SPI2 init function */
 void VS1003_SPI_Init(void)

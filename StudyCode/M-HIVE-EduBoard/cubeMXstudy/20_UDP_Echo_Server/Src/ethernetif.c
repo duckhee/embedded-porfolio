@@ -33,7 +33,9 @@
 
 /* Within 'USER CODE' section, code will be kept by default at each generation */
 /* USER CODE BEGIN 0 */
-
+#ifndef   __ALIGNED
+#define __ALIGNED(x)                           __attribute__((aligned(x)))
+#endif
 /* USER CODE END 0 */
 
 /* Private define ------------------------------------------------------------*/

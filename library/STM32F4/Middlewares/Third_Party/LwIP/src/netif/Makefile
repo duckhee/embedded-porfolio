@@ -3,7 +3,7 @@
 ###########################################################
 
 LIBRARY_LWIP_SOURCE :=
-LIBRARY_LWIP_SOURCE +=bridgeif.c
+LIBRARY_LWIP_SOURCE += bridgeif.c
 LIBRARY_LWIP_SOURCE += bridgeif_fdb.c
 LIBRARY_LWIP_SOURCE += ethernet.c
 LIBRARY_LWIP_SOURCE += lowpan6.c
