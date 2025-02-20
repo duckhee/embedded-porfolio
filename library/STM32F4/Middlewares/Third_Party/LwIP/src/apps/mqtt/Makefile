@@ -1,0 +1,8 @@
+###########################################################
+# GCC template makefile
+###########################################################
+
+LIBRARY_LWIP_SOURCE :=
+LIBRARY_LWIP_SOURCE += mqtt.c
+
+C_SOURCES += $(LIBRARY_LWIP_SOURCE)

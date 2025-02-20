@@ -6,6 +6,8 @@ config FAT_FS
     bool "Select FatFS Library"
     default n
 
-
+config LWIP
+    bool "Select LwIP Library"
+    default n
 
 ###############################################################################

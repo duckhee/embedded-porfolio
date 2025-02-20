@@ -138,4 +138,13 @@ config H_HIVE_EDU_BOARD_SDIO_SD_CARD_MP3
     select M_HIVE_EDU_BOARD
     select FAT_FS
 
+config H_HIVE_EDU_BOARD_UDP_SERVER
+    bool "Select EduBoard M-Hive UDP Server"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+    select FAT_FS
+    select LWIP
+
 ###############################################################################
