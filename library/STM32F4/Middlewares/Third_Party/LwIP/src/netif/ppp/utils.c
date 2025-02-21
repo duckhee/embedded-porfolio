@@ -1,4 +1,3 @@
-
 /*
  * utils.c - various utility functions used in pppd.
  *
