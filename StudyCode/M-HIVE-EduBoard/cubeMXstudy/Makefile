@@ -190,4 +190,14 @@ ifeq ($(CONFIG_H_HIVE_EDU_BOARD_UDP_SERVER), y)
 	vpath %.c $(SUB_ARCH)
 endif
 
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_UDP_SERVER_CONTROL_MP3), y)
+
+	SUB_ARCH += 21_UDP_Echo_Server_Control_MP3/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
 sinclude $(addsuffix /Makefile, $(SUB_ARCH))

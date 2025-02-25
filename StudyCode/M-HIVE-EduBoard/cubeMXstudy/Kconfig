@@ -147,4 +147,13 @@ config H_HIVE_EDU_BOARD_UDP_SERVER
     select FAT_FS
     select LWIP
 
+config H_HIVE_EDU_BOARD_UDP_SERVER_CONTROL_MP3
+    bool "Select EduBoard M-Hive UDP Server"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+    select FAT_FS
+    select LWIP
+
 ###############################################################################
