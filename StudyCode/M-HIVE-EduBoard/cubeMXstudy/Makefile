@@ -200,4 +200,14 @@ ifeq ($(CONFIG_H_HIVE_EDU_BOARD_UDP_SERVER_CONTROL_MP3), y)
 	vpath %.c $(SUB_ARCH)
 endif
 
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_CAN_TRANSMIT), y)
+
+	SUB_ARCH += 22_CAN_Protocol_Transmit/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
 sinclude $(addsuffix /Makefile, $(SUB_ARCH))

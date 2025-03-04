@@ -156,4 +156,13 @@ config H_HIVE_EDU_BOARD_UDP_SERVER_CONTROL_MP3
     select FAT_FS
     select LWIP
 
+config H_HIVE_EDU_BOARD_CAN_TRANSMIT
+    bool "Select EduBoard M-Hive CAN Transmit"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+    select FAT_FS
+    select LWIP
+
 ###############################################################################
