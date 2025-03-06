@@ -165,4 +165,13 @@ config H_HIVE_EDU_BOARD_CAN_TRANSMIT
     select FAT_FS
     select LWIP
 
+config H_HIVE_EDU_BOARD_CAN_RECEIVE
+    bool "Select EduBoard M-Hive CAN Receive"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+    select FAT_FS
+    select LWIP
+
 ###############################################################################
