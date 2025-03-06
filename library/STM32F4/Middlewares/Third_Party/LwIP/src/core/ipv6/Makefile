@@ -1,0 +1,16 @@
+###########################################################
+# GCC template makefile
+###########################################################
+
+LIBRARY_LWIP_CORE_IPV6_SOURCES :=
+LIBRARY_LWIP_CORE_IPV6_SOURCES += dhcp6.c
+LIBRARY_LWIP_CORE_IPV6_SOURCES += ethip6.c
+LIBRARY_LWIP_CORE_IPV6_SOURCES += icmp6.c
+LIBRARY_LWIP_CORE_IPV6_SOURCES += inet6.c
+LIBRARY_LWIP_CORE_IPV6_SOURCES += ip6.c
+LIBRARY_LWIP_CORE_IPV6_SOURCES += ip6_addr.c
+LIBRARY_LWIP_CORE_IPV6_SOURCES += ip6_frag.c
+LIBRARY_LWIP_CORE_IPV6_SOURCES += mld6.c
+LIBRARY_LWIP_CORE_IPV6_SOURCES += nd6.c
+
+C_SOURCES += $(LIBRARY_LWIP_CORE_IPV6_SOURCES)

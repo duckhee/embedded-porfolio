@@ -1,0 +1,27 @@
+###########################################################
+# GCC template makefile
+###########################################################
+
+LIBRARY_LWIP_CORE_SOURCES :=
+LIBRARY_LWIP_CORE_SOURCES +=altcp.c
+LIBRARY_LWIP_CORE_SOURCES += altcp_alloc.c
+LIBRARY_LWIP_CORE_SOURCES += altcp_tcp.c
+LIBRARY_LWIP_CORE_SOURCES += def.c
+LIBRARY_LWIP_CORE_SOURCES += dns.c
+LIBRARY_LWIP_CORE_SOURCES += inet_chksum.c
+LIBRARY_LWIP_CORE_SOURCES += init.c
+LIBRARY_LWIP_CORE_SOURCES += ip.c
+LIBRARY_LWIP_CORE_SOURCES += mem.c
+LIBRARY_LWIP_CORE_SOURCES += memp.c
+LIBRARY_LWIP_CORE_SOURCES += netif.c
+LIBRARY_LWIP_CORE_SOURCES += pbuf.c
+LIBRARY_LWIP_CORE_SOURCES += raw.c
+LIBRARY_LWIP_CORE_SOURCES += stats.c
+LIBRARY_LWIP_CORE_SOURCES += sys.c
+LIBRARY_LWIP_CORE_SOURCES += tcp.c
+LIBRARY_LWIP_CORE_SOURCES += tcp_in.c
+LIBRARY_LWIP_CORE_SOURCES += tcp_out.c
+LIBRARY_LWIP_CORE_SOURCES += timeouts.c
+LIBRARY_LWIP_CORE_SOURCES += udp.c
+
+C_SOURCES += $(LIBRARY_LWIP_CORE_SOURCES)

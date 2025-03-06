@@ -28,3 +28,5 @@ brew install stlink
 ### st-flash command
 
 [command](https://www.mankier.com/1/st-flash)
+
+st-flash write <binary file> 0x8000000

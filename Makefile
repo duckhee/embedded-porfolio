@@ -43,6 +43,8 @@ SUB_DIRS += CMSIS
 SUB_DIRS += StudyCode
 # driver code
 SUB_DIRS += driver
+# Library code
+SUB_DIRS += library
 
 # SUB_DIR addprefix Setting
 SUB_DIRS := $(addprefix $(TOP)/,$(SUB_DIRS))
@@ -88,14 +90,14 @@ link-source:
 
 # common make command
 menuconfig: project-version
-	@$(MAKE) -f scripts/Makefile $@
+	@$(MAKE) -f scripts/Makefile $@ -s
 
 distclean: 
 	$(REMOVE_CMD) $(OUT_DIR)
 	$(REMOVE_CMD) $(BUILD_DIR)
 	$(REMOVE_CMD) $(LIB_DIR)
 	$(REMOVE_CMD) build $(TOP)/include .config .config.old
-	@$(MAKE) -f scripts/Makefile clean
+	@$(MAKE) -f scripts/Makefile clean -s
 
 
 # Help Command explain
@@ -109,7 +111,7 @@ help:
 	@echo elf-size - "Get Binaray File Size"
 	@echo compiler-version - "Get arm-none-eabi-gcc version Check"
 	@echo createdirs - "Make Object, Binary, hex file In Folder Name"	
-	@$(MAKE) -f scripts/Makefile help
+	@$(MAKE) -f scripts/Makefile help -s
 
 lss: $(BUILD_DIR)/$(TARGET).lss
 bin: $(BUILD_DIR)/$(TARGET).bin

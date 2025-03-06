@@ -57,7 +57,162 @@ endif
 
 ifeq ($(CONFIG_H_HIVE_EDU_BOARD_TIME_TIMER_SEG),y)
 
-SUB_ARCH += 07_TIM_Timer_SEG/Src
+	SUB_ARCH += 07_TIM_Timer_SEG/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_EXTI_INPUT),y)
+
+	SUB_ARCH += 08_EXTI_InputInterrupt/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_PWM_BASIC), y)
+	SUB_ARCH += 09_PWM_Basic/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_PWM_SERVO_MOTOR), y)
+	SUB_ARCH += 10_PWM_SERVO_90/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_PWM_BUZZER), y)
+	SUB_ARCH += 11_PWM_passive_buzzer/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_PWM_MOTOR), y)
+	SUB_ARCH += 12_PWM_DC_Motor/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_PWM_REPEAT_CYCLE), y)
+	SUB_ARCH += 13_PWM_repeat_Cycle/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_ADC_WITH_DMA), y)
+
+	SUB_ARCH += 14_ADC_with_DMA/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_DAC), y)
+
+	SUB_ARCH += 15_DAC/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_I2C_EEPROM), y)
+
+	SUB_ARCH += 16_I2C/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_SPI_VS1003), y)
+
+	SUB_ARCH += 17_SPI_VS1003/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_SDIO_SD_CARD), y)
+
+	SUB_ARCH += 18_SD_Card_FatFs/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_SDIO_SD_CARD_MP3), y)
+
+	SUB_ARCH += 19_SD_Card_FatFS_MP3/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_UDP_SERVER), y)
+
+	SUB_ARCH += 20_UDP_Echo_Server/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_UDP_SERVER_CONTROL_MP3), y)
+
+	SUB_ARCH += 21_UDP_Echo_Server_Control_MP3/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_CAN_TRANSMIT), y)
+
+	SUB_ARCH += 22_CAN_Protocol_Transmit/Src
+
+	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
+
+	vpath %.s $(SUB_ARCH)
+	vpath %.c $(SUB_ARCH)
+endif
+
+ifeq ($(CONFIG_H_HIVE_EDU_BOARD_CAN_RECEIVE), y)
+
+	SUB_ARCH += 23_CAN_Protocol_Receive/Src
 
 	SUB_ARCH :=  $(addprefix $(TOP)/StudyCode/M-HIVE-EduBoard/cubeMxstudy/, $(SUB_ARCH))
 

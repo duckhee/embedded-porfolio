@@ -52,4 +52,126 @@ config H_HIVE_EDU_BOARD_TIME_TIMER_SEG
     select HAL_DRIVER
     select M_HIVE_EDU_BOARD
 
+config H_HIVE_EDU_BOARD_EXTI_INPUT
+    bool "select EduBoard M-Hive EXTI GPIO Input"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
+config H_HIVE_EDU_BOARD_PWM_BASIC
+    bool "select EduBoard M-Hive PWM Basic Pulse Width"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
+config H_HIVE_EDU_BOARD_PWM_SERVO_MOTOR
+    bool "Select EduBoard M-Hive PWM SERVO90 Motor Operator"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
+config H_HIVE_EDU_BOARD_PWM_BUZZER
+    bool "Select EduBoard M-Hive PWM Passive Buzzer"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
+config H_HIVE_EDU_BOARD_PWM_MOTOR
+    bool "Select EduBoard M-Hive PWM DC Motor -> BA6208 Motor Driver"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
+config H_HIVE_EDU_BOARD_PWM_REPEAT_CYCLE
+    bool "Select EduBoard M-Hive PWM repeat cycle -> safe change pre scaler"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
+config H_HIVE_EDU_BOARD_ADC_WITH_DMA
+    bool "Select EduBoard M-Hive ADC with DMA"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
+config H_HIVE_EDU_BOARD_DAC
+    bool "Select EduBoard M-Hive DAC Sin pulse out"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
+config H_HIVE_EDU_BOARD_I2C_EEPROM
+    bool "Select EduBoard M-Hive I2C EEPROM"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
+config H_HIVE_EDU_BOARD_SPI_VS1003
+    bool "Select EduBoard M-Hive SPI VS1003 Audio Codec"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+
+config H_HIVE_EDU_BOARD_SDIO_SD_CARD
+    bool "Select EduBoard M-Hive SDIO SD Card"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+    select FAT_FS
+
+config H_HIVE_EDU_BOARD_SDIO_SD_CARD_MP3
+    bool "Select EduBoard M-Hive SDIO SD Card MP3 Player"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+    select FAT_FS
+
+config H_HIVE_EDU_BOARD_UDP_SERVER
+    bool "Select EduBoard M-Hive UDP Server"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+    select FAT_FS
+    select LWIP
+
+config H_HIVE_EDU_BOARD_UDP_SERVER_CONTROL_MP3
+    bool "Select EduBoard M-Hive UDP Server"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+    select FAT_FS
+    select LWIP
+
+config H_HIVE_EDU_BOARD_CAN_TRANSMIT
+    bool "Select EduBoard M-Hive CAN Transmit"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+    select FAT_FS
+    select LWIP
+
+config H_HIVE_EDU_BOARD_CAN_RECEIVE
+    bool "Select EduBoard M-Hive CAN Receive"
+    default n
+    select ARCH_M4
+    select HAL_DRIVER
+    select M_HIVE_EDU_BOARD
+    select FAT_FS
+    select LWIP
+
 ###############################################################################
