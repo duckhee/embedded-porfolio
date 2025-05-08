@@ -43,6 +43,26 @@ __attribute__((used)) int _read(int fd, char *ptr, int len) {
     return i;
 }
 
+/** TODO Checking GPT Version */
+/*
+__attribute__((used)) int _read(int fd, char *ptr, int len) {
+    size_t i;
+    for (i = 0; i < len; ++i) {
+        while ((USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET));
+        char ch = USART_ReceiveData(USART1) & 0xFF;  // 8비트 마스킹
+
+        ptr[i] = ch;
+
+        // 개행 문자('\n')이면 종료
+        if (ch == '\n') {
+            ++i;  // '\n'까지 포함해서 카운트
+            break;
+        }
+    }
+    return i;
+}
+ */
+
 /*
 __attribute__ ((used)) int _read(int fd, char *ptr, int len)
 {
