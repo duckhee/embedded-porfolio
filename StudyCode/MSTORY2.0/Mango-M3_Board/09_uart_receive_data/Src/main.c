@@ -401,8 +401,11 @@ __attribute__((used)) int _read(int fd, char *ptr, int len) {
     size_t i;
     for (i = 0; i < len; ++i) {
         while ((USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET));
-        *ptr++ = USART_ReceiveData(USART1);
-        if (*ptr == '\n') {
+        char ch = USART_ReceiveData(USART1) & 0xFF;
+        ptr[i] = ch;
+
+        if (ch == '\n') {
+            ++i;
             break;
         }
     }
