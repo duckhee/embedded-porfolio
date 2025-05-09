@@ -61,6 +61,24 @@ __attribute__((used)) int _read(int fd, char *ptr, int len) {
     }
     return i;
 }
+
+ __attribute__((used)) int _read(int fd, char *ptr, int len) {
+    size_t i;
+    for (i = 0; i < len; i++) {
+        uint8_t ch;
+        while ((USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET));
+        ch = USART_ReceiveData(USART1);
+        if (ch == '\r') {
+            *ptr++ = '\n';
+//            USART_SendData(USART1, '\r\n');
+//            while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
+            break;
+        } else {
+            *ptr++ = ch;
+        }
+    }
+    return i;
+}
  */
 
 /*
