@@ -1,0 +1,3778 @@
+
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_Z1\obj\hal_cc2520.o:     file format elf32-littlearm
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_Z1\obj\hal_cc2520.o
+
+Disassembly of section .text.CC2520_INS_WR_ARRAY:
+
+00000000 <CC2520_INS_WR_ARRAY>:
+CC2520_INS_WR_ARRAY():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:169
+*          uint8  *pData -
+*
+* @return  none
+*/
+void CC2520_INS_WR_ARRAY(uint16 count, uint8  *pData)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+   2:	4605      	mov	r5, r0
+   4:	460e      	mov	r6, r1
+   6:	2400      	movs	r4, #0
+   8:	e007      	b.n	1a <CC2520_INS_WR_ARRAY+0x1a>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:171
+    while (count--) {
+        CC2520_SPI_TX(*pData);
+   a:	5d30      	ldrb	r0, [r6, r4]
+   c:	f7ff fffe 	bl	0 <CC2520_SPI_TX>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:173
+        pData++;
+        CC2520_SPI_WAIT_RXRDY();
+  10:	f7ff fffe 	bl	0 <CC2520_SPI_WAIT_RXRDY>
+  14:	1e6b      	subs	r3, r5, #1
+  16:	3401      	adds	r4, #1
+  18:	b29d      	uxth	r5, r3
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:170
+*
+* @return  none
+*/
+void CC2520_INS_WR_ARRAY(uint16 count, uint8  *pData)
+{
+    while (count--) {
+  1a:	2d00      	cmp	r5, #0
+  1c:	d1f5      	bne.n	a <CC2520_SPI_WAIT_RXRDY+0xa>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:175
+        CC2520_SPI_TX(*pData);
+        pData++;
+        CC2520_SPI_WAIT_RXRDY();
+    }
+}
+  1e:	bd70      	pop	{r4, r5, r6, pc}
+Disassembly of section .text.CC2520_SPI_TXRX:
+
+00000000 <CC2520_SPI_TXRX>:
+CC2520_SPI_TXRX():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:36
+static void CC2520_INS_RD_ARRAY(uint16 count, uint8  *pData);
+static uint8 CC2520_INS_MEMCP_COMMON(uint8 instr, uint8 pri, uint16 count, \
+    uint16 src, uint16 dest);
+
+static uint8 CC2520_SPI_TXRX(uint8 x)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:37
+    CC2520_SPI_TX(x);
+   2:	f7ff fffe 	bl	0 <CC2520_SPI_TX>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:38
+    CC2520_SPI_WAIT_RXRDY();
+   6:	f7ff fffe 	bl	0 <CC2520_SPI_WAIT_RXRDY>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:39
+    return CC2520_SPI_RX();
+   a:	f7ff fffe 	bl	0 <CC2520_SPI_RX>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:40
+}
+   e:	bd10      	pop	{r4, pc}
+Disassembly of section .text.CC2520_REGWR24:
+
+00000000 <CC2520_REGWR24>:
+CC2520_REGWR24():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1616
+*         uint32 value
+*
+* @return  none
+*/
+void CC2520_REGWR24(uint8 addr, uint32 value)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1617
+    CC2520_SPI_BEGIN();
+   2:	4e0d      	ldr	r6, [pc, #52]	(38 <CC2520_REGWR24+0x38>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1616
+*         uint32 value
+*
+* @return  none
+*/
+void CC2520_REGWR24(uint8 addr, uint32 value)
+{
+   4:	460d      	mov	r5, r1
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1617
+    CC2520_SPI_BEGIN();
+   8:	2110      	movs	r1, #16
+   a:	4630      	mov	r0, r6
+   c:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1618
+    CC2520_SPI_TXRX(CC2520_INS_REGWR | addr);
+  10:	f044 00c0 	orr.w	r0, r4, #192	; 0xc0
+  14:	f7ff fffe 	bl	0 <CC2520_REGWR24>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1619
+    CC2520_SPI_TXRX(LOBYTE(LOWORD(value)));
+  18:	b2e8      	uxtb	r0, r5
+  1a:	f7ff fffe 	bl	0 <CC2520_REGWR24>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1620
+    CC2520_SPI_TXRX(HIBYTE(LOWORD(value)));
+  1e:	f3c5 2007 	ubfx	r0, r5, #8, #8
+  22:	f7ff fffe 	bl	0 <CC2520_REGWR24>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1621
+    CC2520_SPI_TXRX(LOBYTE(HIWORD(value)));
+  26:	f3c5 4007 	ubfx	r0, r5, #16, #8
+  2a:	f7ff fffe 	bl	0 <CC2520_REGWR24>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1622
+    CC2520_SPI_END();
+  2e:	4630      	mov	r0, r6
+  30:	2110      	movs	r1, #16
+  32:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1623
+}
+  36:	bd70      	pop	{r4, r5, r6, pc}
+  38:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_REGWR16:
+
+00000000 <CC2520_REGWR16>:
+CC2520_REGWR16():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1596
+*         uint16 value
+*
+* @return  none
+*/
+void CC2520_REGWR16(uint8 addr, uint16 value)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1597
+    CC2520_SPI_BEGIN();
+   2:	4e0b      	ldr	r6, [pc, #44]	(30 <CC2520_REGWR16+0x30>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1596
+*         uint16 value
+*
+* @return  none
+*/
+void CC2520_REGWR16(uint8 addr, uint16 value)
+{
+   4:	460d      	mov	r5, r1
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1597
+    CC2520_SPI_BEGIN();
+   8:	2110      	movs	r1, #16
+   a:	4630      	mov	r0, r6
+   c:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1598
+    CC2520_SPI_TXRX(CC2520_INS_REGWR | addr);
+  10:	f044 00c0 	orr.w	r0, r4, #192	; 0xc0
+  14:	f7ff fffe 	bl	0 <CC2520_REGWR16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1599
+    CC2520_SPI_TXRX(LOBYTE(value));
+  18:	b2e8      	uxtb	r0, r5
+  1a:	f7ff fffe 	bl	0 <CC2520_REGWR16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1600
+    CC2520_SPI_TXRX(HIBYTE(value));
+  1e:	0a28      	lsrs	r0, r5, #8
+  20:	f7ff fffe 	bl	0 <CC2520_REGWR16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1601
+    CC2520_SPI_END();
+  24:	4630      	mov	r0, r6
+  26:	2110      	movs	r1, #16
+  28:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1602
+}
+  2c:	bd70      	pop	{r4, r5, r6, pc}
+  2e:	46c0      	nop			(mov r8, r8)
+  30:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_REGWR8:
+
+00000000 <CC2520_REGWR8>:
+CC2520_REGWR8():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1576
+*         uint8 value
+*
+* @return  none
+*/
+void CC2520_REGWR8(uint8 addr, uint8 value)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1577
+    CC2520_SPI_BEGIN();
+   2:	4d09      	ldr	r5, [pc, #36]	(28 <CC2520_REGWR8+0x28>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1576
+*         uint8 value
+*
+* @return  none
+*/
+void CC2520_REGWR8(uint8 addr, uint8 value)
+{
+   4:	4604      	mov	r4, r0
+   6:	460e      	mov	r6, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1577
+    CC2520_SPI_BEGIN();
+   8:	4628      	mov	r0, r5
+   a:	2110      	movs	r1, #16
+   c:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1578
+    CC2520_SPI_TXRX(CC2520_INS_REGWR | addr);
+  10:	f044 00c0 	orr.w	r0, r4, #192	; 0xc0
+  14:	f7ff fffe 	bl	0 <CC2520_REGWR8>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1579
+    CC2520_SPI_TXRX(value);
+  18:	4630      	mov	r0, r6
+  1a:	f7ff fffe 	bl	0 <CC2520_REGWR8>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1580
+    CC2520_SPI_END();
+  1e:	4628      	mov	r0, r5
+  20:	2110      	movs	r1, #16
+  22:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1582
+    return;
+}
+  26:	bd70      	pop	{r4, r5, r6, pc}
+  28:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_REGWR:
+
+00000000 <CC2520_REGWR>:
+CC2520_REGWR():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1555
+*         uint8  *pValues - data buffer
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_REGWR(uint8 addr, uint8 count, uint8  *pValues)
+{
+   0:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1557
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	4c0b      	ldr	r4, [pc, #44]	(34 <CC2520_REGWR+0x34>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1555
+*         uint8  *pValues - data buffer
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_REGWR(uint8 addr, uint8 count, uint8  *pValues)
+{
+   6:	4605      	mov	r5, r0
+   8:	460e      	mov	r6, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1557
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   a:	4620      	mov	r0, r4
+   c:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1555
+*         uint8  *pValues - data buffer
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_REGWR(uint8 addr, uint8 count, uint8  *pValues)
+{
+   e:	4690      	mov	r8, r2
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1557
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  10:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1558
+    s = CC2520_SPI_TXRX(CC2520_INS_REGWR | addr);
+  14:	f045 00c0 	orr.w	r0, r5, #192	; 0xc0
+  18:	f7ff fffe 	bl	0 <CC2520_REGWR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1559
+    CC2520_INS_WR_ARRAY(count, pValues);
+  1c:	4641      	mov	r1, r8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1558
+*/
+uint8 CC2520_REGWR(uint8 addr, uint8 count, uint8  *pValues)
+{
+    uint8 s;
+    CC2520_SPI_BEGIN();
+    s = CC2520_SPI_TXRX(CC2520_INS_REGWR | addr);
+  1e:	4605      	mov	r5, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1559
+    CC2520_INS_WR_ARRAY(count, pValues);
+  20:	4630      	mov	r0, r6
+  22:	f7ff fffe 	bl	0 <CC2520_REGWR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1560
+    CC2520_SPI_END();
+  26:	4620      	mov	r0, r4
+  28:	2110      	movs	r1, #16
+  2a:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1562
+    return s;
+}
+  2e:	4628      	mov	r0, r5
+  30:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+  34:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_REGRD24:
+
+00000000 <CC2520_REGRD24>:
+CC2520_REGRD24():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1530
+* @param  uint8 addr - address
+*
+* @return  uint32 - result
+*/
+uint32 CC2520_REGRD24(uint8 addr)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1532
+    EDWORD value;
+    CC2520_SPI_BEGIN();
+   2:	4d11      	ldr	r5, [pc, #68]	(48 <CC2520_REGRD24+0x48>)
+   4:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1530
+* @param  uint8 addr - address
+*
+* @return  uint32 - result
+*/
+uint32 CC2520_REGRD24(uint8 addr)
+{
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1532
+    EDWORD value;
+    CC2520_SPI_BEGIN();
+   8:	4628      	mov	r0, r5
+   a:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1533
+    CC2520_SPI_TXRX(CC2520_INS_REGRD | addr);
+   e:	f044 0080 	orr.w	r0, r4, #128	; 0x80
+  12:	f7ff fffe 	bl	0 <CC2520_REGRD24>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1534
+    value.b.b0 = CC2520_SPI_TXRX(0x00);
+  16:	2000      	movs	r0, #0
+  18:	f7ff fffe 	bl	0 <CC2520_REGRD24>
+  1c:	2400      	movs	r4, #0
+  1e:	f360 0407 	bfi	r4, r0, #0, #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1535
+    value.b.b1 = CC2520_SPI_TXRX(0x00);
+  22:	2000      	movs	r0, #0
+  24:	f7ff fffe 	bl	0 <CC2520_REGRD24>
+  28:	f360 240f 	bfi	r4, r0, #8, #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1536
+    value.b.b2 = CC2520_SPI_TXRX(0x00);
+  2c:	2000      	movs	r0, #0
+  2e:	f7ff fffe 	bl	0 <CC2520_REGRD24>
+  32:	f360 4417 	bfi	r4, r0, #16, #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1537
+    value.b.b3 = 0x00;
+  36:	f36f 641f 	bfc	r4, #24, #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1538
+    CC2520_SPI_END();
+  3a:	4628      	mov	r0, r5
+  3c:	2110      	movs	r1, #16
+  3e:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1540
+    return value.dw;
+}
+  42:	4620      	mov	r0, r4
+  44:	bd70      	pop	{r4, r5, r6, pc}
+  46:	46c0      	nop			(mov r8, r8)
+  48:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_REGRD16:
+
+00000000 <CC2520_REGRD16>:
+CC2520_REGRD16():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1509
+* @param  uint8 addr - address
+*
+* @return  uint16 - result
+*/
+uint16 CC2520_REGRD16(uint8 addr)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1511
+    EWORD value;
+    CC2520_SPI_BEGIN();
+   2:	4d0e      	ldr	r5, [pc, #56]	(3c <CC2520_REGRD16+0x3c>)
+   4:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1509
+* @param  uint8 addr - address
+*
+* @return  uint16 - result
+*/
+uint16 CC2520_REGRD16(uint8 addr)
+{
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1511
+    EWORD value;
+    CC2520_SPI_BEGIN();
+   8:	4628      	mov	r0, r5
+   a:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1512
+    CC2520_SPI_TXRX(CC2520_INS_REGRD | addr);
+   e:	f044 0080 	orr.w	r0, r4, #128	; 0x80
+  12:	f7ff fffe 	bl	0 <CC2520_REGRD16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1513
+    value.b.b0 = CC2520_SPI_TXRX(0x00);
+  16:	2000      	movs	r0, #0
+  18:	f7ff fffe 	bl	0 <CC2520_REGRD16>
+  1c:	f04f 0400 	mov.w	r4, #0	; 0x0
+  20:	f360 0407 	bfi	r4, r0, #0, #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1514
+    value.b.b1 = CC2520_SPI_TXRX(0x00);
+  24:	2000      	movs	r0, #0
+  26:	f7ff fffe 	bl	0 <CC2520_REGRD16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1515
+    CC2520_SPI_END();
+  2a:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1514
+{
+    EWORD value;
+    CC2520_SPI_BEGIN();
+    CC2520_SPI_TXRX(CC2520_INS_REGRD | addr);
+    value.b.b0 = CC2520_SPI_TXRX(0x00);
+    value.b.b1 = CC2520_SPI_TXRX(0x00);
+  2c:	f360 240f 	bfi	r4, r0, #8, #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1515
+    CC2520_SPI_END();
+  30:	4628      	mov	r0, r5
+  32:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1517
+    return value.w;
+}
+  36:	b2a0      	uxth	r0, r4
+  38:	bd70      	pop	{r4, r5, r6, pc}
+  3a:	46c0      	nop			(mov r8, r8)
+  3c:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_REGRD8:
+
+00000000 <CC2520_REGRD8>:
+CC2520_REGRD8():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1489
+* @param  uint8 addr - address
+*
+* @return  uint8 - result
+*/
+uint8 CC2520_REGRD8(uint8 addr)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1491
+    uint8 value;
+    CC2520_SPI_BEGIN();
+   2:	4d0a      	ldr	r5, [pc, #40]	(2c <CC2520_REGRD8+0x2c>)
+   4:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1489
+* @param  uint8 addr - address
+*
+* @return  uint8 - result
+*/
+uint8 CC2520_REGRD8(uint8 addr)
+{
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1491
+    uint8 value;
+    CC2520_SPI_BEGIN();
+   8:	4628      	mov	r0, r5
+   a:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1492
+    CC2520_SPI_TXRX(CC2520_INS_REGRD | addr);
+   e:	f044 0080 	orr.w	r0, r4, #128	; 0x80
+  12:	f7ff fffe 	bl	0 <CC2520_REGRD8>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1493
+    value = CC2520_SPI_TXRX(0x00);
+  16:	2000      	movs	r0, #0
+  18:	f7ff fffe 	bl	0 <CC2520_REGRD8>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1494
+    CC2520_SPI_END();
+  1c:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1493
+uint8 CC2520_REGRD8(uint8 addr)
+{
+    uint8 value;
+    CC2520_SPI_BEGIN();
+    CC2520_SPI_TXRX(CC2520_INS_REGRD | addr);
+    value = CC2520_SPI_TXRX(0x00);
+  1e:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1494
+    CC2520_SPI_END();
+  20:	4628      	mov	r0, r5
+  22:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1496
+    return value;
+}
+  26:	4620      	mov	r0, r4
+  28:	bd70      	pop	{r4, r5, r6, pc}
+  2a:	46c0      	nop			(mov r8, r8)
+  2c:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_ABORT:
+
+00000000 <CC2520_ABORT>:
+CC2520_ABORT():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1447
+* @param  uint8 c - abort mode (see datasheet)
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_ABORT(uint8 c)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1449
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   2:	4d09      	ldr	r5, [pc, #36]	(28 <CC2520_ABORT+0x28>)
+   4:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1447
+* @param  uint8 c - abort mode (see datasheet)
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_ABORT(uint8 c)
+{
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1449
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   8:	4628      	mov	r0, r5
+   a:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1450
+    s = CC2520_SPI_TXRX(CC2520_INS_ABORT);
+   e:	207f      	movs	r0, #127
+  10:	f7ff fffe 	bl	0 <CC2520_ABORT>
+  14:	4606      	mov	r6, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1451
+    CC2520_SPI_TXRX(c);
+  16:	4620      	mov	r0, r4
+  18:	f7ff fffe 	bl	0 <CC2520_ABORT>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1452
+    CC2520_SPI_END();
+  1c:	4628      	mov	r0, r5
+  1e:	2110      	movs	r1, #16
+  20:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1454
+    return s;
+}
+  24:	4630      	mov	r0, r6
+  26:	bd70      	pop	{r4, r5, r6, pc}
+  28:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_INC:
+
+00000000 <CC2520_INC>:
+CC2520_INC():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1426
+*         uint16 addr - address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_INC(uint8 pri, uint8 c, uint16 addr)
+{
+   0:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1428
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	f8df 8038 	ldr.w	r8, [pc, #56]	; 40 <CC2520_INC+0x40>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1426
+*         uint16 addr - address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_INC(uint8 pri, uint8 c, uint16 addr)
+{
+   8:	4605      	mov	r5, r0
+   a:	460c      	mov	r4, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1428
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   c:	4640      	mov	r0, r8
+   e:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1426
+*         uint16 addr - address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_INC(uint8 pri, uint8 c, uint16 addr)
+{
+  10:	4616      	mov	r6, r2
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1428
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  12:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1429
+    s = CC2520_SPI_TXRX(CC2520_INS_INC | pri);
+  16:	f045 0078 	orr.w	r0, r5, #120	; 0x78
+  1a:	f7ff fffe 	bl	0 <CC2520_INC>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1430
+    CC2520_SPI_TXRX((c << 4) | HIBYTE(addr));
+  1e:	0124      	lsls	r4, r4, #4
+  20:	ea44 2416 	orr.w	r4, r4, r6, lsr #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1429
+*/
+uint8 CC2520_INC(uint8 pri, uint8 c, uint16 addr)
+{
+    uint8 s;
+    CC2520_SPI_BEGIN();
+    s = CC2520_SPI_TXRX(CC2520_INS_INC | pri);
+  24:	4605      	mov	r5, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1430
+    CC2520_SPI_TXRX((c << 4) | HIBYTE(addr));
+  26:	b2e0      	uxtb	r0, r4
+  28:	f7ff fffe 	bl	0 <CC2520_INC>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1431
+    CC2520_SPI_TXRX(LOBYTE(addr));
+  2c:	b2f0      	uxtb	r0, r6
+  2e:	f7ff fffe 	bl	0 <CC2520_INC>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1432
+    CC2520_SPI_END();
+  32:	4640      	mov	r0, r8
+  34:	2110      	movs	r1, #16
+  36:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1434
+    return s;
+}
+  3a:	4628      	mov	r0, r5
+  3c:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+  40:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_ECBXO:
+
+00000000 <CC2520_ECBXO>:
+CC2520_ECBXO():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1401
+*         uint16 addr - source and destination address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_ECBXO(uint8 pri, uint8 k, uint8 c, uint16 addr)
+{
+   0:	e92d 4370 	stmdb	sp!, {r4, r5, r6, r8, r9, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1403
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	f8df 9040 	ldr.w	r9, [pc, #64]	; 48 <CC2520_ECBXO+0x48>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1401
+*         uint16 addr - source and destination address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_ECBXO(uint8 pri, uint8 k, uint8 c, uint16 addr)
+{
+   8:	4605      	mov	r5, r0
+   a:	4688      	mov	r8, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1403
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   c:	4648      	mov	r0, r9
+   e:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1401
+*         uint16 addr - source and destination address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_ECBXO(uint8 pri, uint8 k, uint8 c, uint16 addr)
+{
+  10:	461e      	mov	r6, r3
+  12:	4614      	mov	r4, r2
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1403
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  14:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1404
+    s = CC2520_SPI_TXRX(CC2520_INS_ECBXO | pri);
+  18:	f045 0076 	orr.w	r0, r5, #118	; 0x76
+  1c:	f7ff fffe 	bl	0 <CC2520_ECBXO>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1406
+    CC2520_SPI_TXRX(k);
+    CC2520_SPI_TXRX((c << 4) | HIBYTE(addr));
+  20:	0124      	lsls	r4, r4, #4
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1404
+*/
+uint8 CC2520_ECBXO(uint8 pri, uint8 k, uint8 c, uint16 addr)
+{
+    uint8 s;
+    CC2520_SPI_BEGIN();
+    s = CC2520_SPI_TXRX(CC2520_INS_ECBXO | pri);
+  22:	4605      	mov	r5, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1406
+    CC2520_SPI_TXRX(k);
+    CC2520_SPI_TXRX((c << 4) | HIBYTE(addr));
+  24:	ea44 2416 	orr.w	r4, r4, r6, lsr #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1405
+uint8 CC2520_ECBXO(uint8 pri, uint8 k, uint8 c, uint16 addr)
+{
+    uint8 s;
+    CC2520_SPI_BEGIN();
+    s = CC2520_SPI_TXRX(CC2520_INS_ECBXO | pri);
+    CC2520_SPI_TXRX(k);
+  28:	4640      	mov	r0, r8
+  2a:	f7ff fffe 	bl	0 <CC2520_ECBXO>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1406
+    CC2520_SPI_TXRX((c << 4) | HIBYTE(addr));
+  2e:	b2e0      	uxtb	r0, r4
+  30:	f7ff fffe 	bl	0 <CC2520_ECBXO>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1407
+    CC2520_SPI_TXRX(LOBYTE(addr));
+  34:	b2f0      	uxtb	r0, r6
+  36:	f7ff fffe 	bl	0 <CC2520_ECBXO>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1408
+    CC2520_SPI_END();
+  3a:	4648      	mov	r0, r9
+  3c:	2110      	movs	r1, #16
+  3e:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1410
+    return s;
+}
+  42:	4628      	mov	r0, r5
+  44:	e8bd 8370 	ldmia.w	sp!, {r4, r5, r6, r8, r9, pc}
+  48:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_ECBX:
+
+00000000 <CC2520_ECBX>:
+CC2520_ECBX():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1374
+*         uint16 dest - destination address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_ECBX(uint8 pri, uint8 k, uint8 c, uint16 src, uint16 dest)
+{
+   0:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1376
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	f8df a054 	ldr.w	sl, [pc, #84]	; 5c <CC2520_ECBX+0x5c>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1374
+*         uint16 dest - destination address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_ECBX(uint8 pri, uint8 k, uint8 c, uint16 src, uint16 dest)
+{
+   8:	4605      	mov	r5, r0
+   a:	4688      	mov	r8, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1376
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   c:	4650      	mov	r0, sl
+   e:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1374
+*         uint16 dest - destination address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_ECBX(uint8 pri, uint8 k, uint8 c, uint16 src, uint16 dest)
+{
+  10:	461e      	mov	r6, r3
+  12:	4614      	mov	r4, r2
+  14:	f8bd 9020 	ldrh.w	r9, [sp, #32]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1376
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  18:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1377
+    s = CC2520_SPI_TXRX(CC2520_INS_ECBX | pri);
+  1c:	f045 0074 	orr.w	r0, r5, #116	; 0x74
+  20:	f7ff fffe 	bl	0 <CC2520_ECBX>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1379
+    CC2520_SPI_TXRX(k);
+    CC2520_SPI_TXRX((c << 4) | HIBYTE(src));
+  24:	0124      	lsls	r4, r4, #4
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1377
+*/
+uint8 CC2520_ECBX(uint8 pri, uint8 k, uint8 c, uint16 src, uint16 dest)
+{
+    uint8 s;
+    CC2520_SPI_BEGIN();
+    s = CC2520_SPI_TXRX(CC2520_INS_ECBX | pri);
+  26:	4605      	mov	r5, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1379
+    CC2520_SPI_TXRX(k);
+    CC2520_SPI_TXRX((c << 4) | HIBYTE(src));
+  28:	ea44 2416 	orr.w	r4, r4, r6, lsr #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1378
+uint8 CC2520_ECBX(uint8 pri, uint8 k, uint8 c, uint16 src, uint16 dest)
+{
+    uint8 s;
+    CC2520_SPI_BEGIN();
+    s = CC2520_SPI_TXRX(CC2520_INS_ECBX | pri);
+    CC2520_SPI_TXRX(k);
+  2c:	4640      	mov	r0, r8
+  2e:	f7ff fffe 	bl	0 <CC2520_ECBX>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1379
+    CC2520_SPI_TXRX((c << 4) | HIBYTE(src));
+  32:	b2e0      	uxtb	r0, r4
+  34:	f7ff fffe 	bl	0 <CC2520_ECBX>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1380
+    CC2520_SPI_TXRX(LOBYTE(src));
+  38:	b2f0      	uxtb	r0, r6
+  3a:	f7ff fffe 	bl	0 <CC2520_ECBX>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1381
+    CC2520_SPI_TXRX(HIBYTE(dest));
+  3e:	ea4f 2019 	mov.w	r0, r9, lsr #8
+  42:	f7ff fffe 	bl	0 <CC2520_ECBX>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1382
+    CC2520_SPI_TXRX(LOBYTE(dest));
+  46:	fa5f f089 	uxtb.w	r0, r9
+  4a:	f7ff fffe 	bl	0 <CC2520_ECBX>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1383
+    CC2520_SPI_END();
+  4e:	4650      	mov	r0, sl
+  50:	2110      	movs	r1, #16
+  52:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1385
+    return s;
+}
+  56:	4628      	mov	r0, r5
+  58:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
+  5c:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_ECBO:
+
+00000000 <CC2520_ECBO>:
+CC2520_ECBO():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1348
+*         uint16 addr - source and destination address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_ECBO(uint8 pri, uint8 k, uint8 c, uint16 addr)
+{
+   0:	e92d 4370 	stmdb	sp!, {r4, r5, r6, r8, r9, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1350
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	f8df 9040 	ldr.w	r9, [pc, #64]	; 48 <CC2520_ECBO+0x48>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1348
+*         uint16 addr - source and destination address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_ECBO(uint8 pri, uint8 k, uint8 c, uint16 addr)
+{
+   8:	4605      	mov	r5, r0
+   a:	4688      	mov	r8, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1350
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   c:	4648      	mov	r0, r9
+   e:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1348
+*         uint16 addr - source and destination address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_ECBO(uint8 pri, uint8 k, uint8 c, uint16 addr)
+{
+  10:	461e      	mov	r6, r3
+  12:	4614      	mov	r4, r2
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1350
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  14:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1351
+    s = CC2520_SPI_TXRX(CC2520_INS_ECBO | pri);
+  18:	f045 0072 	orr.w	r0, r5, #114	; 0x72
+  1c:	f7ff fffe 	bl	0 <CC2520_ECBO>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1353
+    CC2520_SPI_TXRX(k);
+    CC2520_SPI_TXRX((c << 4) | HIBYTE(addr));
+  20:	0124      	lsls	r4, r4, #4
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1351
+*/
+uint8 CC2520_ECBO(uint8 pri, uint8 k, uint8 c, uint16 addr)
+{
+    uint8 s;
+    CC2520_SPI_BEGIN();
+    s = CC2520_SPI_TXRX(CC2520_INS_ECBO | pri);
+  22:	4605      	mov	r5, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1353
+    CC2520_SPI_TXRX(k);
+    CC2520_SPI_TXRX((c << 4) | HIBYTE(addr));
+  24:	ea44 2416 	orr.w	r4, r4, r6, lsr #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1352
+uint8 CC2520_ECBO(uint8 pri, uint8 k, uint8 c, uint16 addr)
+{
+    uint8 s;
+    CC2520_SPI_BEGIN();
+    s = CC2520_SPI_TXRX(CC2520_INS_ECBO | pri);
+    CC2520_SPI_TXRX(k);
+  28:	4640      	mov	r0, r8
+  2a:	f7ff fffe 	bl	0 <CC2520_ECBO>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1353
+    CC2520_SPI_TXRX((c << 4) | HIBYTE(addr));
+  2e:	b2e0      	uxtb	r0, r4
+  30:	f7ff fffe 	bl	0 <CC2520_ECBO>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1354
+    CC2520_SPI_TXRX(LOBYTE(addr));
+  34:	b2f0      	uxtb	r0, r6
+  36:	f7ff fffe 	bl	0 <CC2520_ECBO>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1355
+    CC2520_SPI_END();
+  3a:	4648      	mov	r0, r9
+  3c:	2110      	movs	r1, #16
+  3e:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1357
+    return s;
+}
+  42:	4628      	mov	r0, r5
+  44:	e8bd 8370 	ldmia.w	sp!, {r4, r5, r6, r8, r9, pc}
+  48:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_ECB:
+
+00000000 <CC2520_ECB>:
+CC2520_ECB():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1321
+*         uint16 dest - destination address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_ECB(uint8 pri, uint8 k, uint8 c, uint16 src, uint16 dest)
+{
+   0:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1323
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	f8df a054 	ldr.w	sl, [pc, #84]	; 5c <CC2520_ECB+0x5c>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1321
+*         uint16 dest - destination address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_ECB(uint8 pri, uint8 k, uint8 c, uint16 src, uint16 dest)
+{
+   8:	4605      	mov	r5, r0
+   a:	4688      	mov	r8, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1323
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   c:	4650      	mov	r0, sl
+   e:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1321
+*         uint16 dest - destination address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_ECB(uint8 pri, uint8 k, uint8 c, uint16 src, uint16 dest)
+{
+  10:	461e      	mov	r6, r3
+  12:	4614      	mov	r4, r2
+  14:	f8bd 9020 	ldrh.w	r9, [sp, #32]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1323
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  18:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1324
+    s = CC2520_SPI_TXRX(CC2520_INS_ECB | pri);
+  1c:	f045 0070 	orr.w	r0, r5, #112	; 0x70
+  20:	f7ff fffe 	bl	0 <CC2520_ECB>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1326
+    CC2520_SPI_TXRX(k);
+    CC2520_SPI_TXRX((c << 4) | HIBYTE(src));
+  24:	0124      	lsls	r4, r4, #4
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1324
+*/
+uint8 CC2520_ECB(uint8 pri, uint8 k, uint8 c, uint16 src, uint16 dest)
+{
+    uint8 s;
+    CC2520_SPI_BEGIN();
+    s = CC2520_SPI_TXRX(CC2520_INS_ECB | pri);
+  26:	4605      	mov	r5, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1326
+    CC2520_SPI_TXRX(k);
+    CC2520_SPI_TXRX((c << 4) | HIBYTE(src));
+  28:	ea44 2416 	orr.w	r4, r4, r6, lsr #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1325
+uint8 CC2520_ECB(uint8 pri, uint8 k, uint8 c, uint16 src, uint16 dest)
+{
+    uint8 s;
+    CC2520_SPI_BEGIN();
+    s = CC2520_SPI_TXRX(CC2520_INS_ECB | pri);
+    CC2520_SPI_TXRX(k);
+  2c:	4640      	mov	r0, r8
+  2e:	f7ff fffe 	bl	0 <CC2520_ECB>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1326
+    CC2520_SPI_TXRX((c << 4) | HIBYTE(src));
+  32:	b2e0      	uxtb	r0, r4
+  34:	f7ff fffe 	bl	0 <CC2520_ECB>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1327
+    CC2520_SPI_TXRX(LOBYTE(src));
+  38:	b2f0      	uxtb	r0, r6
+  3a:	f7ff fffe 	bl	0 <CC2520_ECB>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1328
+    CC2520_SPI_TXRX(HIBYTE(dest));
+  3e:	ea4f 2019 	mov.w	r0, r9, lsr #8
+  42:	f7ff fffe 	bl	0 <CC2520_ECB>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1329
+    CC2520_SPI_TXRX(LOBYTE(dest));
+  46:	fa5f f089 	uxtb.w	r0, r9
+  4a:	f7ff fffe 	bl	0 <CC2520_ECB>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1330
+    CC2520_SPI_END();
+  4e:	4650      	mov	r0, sl
+  50:	2110      	movs	r1, #16
+  52:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1332
+    return s;
+}
+  56:	4628      	mov	r0, r5
+  58:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
+  5c:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_UCCM:
+
+00000000 <CC2520_UCCM>:
+CC2520_UCCM():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1290
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_UCCM(uint8 pri, uint8 k, uint8 c, uint8 n, uint16 src, \
+    uint16 dest, uint8 f, uint8 m)
+{
+   0:	e92d 4ff7 	stmdb	sp!, {r0, r1, r2, r4, r5, r6, r7, r8, r9, sl, fp, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1292
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	f8df b078 	ldr.w	fp, [pc, #120]	; 80 <CC2520_UCCM+0x80>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1290
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_UCCM(uint8 pri, uint8 k, uint8 c, uint8 n, uint16 src, \
+    uint16 dest, uint8 f, uint8 m)
+{
+   8:	469a      	mov	sl, r3
+   a:	f89d 303c 	ldrb.w	r3, [sp, #60]
+   e:	4604      	mov	r4, r0
+  10:	460d      	mov	r5, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1292
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  12:	4658      	mov	r0, fp
+  14:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1290
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_UCCM(uint8 pri, uint8 k, uint8 c, uint8 n, uint16 src, \
+    uint16 dest, uint8 f, uint8 m)
+{
+  16:	4690      	mov	r8, r2
+  18:	9301      	str	r3, [sp, #4]
+  1a:	f8bd 6030 	ldrh.w	r6, [sp, #48]
+  1e:	f8bd 9034 	ldrh.w	r9, [sp, #52]
+  22:	f89d 7038 	ldrb.w	r7, [sp, #56]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1292
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  26:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1293
+    s = CC2520_SPI_TXRX(CC2520_INS_UCCM | pri);
+  2a:	f044 006a 	orr.w	r0, r4, #106	; 0x6a
+  2e:	f7ff fffe 	bl	0 <CC2520_UCCM>
+  32:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1294
+    CC2520_SPI_TXRX(k);
+  34:	4628      	mov	r0, r5
+  36:	f7ff fffe 	bl	0 <CC2520_UCCM>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1295
+    CC2520_SPI_TXRX(c);
+  3a:	4640      	mov	r0, r8
+  3c:	f7ff fffe 	bl	0 <CC2520_UCCM>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1296
+    CC2520_SPI_TXRX(n);
+  40:	4650      	mov	r0, sl
+  42:	f7ff fffe 	bl	0 <CC2520_UCCM>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1297
+    CC2520_SPI_TXRX((HIBYTE(src) << 4) | HIBYTE(dest));
+  46:	0a33      	lsrs	r3, r6, #8
+  48:	ea4f 2019 	mov.w	r0, r9, lsr #8
+  4c:	ea40 1003 	orr.w	r0, r0, r3, lsl #4
+  50:	b2c0      	uxtb	r0, r0
+  52:	f7ff fffe 	bl	0 <CC2520_UCCM>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1298
+    CC2520_SPI_TXRX(LOBYTE(src));
+  56:	b2f0      	uxtb	r0, r6
+  58:	f7ff fffe 	bl	0 <CC2520_UCCM>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1299
+    CC2520_SPI_TXRX(LOBYTE(dest));
+  5c:	fa5f f089 	uxtb.w	r0, r9
+  60:	f7ff fffe 	bl	0 <CC2520_UCCM>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1300
+    CC2520_SPI_TXRX(f);
+  64:	4638      	mov	r0, r7
+  66:	f7ff fffe 	bl	0 <CC2520_UCCM>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1301
+    CC2520_SPI_TXRX(m);
+  6a:	9801      	ldr	r0, [sp, #4]
+  6c:	f7ff fffe 	bl	0 <CC2520_UCCM>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1302
+    CC2520_SPI_END();
+  70:	4658      	mov	r0, fp
+  72:	2110      	movs	r1, #16
+  74:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1304
+    return s;
+}
+  78:	4620      	mov	r0, r4
+  7a:	e8bd 8ffe 	ldmia.w	sp!, {r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  7e:	46c0      	nop			(mov r8, r8)
+  80:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_CCM:
+
+00000000 <CC2520_CCM>:
+CC2520_CCM():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1254
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_CCM(uint8 pri, uint8 k, uint8 c, uint8 n, uint16 src, \
+    uint16 dest, uint8 f, uint8 m)
+{
+   0:	e92d 4ff7 	stmdb	sp!, {r0, r1, r2, r4, r5, r6, r7, r8, r9, sl, fp, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1256
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	f8df b078 	ldr.w	fp, [pc, #120]	; 80 <CC2520_CCM+0x80>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1254
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_CCM(uint8 pri, uint8 k, uint8 c, uint8 n, uint16 src, \
+    uint16 dest, uint8 f, uint8 m)
+{
+   8:	469a      	mov	sl, r3
+   a:	f89d 303c 	ldrb.w	r3, [sp, #60]
+   e:	4604      	mov	r4, r0
+  10:	460d      	mov	r5, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1256
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  12:	4658      	mov	r0, fp
+  14:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1254
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_CCM(uint8 pri, uint8 k, uint8 c, uint8 n, uint16 src, \
+    uint16 dest, uint8 f, uint8 m)
+{
+  16:	4690      	mov	r8, r2
+  18:	9301      	str	r3, [sp, #4]
+  1a:	f8bd 6030 	ldrh.w	r6, [sp, #48]
+  1e:	f8bd 9034 	ldrh.w	r9, [sp, #52]
+  22:	f89d 7038 	ldrb.w	r7, [sp, #56]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1256
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  26:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1257
+    s = CC2520_SPI_TXRX(CC2520_INS_CCM | pri);
+  2a:	f044 0068 	orr.w	r0, r4, #104	; 0x68
+  2e:	f7ff fffe 	bl	0 <CC2520_CCM>
+  32:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1258
+    CC2520_SPI_TXRX(k);
+  34:	4628      	mov	r0, r5
+  36:	f7ff fffe 	bl	0 <CC2520_CCM>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1259
+    CC2520_SPI_TXRX(c);
+  3a:	4640      	mov	r0, r8
+  3c:	f7ff fffe 	bl	0 <CC2520_CCM>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1260
+    CC2520_SPI_TXRX(n);
+  40:	4650      	mov	r0, sl
+  42:	f7ff fffe 	bl	0 <CC2520_CCM>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1261
+    CC2520_SPI_TXRX((HIBYTE(src) << 4) | HIBYTE(dest));
+  46:	0a33      	lsrs	r3, r6, #8
+  48:	ea4f 2019 	mov.w	r0, r9, lsr #8
+  4c:	ea40 1003 	orr.w	r0, r0, r3, lsl #4
+  50:	b2c0      	uxtb	r0, r0
+  52:	f7ff fffe 	bl	0 <CC2520_CCM>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1262
+    CC2520_SPI_TXRX(LOBYTE(src));
+  56:	b2f0      	uxtb	r0, r6
+  58:	f7ff fffe 	bl	0 <CC2520_CCM>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1263
+    CC2520_SPI_TXRX(LOBYTE(dest));
+  5c:	fa5f f089 	uxtb.w	r0, r9
+  60:	f7ff fffe 	bl	0 <CC2520_CCM>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1264
+    CC2520_SPI_TXRX(f);
+  64:	4638      	mov	r0, r7
+  66:	f7ff fffe 	bl	0 <CC2520_CCM>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1265
+    CC2520_SPI_TXRX(m);
+  6a:	9801      	ldr	r0, [sp, #4]
+  6c:	f7ff fffe 	bl	0 <CC2520_CCM>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1266
+    CC2520_SPI_END();
+  70:	4658      	mov	r0, fp
+  72:	2110      	movs	r1, #16
+  74:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1268
+    return s;
+}
+  78:	4620      	mov	r0, r4
+  7a:	e8bd 8ffe 	ldmia.w	sp!, {r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  7e:	46c0      	nop			(mov r8, r8)
+  80:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_UCBCMAC:
+
+00000000 <CC2520_UCBCMAC>:
+CC2520_UCBCMAC():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1221
+*                   field 4,8,16)
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_UCBCMAC(uint8 pri, uint8 k, uint8 c, uint16 src, uint8 m)
+{
+   0:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1223
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	f8df 804c 	ldr.w	r8, [pc, #76]	; 54 <CC2520_UCBCMAC+0x54>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1221
+*                   field 4,8,16)
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_UCBCMAC(uint8 pri, uint8 k, uint8 c, uint16 src, uint8 m)
+{
+   8:	4604      	mov	r4, r0
+   a:	460e      	mov	r6, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1223
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   c:	4640      	mov	r0, r8
+   e:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1221
+*                   field 4,8,16)
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_UCBCMAC(uint8 pri, uint8 k, uint8 c, uint16 src, uint8 m)
+{
+  10:	461d      	mov	r5, r3
+  12:	4691      	mov	r9, r2
+  14:	f89d a020 	ldrb.w	sl, [sp, #32]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1223
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  18:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1224
+    s = CC2520_SPI_TXRX(CC2520_INS_UCBCMAC | pri);
+  1c:	f044 0066 	orr.w	r0, r4, #102	; 0x66
+  20:	f7ff fffe 	bl	0 <CC2520_UCBCMAC>
+  24:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1225
+    CC2520_SPI_TXRX(k);
+  26:	4630      	mov	r0, r6
+  28:	f7ff fffe 	bl	0 <CC2520_UCBCMAC>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1226
+    CC2520_SPI_TXRX(c);
+  2c:	4648      	mov	r0, r9
+  2e:	f7ff fffe 	bl	0 <CC2520_UCBCMAC>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1227
+    CC2520_SPI_TXRX(HIBYTE(src));
+  32:	0a28      	lsrs	r0, r5, #8
+  34:	f7ff fffe 	bl	0 <CC2520_UCBCMAC>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1228
+    CC2520_SPI_TXRX(LOBYTE(src));
+  38:	b2e8      	uxtb	r0, r5
+  3a:	f7ff fffe 	bl	0 <CC2520_UCBCMAC>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1229
+    CC2520_SPI_TXRX(m);
+  3e:	4650      	mov	r0, sl
+  40:	f7ff fffe 	bl	0 <CC2520_UCBCMAC>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1230
+    CC2520_SPI_END();
+  44:	4640      	mov	r0, r8
+  46:	2110      	movs	r1, #16
+  48:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1232
+    return s;
+}
+  4c:	4620      	mov	r0, r4
+  4e:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
+  52:	46c0      	nop			(mov r8, r8)
+  54:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_CBCMAC:
+
+00000000 <CC2520_CBCMAC>:
+CC2520_CBCMAC():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1191
+*                   field 4,8,16)
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_CBCMAC(uint8 pri, uint8 k, uint8 c, uint16 src, uint16 dest, uint8 m)
+{
+   0:	e92d 4f70 	stmdb	sp!, {r4, r5, r6, r8, r9, sl, fp, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1193
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	f8df a060 	ldr.w	sl, [pc, #96]	; 68 <CC2520_CBCMAC+0x68>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1191
+*                   field 4,8,16)
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_CBCMAC(uint8 pri, uint8 k, uint8 c, uint16 src, uint16 dest, uint8 m)
+{
+   8:	4604      	mov	r4, r0
+   a:	460d      	mov	r5, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1193
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   c:	4650      	mov	r0, sl
+   e:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1191
+*                   field 4,8,16)
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_CBCMAC(uint8 pri, uint8 k, uint8 c, uint16 src, uint16 dest, uint8 m)
+{
+  10:	4690      	mov	r8, r2
+  12:	461e      	mov	r6, r3
+  14:	f8bd 9020 	ldrh.w	r9, [sp, #32]
+  18:	f89d b024 	ldrb.w	fp, [sp, #36]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1193
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  1c:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1194
+    s = CC2520_SPI_TXRX(CC2520_INS_CBCMAC | pri);
+  20:	f044 0064 	orr.w	r0, r4, #100	; 0x64
+  24:	f7ff fffe 	bl	0 <CC2520_CBCMAC>
+  28:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1195
+    CC2520_SPI_TXRX(k);
+  2a:	4628      	mov	r0, r5
+  2c:	f7ff fffe 	bl	0 <CC2520_CBCMAC>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1196
+    CC2520_SPI_TXRX(c);
+  30:	4640      	mov	r0, r8
+  32:	f7ff fffe 	bl	0 <CC2520_CBCMAC>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1197
+    CC2520_SPI_TXRX((HIBYTE(src) << 4) | HIBYTE(dest));
+  36:	0a33      	lsrs	r3, r6, #8
+  38:	ea4f 2019 	mov.w	r0, r9, lsr #8
+  3c:	ea40 1003 	orr.w	r0, r0, r3, lsl #4
+  40:	b2c0      	uxtb	r0, r0
+  42:	f7ff fffe 	bl	0 <CC2520_CBCMAC>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1198
+    CC2520_SPI_TXRX(LOBYTE(src));
+  46:	b2f0      	uxtb	r0, r6
+  48:	f7ff fffe 	bl	0 <CC2520_CBCMAC>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1199
+    CC2520_SPI_TXRX(LOBYTE(dest));
+  4c:	fa5f f089 	uxtb.w	r0, r9
+  50:	f7ff fffe 	bl	0 <CC2520_CBCMAC>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1200
+    CC2520_SPI_TXRX(m);
+  54:	4658      	mov	r0, fp
+  56:	f7ff fffe 	bl	0 <CC2520_CBCMAC>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1201
+    CC2520_SPI_END();
+  5a:	4650      	mov	r0, sl
+  5c:	2110      	movs	r1, #16
+  5e:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1203
+    return s;
+}
+  62:	4620      	mov	r0, r4
+  64:	e8bd 8f70 	ldmia.w	sp!, {r4, r5, r6, r8, r9, sl, fp, pc}
+  68:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_CTR:
+
+00000000 <CC2520_CTR>:
+CC2520_CTR():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1140
+*                       equal to src address.
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_CTR(uint8 pri, uint8 k, uint8 c, uint8 n, uint16 src, uint16 dest)
+{
+   0:	e92d 4f70 	stmdb	sp!, {r4, r5, r6, r8, r9, sl, fp, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1142
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	f8df b064 	ldr.w	fp, [pc, #100]	; 6c <CC2520_CTR+0x6c>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1140
+*                       equal to src address.
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_CTR(uint8 pri, uint8 k, uint8 c, uint8 n, uint16 src, uint16 dest)
+{
+   8:	4604      	mov	r4, r0
+   a:	460d      	mov	r5, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1142
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   c:	4658      	mov	r0, fp
+   e:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1140
+*                       equal to src address.
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_CTR(uint8 pri, uint8 k, uint8 c, uint8 n, uint16 src, uint16 dest)
+{
+  10:	4616      	mov	r6, r2
+  12:	4699      	mov	r9, r3
+  14:	f8bd 8020 	ldrh.w	r8, [sp, #32]
+  18:	f8bd a024 	ldrh.w	sl, [sp, #36]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1142
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  1c:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1143
+    s = CC2520_SPI_TXRX(CC2520_INS_CTR | pri);
+  20:	f044 0060 	orr.w	r0, r4, #96	; 0x60
+  24:	f7ff fffe 	bl	0 <CC2520_CTR>
+  28:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1144
+    CC2520_SPI_TXRX(k);
+  2a:	4628      	mov	r0, r5
+  2c:	f7ff fffe 	bl	0 <CC2520_CTR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1145
+    CC2520_SPI_TXRX(c);
+  30:	4630      	mov	r0, r6
+  32:	f7ff fffe 	bl	0 <CC2520_CTR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1146
+    CC2520_SPI_TXRX(n);
+  36:	4648      	mov	r0, r9
+  38:	f7ff fffe 	bl	0 <CC2520_CTR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1147
+    CC2520_SPI_TXRX((HIBYTE(src) << 4) | HIBYTE(dest));
+  3c:	ea4f 2318 	mov.w	r3, r8, lsr #8
+  40:	ea4f 201a 	mov.w	r0, sl, lsr #8
+  44:	ea40 1003 	orr.w	r0, r0, r3, lsl #4
+  48:	b2c0      	uxtb	r0, r0
+  4a:	f7ff fffe 	bl	0 <CC2520_CTR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1148
+    CC2520_SPI_TXRX(LOBYTE(src));
+  4e:	fa5f f088 	uxtb.w	r0, r8
+  52:	f7ff fffe 	bl	0 <CC2520_CTR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1149
+    CC2520_SPI_TXRX(LOBYTE(dest));
+  56:	fa5f f08a 	uxtb.w	r0, sl
+  5a:	f7ff fffe 	bl	0 <CC2520_CTR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1150
+    CC2520_SPI_END();
+  5e:	4658      	mov	r0, fp
+  60:	2110      	movs	r1, #16
+  62:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1152
+    return s;
+}
+  66:	4620      	mov	r0, r4
+  68:	e8bd 8f70 	ldmia.w	sp!, {r4, r5, r6, r8, r9, sl, fp, pc}
+  6c:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_UCTR:
+
+00000000 <CC2520_UCTR>:
+CC2520_UCTR():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1170
+*         uint16 dest - destination address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_UCTR(uint8 pri, uint8 k, uint8 c, uint8 n, uint16 src, uint16 dest)
+{
+   0:	b537      	push	{r0, r1, r2, r4, r5, lr}
+   2:	f8bd 4018 	ldrh.w	r4, [sp, #24]
+   6:	f8bd 501c 	ldrh.w	r5, [sp, #28]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1171
+    return CC2520_CTR(pri, k, c, n, src, dest);
+   a:	9400      	str	r4, [sp, #0]
+   c:	9501      	str	r5, [sp, #4]
+   e:	f7ff fffe 	bl	0 <CC2520_UCTR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1172
+}
+  12:	bd3e      	pop	{r1, r2, r3, r4, r5, pc}
+Disassembly of section .text.CC2520_BCLR:
+
+00000000 <CC2520_BCLR>:
+CC2520_BCLR():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1114
+* @param  uint8 bitAddr - address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_BCLR(uint8 bitAddr)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1116
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   2:	4d09      	ldr	r5, [pc, #36]	(28 <CC2520_BCLR+0x28>)
+   4:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1114
+* @param  uint8 bitAddr - address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_BCLR(uint8 bitAddr)
+{
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1116
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   8:	4628      	mov	r0, r5
+   a:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1117
+    s = CC2520_SPI_TXRX(CC2520_INS_BCLR);
+   e:	2058      	movs	r0, #88
+  10:	f7ff fffe 	bl	0 <CC2520_BCLR>
+  14:	4606      	mov	r6, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1118
+    CC2520_SPI_TXRX(bitAddr);
+  16:	4620      	mov	r0, r4
+  18:	f7ff fffe 	bl	0 <CC2520_BCLR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1119
+    CC2520_SPI_END();
+  1c:	4628      	mov	r0, r5
+  1e:	2110      	movs	r1, #16
+  20:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1121
+    return s;
+}
+  24:	4630      	mov	r0, r6
+  26:	bd70      	pop	{r4, r5, r6, pc}
+  28:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_BSET:
+
+00000000 <CC2520_BSET>:
+CC2520_BSET():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1094
+* @param  uint8 bitAddr - address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_BSET(uint8 bitAddr)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1096
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   2:	4d09      	ldr	r5, [pc, #36]	(28 <CC2520_BSET+0x28>)
+   4:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1094
+* @param  uint8 bitAddr - address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_BSET(uint8 bitAddr)
+{
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1096
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   8:	4628      	mov	r0, r5
+   a:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1097
+    s = CC2520_SPI_TXRX(CC2520_INS_BSET);
+   e:	2059      	movs	r0, #89
+  10:	f7ff fffe 	bl	0 <CC2520_BSET>
+  14:	4606      	mov	r6, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1098
+    CC2520_SPI_TXRX(bitAddr);
+  16:	4620      	mov	r0, r4
+  18:	f7ff fffe 	bl	0 <CC2520_BSET>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1099
+    CC2520_SPI_END();
+  1c:	4628      	mov	r0, r5
+  1e:	2110      	movs	r1, #16
+  20:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1101
+    return s;
+}
+  24:	4630      	mov	r0, r6
+  26:	bd70      	pop	{r4, r5, r6, pc}
+  28:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_MEMXWR:
+
+00000000 <CC2520_MEMXWR>:
+CC2520_MEMXWR():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1072
+*         uint8  *pData - unaltered data
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_MEMXWR(uint16 addr, uint16 count, uint8  *pData)
+{
+   0:	e92d 4370 	stmdb	sp!, {r4, r5, r6, r8, r9, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1074
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	4d0e      	ldr	r5, [pc, #56]	(40 <CC2520_MEMXWR+0x40>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1072
+*         uint8  *pData - unaltered data
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_MEMXWR(uint16 addr, uint16 count, uint8  *pData)
+{
+   6:	4604      	mov	r4, r0
+   8:	4688      	mov	r8, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1074
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   a:	4628      	mov	r0, r5
+   c:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1072
+*         uint8  *pData - unaltered data
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_MEMXWR(uint16 addr, uint16 count, uint8  *pData)
+{
+   e:	4691      	mov	r9, r2
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1074
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  10:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1075
+    s = CC2520_SPI_TXRX(CC2520_INS_MEMXWR);
+  14:	2056      	movs	r0, #86
+  16:	f7ff fffe 	bl	0 <CC2520_MEMXWR>
+  1a:	4606      	mov	r6, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1076
+    CC2520_SPI_TXRX(HIBYTE(addr));
+  1c:	0a20      	lsrs	r0, r4, #8
+  1e:	f7ff fffe 	bl	0 <CC2520_MEMXWR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1077
+    CC2520_SPI_TXRX(LOBYTE(addr));
+  22:	b2e0      	uxtb	r0, r4
+  24:	f7ff fffe 	bl	0 <CC2520_MEMXWR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1078
+    CC2520_INS_WR_ARRAY(count, pData);
+  28:	4640      	mov	r0, r8
+  2a:	4649      	mov	r1, r9
+  2c:	f7ff fffe 	bl	0 <CC2520_MEMXWR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1079
+    CC2520_SPI_END();
+  30:	4628      	mov	r0, r5
+  32:	2110      	movs	r1, #16
+  34:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1081
+    return s;
+}
+  38:	4630      	mov	r0, r6
+  3a:	e8bd 8370 	ldmia.w	sp!, {r4, r5, r6, r8, r9, pc}
+  3e:	46c0      	nop			(mov r8, r8)
+  40:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_INS_MEMCP_COMMON:
+
+00000000 <CC2520_INS_MEMCP_COMMON>:
+CC2520_INS_MEMCP_COMMON():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:141
+*
+* @return  uint8 - status byte
+*/
+static uint8 CC2520_INS_MEMCP_COMMON(uint8 instr, uint8 pri, uint16 count, \
+    uint16 src, uint16 dest)
+{
+   0:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:143
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	f8df a054 	ldr.w	sl, [pc, #84]	; 5c <CC2520_INS_MEMCP_COMMON+0x5c>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:141
+*
+* @return  uint8 - status byte
+*/
+static uint8 CC2520_INS_MEMCP_COMMON(uint8 instr, uint8 pri, uint16 count, \
+    uint16 src, uint16 dest)
+{
+   8:	4605      	mov	r5, r0
+   a:	460c      	mov	r4, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:143
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   c:	4650      	mov	r0, sl
+   e:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:141
+*
+* @return  uint8 - status byte
+*/
+static uint8 CC2520_INS_MEMCP_COMMON(uint8 instr, uint8 pri, uint16 count, \
+    uint16 src, uint16 dest)
+{
+  10:	4616      	mov	r6, r2
+  12:	4698      	mov	r8, r3
+  14:	f8bd 9020 	ldrh.w	r9, [sp, #32]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:143
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  18:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:144
+    s = CC2520_SPI_TXRX(instr | pri);
+  1c:	ea44 0005 	orr.w	r0, r4, r5
+  20:	f7ff fffe 	bl	0 <CC2520_INS_MEMCP_COMMON>
+  24:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:145
+    CC2520_SPI_TXRX(count);
+  26:	b2f0      	uxtb	r0, r6
+  28:	f7ff fffe 	bl	0 <CC2520_INS_MEMCP_COMMON>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:146
+    CC2520_SPI_TXRX((HIBYTE(src) << 4) | HIBYTE(dest));
+  2c:	ea4f 2318 	mov.w	r3, r8, lsr #8
+  30:	ea4f 2019 	mov.w	r0, r9, lsr #8
+  34:	ea40 1003 	orr.w	r0, r0, r3, lsl #4
+  38:	b2c0      	uxtb	r0, r0
+  3a:	f7ff fffe 	bl	0 <CC2520_INS_MEMCP_COMMON>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:147
+    CC2520_SPI_TXRX(LOBYTE(src));
+  3e:	fa5f f088 	uxtb.w	r0, r8
+  42:	f7ff fffe 	bl	0 <CC2520_INS_MEMCP_COMMON>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:148
+    CC2520_SPI_TXRX(LOBYTE(dest));
+  46:	fa5f f089 	uxtb.w	r0, r9
+  4a:	f7ff fffe 	bl	0 <CC2520_INS_MEMCP_COMMON>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:149
+    CC2520_SPI_END();
+  4e:	4650      	mov	r0, sl
+  50:	2110      	movs	r1, #16
+  52:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:151
+    return s;
+}
+  56:	4620      	mov	r0, r4
+  58:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
+  5c:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_MEMXCP:
+
+00000000 <CC2520_MEMXCP>:
+CC2520_MEMXCP():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1055
+*         uint16 dest - destination address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_MEMXCP(uint8 pri, uint16 count, uint16 src, uint16 dest)
+{
+   0:	b573      	push	{r0, r1, r4, r5, r6, lr}
+   2:	4604      	mov	r4, r0
+   4:	460d      	mov	r5, r1
+   6:	4616      	mov	r6, r2
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1056
+    return CC2520_INS_MEMCP_COMMON(CC2520_INS_MEMXCP, pri, count, src, dest);
+   8:	9300      	str	r3, [sp, #0]
+   a:	2054      	movs	r0, #84
+   c:	4621      	mov	r1, r4
+   e:	462a      	mov	r2, r5
+  10:	4633      	mov	r3, r6
+  12:	f7ff fffe 	bl	0 <CC2520_MEMXCP>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1057
+}
+  16:	bd7c      	pop	{r2, r3, r4, r5, r6, pc}
+Disassembly of section .text.CC2520_MEMCPR:
+
+00000000 <CC2520_MEMCPR>:
+CC2520_MEMCPR():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1037
+*         uint16 dest - destination address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_MEMCPR(uint8 pri, uint16 count, uint16 src, uint16 dest)
+{
+   0:	b573      	push	{r0, r1, r4, r5, r6, lr}
+   2:	4604      	mov	r4, r0
+   4:	460d      	mov	r5, r1
+   6:	4616      	mov	r6, r2
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1038
+    return CC2520_INS_MEMCP_COMMON(CC2520_INS_MEMCPR, pri, count, src, dest);
+   8:	9300      	str	r3, [sp, #0]
+   a:	2052      	movs	r0, #82
+   c:	4621      	mov	r1, r4
+   e:	462a      	mov	r2, r5
+  10:	4633      	mov	r3, r6
+  12:	f7ff fffe 	bl	0 <CC2520_MEMCPR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1039
+}
+  16:	bd7c      	pop	{r2, r3, r4, r5, r6, pc}
+Disassembly of section .text.CC2520_MEMCP:
+
+00000000 <CC2520_MEMCP>:
+CC2520_MEMCP():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1019
+*         uint16 dest - destination address
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_MEMCP(uint8 pri, uint16 count, uint16 src, uint16 dest)
+{
+   0:	b573      	push	{r0, r1, r4, r5, r6, lr}
+   2:	4604      	mov	r4, r0
+   4:	460d      	mov	r5, r1
+   6:	4616      	mov	r6, r2
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1020
+    return CC2520_INS_MEMCP_COMMON(CC2520_INS_MEMCP, pri, count, src, dest);
+   8:	9300      	str	r3, [sp, #0]
+   a:	2050      	movs	r0, #80
+   c:	4621      	mov	r1, r4
+   e:	462a      	mov	r2, r5
+  10:	4633      	mov	r3, r6
+  12:	f7ff fffe 	bl	0 <CC2520_MEMCP>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1021
+}
+  16:	bd7c      	pop	{r2, r3, r4, r5, r6, pc}
+Disassembly of section .text.CC2520_RXMASKAND:
+
+00000000 <CC2520_RXMASKAND>:
+CC2520_RXMASKAND():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:995
+* @param  uint16 andMask
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_RXMASKAND(uint16 andMask)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:997
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   2:	4d0b      	ldr	r5, [pc, #44]	(30 <CC2520_RXMASKAND+0x30>)
+   4:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:995
+* @param  uint16 andMask
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_RXMASKAND(uint16 andMask)
+{
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:997
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   8:	4628      	mov	r0, r5
+   a:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:998
+    s = CC2520_SPI_TXRX(CC2520_INS_RXMASKAND);
+   e:	204e      	movs	r0, #78
+  10:	f7ff fffe 	bl	0 <CC2520_RXMASKAND>
+  14:	4606      	mov	r6, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:999
+    CC2520_SPI_TXRX(HIBYTE(andMask));
+  16:	0a20      	lsrs	r0, r4, #8
+  18:	f7ff fffe 	bl	0 <CC2520_RXMASKAND>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1000
+    CC2520_SPI_TXRX(LOBYTE(andMask));
+  1c:	b2e0      	uxtb	r0, r4
+  1e:	f7ff fffe 	bl	0 <CC2520_RXMASKAND>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1001
+    CC2520_SPI_END();
+  22:	4628      	mov	r0, r5
+  24:	2110      	movs	r1, #16
+  26:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1003
+    return s;
+}
+  2a:	4630      	mov	r0, r6
+  2c:	bd70      	pop	{r4, r5, r6, pc}
+  2e:	46c0      	nop			(mov r8, r8)
+  30:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_RXMASKOR:
+
+00000000 <CC2520_RXMASKOR>:
+CC2520_RXMASKOR():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:974
+* @param  uint16 orMask -
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_RXMASKOR(uint16 orMask)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:976
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   2:	4d0b      	ldr	r5, [pc, #44]	(30 <CC2520_RXMASKOR+0x30>)
+   4:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:974
+* @param  uint16 orMask -
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_RXMASKOR(uint16 orMask)
+{
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:976
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   8:	4628      	mov	r0, r5
+   a:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:977
+    s = CC2520_SPI_TXRX(CC2520_INS_RXMASKOR);
+   e:	204f      	movs	r0, #79
+  10:	f7ff fffe 	bl	0 <CC2520_RXMASKOR>
+  14:	4606      	mov	r6, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:978
+    CC2520_SPI_TXRX(HIBYTE(orMask));
+  16:	0a20      	lsrs	r0, r4, #8
+  18:	f7ff fffe 	bl	0 <CC2520_RXMASKOR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:979
+    CC2520_SPI_TXRX(LOBYTE(orMask));
+  1c:	b2e0      	uxtb	r0, r4
+  1e:	f7ff fffe 	bl	0 <CC2520_RXMASKOR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:980
+    CC2520_SPI_END();
+  22:	4628      	mov	r0, r5
+  24:	2110      	movs	r1, #16
+  26:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:982
+    return s;
+}
+  2a:	4630      	mov	r0, r6
+  2c:	bd70      	pop	{r4, r5, r6, pc}
+  2e:	46c0      	nop			(mov r8, r8)
+  30:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_RANDOM16:
+
+00000000 <CC2520_RANDOM16>:
+CC2520_RANDOM16():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:952
+* @param  none
+*
+* @return  uint16
+*/
+uint16 CC2520_RANDOM16(void)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:954
+    EWORD value;
+    CC2520_SPI_BEGIN();
+   2:	4d0e      	ldr	r5, [pc, #56]	(3c <CC2520_RANDOM16+0x3c>)
+   4:	2110      	movs	r1, #16
+   6:	4628      	mov	r0, r5
+   8:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:955
+    CC2520_SPI_TXRX(CC2520_INS_RANDOM);
+   c:	203c      	movs	r0, #60
+   e:	f7ff fffe 	bl	0 <CC2520_RANDOM16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:956
+    CC2520_SPI_TXRX(0x00);
+  12:	2000      	movs	r0, #0
+  14:	f7ff fffe 	bl	0 <CC2520_RANDOM16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:957
+    value.b.b0 = CC2520_SPI_TXRX(0x00);
+  18:	2000      	movs	r0, #0
+  1a:	f7ff fffe 	bl	0 <CC2520_RANDOM16>
+  1e:	f04f 0400 	mov.w	r4, #0	; 0x0
+  22:	f360 0407 	bfi	r4, r0, #0, #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:958
+    value.b.b1 = CC2520_SPI_TXRX(0x00);
+  26:	2000      	movs	r0, #0
+  28:	f7ff fffe 	bl	0 <CC2520_RANDOM16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:959
+    CC2520_SPI_END();
+  2c:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:958
+    EWORD value;
+    CC2520_SPI_BEGIN();
+    CC2520_SPI_TXRX(CC2520_INS_RANDOM);
+    CC2520_SPI_TXRX(0x00);
+    value.b.b0 = CC2520_SPI_TXRX(0x00);
+    value.b.b1 = CC2520_SPI_TXRX(0x00);
+  2e:	f360 240f 	bfi	r4, r0, #8, #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:959
+    CC2520_SPI_END();
+  32:	4628      	mov	r0, r5
+  34:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:961
+    return value.w;
+}
+  38:	b2a0      	uxth	r0, r4
+  3a:	bd70      	pop	{r4, r5, r6, pc}
+  3c:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_RANDOM8:
+
+00000000 <CC2520_RANDOM8>:
+CC2520_RANDOM8():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:931
+* @param  none
+*
+* @return  uint8
+*/
+uint8 CC2520_RANDOM8(void)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:933
+    uint8 value;
+    CC2520_SPI_BEGIN();
+   2:	4d0a      	ldr	r5, [pc, #40]	(2c <CC2520_RANDOM8+0x2c>)
+   4:	2110      	movs	r1, #16
+   6:	4628      	mov	r0, r5
+   8:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:934
+    CC2520_SPI_TXRX(CC2520_INS_RANDOM);
+   c:	203c      	movs	r0, #60
+   e:	f7ff fffe 	bl	0 <CC2520_RANDOM8>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:935
+    CC2520_SPI_TXRX(0x00);
+  12:	2000      	movs	r0, #0
+  14:	f7ff fffe 	bl	0 <CC2520_RANDOM8>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:936
+    value = CC2520_SPI_TXRX(0x00);
+  18:	2000      	movs	r0, #0
+  1a:	f7ff fffe 	bl	0 <CC2520_RANDOM8>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:937
+    CC2520_SPI_END();
+  1e:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:936
+{
+    uint8 value;
+    CC2520_SPI_BEGIN();
+    CC2520_SPI_TXRX(CC2520_INS_RANDOM);
+    CC2520_SPI_TXRX(0x00);
+    value = CC2520_SPI_TXRX(0x00);
+  20:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:937
+    CC2520_SPI_END();
+  22:	4628      	mov	r0, r5
+  24:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:939
+    return value;
+}
+  28:	4620      	mov	r0, r4
+  2a:	bd70      	pop	{r4, r5, r6, pc}
+  2c:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_TXBUFCP:
+
+00000000 <CC2520_TXBUFCP>:
+CC2520_TXBUFCP():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:883
+*          uint8 *pCurrCount
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_TXBUFCP(uint8 pri, uint16 addr, uint8 count, uint8 *pCurrCount)
+{
+   0:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   4:	4604      	mov	r4, r0
+   6:	460f      	mov	r7, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:885
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   8:	4810      	ldr	r0, [pc, #64]	(4c <CC2520_TXBUFCP+0x4c>)
+   a:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:883
+*          uint8 *pCurrCount
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_TXBUFCP(uint8 pri, uint16 addr, uint8 count, uint8 *pCurrCount)
+{
+   c:	4615      	mov	r5, r2
+   e:	461e      	mov	r6, r3
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:885
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  10:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:886
+    s = CC2520_SPI_TXRX(CC2520_INS_TXBUFCP | pri);
+  14:	f044 003e 	orr.w	r0, r4, #62	; 0x3e
+  18:	f7ff fffe 	bl	0 <CC2520_TXBUFCP>
+  1c:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:887
+    if (pCurrCount) {
+  1e:	b126      	cbz	r6, 2a <CC2520_TXBUFCP+0x2a>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:888
+        *pCurrCount = CC2520_SPI_TXRX(count);
+  20:	4628      	mov	r0, r5
+  22:	f7ff fffe 	bl	0 <CC2520_TXBUFCP>
+  26:	7030      	strb	r0, [r6, #0]
+  28:	e002      	b.n	30 <CC2520_TXBUFCP+0x30>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:890
+    } else {
+        CC2520_SPI_TXRX(count);
+  2a:	4628      	mov	r0, r5
+  2c:	f7ff fffe 	bl	0 <CC2520_TXBUFCP>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:892
+    }
+    CC2520_SPI_TXRX(HIBYTE(addr));
+  30:	0a38      	lsrs	r0, r7, #8
+  32:	f7ff fffe 	bl	0 <CC2520_TXBUFCP>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:893
+    CC2520_SPI_TXRX(LOBYTE(addr));
+  36:	b2f8      	uxtb	r0, r7
+  38:	f7ff fffe 	bl	0 <CC2520_TXBUFCP>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:894
+    CC2520_SPI_END();
+  3c:	4803      	ldr	r0, [pc, #12]	(4c <CC2520_TXBUFCP+0x4c>)
+  3e:	2110      	movs	r1, #16
+  40:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:896
+    return s;
+}
+  44:	4620      	mov	r0, r4
+  46:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+  4a:	46c0      	nop			(mov r8, r8)
+  4c:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_TXBUF16:
+
+00000000 <CC2520_TXBUF16>:
+CC2520_TXBUF16():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:861
+* @param   uint16 data
+*
+* @return  none
+*/
+void CC2520_TXBUF16(uint16 data)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:862
+    CC2520_SPI_BEGIN();
+   2:	4d0a      	ldr	r5, [pc, #40]	(2c <CC2520_TXBUF16+0x2c>)
+   4:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:861
+* @param   uint16 data
+*
+* @return  none
+*/
+void CC2520_TXBUF16(uint16 data)
+{
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:862
+    CC2520_SPI_BEGIN();
+   8:	4628      	mov	r0, r5
+   a:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:863
+    CC2520_SPI_TXRX(CC2520_INS_TXBUF);
+   e:	203a      	movs	r0, #58
+  10:	f7ff fffe 	bl	0 <CC2520_TXBUF16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:864
+    CC2520_SPI_TXRX(LOBYTE(data));
+  14:	b2e0      	uxtb	r0, r4
+  16:	f7ff fffe 	bl	0 <CC2520_TXBUF16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:865
+    CC2520_SPI_TXRX(HIBYTE(data));
+  1a:	0a20      	lsrs	r0, r4, #8
+  1c:	f7ff fffe 	bl	0 <CC2520_TXBUF16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:866
+    CC2520_SPI_END();
+  20:	4628      	mov	r0, r5
+  22:	2110      	movs	r1, #16
+  24:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:867
+}
+  28:	bd70      	pop	{r4, r5, r6, pc}
+  2a:	46c0      	nop			(mov r8, r8)
+  2c:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_TXBUF8:
+
+00000000 <CC2520_TXBUF8>:
+CC2520_TXBUF8():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:843
+* @param   uint8 data
+*
+* @return  none
+*/
+void CC2520_TXBUF8(uint8 data)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:844
+    CC2520_SPI_BEGIN();
+   2:	4c08      	ldr	r4, [pc, #32]	(24 <CC2520_TXBUF8+0x24>)
+   4:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:843
+* @param   uint8 data
+*
+* @return  none
+*/
+void CC2520_TXBUF8(uint8 data)
+{
+   6:	4605      	mov	r5, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:844
+    CC2520_SPI_BEGIN();
+   8:	4620      	mov	r0, r4
+   a:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:845
+    CC2520_SPI_TXRX(CC2520_INS_TXBUF);
+   e:	203a      	movs	r0, #58
+  10:	f7ff fffe 	bl	0 <CC2520_TXBUF8>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:846
+    CC2520_SPI_TXRX(data);
+  14:	4628      	mov	r0, r5
+  16:	f7ff fffe 	bl	0 <CC2520_TXBUF8>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:847
+    CC2520_SPI_END();
+  1a:	4620      	mov	r0, r4
+  1c:	2110      	movs	r1, #16
+  1e:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:848
+}
+  22:	bd70      	pop	{r4, r5, r6, pc}
+  24:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_TXBUF:
+
+00000000 <CC2520_TXBUF>:
+CC2520_TXBUF():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:823
+*          uint8  *pData - pointer to data buffer
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_TXBUF(uint8 count, uint8  *pData)
+{
+   0:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:825
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	4c0a      	ldr	r4, [pc, #40]	(30 <CC2520_TXBUF+0x30>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:823
+*          uint8  *pData - pointer to data buffer
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_TXBUF(uint8 count, uint8  *pData)
+{
+   6:	4606      	mov	r6, r0
+   8:	4688      	mov	r8, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:825
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   a:	4620      	mov	r0, r4
+   c:	2110      	movs	r1, #16
+   e:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:826
+    s = CC2520_SPI_TXRX(CC2520_INS_TXBUF);
+  12:	203a      	movs	r0, #58
+  14:	f7ff fffe 	bl	0 <CC2520_TXBUF>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:827
+    CC2520_INS_WR_ARRAY(count, pData);
+  18:	4641      	mov	r1, r8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:826
+*/
+uint8 CC2520_TXBUF(uint8 count, uint8  *pData)
+{
+    uint8 s;
+    CC2520_SPI_BEGIN();
+    s = CC2520_SPI_TXRX(CC2520_INS_TXBUF);
+  1a:	4605      	mov	r5, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:827
+    CC2520_INS_WR_ARRAY(count, pData);
+  1c:	4630      	mov	r0, r6
+  1e:	f7ff fffe 	bl	0 <CC2520_TXBUF>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:828
+    CC2520_SPI_END();
+  22:	4620      	mov	r0, r4
+  24:	2110      	movs	r1, #16
+  26:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:830
+    return s;
+}
+  2a:	4628      	mov	r0, r5
+  2c:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+  30:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_RXBUFMOV:
+
+00000000 <CC2520_RXBUFMOV>:
+CC2520_RXBUFMOV():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:796
+*          uint8 *pCurrCount
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_RXBUFMOV(uint8 pri, uint16 addr, uint8 count, uint8 *pCurrCount)
+{
+   0:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   4:	4604      	mov	r4, r0
+   6:	460f      	mov	r7, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:798
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   8:	4810      	ldr	r0, [pc, #64]	(4c <CC2520_RXBUFMOV+0x4c>)
+   a:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:796
+*          uint8 *pCurrCount
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_RXBUFMOV(uint8 pri, uint16 addr, uint8 count, uint8 *pCurrCount)
+{
+   c:	4615      	mov	r5, r2
+   e:	461e      	mov	r6, r3
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:798
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  10:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:799
+    s = CC2520_SPI_TXRX(CC2520_INS_RXBUFMOV | pri);
+  14:	f044 0032 	orr.w	r0, r4, #50	; 0x32
+  18:	f7ff fffe 	bl	0 <CC2520_RXBUFMOV>
+  1c:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:800
+    if (pCurrCount) {
+  1e:	b126      	cbz	r6, 2a <CC2520_RXBUFMOV+0x2a>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:801
+        *pCurrCount = CC2520_SPI_TXRX(count);
+  20:	4628      	mov	r0, r5
+  22:	f7ff fffe 	bl	0 <CC2520_RXBUFMOV>
+  26:	7030      	strb	r0, [r6, #0]
+  28:	e002      	b.n	30 <CC2520_RXBUFMOV+0x30>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:803
+    } else {
+        CC2520_SPI_TXRX(count);
+  2a:	4628      	mov	r0, r5
+  2c:	f7ff fffe 	bl	0 <CC2520_RXBUFMOV>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:805
+    }
+    CC2520_SPI_TXRX(HIBYTE(addr));
+  30:	0a38      	lsrs	r0, r7, #8
+  32:	f7ff fffe 	bl	0 <CC2520_RXBUFMOV>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:806
+    CC2520_SPI_TXRX(LOBYTE(addr));
+  36:	b2f8      	uxtb	r0, r7
+  38:	f7ff fffe 	bl	0 <CC2520_RXBUFMOV>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:807
+    CC2520_SPI_END();
+  3c:	4803      	ldr	r0, [pc, #12]	(4c <CC2520_RXBUFMOV+0x4c>)
+  3e:	2110      	movs	r1, #16
+  40:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:809
+    return s;
+}
+  44:	4620      	mov	r0, r4
+  46:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+  4a:	46c0      	nop			(mov r8, r8)
+  4c:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_RXBUFCP_BEGIN:
+
+00000000 <CC2520_RXBUFCP_BEGIN>:
+CC2520_RXBUFCP_BEGIN():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:747
+*          uint8 *pCurrCount - number of bytes in RX buf
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_RXBUFCP_BEGIN(uint16 addr, uint8 *pCurrCount)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+   2:	4604      	mov	r4, r0
+   4:	460d      	mov	r5, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:749
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   6:	4809      	ldr	r0, [pc, #36]	(2c <CC2520_RXBUFCP_BEGIN+0x2c>)
+   8:	2110      	movs	r1, #16
+   a:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:750
+    s = CC2520_SPI_TXRX(CC2520_INS_RXBUFCP);
+   e:	2038      	movs	r0, #56
+  10:	f7ff fffe 	bl	0 <CC2520_RXBUFCP_BEGIN>
+  14:	4606      	mov	r6, r0
+  16:	0a20      	lsrs	r0, r4, #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:751
+    if (pCurrCount) {
+  18:	b11d      	cbz	r5, 22 <CC2520_RXBUFCP_BEGIN+0x22>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:752
+        *pCurrCount = CC2520_SPI_TXRX(HIBYTE(addr));
+  1a:	f7ff fffe 	bl	0 <CC2520_RXBUFCP_BEGIN>
+  1e:	7028      	strb	r0, [r5, #0]
+  20:	e001      	b.n	26 <CC2520_RXBUFCP_BEGIN+0x26>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:754
+    } else {
+        CC2520_SPI_TXRX(HIBYTE(addr));
+  22:	f7ff fffe 	bl	0 <CC2520_RXBUFCP_BEGIN>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:757
+    }
+    return s;
+}
+  26:	4630      	mov	r0, r6
+  28:	bd70      	pop	{r4, r5, r6, pc}
+  2a:	46c0      	nop			(mov r8, r8)
+  2c:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_RXBUF16:
+
+00000000 <CC2520_RXBUF16>:
+CC2520_RXBUF16():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:725
+* @param   none
+*
+* @return  uint16 - result
+*/
+uint16 CC2520_RXBUF16(void)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:727
+    EWORD value;
+    CC2520_SPI_BEGIN();
+   2:	4d0d      	ldr	r5, [pc, #52]	(38 <CC2520_RXBUF16+0x38>)
+   4:	2110      	movs	r1, #16
+   6:	4628      	mov	r0, r5
+   8:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:728
+    CC2520_SPI_TXRX(CC2520_INS_RXBUF);
+   c:	2030      	movs	r0, #48
+   e:	f7ff fffe 	bl	0 <CC2520_RXBUF16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:729
+    value.b.b0 = CC2520_SPI_TXRX(0x00);
+  12:	2000      	movs	r0, #0
+  14:	f7ff fffe 	bl	0 <CC2520_RXBUF16>
+  18:	f04f 0400 	mov.w	r4, #0	; 0x0
+  1c:	f360 0407 	bfi	r4, r0, #0, #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:730
+    value.b.b1 = CC2520_SPI_TXRX(0x00);
+  20:	2000      	movs	r0, #0
+  22:	f7ff fffe 	bl	0 <CC2520_RXBUF16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:731
+    CC2520_SPI_END();
+  26:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:730
+{
+    EWORD value;
+    CC2520_SPI_BEGIN();
+    CC2520_SPI_TXRX(CC2520_INS_RXBUF);
+    value.b.b0 = CC2520_SPI_TXRX(0x00);
+    value.b.b1 = CC2520_SPI_TXRX(0x00);
+  28:	f360 240f 	bfi	r4, r0, #8, #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:731
+    CC2520_SPI_END();
+  2c:	4628      	mov	r0, r5
+  2e:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:733
+    return value.w;
+}
+  32:	b2a0      	uxth	r0, r4
+  34:	bd70      	pop	{r4, r5, r6, pc}
+  36:	46c0      	nop			(mov r8, r8)
+  38:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_RXBUF8:
+
+00000000 <CC2520_RXBUF8>:
+CC2520_RXBUF8():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:705
+* @param   none
+*
+* @return  uint8 - result
+*/
+uint8 CC2520_RXBUF8(void)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:707
+    uint8 value;
+    CC2520_SPI_BEGIN();
+   2:	4d09      	ldr	r5, [pc, #36]	(28 <CC2520_RXBUF8+0x28>)
+   4:	2110      	movs	r1, #16
+   6:	4628      	mov	r0, r5
+   8:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:708
+    CC2520_SPI_TXRX(CC2520_INS_RXBUF);
+   c:	2030      	movs	r0, #48
+   e:	f7ff fffe 	bl	0 <CC2520_RXBUF8>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:709
+    value = CC2520_SPI_TXRX(0x00);
+  12:	2000      	movs	r0, #0
+  14:	f7ff fffe 	bl	0 <CC2520_RXBUF8>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:710
+    CC2520_SPI_END();
+  18:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:709
+uint8 CC2520_RXBUF8(void)
+{
+    uint8 value;
+    CC2520_SPI_BEGIN();
+    CC2520_SPI_TXRX(CC2520_INS_RXBUF);
+    value = CC2520_SPI_TXRX(0x00);
+  1a:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:710
+    CC2520_SPI_END();
+  1c:	4628      	mov	r0, r5
+  1e:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:712
+    return value;
+}
+  22:	4620      	mov	r0, r4
+  24:	bd70      	pop	{r4, r5, r6, pc}
+  26:	46c0      	nop			(mov r8, r8)
+  28:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_MEMWR24:
+
+00000000 <CC2520_MEMWR24>:
+CC2520_MEMWR24():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:661
+*          uint32 value
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_MEMWR24(uint16 addr, uint32 value)
+{
+   0:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:663
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	4e10      	ldr	r6, [pc, #64]	(48 <CC2520_MEMWR24+0x48>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:661
+*          uint32 value
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_MEMWR24(uint16 addr, uint32 value)
+{
+   6:	460c      	mov	r4, r1
+   8:	4605      	mov	r5, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:663
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   a:	2110      	movs	r1, #16
+   c:	4630      	mov	r0, r6
+   e:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:664
+    s = CC2520_SPI_TXRX(CC2520_INS_MEMWR | HIBYTE(addr));
+  12:	0a28      	lsrs	r0, r5, #8
+  14:	f040 0020 	orr.w	r0, r0, #32	; 0x20
+  18:	f7ff fffe 	bl	0 <CC2520_MEMWR24>
+  1c:	4680      	mov	r8, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:665
+    CC2520_SPI_TXRX(LOBYTE(addr));
+  1e:	b2e8      	uxtb	r0, r5
+  20:	f7ff fffe 	bl	0 <CC2520_MEMWR24>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:666
+    CC2520_SPI_TXRX(LOBYTE(LOWORD(value)));
+  24:	b2e0      	uxtb	r0, r4
+  26:	f7ff fffe 	bl	0 <CC2520_MEMWR24>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:667
+    CC2520_SPI_TXRX(HIBYTE(LOWORD(value)));
+  2a:	f3c4 2007 	ubfx	r0, r4, #8, #8
+  2e:	f7ff fffe 	bl	0 <CC2520_MEMWR24>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:668
+    CC2520_SPI_TXRX(LOBYTE(HIWORD(value)));
+  32:	f3c4 4007 	ubfx	r0, r4, #16, #8
+  36:	f7ff fffe 	bl	0 <CC2520_MEMWR24>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:669
+    CC2520_SPI_END();
+  3a:	4630      	mov	r0, r6
+  3c:	2110      	movs	r1, #16
+  3e:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:671
+    return s;
+}
+  42:	4640      	mov	r0, r8
+  44:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+  48:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_MEMWR16:
+
+00000000 <CC2520_MEMWR16>:
+CC2520_MEMWR16():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:638
+*          uint16 value
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_MEMWR16(uint16 addr, uint16 value)
+{
+   0:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:640
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	4e0e      	ldr	r6, [pc, #56]	(40 <CC2520_MEMWR16+0x40>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:638
+*          uint16 value
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_MEMWR16(uint16 addr, uint16 value)
+{
+   6:	4604      	mov	r4, r0
+   8:	460d      	mov	r5, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:640
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   a:	4630      	mov	r0, r6
+   c:	2110      	movs	r1, #16
+   e:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:641
+    s = CC2520_SPI_TXRX(CC2520_INS_MEMWR | HIBYTE(addr));
+  12:	0a20      	lsrs	r0, r4, #8
+  14:	f040 0020 	orr.w	r0, r0, #32	; 0x20
+  18:	f7ff fffe 	bl	0 <CC2520_MEMWR16>
+  1c:	4680      	mov	r8, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:642
+    CC2520_SPI_TXRX(LOBYTE(addr));
+  1e:	b2e0      	uxtb	r0, r4
+  20:	f7ff fffe 	bl	0 <CC2520_MEMWR16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:643
+    CC2520_SPI_TXRX(LOBYTE(value));
+  24:	b2e8      	uxtb	r0, r5
+  26:	f7ff fffe 	bl	0 <CC2520_MEMWR16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:644
+    CC2520_SPI_TXRX(HIBYTE(value));
+  2a:	0a28      	lsrs	r0, r5, #8
+  2c:	f7ff fffe 	bl	0 <CC2520_MEMWR16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:645
+    CC2520_SPI_END();
+  30:	4630      	mov	r0, r6
+  32:	2110      	movs	r1, #16
+  34:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:647
+    return s;
+}
+  38:	4640      	mov	r0, r8
+  3a:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+  3e:	46c0      	nop			(mov r8, r8)
+  40:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_MEMWR8:
+
+00000000 <CC2520_MEMWR8>:
+CC2520_MEMWR8():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:616
+*          uint8 value
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_MEMWR8(uint16 addr, uint8 value)
+{
+   0:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:618
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	4d0c      	ldr	r5, [pc, #48]	(38 <CC2520_MEMWR8+0x38>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:616
+*          uint8 value
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_MEMWR8(uint16 addr, uint8 value)
+{
+   6:	4604      	mov	r4, r0
+   8:	4688      	mov	r8, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:618
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   a:	4628      	mov	r0, r5
+   c:	2110      	movs	r1, #16
+   e:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:619
+    s = CC2520_SPI_TXRX(CC2520_INS_MEMWR | HIBYTE(addr));
+  12:	0a20      	lsrs	r0, r4, #8
+  14:	f040 0020 	orr.w	r0, r0, #32	; 0x20
+  18:	f7ff fffe 	bl	0 <CC2520_MEMWR8>
+  1c:	4606      	mov	r6, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:620
+    CC2520_SPI_TXRX(LOBYTE(addr));
+  1e:	b2e0      	uxtb	r0, r4
+  20:	f7ff fffe 	bl	0 <CC2520_MEMWR8>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:621
+    CC2520_SPI_TXRX(value);
+  24:	4640      	mov	r0, r8
+  26:	f7ff fffe 	bl	0 <CC2520_MEMWR8>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:622
+    CC2520_SPI_END();
+  2a:	4628      	mov	r0, r5
+  2c:	2110      	movs	r1, #16
+  2e:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:624
+    return s;
+}
+  32:	4630      	mov	r0, r6
+  34:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+  38:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_MEMWR:
+
+00000000 <CC2520_MEMWR>:
+CC2520_MEMWR():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:594
+*          uint8  *pData
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_MEMWR(uint16 addr, uint16 count, uint8  *pData)
+{
+   0:	e92d 4370 	stmdb	sp!, {r4, r5, r6, r8, r9, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:596
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	4d0d      	ldr	r5, [pc, #52]	(3c <CC2520_MEMWR+0x3c>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:594
+*          uint8  *pData
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_MEMWR(uint16 addr, uint16 count, uint8  *pData)
+{
+   6:	4604      	mov	r4, r0
+   8:	4688      	mov	r8, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:596
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   a:	4628      	mov	r0, r5
+   c:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:594
+*          uint8  *pData
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_MEMWR(uint16 addr, uint16 count, uint8  *pData)
+{
+   e:	4691      	mov	r9, r2
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:596
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  10:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:597
+    s = CC2520_SPI_TXRX(CC2520_INS_MEMWR | HIBYTE(addr));
+  14:	0a20      	lsrs	r0, r4, #8
+  16:	f040 0020 	orr.w	r0, r0, #32	; 0x20
+  1a:	f7ff fffe 	bl	0 <CC2520_MEMWR>
+  1e:	4606      	mov	r6, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:598
+    CC2520_SPI_TXRX(LOBYTE(addr));
+  20:	b2e0      	uxtb	r0, r4
+  22:	f7ff fffe 	bl	0 <CC2520_MEMWR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:599
+    CC2520_INS_WR_ARRAY(count, pData);
+  26:	4640      	mov	r0, r8
+  28:	4649      	mov	r1, r9
+  2a:	f7ff fffe 	bl	0 <CC2520_MEMWR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:600
+    CC2520_SPI_END();
+  2e:	4628      	mov	r0, r5
+  30:	2110      	movs	r1, #16
+  32:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:602
+    return s;
+}
+  36:	4630      	mov	r0, r6
+  38:	e8bd 8370 	ldmia.w	sp!, {r4, r5, r6, r8, r9, pc}
+  3c:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_MEMRD24:
+
+00000000 <CC2520_MEMRD24>:
+CC2520_MEMRD24():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:568
+* @param   uint16 addr
+*
+* @return  uint32 - result
+*/
+uint32 CC2520_MEMRD24(uint16 addr)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:570
+    EDWORD value;
+    CC2520_SPI_BEGIN();
+   2:	4d13      	ldr	r5, [pc, #76]	(50 <CC2520_MEMRD24+0x50>)
+   4:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:568
+* @param   uint16 addr
+*
+* @return  uint32 - result
+*/
+uint32 CC2520_MEMRD24(uint16 addr)
+{
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:570
+    EDWORD value;
+    CC2520_SPI_BEGIN();
+   8:	4628      	mov	r0, r5
+   a:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:571
+    CC2520_SPI_TXRX(CC2520_INS_MEMRD | HIBYTE(addr));
+   e:	0a20      	lsrs	r0, r4, #8
+  10:	f040 0010 	orr.w	r0, r0, #16	; 0x10
+  14:	f7ff fffe 	bl	0 <CC2520_MEMRD24>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:572
+    CC2520_SPI_TXRX(LOBYTE(addr));
+  18:	b2e0      	uxtb	r0, r4
+  1a:	f7ff fffe 	bl	0 <CC2520_MEMRD24>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:573
+    value.b.b0 = CC2520_SPI_TXRX(0x00);
+  1e:	2000      	movs	r0, #0
+  20:	f7ff fffe 	bl	0 <CC2520_MEMRD24>
+  24:	2400      	movs	r4, #0
+  26:	f360 0407 	bfi	r4, r0, #0, #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:574
+    value.b.b1 = CC2520_SPI_TXRX(0x00);
+  2a:	2000      	movs	r0, #0
+  2c:	f7ff fffe 	bl	0 <CC2520_MEMRD24>
+  30:	f360 240f 	bfi	r4, r0, #8, #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:575
+    value.b.b2 = CC2520_SPI_TXRX(0x00);
+  34:	2000      	movs	r0, #0
+  36:	f7ff fffe 	bl	0 <CC2520_MEMRD24>
+  3a:	f360 4417 	bfi	r4, r0, #16, #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:576
+    value.b.b3 = 0x00;
+  3e:	f36f 641f 	bfc	r4, #24, #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:577
+    CC2520_SPI_END();
+  42:	4628      	mov	r0, r5
+  44:	2110      	movs	r1, #16
+  46:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:579
+    return value.dw;
+}
+  4a:	4620      	mov	r0, r4
+  4c:	bd70      	pop	{r4, r5, r6, pc}
+  4e:	46c0      	nop			(mov r8, r8)
+  50:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_MEMRD16:
+
+00000000 <CC2520_MEMRD16>:
+CC2520_MEMRD16():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:546
+* @param   uint16 addr
+*
+* @return  uint16 - result
+*/
+uint16 CC2520_MEMRD16(uint16 addr)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:548
+    EWORD value;
+    CC2520_SPI_BEGIN();
+   2:	4d10      	ldr	r5, [pc, #64]	(44 <CC2520_MEMRD16+0x44>)
+   4:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:546
+* @param   uint16 addr
+*
+* @return  uint16 - result
+*/
+uint16 CC2520_MEMRD16(uint16 addr)
+{
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:548
+    EWORD value;
+    CC2520_SPI_BEGIN();
+   8:	4628      	mov	r0, r5
+   a:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:549
+    CC2520_SPI_TXRX(CC2520_INS_MEMRD | HIBYTE(addr));
+   e:	0a20      	lsrs	r0, r4, #8
+  10:	f040 0010 	orr.w	r0, r0, #16	; 0x10
+  14:	f7ff fffe 	bl	0 <CC2520_MEMRD16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:550
+    CC2520_SPI_TXRX(LOBYTE(addr));
+  18:	b2e0      	uxtb	r0, r4
+  1a:	f7ff fffe 	bl	0 <CC2520_MEMRD16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:551
+    value.b.b0 = CC2520_SPI_TXRX(0x00);
+  1e:	2000      	movs	r0, #0
+  20:	f7ff fffe 	bl	0 <CC2520_MEMRD16>
+  24:	f04f 0400 	mov.w	r4, #0	; 0x0
+  28:	f360 0407 	bfi	r4, r0, #0, #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:552
+    value.b.b1 = CC2520_SPI_TXRX(0x00);
+  2c:	2000      	movs	r0, #0
+  2e:	f7ff fffe 	bl	0 <CC2520_MEMRD16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:553
+    CC2520_SPI_END();
+  32:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:552
+    EWORD value;
+    CC2520_SPI_BEGIN();
+    CC2520_SPI_TXRX(CC2520_INS_MEMRD | HIBYTE(addr));
+    CC2520_SPI_TXRX(LOBYTE(addr));
+    value.b.b0 = CC2520_SPI_TXRX(0x00);
+    value.b.b1 = CC2520_SPI_TXRX(0x00);
+  34:	f360 240f 	bfi	r4, r0, #8, #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:553
+    CC2520_SPI_END();
+  38:	4628      	mov	r0, r5
+  3a:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:555
+    return value.w;
+}
+  3e:	b2a0      	uxth	r0, r4
+  40:	bd70      	pop	{r4, r5, r6, pc}
+  42:	46c0      	nop			(mov r8, r8)
+  44:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_MEMRD8:
+
+00000000 <CC2520_MEMRD8>:
+CC2520_MEMRD8():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:525
+* @param   uint16 addr
+*
+* @return  uint8 - result
+*/
+uint8 CC2520_MEMRD8(uint16 addr)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:527
+    uint8 value;
+    CC2520_SPI_BEGIN();
+   2:	4d0c      	ldr	r5, [pc, #48]	(34 <CC2520_MEMRD8+0x34>)
+   4:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:525
+* @param   uint16 addr
+*
+* @return  uint8 - result
+*/
+uint8 CC2520_MEMRD8(uint16 addr)
+{
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:527
+    uint8 value;
+    CC2520_SPI_BEGIN();
+   8:	4628      	mov	r0, r5
+   a:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:528
+    CC2520_SPI_TXRX(CC2520_INS_MEMRD | HIBYTE(addr));
+   e:	0a20      	lsrs	r0, r4, #8
+  10:	f040 0010 	orr.w	r0, r0, #16	; 0x10
+  14:	f7ff fffe 	bl	0 <CC2520_MEMRD8>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:529
+    CC2520_SPI_TXRX(LOBYTE(addr));
+  18:	b2e0      	uxtb	r0, r4
+  1a:	f7ff fffe 	bl	0 <CC2520_MEMRD8>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:530
+    value = CC2520_SPI_TXRX(0x00);
+  1e:	2000      	movs	r0, #0
+  20:	f7ff fffe 	bl	0 <CC2520_MEMRD8>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:531
+    CC2520_SPI_END();
+  24:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:530
+{
+    uint8 value;
+    CC2520_SPI_BEGIN();
+    CC2520_SPI_TXRX(CC2520_INS_MEMRD | HIBYTE(addr));
+    CC2520_SPI_TXRX(LOBYTE(addr));
+    value = CC2520_SPI_TXRX(0x00);
+  26:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:531
+    CC2520_SPI_END();
+  28:	4628      	mov	r0, r5
+  2a:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:533
+    return value;
+}
+  2e:	4620      	mov	r0, r4
+  30:	bd70      	pop	{r4, r5, r6, pc}
+  32:	46c0      	nop			(mov r8, r8)
+  34:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_SRES:
+
+00000000 <CC2520_SRES>:
+CC2520_SRES():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:482
+* @param   none
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_SRES(void)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:484
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   2:	4c09      	ldr	r4, [pc, #36]	(28 <CC2520_SRES+0x28>)
+   4:	2110      	movs	r1, #16
+   6:	4620      	mov	r0, r4
+   8:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:485
+    s = CC2520_SPI_TXRX(CC2520_INS_SRES);
+   c:	200f      	movs	r0, #15
+   e:	f7ff fffe 	bl	0 <CC2520_SRES>
+  12:	4605      	mov	r5, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:486
+    CC2520_SPI_TXRX(0x00);
+  14:	2000      	movs	r0, #0
+  16:	f7ff fffe 	bl	0 <CC2520_SRES>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:487
+    CC2520_SPI_END();
+  1a:	4620      	mov	r0, r4
+  1c:	2110      	movs	r1, #16
+  1e:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:489
+    return s;
+}
+  22:	4628      	mov	r0, r5
+  24:	bd70      	pop	{r4, r5, r6, pc}
+  26:	46c0      	nop			(mov r8, r8)
+  28:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_IBUFLD:
+
+00000000 <CC2520_IBUFLD>:
+CC2520_IBUFLD():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:462
+* @param   uint8 i -
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_IBUFLD(uint8 i)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:464
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   2:	4d09      	ldr	r5, [pc, #36]	(28 <CC2520_IBUFLD+0x28>)
+   4:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:462
+* @param   uint8 i -
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_IBUFLD(uint8 i)
+{
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:464
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   8:	4628      	mov	r0, r5
+   a:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:465
+    s = CC2520_SPI_TXRX(CC2520_INS_IBUFLD);
+   e:	2002      	movs	r0, #2
+  10:	f7ff fffe 	bl	0 <CC2520_IBUFLD>
+  14:	4606      	mov	r6, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:466
+    CC2520_SPI_TXRX(i);
+  16:	4620      	mov	r0, r4
+  18:	f7ff fffe 	bl	0 <CC2520_IBUFLD>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:467
+    CC2520_SPI_END();
+  1c:	4628      	mov	r0, r5
+  1e:	2110      	movs	r1, #16
+  20:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:469
+    return s;
+}
+  24:	4630      	mov	r0, r6
+  26:	bd70      	pop	{r4, r5, r6, pc}
+  28:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_INS_STROBE:
+
+00000000 <CC2520_INS_STROBE>:
+CC2520_INS_STROBE():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:188
+* @param   uint8 strobe - strobe command
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_INS_STROBE(uint8 strobe)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:190
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   2:	4d08      	ldr	r5, [pc, #32]	(24 <CC2520_INS_STROBE+0x24>)
+   4:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:188
+* @param   uint8 strobe - strobe command
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_INS_STROBE(uint8 strobe)
+{
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:190
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   8:	4628      	mov	r0, r5
+   a:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:191
+    s = CC2520_SPI_TXRX(strobe);
+   e:	4620      	mov	r0, r4
+  10:	f7ff fffe 	bl	0 <CC2520_INS_STROBE>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:192
+    CC2520_SPI_END();
+  14:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:191
+*/
+uint8 CC2520_INS_STROBE(uint8 strobe)
+{
+    uint8 s;
+    CC2520_SPI_BEGIN();
+    s = CC2520_SPI_TXRX(strobe);
+  16:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:192
+    CC2520_SPI_END();
+  18:	4628      	mov	r0, r5
+  1a:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:194
+    return s;
+}
+  1e:	4620      	mov	r0, r4
+  20:	bd70      	pop	{r4, r5, r6, pc}
+  22:	46c0      	nop			(mov r8, r8)
+  24:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_SRXMASKBITCLR:
+
+00000000 <CC2520_SRXMASKBITCLR>:
+CC2520_SRXMASKBITCLR():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:447
+* @param   none
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_SRXMASKBITCLR(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:448
+    return CC2520_INS_STROBE(CC2520_INS_SRXMASKBITCLR);
+   2:	204d      	movs	r0, #77
+   4:	f7ff fffe 	bl	0 <CC2520_SRXMASKBITCLR>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:449
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CC2520_SRXMASKBITSET:
+
+00000000 <CC2520_SRXMASKBITSET>:
+CC2520_SRXMASKBITSET():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:432
+* @param   none
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_SRXMASKBITSET(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:433
+    return CC2520_INS_STROBE(CC2520_INS_SRXMASKBITSET);
+   2:	204c      	movs	r0, #76
+   4:	f7ff fffe 	bl	0 <CC2520_SRXMASKBITSET>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:434
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CC2520_SNACK:
+
+00000000 <CC2520_SNACK>:
+CC2520_SNACK():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:417
+* @param   none
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_SNACK(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:418
+    return CC2520_INS_STROBE(CC2520_INS_SNACK);
+   2:	204b      	movs	r0, #75
+   4:	f7ff fffe 	bl	0 <CC2520_SNACK>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:419
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CC2520_SACKPEND:
+
+00000000 <CC2520_SACKPEND>:
+CC2520_SACKPEND():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:402
+* @param   none
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_SACKPEND(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:403
+    return CC2520_INS_STROBE(CC2520_INS_SACKPEND);
+   2:	204a      	movs	r0, #74
+   4:	f7ff fffe 	bl	0 <CC2520_SACKPEND>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:404
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CC2520_SACK:
+
+00000000 <CC2520_SACK>:
+CC2520_SACK():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:387
+* @param   none
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_SACK(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:388
+    return CC2520_INS_STROBE(CC2520_INS_SACK);
+   2:	2049      	movs	r0, #73
+   4:	f7ff fffe 	bl	0 <CC2520_SACK>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:389
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CC2520_SFLUSHTX:
+
+00000000 <CC2520_SFLUSHTX>:
+CC2520_SFLUSHTX():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:372
+* @param   none
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_SFLUSHTX(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:373
+    return CC2520_INS_STROBE(CC2520_INS_SFLUSHTX);
+   2:	2048      	movs	r0, #72
+   4:	f7ff fffe 	bl	0 <CC2520_SFLUSHTX>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:374
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CC2520_SFLUSHRX:
+
+00000000 <CC2520_SFLUSHRX>:
+CC2520_SFLUSHRX():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:357
+* @param   none
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_SFLUSHRX(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:358
+    return CC2520_INS_STROBE(CC2520_INS_SFLUSHRX);
+   2:	2047      	movs	r0, #71
+   4:	f7ff fffe 	bl	0 <CC2520_SFLUSHRX>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:359
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CC2520_SXOSCOFF:
+
+00000000 <CC2520_SXOSCOFF>:
+CC2520_SXOSCOFF():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:342
+* @param   none
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_SXOSCOFF(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:343
+    return CC2520_INS_STROBE(CC2520_INS_SXOSCOFF);
+   2:	2046      	movs	r0, #70
+   4:	f7ff fffe 	bl	0 <CC2520_SXOSCOFF>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:344
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CC2520_SRFOFF:
+
+00000000 <CC2520_SRFOFF>:
+CC2520_SRFOFF():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:327
+* @param   none
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_SRFOFF(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:328
+    return CC2520_INS_STROBE(CC2520_INS_SRFOFF);
+   2:	2045      	movs	r0, #69
+   4:	f7ff fffe 	bl	0 <CC2520_SRFOFF>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:329
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CC2520_STXONCCA:
+
+00000000 <CC2520_STXONCCA>:
+CC2520_STXONCCA():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:312
+* @param   none
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_STXONCCA(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:313
+    return CC2520_INS_STROBE(CC2520_INS_STXONCCA);
+   2:	2044      	movs	r0, #68
+   4:	f7ff fffe 	bl	0 <CC2520_STXONCCA>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:314
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CC2520_STXON:
+
+00000000 <CC2520_STXON>:
+CC2520_STXON():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:297
+* @param   none
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_STXON(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:298
+    return CC2520_INS_STROBE(CC2520_INS_STXON);
+   2:	2043      	movs	r0, #67
+   4:	f7ff fffe 	bl	0 <CC2520_STXON>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:299
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CC2520_SRXON:
+
+00000000 <CC2520_SRXON>:
+CC2520_SRXON():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:282
+* @param   none
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_SRXON(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:283
+    return CC2520_INS_STROBE(CC2520_INS_SRXON);
+   2:	2042      	movs	r0, #66
+   4:	f7ff fffe 	bl	0 <CC2520_SRXON>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:284
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CC2520_STXCAL:
+
+00000000 <CC2520_STXCAL>:
+CC2520_STXCAL():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:267
+* @param   none
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_STXCAL(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:268
+    return CC2520_INS_STROBE(CC2520_INS_STXCAL);
+   2:	2041      	movs	r0, #65
+   4:	f7ff fffe 	bl	0 <CC2520_STXCAL>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:269
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CC2520_SXOSCON:
+
+00000000 <CC2520_SXOSCON>:
+CC2520_SXOSCON():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:252
+* @param   none
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_SXOSCON(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:253
+    return CC2520_INS_STROBE(CC2520_INS_SXOSCON);
+   2:	2040      	movs	r0, #64
+   4:	f7ff fffe 	bl	0 <CC2520_SXOSCON>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:254
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CC2520_SSAMPLECCA:
+
+00000000 <CC2520_SSAMPLECCA>:
+CC2520_SSAMPLECCA():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:237
+* @param   none
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_SSAMPLECCA(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:238
+    return CC2520_INS_STROBE(CC2520_INS_SSAMPLECCA);
+   2:	2004      	movs	r0, #4
+   4:	f7ff fffe 	bl	0 <CC2520_SSAMPLECCA>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:239
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CC2520_SIBUFEX:
+
+00000000 <CC2520_SIBUFEX>:
+CC2520_SIBUFEX():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:222
+* @param   none
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_SIBUFEX(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:223
+    return CC2520_INS_STROBE(CC2520_INS_SIBUFEX);
+   2:	2003      	movs	r0, #3
+   4:	f7ff fffe 	bl	0 <CC2520_SIBUFEX>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:224
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CC2520_SNOP:
+
+00000000 <CC2520_SNOP>:
+CC2520_SNOP():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:207
+* @param   none
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_SNOP(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:208
+    return CC2520_INS_STROBE(CC2520_INS_SNOP);
+   2:	2000      	movs	r0, #0
+   4:	f7ff fffe 	bl	0 <CC2520_SNOP>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:209
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CC2520_INS_RD_ARRAY:
+
+00000000 <CC2520_INS_RD_ARRAY>:
+CC2520_INS_RD_ARRAY():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:115
+*          uint8  *pData -
+*
+* @return  none
+*/
+static void CC2520_INS_RD_ARRAY(uint16 count, uint8  *pData)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+   2:	4605      	mov	r5, r0
+   4:	460e      	mov	r6, r1
+   6:	2400      	movs	r4, #0
+   8:	e00a      	b.n	20 <CC2520_INS_RD_ARRAY+0x20>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:117
+    while (count--) {
+        CC2520_SPI_TX(0x00);
+   a:	2000      	movs	r0, #0
+   c:	f7ff fffe 	bl	0 <CC2520_SPI_TX>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:118
+        CC2520_SPI_WAIT_RXRDY();
+  10:	f7ff fffe 	bl	0 <CC2520_SPI_WAIT_RXRDY>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:119
+        *pData = CC2520_SPI_RX();
+  14:	f7ff fffe 	bl	0 <CC2520_SPI_RX>
+  18:	1e6b      	subs	r3, r5, #1
+  1a:	5530      	strb	r0, [r6, r4]
+  1c:	b29d      	uxth	r5, r3
+  1e:	3401      	adds	r4, #1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:116
+*
+* @return  none
+*/
+static void CC2520_INS_RD_ARRAY(uint16 count, uint8  *pData)
+{
+    while (count--) {
+  20:	2d00      	cmp	r5, #0
+  22:	d1f2      	bne.n	a <CC2520_SPI_RX+0xa>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:122
+        CC2520_SPI_TX(0x00);
+        CC2520_SPI_WAIT_RXRDY();
+        *pData = CC2520_SPI_RX();
+        pData++;
+    }
+}
+  24:	bd70      	pop	{r4, r5, r6, pc}
+  26:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CC2520_REGRD:
+
+00000000 <CC2520_REGRD>:
+CC2520_REGRD():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1469
+*         uint8  *pValues - buffer to store result
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_REGRD(uint8 addr, uint8 count, uint8  *pValues)
+{
+   0:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1471
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	4c0b      	ldr	r4, [pc, #44]	(34 <CC2520_REGRD+0x34>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1469
+*         uint8  *pValues - buffer to store result
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_REGRD(uint8 addr, uint8 count, uint8  *pValues)
+{
+   6:	4605      	mov	r5, r0
+   8:	460e      	mov	r6, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1471
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   a:	4620      	mov	r0, r4
+   c:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1469
+*         uint8  *pValues - buffer to store result
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_REGRD(uint8 addr, uint8 count, uint8  *pValues)
+{
+   e:	4690      	mov	r8, r2
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1471
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  10:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1472
+    s = CC2520_SPI_TXRX(CC2520_INS_REGRD | addr);
+  14:	f045 0080 	orr.w	r0, r5, #128	; 0x80
+  18:	f7ff fffe 	bl	0 <CC2520_REGRD>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1473
+    CC2520_INS_RD_ARRAY(count, pValues);
+  1c:	4641      	mov	r1, r8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1472
+*/
+uint8 CC2520_REGRD(uint8 addr, uint8 count, uint8  *pValues)
+{
+    uint8 s;
+    CC2520_SPI_BEGIN();
+    s = CC2520_SPI_TXRX(CC2520_INS_REGRD | addr);
+  1e:	4605      	mov	r5, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1473
+    CC2520_INS_RD_ARRAY(count, pValues);
+  20:	4630      	mov	r0, r6
+  22:	f7ff fffe 	bl	0 <CC2520_REGRD>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1474
+    CC2520_SPI_END();
+  26:	4620      	mov	r0, r4
+  28:	2110      	movs	r1, #16
+  2a:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:1476
+    return s;
+}
+  2e:	4628      	mov	r0, r5
+  30:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+  34:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_RANDOM:
+
+00000000 <CC2520_RANDOM>:
+CC2520_RANDOM():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:910
+*          uint8  *pData
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_RANDOM(uint8 count, uint8  *pData)
+{
+   0:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:912
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	4c0c      	ldr	r4, [pc, #48]	(38 <CC2520_RANDOM+0x38>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:910
+*          uint8  *pData
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_RANDOM(uint8 count, uint8  *pData)
+{
+   6:	4606      	mov	r6, r0
+   8:	4688      	mov	r8, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:912
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   a:	4620      	mov	r0, r4
+   c:	2110      	movs	r1, #16
+   e:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:913
+    s = CC2520_SPI_TXRX(CC2520_INS_RANDOM);
+  12:	203c      	movs	r0, #60
+  14:	f7ff fffe 	bl	0 <CC2520_RANDOM>
+  18:	4605      	mov	r5, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:914
+    CC2520_SPI_TXRX(0x00);
+  1a:	2000      	movs	r0, #0
+  1c:	f7ff fffe 	bl	0 <CC2520_RANDOM>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:915
+    CC2520_INS_RD_ARRAY(count, pData);
+  20:	4630      	mov	r0, r6
+  22:	4641      	mov	r1, r8
+  24:	f7ff fffe 	bl	0 <CC2520_RANDOM>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:916
+    CC2520_SPI_END();
+  28:	4620      	mov	r0, r4
+  2a:	2110      	movs	r1, #16
+  2c:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:918
+    return s;
+}
+  30:	4628      	mov	r0, r5
+  32:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+  36:	46c0      	nop			(mov r8, r8)
+  38:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_RXBUFCP_END:
+
+00000000 <CC2520_RXBUFCP_END>:
+CC2520_RXBUFCP_END():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:773
+*          uint8  *pData - data buffer
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_RXBUFCP_END(uint16 addr, uint8 count, uint8  *pData)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:775
+    uint8 s;
+    s = CC2520_SPI_TXRX(LOBYTE(addr));
+   2:	b2c0      	uxtb	r0, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:773
+*          uint8  *pData - data buffer
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_RXBUFCP_END(uint16 addr, uint8 count, uint8  *pData)
+{
+   4:	4615      	mov	r5, r2
+   6:	460c      	mov	r4, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:775
+    uint8 s;
+    s = CC2520_SPI_TXRX(LOBYTE(addr));
+   8:	f7ff fffe 	bl	0 <CC2520_RXBUFCP_END>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:776
+    CC2520_INS_RD_ARRAY(count, pData);
+   c:	4629      	mov	r1, r5
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:775
+* @return  uint8 - status byte
+*/
+uint8 CC2520_RXBUFCP_END(uint16 addr, uint8 count, uint8  *pData)
+{
+    uint8 s;
+    s = CC2520_SPI_TXRX(LOBYTE(addr));
+   e:	4606      	mov	r6, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:776
+    CC2520_INS_RD_ARRAY(count, pData);
+  10:	4620      	mov	r0, r4
+  12:	f7ff fffe 	bl	0 <CC2520_RXBUFCP_END>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:777
+    CC2520_SPI_END();
+  16:	4803      	ldr	r0, [pc, #12]	(24 <CC2520_RXBUFCP_END+0x24>)
+  18:	2110      	movs	r1, #16
+  1a:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:779
+    return s;
+}
+  1e:	4630      	mov	r0, r6
+  20:	bd70      	pop	{r4, r5, r6, pc}
+  22:	46c0      	nop			(mov r8, r8)
+  24:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_RXBUF:
+
+00000000 <CC2520_RXBUF>:
+CC2520_RXBUF():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:685
+*          uint8  *pData
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_RXBUF(uint8 count, uint8  *pData)
+{
+   0:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:687
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	4c0a      	ldr	r4, [pc, #40]	(30 <CC2520_RXBUF+0x30>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:685
+*          uint8  *pData
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_RXBUF(uint8 count, uint8  *pData)
+{
+   6:	4606      	mov	r6, r0
+   8:	4688      	mov	r8, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:687
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   a:	4620      	mov	r0, r4
+   c:	2110      	movs	r1, #16
+   e:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:688
+    s = CC2520_SPI_TXRX(CC2520_INS_RXBUF);
+  12:	2030      	movs	r0, #48
+  14:	f7ff fffe 	bl	0 <CC2520_RXBUF>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:689
+    CC2520_INS_RD_ARRAY(count, pData);
+  18:	4641      	mov	r1, r8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:688
+*/
+uint8 CC2520_RXBUF(uint8 count, uint8  *pData)
+{
+    uint8 s;
+    CC2520_SPI_BEGIN();
+    s = CC2520_SPI_TXRX(CC2520_INS_RXBUF);
+  1a:	4605      	mov	r5, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:689
+    CC2520_INS_RD_ARRAY(count, pData);
+  1c:	4630      	mov	r0, r6
+  1e:	f7ff fffe 	bl	0 <CC2520_RXBUF>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:690
+    CC2520_SPI_END();
+  22:	4620      	mov	r0, r4
+  24:	2110      	movs	r1, #16
+  26:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:692
+    return s;
+}
+  2a:	4628      	mov	r0, r5
+  2c:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+  30:	40010800 	.word	0x40010800
+Disassembly of section .text.CC2520_MEMRD:
+
+00000000 <CC2520_MEMRD>:
+CC2520_MEMRD():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:504
+*          uint8  *pData
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_MEMRD(uint16 addr, uint16 count, uint8  *pData)
+{
+   0:	e92d 4370 	stmdb	sp!, {r4, r5, r6, r8, r9, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:506
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   4:	4d0d      	ldr	r5, [pc, #52]	(3c <CC2520_MEMRD+0x3c>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:504
+*          uint8  *pData
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_MEMRD(uint16 addr, uint16 count, uint8  *pData)
+{
+   6:	4604      	mov	r4, r0
+   8:	4688      	mov	r8, r1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:506
+    uint8 s;
+    CC2520_SPI_BEGIN();
+   a:	4628      	mov	r0, r5
+   c:	2110      	movs	r1, #16
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:504
+*          uint8  *pData
+*
+* @return  uint8 - status byte
+*/
+uint8 CC2520_MEMRD(uint16 addr, uint16 count, uint8  *pData)
+{
+   e:	4691      	mov	r9, r2
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:506
+    uint8 s;
+    CC2520_SPI_BEGIN();
+  10:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:507
+    s = CC2520_SPI_TXRX(CC2520_INS_MEMRD | HIBYTE(addr));
+  14:	0a20      	lsrs	r0, r4, #8
+  16:	f040 0010 	orr.w	r0, r0, #16	; 0x10
+  1a:	f7ff fffe 	bl	0 <CC2520_MEMRD>
+  1e:	4606      	mov	r6, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:508
+    CC2520_SPI_TXRX(LOBYTE(addr));
+  20:	b2e0      	uxtb	r0, r4
+  22:	f7ff fffe 	bl	0 <CC2520_MEMRD>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:509
+    CC2520_INS_RD_ARRAY(count, pData);
+  26:	4640      	mov	r0, r8
+  28:	4649      	mov	r1, r9
+  2a:	f7ff fffe 	bl	0 <CC2520_MEMRD>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:510
+    CC2520_SPI_END();
+  2e:	4628      	mov	r0, r5
+  30:	2110      	movs	r1, #16
+  32:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/hal_cc2520.c:512
+    return s;
+}
+  36:	4630      	mov	r0, r6
+  38:	e8bd 8370 	ldmia.w	sp!, {r4, r5, r6, r8, r9, pc}
+  3c:	40010800 	.word	0x40010800

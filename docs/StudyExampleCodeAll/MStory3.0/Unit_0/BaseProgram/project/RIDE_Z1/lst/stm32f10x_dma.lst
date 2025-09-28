@@ -1,0 +1,1392 @@
+
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_Z1\obj\stm32f10x_dma.o:     file format elf32-littlearm
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_Z1\obj\stm32f10x_dma.o
+
+Disassembly of section .text.DMA_StructInit:
+
+00000000 <DMA_StructInit>:
+DMA_StructInit():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:263
+  */
+void DMA_StructInit(DMA_InitTypeDef* DMA_InitStruct)
+{
+/*-------------- Reset DMA init structure parameters values ------------------*/
+  /* Initialize the DMA_PeripheralBaseAddr member */
+  DMA_InitStruct->DMA_PeripheralBaseAddr = 0;
+   0:	2300      	movs	r3, #0
+   2:	6003      	str	r3, [r0, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:265
+  /* Initialize the DMA_MemoryBaseAddr member */
+  DMA_InitStruct->DMA_MemoryBaseAddr = 0;
+   4:	6043      	str	r3, [r0, #4]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:267
+  /* Initialize the DMA_DIR member */
+  DMA_InitStruct->DMA_DIR = DMA_DIR_PeripheralSRC;
+   6:	6083      	str	r3, [r0, #8]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:269
+  /* Initialize the DMA_BufferSize member */
+  DMA_InitStruct->DMA_BufferSize = 0;
+   8:	60c3      	str	r3, [r0, #12]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:271
+  /* Initialize the DMA_PeripheralInc member */
+  DMA_InitStruct->DMA_PeripheralInc = DMA_PeripheralInc_Disable;
+   a:	6103      	str	r3, [r0, #16]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:273
+  /* Initialize the DMA_MemoryInc member */
+  DMA_InitStruct->DMA_MemoryInc = DMA_MemoryInc_Disable;
+   c:	6143      	str	r3, [r0, #20]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:275
+  /* Initialize the DMA_PeripheralDataSize member */
+  DMA_InitStruct->DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;
+   e:	6183      	str	r3, [r0, #24]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:277
+  /* Initialize the DMA_MemoryDataSize member */
+  DMA_InitStruct->DMA_MemoryDataSize = DMA_MemoryDataSize_Byte;
+  10:	61c3      	str	r3, [r0, #28]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:279
+  /* Initialize the DMA_Mode member */
+  DMA_InitStruct->DMA_Mode = DMA_Mode_Normal;
+  12:	6203      	str	r3, [r0, #32]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:281
+  /* Initialize the DMA_Priority member */
+  DMA_InitStruct->DMA_Priority = DMA_Priority_Low;
+  14:	6243      	str	r3, [r0, #36]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:283
+  /* Initialize the DMA_M2M member */
+  DMA_InitStruct->DMA_M2M = DMA_M2M_Disable;
+  16:	6283      	str	r3, [r0, #40]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:284
+}
+  18:	4770      	bx	lr
+  1a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.DMA_ClearITPendingBit:
+
+00000000 <DMA_ClearITPendingBit>:
+DMA_ClearITPendingBit():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:666
+  * @retval None
+  */
+void DMA_ClearITPendingBit(uint32_t DMA_IT)
+{
+  /* Check the parameters */
+  assert_param(IS_DMA_CLEAR_IT(DMA_IT));
+   0:	f010 4f70 	tst.w	r0, #4026531840	; 0xf0000000
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:664
+  *     @arg DMA2_IT_HT5: DMA2 Channel5 half transfer interrupt.
+  *     @arg DMA2_IT_TE5: DMA2 Channel5 transfer error interrupt.
+  * @retval None
+  */
+void DMA_ClearITPendingBit(uint32_t DMA_IT)
+{
+   4:	b510      	push	{r4, lr}
+   6:	4604      	mov	r4, r0
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:666
+  /* Check the parameters */
+  assert_param(IS_DMA_CLEAR_IT(DMA_IT));
+   8:	d004      	beq.n	14 <DMA_ClearITPendingBit+0x14>
+   a:	4b09      	ldr	r3, [pc, #36]	(30 <DMA_ClearITPendingBit+0x30>)
+   c:	ea00 0303 	and.w	r3, r0, r3
+  10:	b90b      	cbnz	r3, 16 <DMA_ClearITPendingBit+0x16>
+  12:	e005      	b.n	20 <DMA_ClearITPendingBit+0x20>
+  14:	b920      	cbnz	r0, 20 <DMA_ClearITPendingBit+0x20>
+  16:	4807      	ldr	r0, [pc, #28]	(34 <DMA_ClearITPendingBit+0x34>)
+  18:	f240 219a 	movw	r1, #666	; 0x29a
+  1c:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:669
+
+  /* Calculate the used DMA */
+  if ((DMA_IT & FLAG_Mask) != (uint32_t)RESET)
+  20:	f014 5f80 	tst.w	r4, #268435456	; 0x10000000
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:672
+  {
+    /* Clear the selected DMA interrupt pending bits */
+    DMA2->IFCR = DMA_IT;
+  24:	bf14      	ite	ne
+  26:	4b04      	ldrne	r3, [pc, #16]	(38 <DMA_ClearITPendingBit+0x38>)
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:677
+  }
+  else
+  {
+    /* Clear the selected DMA interrupt pending bits */
+    DMA1->IFCR = DMA_IT;
+  28:	4b04      	ldreq	r3, [pc, #16]	(3c <DMA_ClearITPendingBit+0x3c>)
+  2a:	605c      	str	r4, [r3, #4]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:679
+  }
+}
+  2c:	bd10      	pop	{r4, pc}
+  2e:	46c0      	nop			(mov r8, r8)
+  30:	eff00000 	.word	0xeff00000
+  34:	00000000 	.word	0x00000000
+  38:	40020400 	.word	0x40020400
+  3c:	40020000 	.word	0x40020000
+Disassembly of section .text.DMA_GetITStatus:
+
+00000000 <DMA_GetITStatus>:
+DMA_GetITStatus():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:580
+ITStatus DMA_GetITStatus(uint32_t DMA_IT)
+{
+  ITStatus bitstatus = RESET;
+  uint32_t tmpreg = 0;
+  /* Check the parameters */
+  assert_param(IS_DMA_GET_IT(DMA_IT));
+   0:	1e43      	subs	r3, r0, #1
+   2:	2b01      	cmp	r3, #1
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:576
+  *     @arg DMA2_IT_HT5: DMA2 Channel5 half transfer interrupt.
+  *     @arg DMA2_IT_TE5: DMA2 Channel5 transfer error interrupt.
+  * @retval The new state of DMA_IT (SET or RESET).
+  */
+ITStatus DMA_GetITStatus(uint32_t DMA_IT)
+{
+   4:	b510      	push	{r4, lr}
+   6:	4604      	mov	r4, r0
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:580
+  ITStatus bitstatus = RESET;
+  uint32_t tmpreg = 0;
+  /* Check the parameters */
+  assert_param(IS_DMA_GET_IT(DMA_IT));
+   8:	f240 809c 	bls.w	144 <DMA_GetITStatus+0x144>
+   c:	2804      	cmp	r0, #4
+   e:	f000 8099 	beq.w	144 <DMA_GetITStatus+0x144>
+  12:	2808      	cmp	r0, #8
+  14:	f000 8096 	beq.w	144 <DMA_GetITStatus+0x144>
+  18:	2810      	cmp	r0, #16
+  1a:	f000 8093 	beq.w	144 <DMA_GetITStatus+0x144>
+  1e:	2820      	cmp	r0, #32
+  20:	f000 8090 	beq.w	144 <DMA_GetITStatus+0x144>
+  24:	2840      	cmp	r0, #64
+  26:	f000 808d 	beq.w	144 <DMA_GetITStatus+0x144>
+  2a:	2880      	cmp	r0, #128
+  2c:	f000 808a 	beq.w	144 <DMA_GetITStatus+0x144>
+  30:	f5b0 7f80 	cmp.w	r0, #256	; 0x100
+  34:	f000 8086 	beq.w	144 <DMA_GetITStatus+0x144>
+  38:	f5b0 7f00 	cmp.w	r0, #512	; 0x200
+  3c:	f000 8082 	beq.w	144 <DMA_GetITStatus+0x144>
+  40:	f5b0 6f80 	cmp.w	r0, #1024	; 0x400
+  44:	d07e      	beq.n	144 <DMA_GetITStatus+0x144>
+  46:	f5b0 6f00 	cmp.w	r0, #2048	; 0x800
+  4a:	d07b      	beq.n	144 <DMA_GetITStatus+0x144>
+  4c:	f5b0 5f80 	cmp.w	r0, #4096	; 0x1000
+  50:	d078      	beq.n	144 <DMA_GetITStatus+0x144>
+  52:	f5b0 5f00 	cmp.w	r0, #8192	; 0x2000
+  56:	d075      	beq.n	144 <DMA_GetITStatus+0x144>
+  58:	f5b0 4f80 	cmp.w	r0, #16384	; 0x4000
+  5c:	d072      	beq.n	144 <DMA_GetITStatus+0x144>
+  5e:	f5b0 4f00 	cmp.w	r0, #32768	; 0x8000
+  62:	d06f      	beq.n	144 <DMA_GetITStatus+0x144>
+  64:	f5b0 3f80 	cmp.w	r0, #65536	; 0x10000
+  68:	d06c      	beq.n	144 <DMA_GetITStatus+0x144>
+  6a:	f5b0 3f00 	cmp.w	r0, #131072	; 0x20000
+  6e:	d069      	beq.n	144 <DMA_GetITStatus+0x144>
+  70:	f5b0 2f80 	cmp.w	r0, #262144	; 0x40000
+  74:	d066      	beq.n	144 <DMA_GetITStatus+0x144>
+  76:	f5b0 2f00 	cmp.w	r0, #524288	; 0x80000
+  7a:	d063      	beq.n	144 <DMA_GetITStatus+0x144>
+  7c:	f5b0 1f80 	cmp.w	r0, #1048576	; 0x100000
+  80:	d060      	beq.n	144 <DMA_GetITStatus+0x144>
+  82:	f5b0 1f00 	cmp.w	r0, #2097152	; 0x200000
+  86:	d05d      	beq.n	144 <DMA_GetITStatus+0x144>
+  88:	f5b0 0f80 	cmp.w	r0, #4194304	; 0x400000
+  8c:	d05a      	beq.n	144 <DMA_GetITStatus+0x144>
+  8e:	f5b0 0f00 	cmp.w	r0, #8388608	; 0x800000
+  92:	d057      	beq.n	144 <DMA_GetITStatus+0x144>
+  94:	f1b0 7f80 	cmp.w	r0, #16777216	; 0x1000000
+  98:	d054      	beq.n	144 <DMA_GetITStatus+0x144>
+  9a:	f1b0 7f00 	cmp.w	r0, #33554432	; 0x2000000
+  9e:	d051      	beq.n	144 <DMA_GetITStatus+0x144>
+  a0:	f1b0 6f80 	cmp.w	r0, #67108864	; 0x4000000
+  a4:	d04e      	beq.n	144 <DMA_GetITStatus+0x144>
+  a6:	f1b0 6f00 	cmp.w	r0, #134217728	; 0x8000000
+  aa:	d04b      	beq.n	144 <DMA_GetITStatus+0x144>
+  ac:	4b2b      	ldr	r3, [pc, #172]	(15c <DMA_GetITStatus+0x15c>)
+  ae:	4298      	cmp	r0, r3
+  b0:	d048      	beq.n	144 <DMA_GetITStatus+0x144>
+  b2:	3301      	adds	r3, #1
+  b4:	4298      	cmp	r0, r3
+  b6:	d045      	beq.n	144 <DMA_GetITStatus+0x144>
+  b8:	3302      	adds	r3, #2
+  ba:	4298      	cmp	r0, r3
+  bc:	d042      	beq.n	144 <DMA_GetITStatus+0x144>
+  be:	3304      	adds	r3, #4
+  c0:	4298      	cmp	r0, r3
+  c2:	d03f      	beq.n	144 <DMA_GetITStatus+0x144>
+  c4:	3308      	adds	r3, #8
+  c6:	4298      	cmp	r0, r3
+  c8:	d03c      	beq.n	144 <DMA_GetITStatus+0x144>
+  ca:	3310      	adds	r3, #16
+  cc:	4298      	cmp	r0, r3
+  ce:	d039      	beq.n	144 <DMA_GetITStatus+0x144>
+  d0:	3320      	adds	r3, #32
+  d2:	4298      	cmp	r0, r3
+  d4:	d036      	beq.n	144 <DMA_GetITStatus+0x144>
+  d6:	3340      	adds	r3, #64
+  d8:	4298      	cmp	r0, r3
+  da:	d033      	beq.n	144 <DMA_GetITStatus+0x144>
+  dc:	3380      	adds	r3, #128
+  de:	4298      	cmp	r0, r3
+  e0:	d030      	beq.n	144 <DMA_GetITStatus+0x144>
+  e2:	f503 7380 	add.w	r3, r3, #256	; 0x100
+  e6:	4298      	cmp	r0, r3
+  e8:	d02c      	beq.n	144 <DMA_GetITStatus+0x144>
+  ea:	f503 7300 	add.w	r3, r3, #512	; 0x200
+  ee:	4298      	cmp	r0, r3
+  f0:	d028      	beq.n	144 <DMA_GetITStatus+0x144>
+  f2:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  f6:	4298      	cmp	r0, r3
+  f8:	d024      	beq.n	144 <DMA_GetITStatus+0x144>
+  fa:	f503 6300 	add.w	r3, r3, #2048	; 0x800
+  fe:	4298      	cmp	r0, r3
+ 100:	d020      	beq.n	144 <DMA_GetITStatus+0x144>
+ 102:	f503 5380 	add.w	r3, r3, #4096	; 0x1000
+ 106:	4298      	cmp	r0, r3
+ 108:	d01c      	beq.n	144 <DMA_GetITStatus+0x144>
+ 10a:	f503 5300 	add.w	r3, r3, #8192	; 0x2000
+ 10e:	4298      	cmp	r0, r3
+ 110:	d018      	beq.n	144 <DMA_GetITStatus+0x144>
+ 112:	f503 4380 	add.w	r3, r3, #16384	; 0x4000
+ 116:	4298      	cmp	r0, r3
+ 118:	d014      	beq.n	144 <DMA_GetITStatus+0x144>
+ 11a:	f503 4300 	add.w	r3, r3, #32768	; 0x8000
+ 11e:	4298      	cmp	r0, r3
+ 120:	d010      	beq.n	144 <DMA_GetITStatus+0x144>
+ 122:	f503 3380 	add.w	r3, r3, #65536	; 0x10000
+ 126:	4298      	cmp	r0, r3
+ 128:	d00c      	beq.n	144 <DMA_GetITStatus+0x144>
+ 12a:	f503 3300 	add.w	r3, r3, #131072	; 0x20000
+ 12e:	4298      	cmp	r0, r3
+ 130:	d008      	beq.n	144 <DMA_GetITStatus+0x144>
+ 132:	f503 2380 	add.w	r3, r3, #262144	; 0x40000
+ 136:	4298      	cmp	r0, r3
+ 138:	d004      	beq.n	144 <DMA_GetITStatus+0x144>
+ 13a:	4809      	ldr	r0, [pc, #36]	(160 <DMA_GetITStatus+0x160>)
+ 13c:	f44f 7111 	mov.w	r1, #580	; 0x244
+ 140:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:583
+
+  /* Calculate the used DMA */
+  if ((DMA_IT & FLAG_Mask) != (uint32_t)RESET)
+ 144:	f014 5f80 	tst.w	r4, #268435456	; 0x10000000
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:586
+  {
+    /* Get DMA2 ISR register value */
+    tmpreg = DMA2->ISR ;
+ 148:	bf14      	ite	ne
+ 14a:	4b06      	ldrne	r3, [pc, #24]	(164 <DMA_GetITStatus+0x164>)
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:591
+  }
+  else
+  {
+    /* Get DMA1 ISR register value */
+    tmpreg = DMA1->ISR ;
+ 14c:	4b06      	ldreq	r3, [pc, #24]	(168 <DMA_GetITStatus+0x168>)
+ 14e:	681b      	ldr	r3, [r3, #0]
+ 150:	4223      	tst	r3, r4
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:607
+    /* DMA_IT is reset */
+    bitstatus = RESET;
+  }
+  /* Return the DMA_IT status */
+  return  bitstatus;
+}
+ 152:	bf0c      	ite	eq
+ 154:	2000      	moveq	r0, #0
+ 156:	2001      	movne	r0, #1
+ 158:	bd10      	pop	{r4, pc}
+ 15a:	46c0      	nop			(mov r8, r8)
+ 15c:	10000001 	.word	0x10000001
+ 160:	00000000 	.word	0x00000000
+ 164:	40020400 	.word	0x40020400
+ 168:	40020000 	.word	0x40020000
+Disassembly of section .text.DMA_ClearFlag:
+
+00000000 <DMA_ClearFlag>:
+DMA_ClearFlag():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:506
+  * @retval None
+  */
+void DMA_ClearFlag(uint32_t DMA_FLAG)
+{
+  /* Check the parameters */
+  assert_param(IS_DMA_CLEAR_FLAG(DMA_FLAG));
+   0:	f010 4f70 	tst.w	r0, #4026531840	; 0xf0000000
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:504
+  *     @arg DMA2_FLAG_HT5: DMA2 Channel5 half transfer flag.
+  *     @arg DMA2_FLAG_TE5: DMA2 Channel5 transfer error flag.
+  * @retval None
+  */
+void DMA_ClearFlag(uint32_t DMA_FLAG)
+{
+   4:	b510      	push	{r4, lr}
+   6:	4604      	mov	r4, r0
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:506
+  /* Check the parameters */
+  assert_param(IS_DMA_CLEAR_FLAG(DMA_FLAG));
+   8:	d004      	beq.n	14 <DMA_ClearFlag+0x14>
+   a:	4b09      	ldr	r3, [pc, #36]	(30 <DMA_ClearFlag+0x30>)
+   c:	ea00 0303 	and.w	r3, r0, r3
+  10:	b90b      	cbnz	r3, 16 <DMA_ClearFlag+0x16>
+  12:	e005      	b.n	20 <DMA_ClearFlag+0x20>
+  14:	b920      	cbnz	r0, 20 <DMA_ClearFlag+0x20>
+  16:	4807      	ldr	r0, [pc, #28]	(34 <DMA_ClearFlag+0x34>)
+  18:	f44f 71fd 	mov.w	r1, #506	; 0x1fa
+  1c:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:509
+  /* Calculate the used DMA */
+
+  if ((DMA_FLAG & FLAG_Mask) != (uint32_t)RESET)
+  20:	f014 5f80 	tst.w	r4, #268435456	; 0x10000000
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:512
+  {
+    /* Clear the selected DMA flags */
+    DMA2->IFCR = DMA_FLAG;
+  24:	bf14      	ite	ne
+  26:	4b04      	ldrne	r3, [pc, #16]	(38 <DMA_ClearFlag+0x38>)
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:517
+  }
+  else
+  {
+    /* Clear the selected DMA flags */
+    DMA1->IFCR = DMA_FLAG;
+  28:	4b04      	ldreq	r3, [pc, #16]	(3c <DMA_ClearFlag+0x3c>)
+  2a:	605c      	str	r4, [r3, #4]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:519
+  }
+}
+  2c:	bd10      	pop	{r4, pc}
+  2e:	46c0      	nop			(mov r8, r8)
+  30:	eff00000 	.word	0xeff00000
+  34:	00000000 	.word	0x00000000
+  38:	40020400 	.word	0x40020400
+  3c:	40020000 	.word	0x40020000
+Disassembly of section .text.DMA_GetFlagStatus:
+
+00000000 <DMA_GetFlagStatus>:
+DMA_GetFlagStatus():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:419
+FlagStatus DMA_GetFlagStatus(uint32_t DMA_FLAG)
+{
+  FlagStatus bitstatus = RESET;
+  uint32_t tmpreg = 0;
+  /* Check the parameters */
+  assert_param(IS_DMA_GET_FLAG(DMA_FLAG));
+   0:	1e43      	subs	r3, r0, #1
+   2:	2b01      	cmp	r3, #1
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:415
+  *     @arg DMA2_FLAG_HT5: DMA2 Channel5 half transfer flag.
+  *     @arg DMA2_FLAG_TE5: DMA2 Channel5 transfer error flag.
+  * @retval The new state of DMA_FLAG (SET or RESET).
+  */
+FlagStatus DMA_GetFlagStatus(uint32_t DMA_FLAG)
+{
+   4:	b510      	push	{r4, lr}
+   6:	4604      	mov	r4, r0
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:419
+  FlagStatus bitstatus = RESET;
+  uint32_t tmpreg = 0;
+  /* Check the parameters */
+  assert_param(IS_DMA_GET_FLAG(DMA_FLAG));
+   8:	f240 809c 	bls.w	144 <DMA_GetFlagStatus+0x144>
+   c:	2804      	cmp	r0, #4
+   e:	f000 8099 	beq.w	144 <DMA_GetFlagStatus+0x144>
+  12:	2808      	cmp	r0, #8
+  14:	f000 8096 	beq.w	144 <DMA_GetFlagStatus+0x144>
+  18:	2810      	cmp	r0, #16
+  1a:	f000 8093 	beq.w	144 <DMA_GetFlagStatus+0x144>
+  1e:	2820      	cmp	r0, #32
+  20:	f000 8090 	beq.w	144 <DMA_GetFlagStatus+0x144>
+  24:	2840      	cmp	r0, #64
+  26:	f000 808d 	beq.w	144 <DMA_GetFlagStatus+0x144>
+  2a:	2880      	cmp	r0, #128
+  2c:	f000 808a 	beq.w	144 <DMA_GetFlagStatus+0x144>
+  30:	f5b0 7f80 	cmp.w	r0, #256	; 0x100
+  34:	f000 8086 	beq.w	144 <DMA_GetFlagStatus+0x144>
+  38:	f5b0 7f00 	cmp.w	r0, #512	; 0x200
+  3c:	f000 8082 	beq.w	144 <DMA_GetFlagStatus+0x144>
+  40:	f5b0 6f80 	cmp.w	r0, #1024	; 0x400
+  44:	d07e      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  46:	f5b0 6f00 	cmp.w	r0, #2048	; 0x800
+  4a:	d07b      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  4c:	f5b0 5f80 	cmp.w	r0, #4096	; 0x1000
+  50:	d078      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  52:	f5b0 5f00 	cmp.w	r0, #8192	; 0x2000
+  56:	d075      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  58:	f5b0 4f80 	cmp.w	r0, #16384	; 0x4000
+  5c:	d072      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  5e:	f5b0 4f00 	cmp.w	r0, #32768	; 0x8000
+  62:	d06f      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  64:	f5b0 3f80 	cmp.w	r0, #65536	; 0x10000
+  68:	d06c      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  6a:	f5b0 3f00 	cmp.w	r0, #131072	; 0x20000
+  6e:	d069      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  70:	f5b0 2f80 	cmp.w	r0, #262144	; 0x40000
+  74:	d066      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  76:	f5b0 2f00 	cmp.w	r0, #524288	; 0x80000
+  7a:	d063      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  7c:	f5b0 1f80 	cmp.w	r0, #1048576	; 0x100000
+  80:	d060      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  82:	f5b0 1f00 	cmp.w	r0, #2097152	; 0x200000
+  86:	d05d      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  88:	f5b0 0f80 	cmp.w	r0, #4194304	; 0x400000
+  8c:	d05a      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  8e:	f5b0 0f00 	cmp.w	r0, #8388608	; 0x800000
+  92:	d057      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  94:	f1b0 7f80 	cmp.w	r0, #16777216	; 0x1000000
+  98:	d054      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  9a:	f1b0 7f00 	cmp.w	r0, #33554432	; 0x2000000
+  9e:	d051      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  a0:	f1b0 6f80 	cmp.w	r0, #67108864	; 0x4000000
+  a4:	d04e      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  a6:	f1b0 6f00 	cmp.w	r0, #134217728	; 0x8000000
+  aa:	d04b      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  ac:	4b2b      	ldr	r3, [pc, #172]	(15c <DMA_GetFlagStatus+0x15c>)
+  ae:	4298      	cmp	r0, r3
+  b0:	d048      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  b2:	3301      	adds	r3, #1
+  b4:	4298      	cmp	r0, r3
+  b6:	d045      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  b8:	3302      	adds	r3, #2
+  ba:	4298      	cmp	r0, r3
+  bc:	d042      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  be:	3304      	adds	r3, #4
+  c0:	4298      	cmp	r0, r3
+  c2:	d03f      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  c4:	3308      	adds	r3, #8
+  c6:	4298      	cmp	r0, r3
+  c8:	d03c      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  ca:	3310      	adds	r3, #16
+  cc:	4298      	cmp	r0, r3
+  ce:	d039      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  d0:	3320      	adds	r3, #32
+  d2:	4298      	cmp	r0, r3
+  d4:	d036      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  d6:	3340      	adds	r3, #64
+  d8:	4298      	cmp	r0, r3
+  da:	d033      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  dc:	3380      	adds	r3, #128
+  de:	4298      	cmp	r0, r3
+  e0:	d030      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  e2:	f503 7380 	add.w	r3, r3, #256	; 0x100
+  e6:	4298      	cmp	r0, r3
+  e8:	d02c      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  ea:	f503 7300 	add.w	r3, r3, #512	; 0x200
+  ee:	4298      	cmp	r0, r3
+  f0:	d028      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  f2:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  f6:	4298      	cmp	r0, r3
+  f8:	d024      	beq.n	144 <DMA_GetFlagStatus+0x144>
+  fa:	f503 6300 	add.w	r3, r3, #2048	; 0x800
+  fe:	4298      	cmp	r0, r3
+ 100:	d020      	beq.n	144 <DMA_GetFlagStatus+0x144>
+ 102:	f503 5380 	add.w	r3, r3, #4096	; 0x1000
+ 106:	4298      	cmp	r0, r3
+ 108:	d01c      	beq.n	144 <DMA_GetFlagStatus+0x144>
+ 10a:	f503 5300 	add.w	r3, r3, #8192	; 0x2000
+ 10e:	4298      	cmp	r0, r3
+ 110:	d018      	beq.n	144 <DMA_GetFlagStatus+0x144>
+ 112:	f503 4380 	add.w	r3, r3, #16384	; 0x4000
+ 116:	4298      	cmp	r0, r3
+ 118:	d014      	beq.n	144 <DMA_GetFlagStatus+0x144>
+ 11a:	f503 4300 	add.w	r3, r3, #32768	; 0x8000
+ 11e:	4298      	cmp	r0, r3
+ 120:	d010      	beq.n	144 <DMA_GetFlagStatus+0x144>
+ 122:	f503 3380 	add.w	r3, r3, #65536	; 0x10000
+ 126:	4298      	cmp	r0, r3
+ 128:	d00c      	beq.n	144 <DMA_GetFlagStatus+0x144>
+ 12a:	f503 3300 	add.w	r3, r3, #131072	; 0x20000
+ 12e:	4298      	cmp	r0, r3
+ 130:	d008      	beq.n	144 <DMA_GetFlagStatus+0x144>
+ 132:	f503 2380 	add.w	r3, r3, #262144	; 0x40000
+ 136:	4298      	cmp	r0, r3
+ 138:	d004      	beq.n	144 <DMA_GetFlagStatus+0x144>
+ 13a:	4809      	ldr	r0, [pc, #36]	(160 <DMA_GetFlagStatus+0x160>)
+ 13c:	f240 11a3 	movw	r1, #419	; 0x1a3
+ 140:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:422
+
+  /* Calculate the used DMA */
+  if ((DMA_FLAG & FLAG_Mask) != (uint32_t)RESET)
+ 144:	f014 5f80 	tst.w	r4, #268435456	; 0x10000000
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:425
+  {
+    /* Get DMA2 ISR register value */
+    tmpreg = DMA2->ISR ;
+ 148:	bf14      	ite	ne
+ 14a:	4b06      	ldrne	r3, [pc, #24]	(164 <DMA_GetFlagStatus+0x164>)
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:430
+  }
+  else
+  {
+    /* Get DMA1 ISR register value */
+    tmpreg = DMA1->ISR ;
+ 14c:	4b06      	ldreq	r3, [pc, #24]	(168 <DMA_GetFlagStatus+0x168>)
+ 14e:	681b      	ldr	r3, [r3, #0]
+ 150:	4223      	tst	r3, r4
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:447
+    bitstatus = RESET;
+  }
+  
+  /* Return the DMA_FLAG status */
+  return  bitstatus;
+}
+ 152:	bf0c      	ite	eq
+ 154:	2000      	moveq	r0, #0
+ 156:	2001      	movne	r0, #1
+ 158:	bd10      	pop	{r4, pc}
+ 15a:	46c0      	nop			(mov r8, r8)
+ 15c:	10000001 	.word	0x10000001
+ 160:	00000000 	.word	0x00000000
+ 164:	40020400 	.word	0x40020400
+ 168:	40020000 	.word	0x40020000
+Disassembly of section .text.DMA_GetCurrDataCounter:
+
+00000000 <DMA_GetCurrDataCounter>:
+DMA_GetCurrDataCounter():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:355
+  *   transfer.
+  */
+uint16_t DMA_GetCurrDataCounter(DMA_Channel_TypeDef* DMAy_Channelx)
+{
+  /* Check the parameters */
+  assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+   0:	4b17      	ldr	r3, [pc, #92]	(60 <DMA_GetCurrDataCounter+0x60>)
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:353
+  *   x can be 1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel.
+  * @retval The number of remaining data units in the current DMAy Channelx
+  *   transfer.
+  */
+uint16_t DMA_GetCurrDataCounter(DMA_Channel_TypeDef* DMAy_Channelx)
+{
+   2:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:355
+  /* Check the parameters */
+  assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+   4:	4298      	cmp	r0, r3
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:353
+  *   x can be 1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel.
+  * @retval The number of remaining data units in the current DMAy Channelx
+  *   transfer.
+  */
+uint16_t DMA_GetCurrDataCounter(DMA_Channel_TypeDef* DMAy_Channelx)
+{
+   6:	4604      	mov	r4, r0
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:355
+  /* Check the parameters */
+  assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+   8:	d026      	beq.n	58 <DMA_GetCurrDataCounter+0x58>
+   a:	3314      	adds	r3, #20
+   c:	4298      	cmp	r0, r3
+   e:	d023      	beq.n	58 <DMA_GetCurrDataCounter+0x58>
+  10:	3314      	adds	r3, #20
+  12:	4298      	cmp	r0, r3
+  14:	d020      	beq.n	58 <DMA_GetCurrDataCounter+0x58>
+  16:	3314      	adds	r3, #20
+  18:	4298      	cmp	r0, r3
+  1a:	d01d      	beq.n	58 <DMA_GetCurrDataCounter+0x58>
+  1c:	3314      	adds	r3, #20
+  1e:	4298      	cmp	r0, r3
+  20:	d01a      	beq.n	58 <DMA_GetCurrDataCounter+0x58>
+  22:	3314      	adds	r3, #20
+  24:	4298      	cmp	r0, r3
+  26:	d017      	beq.n	58 <DMA_GetCurrDataCounter+0x58>
+  28:	3314      	adds	r3, #20
+  2a:	4298      	cmp	r0, r3
+  2c:	d014      	beq.n	58 <DMA_GetCurrDataCounter+0x58>
+  2e:	f503 7362 	add.w	r3, r3, #904	; 0x388
+  32:	4298      	cmp	r0, r3
+  34:	d010      	beq.n	58 <DMA_GetCurrDataCounter+0x58>
+  36:	3314      	adds	r3, #20
+  38:	4298      	cmp	r0, r3
+  3a:	d00d      	beq.n	58 <DMA_GetCurrDataCounter+0x58>
+  3c:	3314      	adds	r3, #20
+  3e:	4298      	cmp	r0, r3
+  40:	d00a      	beq.n	58 <DMA_GetCurrDataCounter+0x58>
+  42:	3314      	adds	r3, #20
+  44:	4298      	cmp	r0, r3
+  46:	d007      	beq.n	58 <DMA_GetCurrDataCounter+0x58>
+  48:	3314      	adds	r3, #20
+  4a:	4298      	cmp	r0, r3
+  4c:	d004      	beq.n	58 <DMA_GetCurrDataCounter+0x58>
+  4e:	4805      	ldr	r0, [pc, #20]	(64 <DMA_GetCurrDataCounter+0x64>)
+  50:	f240 1163 	movw	r1, #355	; 0x163
+  54:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:357
+  /* Return the number of remaining data units for DMAy Channelx */
+  return ((uint16_t)(DMAy_Channelx->CNDTR));
+  58:	6860      	ldr	r0, [r4, #4]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:358
+}
+  5a:	b280      	uxth	r0, r0
+  5c:	bd10      	pop	{r4, pc}
+  5e:	46c0      	nop			(mov r8, r8)
+  60:	40020008 	.word	0x40020008
+  64:	00000000 	.word	0x00000000
+Disassembly of section .text.DMA_ITConfig:
+
+00000000 <DMA_ITConfig>:
+DMA_ITConfig():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:329
+  * @retval None
+  */
+void DMA_ITConfig(DMA_Channel_TypeDef* DMAy_Channelx, uint32_t DMA_IT, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+   0:	4b23      	ldr	r3, [pc, #140]	(90 <DMA_ITConfig+0x90>)
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:327
+  * @param  NewState: new state of the specified DMA interrupts.
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void DMA_ITConfig(DMA_Channel_TypeDef* DMAy_Channelx, uint32_t DMA_IT, FunctionalState NewState)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:329
+  /* Check the parameters */
+  assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+   4:	4298      	cmp	r0, r3
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:327
+  * @param  NewState: new state of the specified DMA interrupts.
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void DMA_ITConfig(DMA_Channel_TypeDef* DMAy_Channelx, uint32_t DMA_IT, FunctionalState NewState)
+{
+   6:	4604      	mov	r4, r0
+   8:	460d      	mov	r5, r1
+   a:	4616      	mov	r6, r2
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:329
+  /* Check the parameters */
+  assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+   c:	d026      	beq.n	5c <DMA_ITConfig+0x5c>
+   e:	3314      	adds	r3, #20
+  10:	4298      	cmp	r0, r3
+  12:	d023      	beq.n	5c <DMA_ITConfig+0x5c>
+  14:	3314      	adds	r3, #20
+  16:	4298      	cmp	r0, r3
+  18:	d020      	beq.n	5c <DMA_ITConfig+0x5c>
+  1a:	3314      	adds	r3, #20
+  1c:	4298      	cmp	r0, r3
+  1e:	d01d      	beq.n	5c <DMA_ITConfig+0x5c>
+  20:	3314      	adds	r3, #20
+  22:	4298      	cmp	r0, r3
+  24:	d01a      	beq.n	5c <DMA_ITConfig+0x5c>
+  26:	3314      	adds	r3, #20
+  28:	4298      	cmp	r0, r3
+  2a:	d017      	beq.n	5c <DMA_ITConfig+0x5c>
+  2c:	3314      	adds	r3, #20
+  2e:	4298      	cmp	r0, r3
+  30:	d014      	beq.n	5c <DMA_ITConfig+0x5c>
+  32:	f503 7362 	add.w	r3, r3, #904	; 0x388
+  36:	4298      	cmp	r0, r3
+  38:	d010      	beq.n	5c <DMA_ITConfig+0x5c>
+  3a:	3314      	adds	r3, #20
+  3c:	4298      	cmp	r0, r3
+  3e:	d00d      	beq.n	5c <DMA_ITConfig+0x5c>
+  40:	3314      	adds	r3, #20
+  42:	4298      	cmp	r0, r3
+  44:	d00a      	beq.n	5c <DMA_ITConfig+0x5c>
+  46:	3314      	adds	r3, #20
+  48:	4298      	cmp	r0, r3
+  4a:	d007      	beq.n	5c <DMA_ITConfig+0x5c>
+  4c:	3314      	adds	r3, #20
+  4e:	4298      	cmp	r0, r3
+  50:	d004      	beq.n	5c <DMA_ITConfig+0x5c>
+  52:	4810      	ldr	r0, [pc, #64]	(94 <DMA_ITConfig+0x94>)
+  54:	f240 1149 	movw	r1, #329	; 0x149
+  58:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:330
+  assert_param(IS_DMA_CONFIG_IT(DMA_IT));
+  5c:	f035 030e 	bics.w	r3, r5, #14	; 0xe
+  60:	d100      	bne.n	64 <DMA_ITConfig+0x64>
+  62:	b925      	cbnz	r5, 6e <DMA_ITConfig+0x6e>
+  64:	480b      	ldr	r0, [pc, #44]	(94 <DMA_ITConfig+0x94>)
+  66:	f44f 71a5 	mov.w	r1, #330	; 0x14a
+  6a:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:331
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  6e:	2e01      	cmp	r6, #1
+  70:	d904      	bls.n	7c <DMA_ITConfig+0x7c>
+  72:	4808      	ldr	r0, [pc, #32]	(94 <DMA_ITConfig+0x94>)
+  74:	f240 114b 	movw	r1, #331	; 0x14b
+  78:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:332
+  if (NewState != DISABLE)
+  7c:	b11e      	cbz	r6, 86 <DMA_ITConfig+0x86>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:335
+  {
+    /* Enable the selected DMA interrupts */
+    DMAy_Channelx->CCR |= DMA_IT;
+  7e:	6823      	ldr	r3, [r4, #0]
+  80:	ea45 0303 	orr.w	r3, r5, r3
+  84:	e002      	b.n	8c <DMA_ITConfig+0x8c>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:340
+  }
+  else
+  {
+    /* Disable the selected DMA interrupts */
+    DMAy_Channelx->CCR &= ~DMA_IT;
+  86:	6823      	ldr	r3, [r4, #0]
+  88:	ea23 0305 	bic.w	r3, r3, r5
+  8c:	6023      	str	r3, [r4, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:342
+  }
+}
+  8e:	bd70      	pop	{r4, r5, r6, pc}
+  90:	40020008 	.word	0x40020008
+  94:	00000000 	.word	0x00000000
+Disassembly of section .text.DMA_Cmd:
+
+00000000 <DMA_Cmd>:
+DMA_Cmd():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:297
+  * @retval None
+  */
+void DMA_Cmd(DMA_Channel_TypeDef* DMAy_Channelx, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+   0:	4b1e      	ldr	r3, [pc, #120]	(7c <DMA_Cmd+0x7c>)
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:295
+  * @param  NewState: new state of the DMAy Channelx. 
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void DMA_Cmd(DMA_Channel_TypeDef* DMAy_Channelx, FunctionalState NewState)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:297
+  /* Check the parameters */
+  assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+   4:	4298      	cmp	r0, r3
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:295
+  * @param  NewState: new state of the DMAy Channelx. 
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void DMA_Cmd(DMA_Channel_TypeDef* DMAy_Channelx, FunctionalState NewState)
+{
+   6:	4604      	mov	r4, r0
+   8:	460d      	mov	r5, r1
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:297
+  /* Check the parameters */
+  assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+   a:	d026      	beq.n	5a <DMA_Cmd+0x5a>
+   c:	3314      	adds	r3, #20
+   e:	4298      	cmp	r0, r3
+  10:	d023      	beq.n	5a <DMA_Cmd+0x5a>
+  12:	3314      	adds	r3, #20
+  14:	4298      	cmp	r0, r3
+  16:	d020      	beq.n	5a <DMA_Cmd+0x5a>
+  18:	3314      	adds	r3, #20
+  1a:	4298      	cmp	r0, r3
+  1c:	d01d      	beq.n	5a <DMA_Cmd+0x5a>
+  1e:	3314      	adds	r3, #20
+  20:	4298      	cmp	r0, r3
+  22:	d01a      	beq.n	5a <DMA_Cmd+0x5a>
+  24:	3314      	adds	r3, #20
+  26:	4298      	cmp	r0, r3
+  28:	d017      	beq.n	5a <DMA_Cmd+0x5a>
+  2a:	3314      	adds	r3, #20
+  2c:	4298      	cmp	r0, r3
+  2e:	d014      	beq.n	5a <DMA_Cmd+0x5a>
+  30:	f503 7362 	add.w	r3, r3, #904	; 0x388
+  34:	4298      	cmp	r0, r3
+  36:	d010      	beq.n	5a <DMA_Cmd+0x5a>
+  38:	3314      	adds	r3, #20
+  3a:	4298      	cmp	r0, r3
+  3c:	d00d      	beq.n	5a <DMA_Cmd+0x5a>
+  3e:	3314      	adds	r3, #20
+  40:	4298      	cmp	r0, r3
+  42:	d00a      	beq.n	5a <DMA_Cmd+0x5a>
+  44:	3314      	adds	r3, #20
+  46:	4298      	cmp	r0, r3
+  48:	d007      	beq.n	5a <DMA_Cmd+0x5a>
+  4a:	3314      	adds	r3, #20
+  4c:	4298      	cmp	r0, r3
+  4e:	d004      	beq.n	5a <DMA_Cmd+0x5a>
+  50:	480b      	ldr	r0, [pc, #44]	(80 <DMA_Cmd+0x80>)
+  52:	f240 1129 	movw	r1, #297	; 0x129
+  56:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:298
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  5a:	2d01      	cmp	r5, #1
+  5c:	d904      	bls.n	68 <DMA_Cmd+0x68>
+  5e:	4808      	ldr	r0, [pc, #32]	(80 <DMA_Cmd+0x80>)
+  60:	f44f 7195 	mov.w	r1, #298	; 0x12a
+  64:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:300
+
+  if (NewState != DISABLE)
+  68:	b11d      	cbz	r5, 72 <DMA_Cmd+0x72>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:303
+  {
+    /* Enable the selected DMAy Channelx */
+    DMAy_Channelx->CCR |= CCR_ENABLE_Set;
+  6a:	6823      	ldr	r3, [r4, #0]
+  6c:	f043 0301 	orr.w	r3, r3, #1	; 0x1
+  70:	e002      	b.n	78 <DMA_Cmd+0x78>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:308
+  }
+  else
+  {
+    /* Disable the selected DMAy Channelx */
+    DMAy_Channelx->CCR &= CCR_ENABLE_Reset;
+  72:	6823      	ldr	r3, [r4, #0]
+  74:	f023 0301 	bic.w	r3, r3, #1	; 0x1
+  78:	6023      	str	r3, [r4, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:310
+  }
+}
+  7a:	bd70      	pop	{r4, r5, r6, pc}
+  7c:	40020008 	.word	0x40020008
+  80:	00000000 	.word	0x00000000
+Disassembly of section .text.DMA_Init:
+
+00000000 <DMA_Init>:
+DMA_Init():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:207
+void DMA_Init(DMA_Channel_TypeDef* DMAy_Channelx, DMA_InitTypeDef* DMA_InitStruct)
+{
+  uint32_t tmpreg = 0;
+
+  /* Check the parameters */
+  assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+   0:	4b51      	ldr	r3, [pc, #324]	(148 <DMA_Init+0x148>)
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:203
+  * @param  DMA_InitStruct: pointer to a DMA_InitTypeDef structure that
+  *   contains the configuration information for the specified DMA Channel.
+  * @retval None
+  */
+void DMA_Init(DMA_Channel_TypeDef* DMAy_Channelx, DMA_InitTypeDef* DMA_InitStruct)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:207
+  uint32_t tmpreg = 0;
+
+  /* Check the parameters */
+  assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+   4:	4298      	cmp	r0, r3
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:203
+  * @param  DMA_InitStruct: pointer to a DMA_InitTypeDef structure that
+  *   contains the configuration information for the specified DMA Channel.
+  * @retval None
+  */
+void DMA_Init(DMA_Channel_TypeDef* DMAy_Channelx, DMA_InitTypeDef* DMA_InitStruct)
+{
+   6:	4605      	mov	r5, r0
+   8:	460c      	mov	r4, r1
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:207
+  uint32_t tmpreg = 0;
+
+  /* Check the parameters */
+  assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+   a:	d025      	beq.n	58 <DMA_Init+0x58>
+   c:	3314      	adds	r3, #20
+   e:	4298      	cmp	r0, r3
+  10:	d022      	beq.n	58 <DMA_Init+0x58>
+  12:	3314      	adds	r3, #20
+  14:	4298      	cmp	r0, r3
+  16:	d01f      	beq.n	58 <DMA_Init+0x58>
+  18:	3314      	adds	r3, #20
+  1a:	4298      	cmp	r0, r3
+  1c:	d01c      	beq.n	58 <DMA_Init+0x58>
+  1e:	3314      	adds	r3, #20
+  20:	4298      	cmp	r0, r3
+  22:	d019      	beq.n	58 <DMA_Init+0x58>
+  24:	3314      	adds	r3, #20
+  26:	4298      	cmp	r0, r3
+  28:	d016      	beq.n	58 <DMA_Init+0x58>
+  2a:	3314      	adds	r3, #20
+  2c:	4298      	cmp	r0, r3
+  2e:	d013      	beq.n	58 <DMA_Init+0x58>
+  30:	f503 7362 	add.w	r3, r3, #904	; 0x388
+  34:	4298      	cmp	r0, r3
+  36:	d00f      	beq.n	58 <DMA_Init+0x58>
+  38:	3314      	adds	r3, #20
+  3a:	4298      	cmp	r0, r3
+  3c:	d00c      	beq.n	58 <DMA_Init+0x58>
+  3e:	3314      	adds	r3, #20
+  40:	4298      	cmp	r0, r3
+  42:	d009      	beq.n	58 <DMA_Init+0x58>
+  44:	3314      	adds	r3, #20
+  46:	4298      	cmp	r0, r3
+  48:	d006      	beq.n	58 <DMA_Init+0x58>
+  4a:	3314      	adds	r3, #20
+  4c:	4298      	cmp	r0, r3
+  4e:	d003      	beq.n	58 <DMA_Init+0x58>
+  50:	483e      	ldr	r0, [pc, #248]	(14c <DMA_Init+0x14c>)
+  52:	21cf      	movs	r1, #207
+  54:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:208
+  assert_param(IS_DMA_DIR(DMA_InitStruct->DMA_DIR));
+  58:	68a3      	ldr	r3, [r4, #8]
+  5a:	2b10      	cmp	r3, #16
+  5c:	d004      	beq.n	68 <DMA_Init+0x68>
+  5e:	b11b      	cbz	r3, 68 <DMA_Init+0x68>
+  60:	483a      	ldr	r0, [pc, #232]	(14c <DMA_Init+0x14c>)
+  62:	21d0      	movs	r1, #208
+  64:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:209
+  assert_param(IS_DMA_BUFFER_SIZE(DMA_InitStruct->DMA_BufferSize));
+  68:	68e3      	ldr	r3, [r4, #12]
+  6a:	f64f 72fe 	movw	r2, #65534	; 0xfffe
+  6e:	3b01      	subs	r3, #1
+  70:	4293      	cmp	r3, r2
+  72:	d903      	bls.n	7c <DMA_Init+0x7c>
+  74:	4835      	ldr	r0, [pc, #212]	(14c <DMA_Init+0x14c>)
+  76:	21d1      	movs	r1, #209
+  78:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:210
+  assert_param(IS_DMA_PERIPHERAL_INC_STATE(DMA_InitStruct->DMA_PeripheralInc));
+  7c:	6923      	ldr	r3, [r4, #16]
+  7e:	2b40      	cmp	r3, #64
+  80:	d004      	beq.n	8c <DMA_Init+0x8c>
+  82:	b11b      	cbz	r3, 8c <DMA_Init+0x8c>
+  84:	4831      	ldr	r0, [pc, #196]	(14c <DMA_Init+0x14c>)
+  86:	21d2      	movs	r1, #210
+  88:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:211
+  assert_param(IS_DMA_MEMORY_INC_STATE(DMA_InitStruct->DMA_MemoryInc));   
+  8c:	6963      	ldr	r3, [r4, #20]
+  8e:	2b80      	cmp	r3, #128
+  90:	d004      	beq.n	9c <DMA_Init+0x9c>
+  92:	b11b      	cbz	r3, 9c <DMA_Init+0x9c>
+  94:	482d      	ldr	r0, [pc, #180]	(14c <DMA_Init+0x14c>)
+  96:	21d3      	movs	r1, #211
+  98:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:212
+  assert_param(IS_DMA_PERIPHERAL_DATA_SIZE(DMA_InitStruct->DMA_PeripheralDataSize));
+  9c:	69a3      	ldr	r3, [r4, #24]
+  9e:	b14b      	cbz	r3, b4 <DMA_Init+0xb4>
+  a0:	f5b3 7f80 	cmp.w	r3, #256	; 0x100
+  a4:	d006      	beq.n	b4 <DMA_Init+0xb4>
+  a6:	f5b3 7f00 	cmp.w	r3, #512	; 0x200
+  aa:	d003      	beq.n	b4 <DMA_Init+0xb4>
+  ac:	4827      	ldr	r0, [pc, #156]	(14c <DMA_Init+0x14c>)
+  ae:	21d4      	movs	r1, #212
+  b0:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:213
+  assert_param(IS_DMA_MEMORY_DATA_SIZE(DMA_InitStruct->DMA_MemoryDataSize));
+  b4:	69e3      	ldr	r3, [r4, #28]
+  b6:	b14b      	cbz	r3, cc <DMA_Init+0xcc>
+  b8:	f5b3 6f80 	cmp.w	r3, #1024	; 0x400
+  bc:	d006      	beq.n	cc <DMA_Init+0xcc>
+  be:	f5b3 6f00 	cmp.w	r3, #2048	; 0x800
+  c2:	d003      	beq.n	cc <DMA_Init+0xcc>
+  c4:	4821      	ldr	r0, [pc, #132]	(14c <DMA_Init+0x14c>)
+  c6:	21d5      	movs	r1, #213
+  c8:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:214
+  assert_param(IS_DMA_MODE(DMA_InitStruct->DMA_Mode));
+  cc:	6a23      	ldr	r3, [r4, #32]
+  ce:	2b20      	cmp	r3, #32
+  d0:	d004      	beq.n	dc <DMA_Init+0xdc>
+  d2:	b11b      	cbz	r3, dc <DMA_Init+0xdc>
+  d4:	481d      	ldr	r0, [pc, #116]	(14c <DMA_Init+0x14c>)
+  d6:	21d6      	movs	r1, #214
+  d8:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:215
+  assert_param(IS_DMA_PRIORITY(DMA_InitStruct->DMA_Priority));
+  dc:	6a63      	ldr	r3, [r4, #36]
+  de:	f5b3 5f40 	cmp.w	r3, #12288	; 0x3000
+  e2:	d00a      	beq.n	fa <DMA_Init+0xfa>
+  e4:	f5b3 5f00 	cmp.w	r3, #8192	; 0x2000
+  e8:	d007      	beq.n	fa <DMA_Init+0xfa>
+  ea:	f5b3 5f80 	cmp.w	r3, #4096	; 0x1000
+  ee:	d004      	beq.n	fa <DMA_Init+0xfa>
+  f0:	b11b      	cbz	r3, fa <DMA_Init+0xfa>
+  f2:	4816      	ldr	r0, [pc, #88]	(14c <DMA_Init+0x14c>)
+  f4:	21d7      	movs	r1, #215
+  f6:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:216
+  assert_param(IS_DMA_M2M_STATE(DMA_InitStruct->DMA_M2M));
+  fa:	6aa3      	ldr	r3, [r4, #40]
+  fc:	f5b3 4f80 	cmp.w	r3, #16384	; 0x4000
+ 100:	d004      	beq.n	10c <DMA_Init+0x10c>
+ 102:	b11b      	cbz	r3, 10c <DMA_Init+0x10c>
+ 104:	4811      	ldr	r0, [pc, #68]	(14c <DMA_Init+0x14c>)
+ 106:	21d8      	movs	r1, #216
+ 108:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:232
+  /* Set MINC bit according to DMA_MemoryInc value */
+  /* Set PSIZE bits according to DMA_PeripheralDataSize value */
+  /* Set MSIZE bits according to DMA_MemoryDataSize value */
+  /* Set PL bits according to DMA_Priority value */
+  /* Set the MEM2MEM bit according to DMA_M2M value */
+  tmpreg |= DMA_InitStruct->DMA_DIR | DMA_InitStruct->DMA_Mode |
+ 10c:	68a2      	ldr	r2, [r4, #8]
+ 10e:	6a23      	ldr	r3, [r4, #32]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:220
+  assert_param(IS_DMA_PRIORITY(DMA_InitStruct->DMA_Priority));
+  assert_param(IS_DMA_M2M_STATE(DMA_InitStruct->DMA_M2M));
+
+/*--------------------------- DMAy Channelx CCR Configuration -----------------*/
+  /* Get the DMAy_Channelx CCR value */
+  tmpreg = DMAy_Channelx->CCR;
+ 110:	6829      	ldr	r1, [r5, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:232
+  /* Set MINC bit according to DMA_MemoryInc value */
+  /* Set PSIZE bits according to DMA_PeripheralDataSize value */
+  /* Set MSIZE bits according to DMA_MemoryDataSize value */
+  /* Set PL bits according to DMA_Priority value */
+  /* Set the MEM2MEM bit according to DMA_M2M value */
+  tmpreg |= DMA_InitStruct->DMA_DIR | DMA_InitStruct->DMA_Mode |
+ 112:	4313      	orrs	r3, r2
+ 114:	6922      	ldr	r2, [r4, #16]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:222
+
+/*--------------------------- DMAy Channelx CCR Configuration -----------------*/
+  /* Get the DMAy_Channelx CCR value */
+  tmpreg = DMAy_Channelx->CCR;
+  /* Clear MEM2MEM, PL, MSIZE, PSIZE, MINC, PINC, CIRC and DIR bits */
+  tmpreg &= CCR_CLEAR_Mask;
+ 116:	f421 41fe 	bic.w	r1, r1, #32512	; 0x7f00
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:232
+  /* Set MINC bit according to DMA_MemoryInc value */
+  /* Set PSIZE bits according to DMA_PeripheralDataSize value */
+  /* Set MSIZE bits according to DMA_MemoryDataSize value */
+  /* Set PL bits according to DMA_Priority value */
+  /* Set the MEM2MEM bit according to DMA_M2M value */
+  tmpreg |= DMA_InitStruct->DMA_DIR | DMA_InitStruct->DMA_Mode |
+ 11a:	4313      	orrs	r3, r2
+ 11c:	6962      	ldr	r2, [r4, #20]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:222
+
+/*--------------------------- DMAy Channelx CCR Configuration -----------------*/
+  /* Get the DMAy_Channelx CCR value */
+  tmpreg = DMAy_Channelx->CCR;
+  /* Clear MEM2MEM, PL, MSIZE, PSIZE, MINC, PINC, CIRC and DIR bits */
+  tmpreg &= CCR_CLEAR_Mask;
+ 11e:	f021 01f0 	bic.w	r1, r1, #240	; 0xf0
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:232
+  /* Set MINC bit according to DMA_MemoryInc value */
+  /* Set PSIZE bits according to DMA_PeripheralDataSize value */
+  /* Set MSIZE bits according to DMA_MemoryDataSize value */
+  /* Set PL bits according to DMA_Priority value */
+  /* Set the MEM2MEM bit according to DMA_M2M value */
+  tmpreg |= DMA_InitStruct->DMA_DIR | DMA_InitStruct->DMA_Mode |
+ 122:	4313      	orrs	r3, r2
+ 124:	69a2      	ldr	r2, [r4, #24]
+ 126:	4313      	orrs	r3, r2
+ 128:	69e2      	ldr	r2, [r4, #28]
+ 12a:	4313      	orrs	r3, r2
+ 12c:	6a62      	ldr	r2, [r4, #36]
+ 12e:	4313      	orrs	r3, r2
+ 130:	6aa2      	ldr	r2, [r4, #40]
+ 132:	4313      	orrs	r3, r2
+ 134:	430b      	orrs	r3, r1
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:238
+            DMA_InitStruct->DMA_PeripheralInc | DMA_InitStruct->DMA_MemoryInc |
+            DMA_InitStruct->DMA_PeripheralDataSize | DMA_InitStruct->DMA_MemoryDataSize |
+            DMA_InitStruct->DMA_Priority | DMA_InitStruct->DMA_M2M;
+
+  /* Write to DMAy Channelx CCR */
+  DMAy_Channelx->CCR = tmpreg;
+ 136:	602b      	str	r3, [r5, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:242
+
+/*--------------------------- DMAy Channelx CNDTR Configuration ---------------*/
+  /* Write to DMAy Channelx CNDTR */
+  DMAy_Channelx->CNDTR = DMA_InitStruct->DMA_BufferSize;
+ 138:	68e3      	ldr	r3, [r4, #12]
+ 13a:	606b      	str	r3, [r5, #4]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:246
+
+/*--------------------------- DMAy Channelx CPAR Configuration ----------------*/
+  /* Write to DMAy Channelx CPAR */
+  DMAy_Channelx->CPAR = DMA_InitStruct->DMA_PeripheralBaseAddr;
+ 13c:	6823      	ldr	r3, [r4, #0]
+ 13e:	60ab      	str	r3, [r5, #8]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:250
+
+/*--------------------------- DMAy Channelx CMAR Configuration ----------------*/
+  /* Write to DMAy Channelx CMAR */
+  DMAy_Channelx->CMAR = DMA_InitStruct->DMA_MemoryBaseAddr;
+ 140:	6863      	ldr	r3, [r4, #4]
+ 142:	60eb      	str	r3, [r5, #12]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:251
+}
+ 144:	bd70      	pop	{r4, r5, r6, pc}
+ 146:	46c0      	nop			(mov r8, r8)
+ 148:	40020008 	.word	0x40020008
+ 14c:	00000000 	.word	0x00000000
+Disassembly of section .text.DMA_DeInit:
+
+00000000 <DMA_DeInit>:
+DMA_DeInit():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:113
+  * @retval None
+  */
+void DMA_DeInit(DMA_Channel_TypeDef* DMAy_Channelx)
+{
+  /* Check the parameters */
+  assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+   0:	4b42      	ldr	r3, [pc, #264]	(10c <DMA_DeInit+0x10c>)
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:111
+  * @param  DMAy_Channelx: where y can be 1 or 2 to select the DMA and
+  *   x can be 1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel.
+  * @retval None
+  */
+void DMA_DeInit(DMA_Channel_TypeDef* DMAy_Channelx)
+{
+   2:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:113
+  /* Check the parameters */
+  assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+   4:	4298      	cmp	r0, r3
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:111
+  * @param  DMAy_Channelx: where y can be 1 or 2 to select the DMA and
+  *   x can be 1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel.
+  * @retval None
+  */
+void DMA_DeInit(DMA_Channel_TypeDef* DMAy_Channelx)
+{
+   6:	4604      	mov	r4, r0
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:113
+  /* Check the parameters */
+  assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+   8:	d025      	beq.n	56 <DMA_DeInit+0x56>
+   a:	3314      	adds	r3, #20
+   c:	4298      	cmp	r0, r3
+   e:	d022      	beq.n	56 <DMA_DeInit+0x56>
+  10:	3314      	adds	r3, #20
+  12:	4298      	cmp	r0, r3
+  14:	d01f      	beq.n	56 <DMA_DeInit+0x56>
+  16:	3314      	adds	r3, #20
+  18:	4298      	cmp	r0, r3
+  1a:	d01c      	beq.n	56 <DMA_DeInit+0x56>
+  1c:	3314      	adds	r3, #20
+  1e:	4298      	cmp	r0, r3
+  20:	d019      	beq.n	56 <DMA_DeInit+0x56>
+  22:	3314      	adds	r3, #20
+  24:	4298      	cmp	r0, r3
+  26:	d016      	beq.n	56 <DMA_DeInit+0x56>
+  28:	3314      	adds	r3, #20
+  2a:	4298      	cmp	r0, r3
+  2c:	d013      	beq.n	56 <DMA_DeInit+0x56>
+  2e:	f503 7362 	add.w	r3, r3, #904	; 0x388
+  32:	4298      	cmp	r0, r3
+  34:	d00f      	beq.n	56 <DMA_DeInit+0x56>
+  36:	3314      	adds	r3, #20
+  38:	4298      	cmp	r0, r3
+  3a:	d00c      	beq.n	56 <DMA_DeInit+0x56>
+  3c:	3314      	adds	r3, #20
+  3e:	4298      	cmp	r0, r3
+  40:	d009      	beq.n	56 <DMA_DeInit+0x56>
+  42:	3314      	adds	r3, #20
+  44:	4298      	cmp	r0, r3
+  46:	d006      	beq.n	56 <DMA_DeInit+0x56>
+  48:	3314      	adds	r3, #20
+  4a:	4298      	cmp	r0, r3
+  4c:	d003      	beq.n	56 <DMA_DeInit+0x56>
+  4e:	4830      	ldr	r0, [pc, #192]	(110 <DMA_DeInit+0x110>)
+  50:	2171      	movs	r1, #113
+  52:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:115
+  /* Disable the selected DMAy Channelx */
+  DMAy_Channelx->CCR &= CCR_ENABLE_Reset;
+  56:	6823      	ldr	r3, [r4, #0]
+  58:	f023 0301 	bic.w	r3, r3, #1	; 0x1
+  5c:	6023      	str	r3, [r4, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:117
+  /* Reset DMAy Channelx control register */
+  DMAy_Channelx->CCR  = 0;
+  5e:	2300      	movs	r3, #0
+  60:	6023      	str	r3, [r4, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:120
+  
+  /* Reset DMAy Channelx remaining bytes register */
+  DMAy_Channelx->CNDTR = 0;
+  62:	6063      	str	r3, [r4, #4]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:123
+  
+  /* Reset DMAy Channelx peripheral address register */
+  DMAy_Channelx->CPAR  = 0;
+  64:	60a3      	str	r3, [r4, #8]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:126
+  
+  /* Reset DMAy Channelx memory address register */
+  DMAy_Channelx->CMAR = 0;
+  66:	60e3      	str	r3, [r4, #12]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:128
+  
+  if (DMAy_Channelx == DMA1_Channel1)
+  68:	4b28      	ldr	r3, [pc, #160]	(10c <DMA_DeInit+0x10c>)
+  6a:	429c      	cmp	r4, r3
+  6c:	d101      	bne.n	72 <DMA_DeInit+0x72>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:131
+  {
+    /* Reset interrupt pending bits for DMA1 Channel1 */
+    DMA1->IFCR |= DMA1_Channel1_IT_Mask;
+  6e:	4a29      	ldr	r2, [pc, #164]	(114 <DMA_DeInit+0x114>)
+  70:	e027      	b.n	c2 <DMA_DeInit+0xc2>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:133
+  }
+  else if (DMAy_Channelx == DMA1_Channel2)
+  72:	4b29      	ldr	r3, [pc, #164]	(118 <DMA_DeInit+0x118>)
+  74:	429c      	cmp	r4, r3
+  76:	d101      	bne.n	7c <DMA_DeInit+0x7c>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:136
+  {
+    /* Reset interrupt pending bits for DMA1 Channel2 */
+    DMA1->IFCR |= DMA1_Channel2_IT_Mask;
+  78:	4a26      	ldr	r2, [pc, #152]	(114 <DMA_DeInit+0x114>)
+  7a:	e02a      	b.n	d2 <DMA_DeInit+0xd2>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:138
+  }
+  else if (DMAy_Channelx == DMA1_Channel3)
+  7c:	4b27      	ldr	r3, [pc, #156]	(11c <DMA_DeInit+0x11c>)
+  7e:	429c      	cmp	r4, r3
+  80:	d101      	bne.n	86 <DMA_DeInit+0x86>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:141
+  {
+    /* Reset interrupt pending bits for DMA1 Channel3 */
+    DMA1->IFCR |= DMA1_Channel3_IT_Mask;
+  82:	4a24      	ldr	r2, [pc, #144]	(114 <DMA_DeInit+0x114>)
+  84:	e02d      	b.n	e2 <DMA_DeInit+0xe2>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:143
+  }
+  else if (DMAy_Channelx == DMA1_Channel4)
+  86:	4b26      	ldr	r3, [pc, #152]	(120 <DMA_DeInit+0x120>)
+  88:	429c      	cmp	r4, r3
+  8a:	d101      	bne.n	90 <DMA_DeInit+0x90>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:146
+  {
+    /* Reset interrupt pending bits for DMA1 Channel4 */
+    DMA1->IFCR |= DMA1_Channel4_IT_Mask;
+  8c:	4a21      	ldr	r2, [pc, #132]	(114 <DMA_DeInit+0x114>)
+  8e:	e030      	b.n	f2 <DMA_DeInit+0xf2>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:148
+  }
+  else if (DMAy_Channelx == DMA1_Channel5)
+  90:	4b24      	ldr	r3, [pc, #144]	(124 <DMA_DeInit+0x124>)
+  92:	429c      	cmp	r4, r3
+  94:	d101      	bne.n	9a <DMA_DeInit+0x9a>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:151
+  {
+    /* Reset interrupt pending bits for DMA1 Channel5 */
+    DMA1->IFCR |= DMA1_Channel5_IT_Mask;
+  96:	4a1f      	ldr	r2, [pc, #124]	(114 <DMA_DeInit+0x114>)
+  98:	e033      	b.n	102 <DMA_DeInit+0x102>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:153
+  }
+  else if (DMAy_Channelx == DMA1_Channel6)
+  9a:	4b23      	ldr	r3, [pc, #140]	(128 <DMA_DeInit+0x128>)
+  9c:	429c      	cmp	r4, r3
+  9e:	d104      	bne.n	aa <DMA_DeInit+0xaa>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:156
+  {
+    /* Reset interrupt pending bits for DMA1 Channel6 */
+    DMA1->IFCR |= DMA1_Channel6_IT_Mask;
+  a0:	4a1c      	ldr	r2, [pc, #112]	(114 <DMA_DeInit+0x114>)
+  a2:	6853      	ldr	r3, [r2, #4]
+  a4:	f443 0370 	orr.w	r3, r3, #15728640	; 0xf00000
+  a8:	e02e      	b.n	108 <DMA_DeInit+0x108>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:158
+  }
+  else if (DMAy_Channelx == DMA1_Channel7)
+  aa:	4b20      	ldr	r3, [pc, #128]	(12c <DMA_DeInit+0x12c>)
+  ac:	429c      	cmp	r4, r3
+  ae:	d104      	bne.n	ba <DMA_DeInit+0xba>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:161
+  {
+    /* Reset interrupt pending bits for DMA1 Channel7 */
+    DMA1->IFCR |= DMA1_Channel7_IT_Mask;
+  b0:	4a18      	ldr	r2, [pc, #96]	(114 <DMA_DeInit+0x114>)
+  b2:	6853      	ldr	r3, [r2, #4]
+  b4:	f043 6370 	orr.w	r3, r3, #251658240	; 0xf000000
+  b8:	e026      	b.n	108 <DMA_DeInit+0x108>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:163
+  }
+  else if (DMAy_Channelx == DMA2_Channel1)
+  ba:	4b1d      	ldr	r3, [pc, #116]	(130 <DMA_DeInit+0x130>)
+  bc:	429c      	cmp	r4, r3
+  be:	d104      	bne.n	ca <DMA_DeInit+0xca>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:166
+  {
+    /* Reset interrupt pending bits for DMA2 Channel1 */
+    DMA2->IFCR |= DMA2_Channel1_IT_Mask;
+  c0:	4a1c      	ldr	r2, [pc, #112]	(134 <DMA_DeInit+0x134>)
+  c2:	6853      	ldr	r3, [r2, #4]
+  c4:	f043 030f 	orr.w	r3, r3, #15	; 0xf
+  c8:	e01e      	b.n	108 <DMA_DeInit+0x108>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:168
+  }
+  else if (DMAy_Channelx == DMA2_Channel2)
+  ca:	4b1b      	ldr	r3, [pc, #108]	(138 <DMA_DeInit+0x138>)
+  cc:	429c      	cmp	r4, r3
+  ce:	d104      	bne.n	da <DMA_DeInit+0xda>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:171
+  {
+    /* Reset interrupt pending bits for DMA2 Channel2 */
+    DMA2->IFCR |= DMA2_Channel2_IT_Mask;
+  d0:	4a18      	ldr	r2, [pc, #96]	(134 <DMA_DeInit+0x134>)
+  d2:	6853      	ldr	r3, [r2, #4]
+  d4:	f043 03f0 	orr.w	r3, r3, #240	; 0xf0
+  d8:	e016      	b.n	108 <DMA_DeInit+0x108>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:173
+  }
+  else if (DMAy_Channelx == DMA2_Channel3)
+  da:	4b18      	ldr	r3, [pc, #96]	(13c <DMA_DeInit+0x13c>)
+  dc:	429c      	cmp	r4, r3
+  de:	d104      	bne.n	ea <DMA_DeInit+0xea>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:176
+  {
+    /* Reset interrupt pending bits for DMA2 Channel3 */
+    DMA2->IFCR |= DMA2_Channel3_IT_Mask;
+  e0:	4a14      	ldr	r2, [pc, #80]	(134 <DMA_DeInit+0x134>)
+  e2:	6853      	ldr	r3, [r2, #4]
+  e4:	f443 6370 	orr.w	r3, r3, #3840	; 0xf00
+  e8:	e00e      	b.n	108 <DMA_DeInit+0x108>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:178
+  }
+  else if (DMAy_Channelx == DMA2_Channel4)
+  ea:	4b15      	ldr	r3, [pc, #84]	(140 <DMA_DeInit+0x140>)
+  ec:	429c      	cmp	r4, r3
+  ee:	d104      	bne.n	fa <DMA_DeInit+0xfa>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:181
+  {
+    /* Reset interrupt pending bits for DMA2 Channel4 */
+    DMA2->IFCR |= DMA2_Channel4_IT_Mask;
+  f0:	4a10      	ldr	r2, [pc, #64]	(134 <DMA_DeInit+0x134>)
+  f2:	6853      	ldr	r3, [r2, #4]
+  f4:	f443 4370 	orr.w	r3, r3, #61440	; 0xf000
+  f8:	e006      	b.n	108 <DMA_DeInit+0x108>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:185
+  }
+  else
+  { 
+    if (DMAy_Channelx == DMA2_Channel5)
+  fa:	4b12      	ldr	r3, [pc, #72]	(144 <DMA_DeInit+0x144>)
+  fc:	429c      	cmp	r4, r3
+  fe:	d104      	bne.n	10a <DMA_DeInit+0x10a>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:188
+    {
+      /* Reset interrupt pending bits for DMA2 Channel5 */
+      DMA2->IFCR |= DMA2_Channel5_IT_Mask;
+ 100:	4a0c      	ldr	r2, [pc, #48]	(134 <DMA_DeInit+0x134>)
+ 102:	6853      	ldr	r3, [r2, #4]
+ 104:	f443 2370 	orr.w	r3, r3, #983040	; 0xf0000
+ 108:	6053      	str	r3, [r2, #4]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c:191
+    }
+  }
+}
+ 10a:	bd10      	pop	{r4, pc}
+ 10c:	40020008 	.word	0x40020008
+ 110:	00000000 	.word	0x00000000
+ 114:	40020000 	.word	0x40020000
+ 118:	4002001c 	.word	0x4002001c
+ 11c:	40020030 	.word	0x40020030
+ 120:	40020044 	.word	0x40020044
+ 124:	40020058 	.word	0x40020058
+ 128:	4002006c 	.word	0x4002006c
+ 12c:	40020080 	.word	0x40020080
+ 130:	40020408 	.word	0x40020408
+ 134:	40020400 	.word	0x40020400
+ 138:	4002041c 	.word	0x4002041c
+ 13c:	40020430 	.word	0x40020430
+ 140:	40020444 	.word	0x40020444
+ 144:	40020458 	.word	0x40020458

@@ -1,0 +1,2195 @@
+
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_Z1\obj\stm32f10x_spi.o:     file format elf32-littlearm
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_Z1\obj\stm32f10x_spi.o
+
+Disassembly of section .text.SPI_StructInit:
+
+00000000 <SPI_StructInit>:
+SPI_StructInit():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:373
+  */
+void SPI_StructInit(SPI_InitTypeDef* SPI_InitStruct)
+{
+/*--------------- Reset SPI init structure parameters values -----------------*/
+  /* Initialize the SPI_Direction member */
+  SPI_InitStruct->SPI_Direction = SPI_Direction_2Lines_FullDuplex;
+   0:	2300      	movs	r3, #0
+   2:	8003      	strh	r3, [r0, #0]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:375
+  /* initialize the SPI_Mode member */
+  SPI_InitStruct->SPI_Mode = SPI_Mode_Slave;
+   4:	8043      	strh	r3, [r0, #2]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:377
+  /* initialize the SPI_DataSize member */
+  SPI_InitStruct->SPI_DataSize = SPI_DataSize_8b;
+   6:	8083      	strh	r3, [r0, #4]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:379
+  /* Initialize the SPI_CPOL member */
+  SPI_InitStruct->SPI_CPOL = SPI_CPOL_Low;
+   8:	80c3      	strh	r3, [r0, #6]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:381
+  /* Initialize the SPI_CPHA member */
+  SPI_InitStruct->SPI_CPHA = SPI_CPHA_1Edge;
+   a:	8103      	strh	r3, [r0, #8]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:383
+  /* Initialize the SPI_NSS member */
+  SPI_InitStruct->SPI_NSS = SPI_NSS_Hard;
+   c:	8143      	strh	r3, [r0, #10]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:385
+  /* Initialize the SPI_BaudRatePrescaler member */
+  SPI_InitStruct->SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_2;
+   e:	8183      	strh	r3, [r0, #12]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:387
+  /* Initialize the SPI_FirstBit member */
+  SPI_InitStruct->SPI_FirstBit = SPI_FirstBit_MSB;
+  10:	81c3      	strh	r3, [r0, #14]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:389
+  /* Initialize the SPI_CRCPolynomial member */
+  SPI_InitStruct->SPI_CRCPolynomial = 7;
+  12:	f04f 0307 	mov.w	r3, #7	; 0x7
+  16:	8203      	strh	r3, [r0, #16]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:390
+}
+  18:	4770      	bx	lr
+  1a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.I2S_StructInit:
+
+00000000 <I2S_StructInit>:
+I2S_StructInit():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:401
+  */
+void I2S_StructInit(I2S_InitTypeDef* I2S_InitStruct)
+{
+/*--------------- Reset I2S init structure parameters values -----------------*/
+  /* Initialize the I2S_Mode member */
+  I2S_InitStruct->I2S_Mode = I2S_Mode_SlaveTx;
+   0:	2200      	movs	r2, #0
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:413
+  
+  /* Initialize the I2S_MCLKOutput member */
+  I2S_InitStruct->I2S_MCLKOutput = I2S_MCLKOutput_Disable;
+  
+  /* Initialize the I2S_AudioFreq member */
+  I2S_InitStruct->I2S_AudioFreq = I2S_AudioFreq_Default;
+   2:	2302      	movs	r3, #2
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:401
+  */
+void I2S_StructInit(I2S_InitTypeDef* I2S_InitStruct)
+{
+/*--------------- Reset I2S init structure parameters values -----------------*/
+  /* Initialize the I2S_Mode member */
+  I2S_InitStruct->I2S_Mode = I2S_Mode_SlaveTx;
+   4:	8002      	strh	r2, [r0, #0]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:404
+  
+  /* Initialize the I2S_Standard member */
+  I2S_InitStruct->I2S_Standard = I2S_Standard_Phillips;
+   6:	8042      	strh	r2, [r0, #2]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:407
+  
+  /* Initialize the I2S_DataFormat member */
+  I2S_InitStruct->I2S_DataFormat = I2S_DataFormat_16b;
+   8:	8082      	strh	r2, [r0, #4]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:410
+  
+  /* Initialize the I2S_MCLKOutput member */
+  I2S_InitStruct->I2S_MCLKOutput = I2S_MCLKOutput_Disable;
+   a:	80c2      	strh	r2, [r0, #6]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:413
+  
+  /* Initialize the I2S_AudioFreq member */
+  I2S_InitStruct->I2S_AudioFreq = I2S_AudioFreq_Default;
+   c:	6083      	str	r3, [r0, #8]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:416
+  
+  /* Initialize the I2S_CPOL member */
+  I2S_InitStruct->I2S_CPOL = I2S_CPOL_Low;
+   e:	8182      	strh	r2, [r0, #12]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:417
+}
+  10:	4770      	bx	lr
+  12:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.SPI_I2S_ClearITPendingBit:
+
+00000000 <SPI_I2S_ClearITPendingBit>:
+SPI_I2S_ClearITPendingBit():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:886
+  */
+void SPI_I2S_ClearITPendingBit(SPI_TypeDef* SPIx, uint8_t SPI_I2S_IT)
+{
+  uint16_t itpos = 0;
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   0:	4b10      	ldr	r3, [pc, #64]	(44 <SPI_I2S_ClearITPendingBit+0x44>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:883
+  *     followed by a write operation to SPI_CR1 register (SPI_Cmd() to enable 
+  *     the SPI).
+  * @retval None
+  */
+void SPI_I2S_ClearITPendingBit(SPI_TypeDef* SPIx, uint8_t SPI_I2S_IT)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:886
+  uint16_t itpos = 0;
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:883
+  *     followed by a write operation to SPI_CR1 register (SPI_Cmd() to enable 
+  *     the SPI).
+  * @retval None
+  */
+void SPI_I2S_ClearITPendingBit(SPI_TypeDef* SPIx, uint8_t SPI_I2S_IT)
+{
+   6:	4604      	mov	r4, r0
+   8:	460d      	mov	r5, r1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:886
+  uint16_t itpos = 0;
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   a:	d00c      	beq.n	26 <SPI_I2S_ClearITPendingBit+0x26>
+   c:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+  10:	4298      	cmp	r0, r3
+  12:	d008      	beq.n	26 <SPI_I2S_ClearITPendingBit+0x26>
+  14:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  18:	4298      	cmp	r0, r3
+  1a:	d004      	beq.n	26 <SPI_I2S_ClearITPendingBit+0x26>
+  1c:	480a      	ldr	r0, [pc, #40]	(48 <SPI_I2S_ClearITPendingBit+0x48>)
+  1e:	f240 3176 	movw	r1, #886	; 0x376
+  22:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:887
+  assert_param(IS_SPI_I2S_CLEAR_IT(SPI_I2S_IT));
+  26:	2d54      	cmp	r5, #84
+  28:	d004      	beq.n	34 <SPI_I2S_ClearITPendingBit+0x34>
+  2a:	4807      	ldr	r0, [pc, #28]	(48 <SPI_I2S_ClearITPendingBit+0x48>)
+  2c:	f240 3177 	movw	r1, #887	; 0x377
+  30:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:893
+
+  /* Get the SPI IT index */
+  itpos = 0x01 << (SPI_I2S_IT & 0x0F);
+
+  /* Clear the selected SPI CRC Error (CRCERR) interrupt pending bit */
+  SPIx->SR = (uint16_t)~itpos;
+  34:	f005 020f 	and.w	r2, r5, #15	; 0xf
+  38:	2301      	movs	r3, #1
+  3a:	4093      	lsls	r3, r2
+  3c:	43db      	mvns	r3, r3
+  3e:	b29b      	uxth	r3, r3
+  40:	8123      	strh	r3, [r4, #8]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:894
+}
+  42:	bd70      	pop	{r4, r5, r6, pc}
+  44:	40013000 	.word	0x40013000
+  48:	00000000 	.word	0x00000000
+Disassembly of section .text.SPI_I2S_GetITStatus:
+
+00000000 <SPI_I2S_GetITStatus>:
+SPI_I2S_GetITStatus():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:834
+{
+  ITStatus bitstatus = RESET;
+  uint16_t itpos = 0, itmask = 0, enablestatus = 0;
+
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   0:	4b1c      	ldr	r3, [pc, #112]	(74 <SPI_I2S_GetITStatus+0x74>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:829
+  *     @arg SPI_IT_CRCERR: CRC Error interrupt.
+  *     @arg I2S_IT_UDR: Underrun Error interrupt.
+  * @retval The new state of SPI_I2S_IT (SET or RESET).
+  */
+ITStatus SPI_I2S_GetITStatus(SPI_TypeDef* SPIx, uint8_t SPI_I2S_IT)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:834
+  ITStatus bitstatus = RESET;
+  uint16_t itpos = 0, itmask = 0, enablestatus = 0;
+
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:829
+  *     @arg SPI_IT_CRCERR: CRC Error interrupt.
+  *     @arg I2S_IT_UDR: Underrun Error interrupt.
+  * @retval The new state of SPI_I2S_IT (SET or RESET).
+  */
+ITStatus SPI_I2S_GetITStatus(SPI_TypeDef* SPIx, uint8_t SPI_I2S_IT)
+{
+   6:	4605      	mov	r5, r0
+   8:	460c      	mov	r4, r1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:834
+  ITStatus bitstatus = RESET;
+  uint16_t itpos = 0, itmask = 0, enablestatus = 0;
+
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   a:	d00c      	beq.n	26 <SPI_I2S_GetITStatus+0x26>
+   c:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+  10:	4298      	cmp	r0, r3
+  12:	d008      	beq.n	26 <SPI_I2S_GetITStatus+0x26>
+  14:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  18:	4298      	cmp	r0, r3
+  1a:	d004      	beq.n	26 <SPI_I2S_GetITStatus+0x26>
+  1c:	4816      	ldr	r0, [pc, #88]	(78 <SPI_I2S_GetITStatus+0x78>)
+  1e:	f240 3142 	movw	r1, #834	; 0x342
+  22:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:835
+  assert_param(IS_SPI_I2S_GET_IT(SPI_I2S_IT));
+  26:	2c60      	cmp	r4, #96
+  28:	d00e      	beq.n	48 <SPI_I2S_GetITStatus+0x48>
+  2a:	2c71      	cmp	r4, #113
+  2c:	d00c      	beq.n	48 <SPI_I2S_GetITStatus+0x48>
+  2e:	2c53      	cmp	r4, #83
+  30:	d00a      	beq.n	48 <SPI_I2S_GetITStatus+0x48>
+  32:	2c54      	cmp	r4, #84
+  34:	d008      	beq.n	48 <SPI_I2S_GetITStatus+0x48>
+  36:	2c55      	cmp	r4, #85
+  38:	d006      	beq.n	48 <SPI_I2S_GetITStatus+0x48>
+  3a:	2c56      	cmp	r4, #86
+  3c:	d004      	beq.n	48 <SPI_I2S_GetITStatus+0x48>
+  3e:	480e      	ldr	r0, [pc, #56]	(78 <SPI_I2S_GetITStatus+0x78>)
+  40:	f240 3143 	movw	r1, #835	; 0x343
+  44:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:847
+
+  /* Set the IT mask */
+  itmask = 0x01 << itmask;
+
+  /* Get the SPI_I2S_IT enable bit status */
+  enablestatus = (SPIx->CR2 & itmask) ;
+  48:	88ab      	ldrh	r3, [r5, #4]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:850
+
+  /* Check the status of the specified SPI/I2S interrupt */
+  if (((SPIx->SR & itpos) != (uint16_t)RESET) && enablestatus)
+  4a:	2101      	movs	r1, #1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:847
+
+  /* Set the IT mask */
+  itmask = 0x01 << itmask;
+
+  /* Get the SPI_I2S_IT enable bit status */
+  enablestatus = (SPIx->CR2 & itmask) ;
+  4c:	fa1f fc83 	uxth.w	ip, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:850
+
+  /* Check the status of the specified SPI/I2S interrupt */
+  if (((SPIx->SR & itpos) != (uint16_t)RESET) && enablestatus)
+  50:	f004 030f 	and.w	r3, r4, #15	; 0xf
+  54:	fa11 f303 	lsls.w	r3, r1, r3
+  58:	892a      	ldrh	r2, [r5, #8]
+  5a:	b292      	uxth	r2, r2
+  5c:	ea12 0003 	ands.w	r0, r2, r3
+  60:	d007      	beq.n	72 <SPI_I2S_GetITStatus+0x72>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:844
+
+  /* Get the SPI/I2S IT mask */
+  itmask = SPI_I2S_IT >> 4;
+
+  /* Set the IT mask */
+  itmask = 0x01 << itmask;
+  62:	0923      	lsrs	r3, r4, #4
+  64:	fa11 f303 	lsls.w	r3, r1, r3
+  68:	ea1c 0f03 	tst.w	ip, r3
+  6c:	bf0c      	ite	eq
+  6e:	2000      	moveq	r0, #0
+  70:	2001      	movne	r0, #1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:862
+    /* SPI_I2S_IT is reset */
+    bitstatus = RESET;
+  }
+  /* Return the SPI_I2S_IT status */
+  return bitstatus;
+}
+  72:	bd70      	pop	{r4, r5, r6, pc}
+  74:	40013000 	.word	0x40013000
+  78:	00000000 	.word	0x00000000
+Disassembly of section .text.SPI_I2S_ClearFlag:
+
+00000000 <SPI_I2S_ClearFlag>:
+SPI_I2S_ClearFlag():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:806
+  * @retval None
+  */
+void SPI_I2S_ClearFlag(SPI_TypeDef* SPIx, uint16_t SPI_I2S_FLAG)
+{
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   0:	4b0e      	ldr	r3, [pc, #56]	(3c <SPI_I2S_ClearFlag+0x3c>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:804
+  *     operation to SPI_SR register (SPI_I2S_GetFlagStatus()) followed by a 
+  *     write operation to SPI_CR1 register (SPI_Cmd() to enable the SPI).
+  * @retval None
+  */
+void SPI_I2S_ClearFlag(SPI_TypeDef* SPIx, uint16_t SPI_I2S_FLAG)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:806
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:804
+  *     operation to SPI_SR register (SPI_I2S_GetFlagStatus()) followed by a 
+  *     write operation to SPI_CR1 register (SPI_Cmd() to enable the SPI).
+  * @retval None
+  */
+void SPI_I2S_ClearFlag(SPI_TypeDef* SPIx, uint16_t SPI_I2S_FLAG)
+{
+   6:	4604      	mov	r4, r0
+   8:	460d      	mov	r5, r1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:806
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   a:	d00c      	beq.n	26 <SPI_I2S_ClearFlag+0x26>
+   c:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+  10:	4298      	cmp	r0, r3
+  12:	d008      	beq.n	26 <SPI_I2S_ClearFlag+0x26>
+  14:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  18:	4298      	cmp	r0, r3
+  1a:	d004      	beq.n	26 <SPI_I2S_ClearFlag+0x26>
+  1c:	4808      	ldr	r0, [pc, #32]	(40 <SPI_I2S_ClearFlag+0x40>)
+  1e:	f240 3126 	movw	r1, #806	; 0x326
+  22:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:807
+  assert_param(IS_SPI_I2S_CLEAR_FLAG(SPI_I2S_FLAG));
+  26:	2d10      	cmp	r5, #16
+  28:	d004      	beq.n	34 <SPI_I2S_ClearFlag+0x34>
+  2a:	4805      	ldr	r0, [pc, #20]	(40 <SPI_I2S_ClearFlag+0x40>)
+  2c:	f240 3127 	movw	r1, #807	; 0x327
+  30:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:810
+    
+    /* Clear the selected SPI CRC Error (CRCERR) flag */
+    SPIx->SR = (uint16_t)~SPI_I2S_FLAG;
+  34:	43eb      	mvns	r3, r5
+  36:	b29b      	uxth	r3, r3
+  38:	8123      	strh	r3, [r4, #8]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:811
+}
+  3a:	bd70      	pop	{r4, r5, r6, pc}
+  3c:	40013000 	.word	0x40013000
+  40:	00000000 	.word	0x00000000
+Disassembly of section .text.SPI_I2S_GetFlagStatus:
+
+00000000 <SPI_I2S_GetFlagStatus>:
+SPI_I2S_GetFlagStatus():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:769
+  */
+FlagStatus SPI_I2S_GetFlagStatus(SPI_TypeDef* SPIx, uint16_t SPI_I2S_FLAG)
+{
+  FlagStatus bitstatus = RESET;
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   0:	4b16      	ldr	r3, [pc, #88]	(5c <SPI_I2S_GetFlagStatus+0x5c>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:766
+  *     @arg I2S_FLAG_UDR: Underrun Error flag.
+  *     @arg I2S_FLAG_CHSIDE: Channel Side flag.
+  * @retval The new state of SPI_I2S_FLAG (SET or RESET).
+  */
+FlagStatus SPI_I2S_GetFlagStatus(SPI_TypeDef* SPIx, uint16_t SPI_I2S_FLAG)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:769
+  FlagStatus bitstatus = RESET;
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:766
+  *     @arg I2S_FLAG_UDR: Underrun Error flag.
+  *     @arg I2S_FLAG_CHSIDE: Channel Side flag.
+  * @retval The new state of SPI_I2S_FLAG (SET or RESET).
+  */
+FlagStatus SPI_I2S_GetFlagStatus(SPI_TypeDef* SPIx, uint16_t SPI_I2S_FLAG)
+{
+   6:	4605      	mov	r5, r0
+   8:	460c      	mov	r4, r1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:769
+  FlagStatus bitstatus = RESET;
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   a:	d00c      	beq.n	26 <SPI_I2S_GetFlagStatus+0x26>
+   c:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+  10:	4298      	cmp	r0, r3
+  12:	d008      	beq.n	26 <SPI_I2S_GetFlagStatus+0x26>
+  14:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  18:	4298      	cmp	r0, r3
+  1a:	d004      	beq.n	26 <SPI_I2S_GetFlagStatus+0x26>
+  1c:	4810      	ldr	r0, [pc, #64]	(60 <SPI_I2S_GetFlagStatus+0x60>)
+  1e:	f240 3101 	movw	r1, #769	; 0x301
+  22:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:770
+  assert_param(IS_SPI_I2S_GET_FLAG(SPI_I2S_FLAG));
+  26:	2c80      	cmp	r4, #128
+  28:	d012      	beq.n	50 <SPI_I2S_GetFlagStatus+0x50>
+  2a:	2c40      	cmp	r4, #64
+  2c:	d010      	beq.n	50 <SPI_I2S_GetFlagStatus+0x50>
+  2e:	2c20      	cmp	r4, #32
+  30:	d00e      	beq.n	50 <SPI_I2S_GetFlagStatus+0x50>
+  32:	2c10      	cmp	r4, #16
+  34:	d00c      	beq.n	50 <SPI_I2S_GetFlagStatus+0x50>
+  36:	2c08      	cmp	r4, #8
+  38:	d00a      	beq.n	50 <SPI_I2S_GetFlagStatus+0x50>
+  3a:	2c04      	cmp	r4, #4
+  3c:	d008      	beq.n	50 <SPI_I2S_GetFlagStatus+0x50>
+  3e:	2c02      	cmp	r4, #2
+  40:	d006      	beq.n	50 <SPI_I2S_GetFlagStatus+0x50>
+  42:	2c01      	cmp	r4, #1
+  44:	d004      	beq.n	50 <SPI_I2S_GetFlagStatus+0x50>
+  46:	4806      	ldr	r0, [pc, #24]	(60 <SPI_I2S_GetFlagStatus+0x60>)
+  48:	f240 3102 	movw	r1, #770	; 0x302
+  4c:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:772
+  /* Check the status of the specified SPI/I2S flag */
+  if ((SPIx->SR & SPI_I2S_FLAG) != (uint16_t)RESET)
+  50:	892b      	ldrh	r3, [r5, #8]
+  52:	421c      	tst	r4, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:784
+    /* SPI_I2S_FLAG is reset */
+    bitstatus = RESET;
+  }
+  /* Return the SPI_I2S_FLAG status */
+  return  bitstatus;
+}
+  54:	bf0c      	ite	eq
+  56:	2000      	moveq	r0, #0
+  58:	2001      	movne	r0, #1
+  5a:	bd70      	pop	{r4, r5, r6, pc}
+  5c:	40013000 	.word	0x40013000
+  60:	00000000 	.word	0x00000000
+Disassembly of section .text.SPI_BiDirectionalLineConfig:
+
+00000000 <SPI_BiDirectionalLineConfig>:
+SPI_BiDirectionalLineConfig():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:734
+  * @retval None
+  */
+void SPI_BiDirectionalLineConfig(SPI_TypeDef* SPIx, uint16_t SPI_Direction)
+{
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   0:	4b15      	ldr	r3, [pc, #84]	(58 <SPI_BiDirectionalLineConfig+0x58>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:732
+  *     @arg SPI_Direction_Tx: Selects Tx transmission direction
+  *     @arg SPI_Direction_Rx: Selects Rx receive direction
+  * @retval None
+  */
+void SPI_BiDirectionalLineConfig(SPI_TypeDef* SPIx, uint16_t SPI_Direction)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:734
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:732
+  *     @arg SPI_Direction_Tx: Selects Tx transmission direction
+  *     @arg SPI_Direction_Rx: Selects Rx receive direction
+  * @retval None
+  */
+void SPI_BiDirectionalLineConfig(SPI_TypeDef* SPIx, uint16_t SPI_Direction)
+{
+   6:	4604      	mov	r4, r0
+   8:	460d      	mov	r5, r1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:734
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   a:	d00c      	beq.n	26 <SPI_BiDirectionalLineConfig+0x26>
+   c:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+  10:	4298      	cmp	r0, r3
+  12:	d008      	beq.n	26 <SPI_BiDirectionalLineConfig+0x26>
+  14:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  18:	4298      	cmp	r0, r3
+  1a:	d004      	beq.n	26 <SPI_BiDirectionalLineConfig+0x26>
+  1c:	480f      	ldr	r0, [pc, #60]	(5c <SPI_BiDirectionalLineConfig+0x5c>)
+  1e:	f240 21de 	movw	r1, #734	; 0x2de
+  22:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:735
+  assert_param(IS_SPI_DIRECTION(SPI_Direction));
+  26:	f64b 73ff 	movw	r3, #49151	; 0xbfff
+  2a:	429d      	cmp	r5, r3
+  2c:	d007      	beq.n	3e <SPI_BiDirectionalLineConfig+0x3e>
+  2e:	f5b5 4f80 	cmp.w	r5, #16384	; 0x4000
+  32:	d00a      	beq.n	4a <SPI_BiDirectionalLineConfig+0x4a>
+  34:	4809      	ldr	r0, [pc, #36]	(5c <SPI_BiDirectionalLineConfig+0x5c>)
+  36:	f240 21df 	movw	r1, #735	; 0x2df
+  3a:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:744
+    SPIx->CR1 |= SPI_Direction_Tx;
+  }
+  else
+  {
+    /* Set the Rx only mode */
+    SPIx->CR1 &= SPI_Direction_Rx;
+  3e:	8823      	ldrh	r3, [r4, #0]
+  40:	f423 4380 	bic.w	r3, r3, #16384	; 0x4000
+  44:	041b      	lsls	r3, r3, #16
+  46:	0c1b      	lsrs	r3, r3, #16
+  48:	e003      	b.n	52 <SPI_BiDirectionalLineConfig+0x52>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:739
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+  assert_param(IS_SPI_DIRECTION(SPI_Direction));
+  if (SPI_Direction == SPI_Direction_Tx)
+  {
+    /* Set the Tx only mode */
+    SPIx->CR1 |= SPI_Direction_Tx;
+  4a:	8823      	ldrh	r3, [r4, #0]
+  4c:	b29b      	uxth	r3, r3
+  4e:	f443 4380 	orr.w	r3, r3, #16384	; 0x4000
+  52:	8023      	strh	r3, [r4, #0]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:746
+  else
+  {
+    /* Set the Rx only mode */
+    SPIx->CR1 &= SPI_Direction_Rx;
+  }
+}
+  54:	bd70      	pop	{r4, r5, r6, pc}
+  56:	46c0      	nop			(mov r8, r8)
+  58:	40013000 	.word	0x40013000
+  5c:	00000000 	.word	0x00000000
+Disassembly of section .text.SPI_GetCRCPolynomial:
+
+00000000 <SPI_GetCRCPolynomial>:
+SPI_GetCRCPolynomial():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:716
+  * @retval The CRC Polynomial register value.
+  */
+uint16_t SPI_GetCRCPolynomial(SPI_TypeDef* SPIx)
+{
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   0:	4b0a      	ldr	r3, [pc, #40]	(2c <SPI_GetCRCPolynomial+0x2c>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:714
+  * @brief  Returns the CRC Polynomial register value for the specified SPI.
+  * @param  SPIx: where x can be 1, 2 or 3 to select the SPI peripheral.
+  * @retval The CRC Polynomial register value.
+  */
+uint16_t SPI_GetCRCPolynomial(SPI_TypeDef* SPIx)
+{
+   2:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:716
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:714
+  * @brief  Returns the CRC Polynomial register value for the specified SPI.
+  * @param  SPIx: where x can be 1, 2 or 3 to select the SPI peripheral.
+  * @retval The CRC Polynomial register value.
+  */
+uint16_t SPI_GetCRCPolynomial(SPI_TypeDef* SPIx)
+{
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:716
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   8:	d00c      	beq.n	24 <SPI_GetCRCPolynomial+0x24>
+   a:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+   e:	4298      	cmp	r0, r3
+  10:	d008      	beq.n	24 <SPI_GetCRCPolynomial+0x24>
+  12:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  16:	4298      	cmp	r0, r3
+  18:	d004      	beq.n	24 <SPI_GetCRCPolynomial+0x24>
+  1a:	4805      	ldr	r0, [pc, #20]	(30 <SPI_GetCRCPolynomial+0x30>)
+  1c:	f44f 7133 	mov.w	r1, #716	; 0x2cc
+  20:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:719
+  
+  /* Return the CRC polynomial register */
+  return SPIx->CRCPR;
+  24:	8a20      	ldrh	r0, [r4, #16]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:720
+}
+  26:	b280      	uxth	r0, r0
+  28:	bd10      	pop	{r4, pc}
+  2a:	46c0      	nop			(mov r8, r8)
+  2c:	40013000 	.word	0x40013000
+  30:	00000000 	.word	0x00000000
+Disassembly of section .text.SPI_GetCRC:
+
+00000000 <SPI_GetCRC>:
+SPI_GetCRC():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:692
+  */
+uint16_t SPI_GetCRC(SPI_TypeDef* SPIx, uint8_t SPI_CRC)
+{
+  uint16_t crcreg = 0;
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   0:	4b10      	ldr	r3, [pc, #64]	(44 <SPI_GetCRC+0x44>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:689
+  *     @arg SPI_CRC_Tx: Selects Tx CRC register
+  *     @arg SPI_CRC_Rx: Selects Rx CRC register
+  * @retval The selected CRC register value..
+  */
+uint16_t SPI_GetCRC(SPI_TypeDef* SPIx, uint8_t SPI_CRC)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:692
+  uint16_t crcreg = 0;
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:689
+  *     @arg SPI_CRC_Tx: Selects Tx CRC register
+  *     @arg SPI_CRC_Rx: Selects Rx CRC register
+  * @retval The selected CRC register value..
+  */
+uint16_t SPI_GetCRC(SPI_TypeDef* SPIx, uint8_t SPI_CRC)
+{
+   6:	4604      	mov	r4, r0
+   8:	460d      	mov	r5, r1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:692
+  uint16_t crcreg = 0;
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   a:	d00c      	beq.n	26 <SPI_GetCRC+0x26>
+   c:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+  10:	4298      	cmp	r0, r3
+  12:	d008      	beq.n	26 <SPI_GetCRC+0x26>
+  14:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  18:	4298      	cmp	r0, r3
+  1a:	d004      	beq.n	26 <SPI_GetCRC+0x26>
+  1c:	480a      	ldr	r0, [pc, #40]	(48 <SPI_GetCRC+0x48>)
+  1e:	f44f 712d 	mov.w	r1, #692	; 0x2b4
+  22:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:693
+  assert_param(IS_SPI_CRC(SPI_CRC));
+  26:	2d01      	cmp	r5, #1
+  28:	d905      	bls.n	36 <SPI_GetCRC+0x36>
+  2a:	4807      	ldr	r0, [pc, #28]	(48 <SPI_GetCRC+0x48>)
+  2c:	f240 21b5 	movw	r1, #693	; 0x2b5
+  30:	f7ff fffe 	bl	0 <assert_failed>
+  34:	e000      	b.n	38 <SPI_GetCRC+0x38>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:694
+  if (SPI_CRC != SPI_CRC_Rx)
+  36:	d001      	beq.n	3c <SPI_GetCRC+0x3c>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:697
+  {
+    /* Get the Tx CRC register */
+    crcreg = SPIx->TXCRCR;
+  38:	8b23      	ldrh	r3, [r4, #24]
+  3a:	e000      	b.n	3e <SPI_GetCRC+0x3e>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:702
+  }
+  else
+  {
+    /* Get the Rx CRC register */
+    crcreg = SPIx->RXCRCR;
+  3c:	8aa3      	ldrh	r3, [r4, #20]
+  3e:	b298      	uxth	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:706
+  }
+  /* Return the selected CRC register */
+  return crcreg;
+}
+  40:	bd70      	pop	{r4, r5, r6, pc}
+  42:	46c0      	nop			(mov r8, r8)
+  44:	40013000 	.word	0x40013000
+  48:	00000000 	.word	0x00000000
+Disassembly of section .text.SPI_CalculateCRC:
+
+00000000 <SPI_CalculateCRC>:
+SPI_CalculateCRC():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:665
+  * @retval None
+  */
+void SPI_CalculateCRC(SPI_TypeDef* SPIx, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   0:	4b13      	ldr	r3, [pc, #76]	(50 <SPI_CalculateCRC+0x50>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:663
+  * @param  NewState: new state of the SPIx CRC value calculation.
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void SPI_CalculateCRC(SPI_TypeDef* SPIx, FunctionalState NewState)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:665
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:663
+  * @param  NewState: new state of the SPIx CRC value calculation.
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void SPI_CalculateCRC(SPI_TypeDef* SPIx, FunctionalState NewState)
+{
+   6:	4604      	mov	r4, r0
+   8:	460d      	mov	r5, r1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:665
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   a:	d00c      	beq.n	26 <SPI_CalculateCRC+0x26>
+   c:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+  10:	4298      	cmp	r0, r3
+  12:	d008      	beq.n	26 <SPI_CalculateCRC+0x26>
+  14:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  18:	4298      	cmp	r0, r3
+  1a:	d004      	beq.n	26 <SPI_CalculateCRC+0x26>
+  1c:	480d      	ldr	r0, [pc, #52]	(54 <SPI_CalculateCRC+0x54>)
+  1e:	f240 2199 	movw	r1, #665	; 0x299
+  22:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:666
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  26:	2d01      	cmp	r5, #1
+  28:	d904      	bls.n	34 <SPI_CalculateCRC+0x34>
+  2a:	480a      	ldr	r0, [pc, #40]	(54 <SPI_CalculateCRC+0x54>)
+  2c:	f240 219a 	movw	r1, #666	; 0x29a
+  30:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:667
+  if (NewState != DISABLE)
+  34:	b125      	cbz	r5, 40 <SPI_CalculateCRC+0x40>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:670
+  {
+    /* Enable the selected SPI CRC calculation */
+    SPIx->CR1 |= CR1_CRCEN_Set;
+  36:	8823      	ldrh	r3, [r4, #0]
+  38:	b29b      	uxth	r3, r3
+  3a:	f443 5300 	orr.w	r3, r3, #8192	; 0x2000
+  3e:	e004      	b.n	4a <SPI_CalculateCRC+0x4a>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:675
+  }
+  else
+  {
+    /* Disable the selected SPI CRC calculation */
+    SPIx->CR1 &= CR1_CRCEN_Reset;
+  40:	8823      	ldrh	r3, [r4, #0]
+  42:	f423 5300 	bic.w	r3, r3, #8192	; 0x2000
+  46:	041b      	lsls	r3, r3, #16
+  48:	0c1b      	lsrs	r3, r3, #16
+  4a:	8023      	strh	r3, [r4, #0]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:677
+  }
+}
+  4c:	bd70      	pop	{r4, r5, r6, pc}
+  4e:	46c0      	nop			(mov r8, r8)
+  50:	40013000 	.word	0x40013000
+  54:	00000000 	.word	0x00000000
+Disassembly of section .text.SPI_TransmitCRC:
+
+00000000 <SPI_TransmitCRC>:
+SPI_TransmitCRC():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:649
+  * @retval None
+  */
+void SPI_TransmitCRC(SPI_TypeDef* SPIx)
+{
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   0:	4b0b      	ldr	r3, [pc, #44]	(30 <SPI_TransmitCRC+0x30>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:647
+  * @brief  Transmit the SPIx CRC value.
+  * @param  SPIx: where x can be 1, 2 or 3 to select the SPI peripheral.
+  * @retval None
+  */
+void SPI_TransmitCRC(SPI_TypeDef* SPIx)
+{
+   2:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:649
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:647
+  * @brief  Transmit the SPIx CRC value.
+  * @param  SPIx: where x can be 1, 2 or 3 to select the SPI peripheral.
+  * @retval None
+  */
+void SPI_TransmitCRC(SPI_TypeDef* SPIx)
+{
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:649
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   8:	d00c      	beq.n	24 <SPI_TransmitCRC+0x24>
+   a:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+   e:	4298      	cmp	r0, r3
+  10:	d008      	beq.n	24 <SPI_TransmitCRC+0x24>
+  12:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  16:	4298      	cmp	r0, r3
+  18:	d004      	beq.n	24 <SPI_TransmitCRC+0x24>
+  1a:	4806      	ldr	r0, [pc, #24]	(34 <SPI_TransmitCRC+0x34>)
+  1c:	f240 2189 	movw	r1, #649	; 0x289
+  20:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:652
+  
+  /* Enable the selected SPI CRC transmission */
+  SPIx->CR1 |= CR1_CRCNext_Set;
+  24:	8823      	ldrh	r3, [r4, #0]
+  26:	b29b      	uxth	r3, r3
+  28:	f443 5380 	orr.w	r3, r3, #4096	; 0x1000
+  2c:	8023      	strh	r3, [r4, #0]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:653
+}
+  2e:	bd10      	pop	{r4, pc}
+  30:	40013000 	.word	0x40013000
+  34:	00000000 	.word	0x00000000
+Disassembly of section .text.SPI_DataSizeConfig:
+
+00000000 <SPI_DataSizeConfig>:
+SPI_DataSizeConfig():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:633
+  * @retval None
+  */
+void SPI_DataSizeConfig(SPI_TypeDef* SPIx, uint16_t SPI_DataSize)
+{
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   0:	4b13      	ldr	r3, [pc, #76]	(50 <SPI_DataSizeConfig+0x50>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:631
+  *     @arg SPI_DataSize_16b: Set data frame format to 16bit
+  *     @arg SPI_DataSize_8b: Set data frame format to 8bit
+  * @retval None
+  */
+void SPI_DataSizeConfig(SPI_TypeDef* SPIx, uint16_t SPI_DataSize)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:633
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:631
+  *     @arg SPI_DataSize_16b: Set data frame format to 16bit
+  *     @arg SPI_DataSize_8b: Set data frame format to 8bit
+  * @retval None
+  */
+void SPI_DataSizeConfig(SPI_TypeDef* SPIx, uint16_t SPI_DataSize)
+{
+   6:	4604      	mov	r4, r0
+   8:	460d      	mov	r5, r1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:633
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   a:	d00c      	beq.n	26 <SPI_DataSizeConfig+0x26>
+   c:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+  10:	4298      	cmp	r0, r3
+  12:	d008      	beq.n	26 <SPI_DataSizeConfig+0x26>
+  14:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  18:	4298      	cmp	r0, r3
+  1a:	d004      	beq.n	26 <SPI_DataSizeConfig+0x26>
+  1c:	480d      	ldr	r0, [pc, #52]	(54 <SPI_DataSizeConfig+0x54>)
+  1e:	f240 2179 	movw	r1, #633	; 0x279
+  22:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:634
+  assert_param(IS_SPI_DATASIZE(SPI_DataSize));
+  26:	f5b5 6f00 	cmp.w	r5, #2048	; 0x800
+  2a:	d005      	beq.n	38 <SPI_DataSizeConfig+0x38>
+  2c:	b125      	cbz	r5, 38 <SPI_DataSizeConfig+0x38>
+  2e:	4809      	ldr	r0, [pc, #36]	(54 <SPI_DataSizeConfig+0x54>)
+  30:	f240 217a 	movw	r1, #634	; 0x27a
+  34:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:636
+  /* Clear DFF bit */
+  SPIx->CR1 &= (uint16_t)~SPI_DataSize_16b;
+  38:	8823      	ldrh	r3, [r4, #0]
+  3a:	f423 6300 	bic.w	r3, r3, #2048	; 0x800
+  3e:	041b      	lsls	r3, r3, #16
+  40:	0c1b      	lsrs	r3, r3, #16
+  42:	8023      	strh	r3, [r4, #0]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:638
+  /* Set new DFF bit value */
+  SPIx->CR1 |= SPI_DataSize;
+  44:	8823      	ldrh	r3, [r4, #0]
+  46:	b29b      	uxth	r3, r3
+  48:	ea45 0303 	orr.w	r3, r5, r3
+  4c:	8023      	strh	r3, [r4, #0]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:639
+}
+  4e:	bd70      	pop	{r4, r5, r6, pc}
+  50:	40013000 	.word	0x40013000
+  54:	00000000 	.word	0x00000000
+Disassembly of section .text.SPI_SSOutputCmd:
+
+00000000 <SPI_SSOutputCmd>:
+SPI_SSOutputCmd():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:607
+  * @retval None
+  */
+void SPI_SSOutputCmd(SPI_TypeDef* SPIx, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   0:	4b13      	ldr	r3, [pc, #76]	(50 <SPI_SSOutputCmd+0x50>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:605
+  * @param  NewState: new state of the SPIx SS output. 
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void SPI_SSOutputCmd(SPI_TypeDef* SPIx, FunctionalState NewState)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:607
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:605
+  * @param  NewState: new state of the SPIx SS output. 
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void SPI_SSOutputCmd(SPI_TypeDef* SPIx, FunctionalState NewState)
+{
+   6:	4604      	mov	r4, r0
+   8:	460d      	mov	r5, r1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:607
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   a:	d00c      	beq.n	26 <SPI_SSOutputCmd+0x26>
+   c:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+  10:	4298      	cmp	r0, r3
+  12:	d008      	beq.n	26 <SPI_SSOutputCmd+0x26>
+  14:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  18:	4298      	cmp	r0, r3
+  1a:	d004      	beq.n	26 <SPI_SSOutputCmd+0x26>
+  1c:	480d      	ldr	r0, [pc, #52]	(54 <SPI_SSOutputCmd+0x54>)
+  1e:	f240 215f 	movw	r1, #607	; 0x25f
+  22:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:608
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  26:	2d01      	cmp	r5, #1
+  28:	d904      	bls.n	34 <SPI_SSOutputCmd+0x34>
+  2a:	480a      	ldr	r0, [pc, #40]	(54 <SPI_SSOutputCmd+0x54>)
+  2c:	f44f 7118 	mov.w	r1, #608	; 0x260
+  30:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:609
+  if (NewState != DISABLE)
+  34:	b125      	cbz	r5, 40 <SPI_SSOutputCmd+0x40>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:612
+  {
+    /* Enable the selected SPI SS output */
+    SPIx->CR2 |= CR2_SSOE_Set;
+  36:	88a3      	ldrh	r3, [r4, #4]
+  38:	b29b      	uxth	r3, r3
+  3a:	f043 0304 	orr.w	r3, r3, #4	; 0x4
+  3e:	e004      	b.n	4a <SPI_SSOutputCmd+0x4a>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:617
+  }
+  else
+  {
+    /* Disable the selected SPI SS output */
+    SPIx->CR2 &= CR2_SSOE_Reset;
+  40:	88a3      	ldrh	r3, [r4, #4]
+  42:	f023 0304 	bic.w	r3, r3, #4	; 0x4
+  46:	041b      	lsls	r3, r3, #16
+  48:	0c1b      	lsrs	r3, r3, #16
+  4a:	80a3      	strh	r3, [r4, #4]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:619
+  }
+}
+  4c:	bd70      	pop	{r4, r5, r6, pc}
+  4e:	46c0      	nop			(mov r8, r8)
+  50:	40013000 	.word	0x40013000
+  54:	00000000 	.word	0x00000000
+Disassembly of section .text.SPI_NSSInternalSoftwareConfig:
+
+00000000 <SPI_NSSInternalSoftwareConfig>:
+SPI_NSSInternalSoftwareConfig():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:583
+  * @retval None
+  */
+void SPI_NSSInternalSoftwareConfig(SPI_TypeDef* SPIx, uint16_t SPI_NSSInternalSoft)
+{
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   0:	4b14      	ldr	r3, [pc, #80]	(54 <SPI_NSSInternalSoftwareConfig+0x54>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:581
+  *     @arg SPI_NSSInternalSoft_Set: Set NSS pin internally
+  *     @arg SPI_NSSInternalSoft_Reset: Reset NSS pin internally
+  * @retval None
+  */
+void SPI_NSSInternalSoftwareConfig(SPI_TypeDef* SPIx, uint16_t SPI_NSSInternalSoft)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:583
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:581
+  *     @arg SPI_NSSInternalSoft_Set: Set NSS pin internally
+  *     @arg SPI_NSSInternalSoft_Reset: Reset NSS pin internally
+  * @retval None
+  */
+void SPI_NSSInternalSoftwareConfig(SPI_TypeDef* SPIx, uint16_t SPI_NSSInternalSoft)
+{
+   6:	4604      	mov	r4, r0
+   8:	460d      	mov	r5, r1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:583
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   a:	d00c      	beq.n	26 <SPI_NSSInternalSoftwareConfig+0x26>
+   c:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+  10:	4298      	cmp	r0, r3
+  12:	d008      	beq.n	26 <SPI_NSSInternalSoftwareConfig+0x26>
+  14:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  18:	4298      	cmp	r0, r3
+  1a:	d004      	beq.n	26 <SPI_NSSInternalSoftwareConfig+0x26>
+  1c:	480e      	ldr	r0, [pc, #56]	(58 <SPI_NSSInternalSoftwareConfig+0x58>)
+  1e:	f240 2147 	movw	r1, #583	; 0x247
+  22:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:584
+  assert_param(IS_SPI_NSS_INTERNAL(SPI_NSSInternalSoft));
+  26:	f5b5 7f80 	cmp.w	r5, #256	; 0x100
+  2a:	d008      	beq.n	3e <SPI_NSSInternalSoftwareConfig+0x3e>
+  2c:	f64f 63ff 	movw	r3, #65279	; 0xfeff
+  30:	429d      	cmp	r5, r3
+  32:	d009      	beq.n	48 <SPI_NSSInternalSoftwareConfig+0x48>
+  34:	4808      	ldr	r0, [pc, #32]	(58 <SPI_NSSInternalSoftwareConfig+0x58>)
+  36:	f44f 7112 	mov.w	r1, #584	; 0x248
+  3a:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:588
+  if (SPI_NSSInternalSoft != SPI_NSSInternalSoft_Reset)
+  {
+    /* Set NSS pin internally by software */
+    SPIx->CR1 |= SPI_NSSInternalSoft_Set;
+  3e:	8823      	ldrh	r3, [r4, #0]
+  40:	b29b      	uxth	r3, r3
+  42:	f443 7380 	orr.w	r3, r3, #256	; 0x100
+  46:	e002      	b.n	4e <SPI_NSSInternalSoftwareConfig+0x4e>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:593
+  }
+  else
+  {
+    /* Reset NSS pin internally by software */
+    SPIx->CR1 &= SPI_NSSInternalSoft_Reset;
+  48:	8823      	ldrh	r3, [r4, #0]
+  4a:	ea05 0303 	and.w	r3, r5, r3
+  4e:	8023      	strh	r3, [r4, #0]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:595
+  }
+}
+  50:	bd70      	pop	{r4, r5, r6, pc}
+  52:	46c0      	nop			(mov r8, r8)
+  54:	40013000 	.word	0x40013000
+  58:	00000000 	.word	0x00000000
+Disassembly of section .text.SPI_I2S_ReceiveData:
+
+00000000 <SPI_I2S_ReceiveData>:
+SPI_I2S_ReceiveData():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:565
+  * @retval The value of the received data.
+  */
+uint16_t SPI_I2S_ReceiveData(SPI_TypeDef* SPIx)
+{
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   0:	4b0a      	ldr	r3, [pc, #40]	(2c <SPI_I2S_ReceiveData+0x2c>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:563
+  *   - 1, 2 or 3 in SPI mode 
+  *   - 2 or 3 in I2S mode
+  * @retval The value of the received data.
+  */
+uint16_t SPI_I2S_ReceiveData(SPI_TypeDef* SPIx)
+{
+   2:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:565
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:563
+  *   - 1, 2 or 3 in SPI mode 
+  *   - 2 or 3 in I2S mode
+  * @retval The value of the received data.
+  */
+uint16_t SPI_I2S_ReceiveData(SPI_TypeDef* SPIx)
+{
+   6:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:565
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   8:	d00c      	beq.n	24 <SPI_I2S_ReceiveData+0x24>
+   a:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+   e:	4298      	cmp	r0, r3
+  10:	d008      	beq.n	24 <SPI_I2S_ReceiveData+0x24>
+  12:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  16:	4298      	cmp	r0, r3
+  18:	d004      	beq.n	24 <SPI_I2S_ReceiveData+0x24>
+  1a:	4805      	ldr	r0, [pc, #20]	(30 <SPI_I2S_ReceiveData+0x30>)
+  1c:	f240 2135 	movw	r1, #565	; 0x235
+  20:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:568
+  
+  /* Return the data in the DR register */
+  return SPIx->DR;
+  24:	89a0      	ldrh	r0, [r4, #12]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:569
+}
+  26:	b280      	uxth	r0, r0
+  28:	bd10      	pop	{r4, pc}
+  2a:	46c0      	nop			(mov r8, r8)
+  2c:	40013000 	.word	0x40013000
+  30:	00000000 	.word	0x00000000
+Disassembly of section .text.SPI_I2S_SendData:
+
+00000000 <SPI_I2S_SendData>:
+SPI_I2S_SendData():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:549
+  * @retval None
+  */
+void SPI_I2S_SendData(SPI_TypeDef* SPIx, uint16_t Data)
+{
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   0:	4b0a      	ldr	r3, [pc, #40]	(2c <SPI_I2S_SendData+0x2c>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:547
+  *   - 2 or 3 in I2S mode
+  * @param  Data : Data to be transmitted.
+  * @retval None
+  */
+void SPI_I2S_SendData(SPI_TypeDef* SPIx, uint16_t Data)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:549
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:547
+  *   - 2 or 3 in I2S mode
+  * @param  Data : Data to be transmitted.
+  * @retval None
+  */
+void SPI_I2S_SendData(SPI_TypeDef* SPIx, uint16_t Data)
+{
+   6:	4604      	mov	r4, r0
+   8:	460d      	mov	r5, r1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:549
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   a:	d00c      	beq.n	26 <SPI_I2S_SendData+0x26>
+   c:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+  10:	4298      	cmp	r0, r3
+  12:	d008      	beq.n	26 <SPI_I2S_SendData+0x26>
+  14:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  18:	4298      	cmp	r0, r3
+  1a:	d004      	beq.n	26 <SPI_I2S_SendData+0x26>
+  1c:	4804      	ldr	r0, [pc, #16]	(30 <SPI_I2S_SendData+0x30>)
+  1e:	f240 2125 	movw	r1, #549	; 0x225
+  22:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:552
+  
+  /* Write in the DR register the data to be sent */
+  SPIx->DR = Data;
+  26:	81a5      	strh	r5, [r4, #12]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:553
+}
+  28:	bd70      	pop	{r4, r5, r6, pc}
+  2a:	46c0      	nop			(mov r8, r8)
+  2c:	40013000 	.word	0x40013000
+  30:	00000000 	.word	0x00000000
+Disassembly of section .text.SPI_I2S_DMACmd:
+
+00000000 <SPI_I2S_DMACmd>:
+SPI_I2S_DMACmd():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:523
+  * @retval None
+  */
+void SPI_I2S_DMACmd(SPI_TypeDef* SPIx, uint16_t SPI_I2S_DMAReq, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   0:	4b18      	ldr	r3, [pc, #96]	(64 <SPI_I2S_DMACmd+0x64>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:521
+  * @param  NewState: new state of the selected SPI/I2S DMA transfer request.
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void SPI_I2S_DMACmd(SPI_TypeDef* SPIx, uint16_t SPI_I2S_DMAReq, FunctionalState NewState)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:523
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:521
+  * @param  NewState: new state of the selected SPI/I2S DMA transfer request.
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void SPI_I2S_DMACmd(SPI_TypeDef* SPIx, uint16_t SPI_I2S_DMAReq, FunctionalState NewState)
+{
+   6:	4604      	mov	r4, r0
+   8:	460d      	mov	r5, r1
+   a:	4616      	mov	r6, r2
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:523
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   c:	d00c      	beq.n	28 <SPI_I2S_DMACmd+0x28>
+   e:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+  12:	4298      	cmp	r0, r3
+  14:	d008      	beq.n	28 <SPI_I2S_DMACmd+0x28>
+  16:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  1a:	4298      	cmp	r0, r3
+  1c:	d004      	beq.n	28 <SPI_I2S_DMACmd+0x28>
+  1e:	4812      	ldr	r0, [pc, #72]	(68 <SPI_I2S_DMACmd+0x68>)
+  20:	f240 210b 	movw	r1, #523	; 0x20b
+  24:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:524
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  28:	2e01      	cmp	r6, #1
+  2a:	d904      	bls.n	36 <SPI_I2S_DMACmd+0x36>
+  2c:	480e      	ldr	r0, [pc, #56]	(68 <SPI_I2S_DMACmd+0x68>)
+  2e:	f44f 7103 	mov.w	r1, #524	; 0x20c
+  32:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:525
+  assert_param(IS_SPI_I2S_DMAREQ(SPI_I2S_DMAReq));
+  36:	f64f 73fc 	movw	r3, #65532	; 0xfffc
+  3a:	ea05 0303 	and.w	r3, r5, r3
+  3e:	b903      	cbnz	r3, 42 <SPI_I2S_DMACmd+0x42>
+  40:	b925      	cbnz	r5, 4c <SPI_I2S_DMACmd+0x4c>
+  42:	4809      	ldr	r0, [pc, #36]	(68 <SPI_I2S_DMACmd+0x68>)
+  44:	f240 210d 	movw	r1, #525	; 0x20d
+  48:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:526
+  if (NewState != DISABLE)
+  4c:	b126      	cbz	r6, 58 <SPI_I2S_DMACmd+0x58>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:529
+  {
+    /* Enable the selected SPI/I2S DMA requests */
+    SPIx->CR2 |= SPI_I2S_DMAReq;
+  4e:	88a3      	ldrh	r3, [r4, #4]
+  50:	b29b      	uxth	r3, r3
+  52:	ea45 0303 	orr.w	r3, r5, r3
+  56:	e003      	b.n	60 <SPI_I2S_DMACmd+0x60>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:534
+  }
+  else
+  {
+    /* Disable the selected SPI/I2S DMA requests */
+    SPIx->CR2 &= (uint16_t)~SPI_I2S_DMAReq;
+  58:	88a3      	ldrh	r3, [r4, #4]
+  5a:	b29b      	uxth	r3, r3
+  5c:	ea23 0305 	bic.w	r3, r3, r5
+  60:	80a3      	strh	r3, [r4, #4]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:536
+  }
+}
+  62:	bd70      	pop	{r4, r5, r6, pc}
+  64:	40013000 	.word	0x40013000
+  68:	00000000 	.word	0x00000000
+Disassembly of section .text.SPI_I2S_ITConfig:
+
+00000000 <SPI_I2S_ITConfig>:
+SPI_I2S_ITConfig():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:485
+  */
+void SPI_I2S_ITConfig(SPI_TypeDef* SPIx, uint8_t SPI_I2S_IT, FunctionalState NewState)
+{
+  uint16_t itpos = 0, itmask = 0 ;
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   0:	4b1a      	ldr	r3, [pc, #104]	(6c <SPI_I2S_ITConfig+0x6c>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:482
+  * @param  NewState: new state of the specified SPI/I2S interrupt.
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void SPI_I2S_ITConfig(SPI_TypeDef* SPIx, uint8_t SPI_I2S_IT, FunctionalState NewState)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:485
+  uint16_t itpos = 0, itmask = 0 ;
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:482
+  * @param  NewState: new state of the specified SPI/I2S interrupt.
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void SPI_I2S_ITConfig(SPI_TypeDef* SPIx, uint8_t SPI_I2S_IT, FunctionalState NewState)
+{
+   6:	4604      	mov	r4, r0
+   8:	460d      	mov	r5, r1
+   a:	4616      	mov	r6, r2
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:485
+  uint16_t itpos = 0, itmask = 0 ;
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   c:	d00c      	beq.n	28 <SPI_I2S_ITConfig+0x28>
+   e:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+  12:	4298      	cmp	r0, r3
+  14:	d008      	beq.n	28 <SPI_I2S_ITConfig+0x28>
+  16:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  1a:	4298      	cmp	r0, r3
+  1c:	d004      	beq.n	28 <SPI_I2S_ITConfig+0x28>
+  1e:	4814      	ldr	r0, [pc, #80]	(70 <SPI_I2S_ITConfig+0x70>)
+  20:	f240 11e5 	movw	r1, #485	; 0x1e5
+  24:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:486
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  28:	2e01      	cmp	r6, #1
+  2a:	d904      	bls.n	36 <SPI_I2S_ITConfig+0x36>
+  2c:	4810      	ldr	r0, [pc, #64]	(70 <SPI_I2S_ITConfig+0x70>)
+  2e:	f44f 71f3 	mov.w	r1, #486	; 0x1e6
+  32:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:487
+  assert_param(IS_SPI_I2S_CONFIG_IT(SPI_I2S_IT));
+  36:	2d71      	cmp	r5, #113
+  38:	d008      	beq.n	4c <SPI_I2S_ITConfig+0x4c>
+  3a:	2d60      	cmp	r5, #96
+  3c:	d006      	beq.n	4c <SPI_I2S_ITConfig+0x4c>
+  3e:	2d50      	cmp	r5, #80
+  40:	d004      	beq.n	4c <SPI_I2S_ITConfig+0x4c>
+  42:	480b      	ldr	r0, [pc, #44]	(70 <SPI_I2S_ITConfig+0x70>)
+  44:	f240 11e7 	movw	r1, #487	; 0x1e7
+  48:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:493
+
+  /* Get the SPI/I2S IT index */
+  itpos = SPI_I2S_IT >> 4;
+
+  /* Set the IT mask */
+  itmask = (uint16_t)1 << (uint16_t)itpos;
+  4c:	092a      	lsrs	r2, r5, #4
+  4e:	2301      	movs	r3, #1
+  50:	4093      	lsls	r3, r2
+  52:	b299      	uxth	r1, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:495
+
+  if (NewState != DISABLE)
+  54:	b126      	cbz	r6, 60 <SPI_I2S_ITConfig+0x60>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:498
+  {
+    /* Enable the selected SPI/I2S interrupt */
+    SPIx->CR2 |= itmask;
+  56:	88a3      	ldrh	r3, [r4, #4]
+  58:	b29b      	uxth	r3, r3
+  5a:	ea41 0303 	orr.w	r3, r1, r3
+  5e:	e003      	b.n	68 <SPI_I2S_ITConfig+0x68>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:503
+  }
+  else
+  {
+    /* Disable the selected SPI/I2S interrupt */
+    SPIx->CR2 &= (uint16_t)~itmask;
+  60:	88a3      	ldrh	r3, [r4, #4]
+  62:	b29b      	uxth	r3, r3
+  64:	ea23 0301 	bic.w	r3, r3, r1
+  68:	80a3      	strh	r3, [r4, #4]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:505
+  }
+}
+  6a:	bd70      	pop	{r4, r5, r6, pc}
+  6c:	40013000 	.word	0x40013000
+  70:	00000000 	.word	0x00000000
+Disassembly of section .text.I2S_Cmd:
+
+00000000 <I2S_Cmd>:
+I2S_Cmd():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:453
+  * @retval None
+  */
+void I2S_Cmd(SPI_TypeDef* SPIx, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_SPI_23_PERIPH(SPIx));
+   0:	4b11      	ldr	r3, [pc, #68]	(48 <I2S_Cmd+0x48>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:451
+  * @param  NewState: new state of the SPIx peripheral. 
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void I2S_Cmd(SPI_TypeDef* SPIx, FunctionalState NewState)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:453
+  /* Check the parameters */
+  assert_param(IS_SPI_23_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:451
+  * @param  NewState: new state of the SPIx peripheral. 
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void I2S_Cmd(SPI_TypeDef* SPIx, FunctionalState NewState)
+{
+   6:	4604      	mov	r4, r0
+   8:	460d      	mov	r5, r1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:453
+  /* Check the parameters */
+  assert_param(IS_SPI_23_PERIPH(SPIx));
+   a:	d008      	beq.n	1e <I2S_Cmd+0x1e>
+   c:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  10:	4298      	cmp	r0, r3
+  12:	d004      	beq.n	1e <I2S_Cmd+0x1e>
+  14:	480d      	ldr	r0, [pc, #52]	(4c <I2S_Cmd+0x4c>)
+  16:	f240 11c5 	movw	r1, #453	; 0x1c5
+  1a:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:454
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  1e:	2d01      	cmp	r5, #1
+  20:	d904      	bls.n	2c <I2S_Cmd+0x2c>
+  22:	480a      	ldr	r0, [pc, #40]	(4c <I2S_Cmd+0x4c>)
+  24:	f44f 71e3 	mov.w	r1, #454	; 0x1c6
+  28:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:455
+  if (NewState != DISABLE)
+  2c:	b125      	cbz	r5, 38 <I2S_Cmd+0x38>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:458
+  {
+    /* Enable the selected SPI peripheral (in I2S mode) */
+    SPIx->I2SCFGR |= I2SCFGR_I2SE_Set;
+  2e:	8ba3      	ldrh	r3, [r4, #28]
+  30:	b29b      	uxth	r3, r3
+  32:	f443 6380 	orr.w	r3, r3, #1024	; 0x400
+  36:	e004      	b.n	42 <I2S_Cmd+0x42>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:463
+  }
+  else
+  {
+    /* Disable the selected SPI peripheral (in I2S mode) */
+    SPIx->I2SCFGR &= I2SCFGR_I2SE_Reset;
+  38:	8ba3      	ldrh	r3, [r4, #28]
+  3a:	f423 6380 	bic.w	r3, r3, #1024	; 0x400
+  3e:	041b      	lsls	r3, r3, #16
+  40:	0c1b      	lsrs	r3, r3, #16
+  42:	83a3      	strh	r3, [r4, #28]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:465
+  }
+}
+  44:	bd70      	pop	{r4, r5, r6, pc}
+  46:	46c0      	nop			(mov r8, r8)
+  48:	40003800 	.word	0x40003800
+  4c:	00000000 	.word	0x00000000
+Disassembly of section .text.SPI_Cmd:
+
+00000000 <SPI_Cmd>:
+SPI_Cmd():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:429
+  * @retval None
+  */
+void SPI_Cmd(SPI_TypeDef* SPIx, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   0:	4b13      	ldr	r3, [pc, #76]	(50 <SPI_Cmd+0x50>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:427
+  * @param  NewState: new state of the SPIx peripheral. 
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void SPI_Cmd(SPI_TypeDef* SPIx, FunctionalState NewState)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:429
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:427
+  * @param  NewState: new state of the SPIx peripheral. 
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void SPI_Cmd(SPI_TypeDef* SPIx, FunctionalState NewState)
+{
+   6:	4604      	mov	r4, r0
+   8:	460d      	mov	r5, r1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:429
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   a:	d00c      	beq.n	26 <SPI_Cmd+0x26>
+   c:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+  10:	4298      	cmp	r0, r3
+  12:	d008      	beq.n	26 <SPI_Cmd+0x26>
+  14:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  18:	4298      	cmp	r0, r3
+  1a:	d004      	beq.n	26 <SPI_Cmd+0x26>
+  1c:	480d      	ldr	r0, [pc, #52]	(54 <SPI_Cmd+0x54>)
+  1e:	f240 11ad 	movw	r1, #429	; 0x1ad
+  22:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:430
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  26:	2d01      	cmp	r5, #1
+  28:	d904      	bls.n	34 <SPI_Cmd+0x34>
+  2a:	480a      	ldr	r0, [pc, #40]	(54 <SPI_Cmd+0x54>)
+  2c:	f44f 71d7 	mov.w	r1, #430	; 0x1ae
+  30:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:431
+  if (NewState != DISABLE)
+  34:	b125      	cbz	r5, 40 <SPI_Cmd+0x40>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:434
+  {
+    /* Enable the selected SPI peripheral */
+    SPIx->CR1 |= CR1_SPE_Set;
+  36:	8823      	ldrh	r3, [r4, #0]
+  38:	b29b      	uxth	r3, r3
+  3a:	f043 0340 	orr.w	r3, r3, #64	; 0x40
+  3e:	e004      	b.n	4a <SPI_Cmd+0x4a>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:439
+  }
+  else
+  {
+    /* Disable the selected SPI peripheral */
+    SPIx->CR1 &= CR1_SPE_Reset;
+  40:	8823      	ldrh	r3, [r4, #0]
+  42:	f023 0340 	bic.w	r3, r3, #64	; 0x40
+  46:	041b      	lsls	r3, r3, #16
+  48:	0c1b      	lsrs	r3, r3, #16
+  4a:	8023      	strh	r3, [r4, #0]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:441
+  }
+}
+  4c:	bd70      	pop	{r4, r5, r6, pc}
+  4e:	46c0      	nop			(mov r8, r8)
+  50:	40013000 	.word	0x40013000
+  54:	00000000 	.word	0x00000000
+Disassembly of section .text.SPI_Init:
+
+00000000 <SPI_Init>:
+SPI_Init():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:162
+void SPI_Init(SPI_TypeDef* SPIx, SPI_InitTypeDef* SPI_InitStruct)
+{
+  uint16_t tmpreg = 0;
+  
+  /* check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));   
+   0:	4b45      	ldr	r3, [pc, #276]	(118 <SPI_Init+0x118>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:158
+  * @param  SPI_InitStruct: pointer to a SPI_InitTypeDef structure that
+  *   contains the configuration information for the specified SPI peripheral.
+  * @retval None
+  */
+void SPI_Init(SPI_TypeDef* SPIx, SPI_InitTypeDef* SPI_InitStruct)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:162
+  uint16_t tmpreg = 0;
+  
+  /* check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));   
+   4:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:158
+  * @param  SPI_InitStruct: pointer to a SPI_InitTypeDef structure that
+  *   contains the configuration information for the specified SPI peripheral.
+  * @retval None
+  */
+void SPI_Init(SPI_TypeDef* SPIx, SPI_InitTypeDef* SPI_InitStruct)
+{
+   6:	4605      	mov	r5, r0
+   8:	460c      	mov	r4, r1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:162
+  uint16_t tmpreg = 0;
+  
+  /* check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));   
+   a:	d00b      	beq.n	24 <SPI_Init+0x24>
+   c:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+  10:	4298      	cmp	r0, r3
+  12:	d007      	beq.n	24 <SPI_Init+0x24>
+  14:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  18:	4298      	cmp	r0, r3
+  1a:	d003      	beq.n	24 <SPI_Init+0x24>
+  1c:	483f      	ldr	r0, [pc, #252]	(11c <SPI_Init+0x11c>)
+  1e:	21a2      	movs	r1, #162
+  20:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:165
+  
+  /* Check the SPI parameters */
+  assert_param(IS_SPI_DIRECTION_MODE(SPI_InitStruct->SPI_Direction));
+  24:	8823      	ldrh	r3, [r4, #0]
+  26:	b163      	cbz	r3, 42 <SPI_Init+0x42>
+  28:	f5b3 6f80 	cmp.w	r3, #1024	; 0x400
+  2c:	d009      	beq.n	42 <SPI_Init+0x42>
+  2e:	f5b3 4f00 	cmp.w	r3, #32768	; 0x8000
+  32:	d006      	beq.n	42 <SPI_Init+0x42>
+  34:	f5b3 4f40 	cmp.w	r3, #49152	; 0xc000
+  38:	d003      	beq.n	42 <SPI_Init+0x42>
+  3a:	4838      	ldr	r0, [pc, #224]	(11c <SPI_Init+0x11c>)
+  3c:	21a5      	movs	r1, #165
+  3e:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:166
+  assert_param(IS_SPI_MODE(SPI_InitStruct->SPI_Mode));
+  42:	8863      	ldrh	r3, [r4, #2]
+  44:	f5b3 7f82 	cmp.w	r3, #260	; 0x104
+  48:	d004      	beq.n	54 <SPI_Init+0x54>
+  4a:	b11b      	cbz	r3, 54 <SPI_Init+0x54>
+  4c:	4833      	ldr	r0, [pc, #204]	(11c <SPI_Init+0x11c>)
+  4e:	21a6      	movs	r1, #166
+  50:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:167
+  assert_param(IS_SPI_DATASIZE(SPI_InitStruct->SPI_DataSize));
+  54:	88a3      	ldrh	r3, [r4, #4]
+  56:	f5b3 6f00 	cmp.w	r3, #2048	; 0x800
+  5a:	d004      	beq.n	66 <SPI_Init+0x66>
+  5c:	b11b      	cbz	r3, 66 <SPI_Init+0x66>
+  5e:	482f      	ldr	r0, [pc, #188]	(11c <SPI_Init+0x11c>)
+  60:	21a7      	movs	r1, #167
+  62:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:168
+  assert_param(IS_SPI_CPOL(SPI_InitStruct->SPI_CPOL));
+  66:	88e3      	ldrh	r3, [r4, #6]
+  68:	b12b      	cbz	r3, 76 <SPI_Init+0x76>
+  6a:	2b02      	cmp	r3, #2
+  6c:	d003      	beq.n	76 <SPI_Init+0x76>
+  6e:	482b      	ldr	r0, [pc, #172]	(11c <SPI_Init+0x11c>)
+  70:	21a8      	movs	r1, #168
+  72:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:169
+  assert_param(IS_SPI_CPHA(SPI_InitStruct->SPI_CPHA));
+  76:	8923      	ldrh	r3, [r4, #8]
+  78:	2b01      	cmp	r3, #1
+  7a:	d903      	bls.n	84 <SPI_Init+0x84>
+  7c:	4827      	ldr	r0, [pc, #156]	(11c <SPI_Init+0x11c>)
+  7e:	21a9      	movs	r1, #169
+  80:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:170
+  assert_param(IS_SPI_NSS(SPI_InitStruct->SPI_NSS));
+  84:	8963      	ldrh	r3, [r4, #10]
+  86:	f5b3 7f00 	cmp.w	r3, #512	; 0x200
+  8a:	d004      	beq.n	96 <SPI_Init+0x96>
+  8c:	b11b      	cbz	r3, 96 <SPI_Init+0x96>
+  8e:	4823      	ldr	r0, [pc, #140]	(11c <SPI_Init+0x11c>)
+  90:	21aa      	movs	r1, #170
+  92:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:171
+  assert_param(IS_SPI_BAUDRATE_PRESCALER(SPI_InitStruct->SPI_BaudRatePrescaler));
+  96:	89a3      	ldrh	r3, [r4, #12]
+  98:	b18b      	cbz	r3, be <SPI_Init+0xbe>
+  9a:	2b08      	cmp	r3, #8
+  9c:	d00f      	beq.n	be <SPI_Init+0xbe>
+  9e:	2b10      	cmp	r3, #16
+  a0:	d00d      	beq.n	be <SPI_Init+0xbe>
+  a2:	2b18      	cmp	r3, #24
+  a4:	d00b      	beq.n	be <SPI_Init+0xbe>
+  a6:	2b20      	cmp	r3, #32
+  a8:	d009      	beq.n	be <SPI_Init+0xbe>
+  aa:	2b28      	cmp	r3, #40
+  ac:	d007      	beq.n	be <SPI_Init+0xbe>
+  ae:	2b30      	cmp	r3, #48
+  b0:	d005      	beq.n	be <SPI_Init+0xbe>
+  b2:	2b38      	cmp	r3, #56
+  b4:	d003      	beq.n	be <SPI_Init+0xbe>
+  b6:	4819      	ldr	r0, [pc, #100]	(11c <SPI_Init+0x11c>)
+  b8:	21ab      	movs	r1, #171
+  ba:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:172
+  assert_param(IS_SPI_FIRST_BIT(SPI_InitStruct->SPI_FirstBit));
+  be:	89e3      	ldrh	r3, [r4, #14]
+  c0:	b12b      	cbz	r3, ce <SPI_Init+0xce>
+  c2:	2b80      	cmp	r3, #128
+  c4:	d003      	beq.n	ce <SPI_Init+0xce>
+  c6:	4815      	ldr	r0, [pc, #84]	(11c <SPI_Init+0x11c>)
+  c8:	21ac      	movs	r1, #172
+  ca:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:173
+  assert_param(IS_SPI_CRC_POLYNOMIAL(SPI_InitStruct->SPI_CRCPolynomial));
+  ce:	8a23      	ldrh	r3, [r4, #16]
+  d0:	b91b      	cbnz	r3, da <SPI_Init+0xda>
+  d2:	4812      	ldr	r0, [pc, #72]	(11c <SPI_Init+0x11c>)
+  d4:	21ad      	movs	r1, #173
+  d6:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:188
+  /* Set SSM, SSI and MSTR bits according to SPI_Mode and SPI_NSS values */
+  /* Set LSBFirst bit according to SPI_FirstBit value */
+  /* Set BR bits according to SPI_BaudRatePrescaler value */
+  /* Set CPOL bit according to SPI_CPOL value */
+  /* Set CPHA bit according to SPI_CPHA value */
+  tmpreg |= (uint16_t)((uint32_t)SPI_InitStruct->SPI_Direction | SPI_InitStruct->SPI_Mode |
+  da:	8822      	ldrh	r2, [r4, #0]
+  dc:	8863      	ldrh	r3, [r4, #2]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:177
+  assert_param(IS_SPI_FIRST_BIT(SPI_InitStruct->SPI_FirstBit));
+  assert_param(IS_SPI_CRC_POLYNOMIAL(SPI_InitStruct->SPI_CRCPolynomial));
+
+/*---------------------------- SPIx CR1 Configuration ------------------------*/
+  /* Get the SPIx CR1 value */
+  tmpreg = SPIx->CR1;
+  de:	8829      	ldrh	r1, [r5, #0]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:188
+  /* Set SSM, SSI and MSTR bits according to SPI_Mode and SPI_NSS values */
+  /* Set LSBFirst bit according to SPI_FirstBit value */
+  /* Set BR bits according to SPI_BaudRatePrescaler value */
+  /* Set CPOL bit according to SPI_CPOL value */
+  /* Set CPHA bit according to SPI_CPHA value */
+  tmpreg |= (uint16_t)((uint32_t)SPI_InitStruct->SPI_Direction | SPI_InitStruct->SPI_Mode |
+  e0:	4313      	orrs	r3, r2
+  e2:	88a2      	ldrh	r2, [r4, #4]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:179
+
+/*---------------------------- SPIx CR1 Configuration ------------------------*/
+  /* Get the SPIx CR1 value */
+  tmpreg = SPIx->CR1;
+  /* Clear BIDIMode, BIDIOE, RxONLY, SSM, SSI, LSBFirst, BR, MSTR, CPOL and CPHA bits */
+  tmpreg &= CR1_CLEAR_Mask;
+  e4:	f401 5141 	and.w	r1, r1, #12352	; 0x3040
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:188
+  /* Set SSM, SSI and MSTR bits according to SPI_Mode and SPI_NSS values */
+  /* Set LSBFirst bit according to SPI_FirstBit value */
+  /* Set BR bits according to SPI_BaudRatePrescaler value */
+  /* Set CPOL bit according to SPI_CPOL value */
+  /* Set CPHA bit according to SPI_CPHA value */
+  tmpreg |= (uint16_t)((uint32_t)SPI_InitStruct->SPI_Direction | SPI_InitStruct->SPI_Mode |
+  e8:	4313      	orrs	r3, r2
+  ea:	88e2      	ldrh	r2, [r4, #6]
+  ec:	4313      	orrs	r3, r2
+  ee:	8922      	ldrh	r2, [r4, #8]
+  f0:	4313      	orrs	r3, r2
+  f2:	8962      	ldrh	r2, [r4, #10]
+  f4:	4313      	orrs	r3, r2
+  f6:	89a2      	ldrh	r2, [r4, #12]
+  f8:	4313      	orrs	r3, r2
+  fa:	89e2      	ldrh	r2, [r4, #14]
+  fc:	4313      	orrs	r3, r2
+  fe:	4319      	orrs	r1, r3
+ 100:	b289      	uxth	r1, r1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:193
+                  SPI_InitStruct->SPI_DataSize | SPI_InitStruct->SPI_CPOL |  
+                  SPI_InitStruct->SPI_CPHA | SPI_InitStruct->SPI_NSS |  
+                  SPI_InitStruct->SPI_BaudRatePrescaler | SPI_InitStruct->SPI_FirstBit);
+  /* Write to SPIx CR1 */
+  SPIx->CR1 = tmpreg;
+ 102:	8029      	strh	r1, [r5, #0]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:196
+  
+  /* Activate the SPI mode (Reset I2SMOD bit in I2SCFGR register) */
+  SPIx->I2SCFGR &= SPI_Mode_Select;		
+ 104:	8bab      	ldrh	r3, [r5, #28]
+ 106:	f423 6300 	bic.w	r3, r3, #2048	; 0x800
+ 10a:	041b      	lsls	r3, r3, #16
+ 10c:	0c1b      	lsrs	r3, r3, #16
+ 10e:	83ab      	strh	r3, [r5, #28]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:200
+
+/*---------------------------- SPIx CRCPOLY Configuration --------------------*/
+  /* Write to SPIx CRCPOLY */
+  SPIx->CRCPR = SPI_InitStruct->SPI_CRCPolynomial;
+ 110:	8a23      	ldrh	r3, [r4, #16]
+ 112:	822b      	strh	r3, [r5, #16]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:201
+}
+ 114:	bd70      	pop	{r4, r5, r6, pc}
+ 116:	46c0      	nop			(mov r8, r8)
+ 118:	40013000 	.word	0x40013000
+ 11c:	00000000 	.word	0x00000000
+Disassembly of section .text.I2S_Init:
+
+00000000 <I2S_Init>:
+I2S_Init():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:219
+  *  and the product configuration). But in case the prescaler value is greater 
+  *  than 511, the default value (0x02) will be configured instead.  *   
+  * @retval None
+  */
+void I2S_Init(SPI_TypeDef* SPIx, I2S_InitTypeDef* I2S_InitStruct)
+{
+   0:	b5f0      	push	{r4, r5, r6, r7, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:226
+  uint32_t tmp = 0;
+  RCC_ClocksTypeDef RCC_Clocks;
+  uint32_t sourceclock = 0;
+  
+  /* Check the I2S parameters */
+  assert_param(IS_SPI_23_PERIPH(SPIx));
+   2:	4b5e      	ldr	r3, [pc, #376]	(17c <I2S_Init+0x17c>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:219
+  *  and the product configuration). But in case the prescaler value is greater 
+  *  than 511, the default value (0x02) will be configured instead.  *   
+  * @retval None
+  */
+void I2S_Init(SPI_TypeDef* SPIx, I2S_InitTypeDef* I2S_InitStruct)
+{
+   4:	b087      	sub	sp, #28
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:226
+  uint32_t tmp = 0;
+  RCC_ClocksTypeDef RCC_Clocks;
+  uint32_t sourceclock = 0;
+  
+  /* Check the I2S parameters */
+  assert_param(IS_SPI_23_PERIPH(SPIx));
+   6:	4298      	cmp	r0, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:219
+  *  and the product configuration). But in case the prescaler value is greater 
+  *  than 511, the default value (0x02) will be configured instead.  *   
+  * @retval None
+  */
+void I2S_Init(SPI_TypeDef* SPIx, I2S_InitTypeDef* I2S_InitStruct)
+{
+   8:	4606      	mov	r6, r0
+   a:	460c      	mov	r4, r1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:226
+  uint32_t tmp = 0;
+  RCC_ClocksTypeDef RCC_Clocks;
+  uint32_t sourceclock = 0;
+  
+  /* Check the I2S parameters */
+  assert_param(IS_SPI_23_PERIPH(SPIx));
+   c:	d007      	beq.n	1e <I2S_Init+0x1e>
+   e:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  12:	4298      	cmp	r0, r3
+  14:	d003      	beq.n	1e <I2S_Init+0x1e>
+  16:	485a      	ldr	r0, [pc, #360]	(180 <I2S_Init+0x180>)
+  18:	21e2      	movs	r1, #226
+  1a:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:227
+  assert_param(IS_I2S_MODE(I2S_InitStruct->I2S_Mode));
+  1e:	8823      	ldrh	r3, [r4, #0]
+  20:	b163      	cbz	r3, 3c <I2S_Init+0x3c>
+  22:	f5b3 7f80 	cmp.w	r3, #256	; 0x100
+  26:	d009      	beq.n	3c <I2S_Init+0x3c>
+  28:	f5b3 7f00 	cmp.w	r3, #512	; 0x200
+  2c:	d006      	beq.n	3c <I2S_Init+0x3c>
+  2e:	f5b3 7f40 	cmp.w	r3, #768	; 0x300
+  32:	d003      	beq.n	3c <I2S_Init+0x3c>
+  34:	4852      	ldr	r0, [pc, #328]	(180 <I2S_Init+0x180>)
+  36:	21e3      	movs	r1, #227
+  38:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:228
+  assert_param(IS_I2S_STANDARD(I2S_InitStruct->I2S_Standard));
+  3c:	8863      	ldrh	r3, [r4, #2]
+  3e:	b15b      	cbz	r3, 58 <I2S_Init+0x58>
+  40:	2b10      	cmp	r3, #16
+  42:	d009      	beq.n	58 <I2S_Init+0x58>
+  44:	2b20      	cmp	r3, #32
+  46:	d007      	beq.n	58 <I2S_Init+0x58>
+  48:	2b30      	cmp	r3, #48
+  4a:	d005      	beq.n	58 <I2S_Init+0x58>
+  4c:	2bb0      	cmp	r3, #176
+  4e:	d003      	beq.n	58 <I2S_Init+0x58>
+  50:	484b      	ldr	r0, [pc, #300]	(180 <I2S_Init+0x180>)
+  52:	21e4      	movs	r1, #228
+  54:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:229
+  assert_param(IS_I2S_DATA_FORMAT(I2S_InitStruct->I2S_DataFormat));
+  58:	88a3      	ldrh	r3, [r4, #4]
+  5a:	2b01      	cmp	r3, #1
+  5c:	d907      	bls.n	6e <I2S_Init+0x6e>
+  5e:	2b03      	cmp	r3, #3
+  60:	d005      	beq.n	6e <I2S_Init+0x6e>
+  62:	2b05      	cmp	r3, #5
+  64:	d003      	beq.n	6e <I2S_Init+0x6e>
+  66:	4846      	ldr	r0, [pc, #280]	(180 <I2S_Init+0x180>)
+  68:	21e5      	movs	r1, #229
+  6a:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:230
+  assert_param(IS_I2S_MCLK_OUTPUT(I2S_InitStruct->I2S_MCLKOutput));
+  6e:	88e3      	ldrh	r3, [r4, #6]
+  70:	f5b3 7f00 	cmp.w	r3, #512	; 0x200
+  74:	d004      	beq.n	80 <I2S_Init+0x80>
+  76:	b11b      	cbz	r3, 80 <I2S_Init+0x80>
+  78:	4841      	ldr	r0, [pc, #260]	(180 <I2S_Init+0x180>)
+  7a:	21e6      	movs	r1, #230
+  7c:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:231
+  assert_param(IS_I2S_AUDIO_FREQ(I2S_InitStruct->I2S_AudioFreq));
+  80:	68a2      	ldr	r2, [r4, #8]
+  82:	4b40      	ldr	r3, [pc, #256]	(184 <I2S_Init+0x184>)
+  84:	429a      	cmp	r2, r3
+  86:	d01e      	beq.n	c6 <I2S_Init+0xc6>
+  88:	f64b 3380 	movw	r3, #48000	; 0xbb80
+  8c:	429a      	cmp	r2, r3
+  8e:	d01a      	beq.n	c6 <I2S_Init+0xc6>
+  90:	f64a 4344 	movw	r3, #44100	; 0xac44
+  94:	429a      	cmp	r2, r3
+  96:	d016      	beq.n	c6 <I2S_Init+0xc6>
+  98:	f5b2 4ffa 	cmp.w	r2, #32000	; 0x7d00
+  9c:	d013      	beq.n	c6 <I2S_Init+0xc6>
+  9e:	f245 6322 	movw	r3, #22050	; 0x5622
+  a2:	429a      	cmp	r2, r3
+  a4:	d00f      	beq.n	c6 <I2S_Init+0xc6>
+  a6:	f5b2 5f7a 	cmp.w	r2, #16000	; 0x3e80
+  aa:	d00c      	beq.n	c6 <I2S_Init+0xc6>
+  ac:	f642 3311 	movw	r3, #11025	; 0x2b11
+  b0:	429a      	cmp	r2, r3
+  b2:	d008      	beq.n	c6 <I2S_Init+0xc6>
+  b4:	f5b2 5ffa 	cmp.w	r2, #8000	; 0x1f40
+  b8:	d005      	beq.n	c6 <I2S_Init+0xc6>
+  ba:	2a02      	cmp	r2, #2
+  bc:	d003      	beq.n	c6 <I2S_Init+0xc6>
+  be:	4830      	ldr	r0, [pc, #192]	(180 <I2S_Init+0x180>)
+  c0:	21e7      	movs	r1, #231
+  c2:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:232
+  assert_param(IS_I2S_CPOL(I2S_InitStruct->I2S_CPOL));  
+  c6:	89a3      	ldrh	r3, [r4, #12]
+  c8:	b12b      	cbz	r3, d6 <I2S_Init+0xd6>
+  ca:	2b08      	cmp	r3, #8
+  cc:	d003      	beq.n	d6 <I2S_Init+0xd6>
+  ce:	482c      	ldr	r0, [pc, #176]	(180 <I2S_Init+0x180>)
+  d0:	21e8      	movs	r1, #232
+  d2:	f7ff fffe 	bl	0 <assert_failed>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:236
+
+/*----------------------- SPIx I2SCFGR & I2SPR Configuration -----------------*/
+  /* Clear I2SMOD, I2SE, I2SCFG, PCMSYNC, I2SSTD, CKPOL, DATLEN and CHLEN bits */
+  SPIx->I2SCFGR &= I2SCFGR_CLEAR_Mask; 
+  d6:	8bb3      	ldrh	r3, [r6, #28]
+  d8:	f423 637a 	bic.w	r3, r3, #4000	; 0xfa0
+  dc:	f023 031f 	bic.w	r3, r3, #31	; 0x1f
+  e0:	041b      	lsls	r3, r3, #16
+  e2:	0c1b      	lsrs	r3, r3, #16
+  e4:	83b3      	strh	r3, [r6, #28]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:237
+  SPIx->I2SPR = 0x0002;
+  e6:	f04f 0302 	mov.w	r3, #2	; 0x2
+  ea:	8433      	strh	r3, [r6, #32]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:240
+  
+  /* Get the I2SCFGR register value */
+  tmpreg = SPIx->I2SCFGR;
+  ec:	8bb3      	ldrh	r3, [r6, #28]
+  ee:	b29f      	uxth	r7, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:243
+  
+  /* If the default value has to be written, reinitialize i2sdiv and i2sodd*/
+  if(I2S_InitStruct->I2S_AudioFreq == I2S_AudioFreq_Default)
+  f0:	68a3      	ldr	r3, [r4, #8]
+  f2:	2b02      	cmp	r3, #2
+  f4:	d102      	bne.n	fc <I2S_Init+0xfc>
+  f6:	4619      	mov	r1, r3
+  f8:	2200      	movs	r2, #0
+  fa:	e023      	b.n	144 <I2S_Init+0x144>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:252
+  }
+  /* If the requested audio frequency is not the default, compute the prescaler */
+  else
+  {
+    /* Check the frame length (For the Prescaler computing) */
+    if(I2S_InitStruct->I2S_DataFormat == I2S_DataFormat_16b)
+  fc:	88a3      	ldrh	r3, [r4, #4]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:313
+      /* Get the source clock value: based on System Clock value */
+      sourceclock = RCC_Clocks.SYSCLK_Frequency;
+    }        
+#else /* STM32F10X_HD */
+    /* I2S Clock source is System clock: Get System Clock frequency */
+    RCC_GetClocksFreq(&RCC_Clocks);      
+  fe:	a801      	add	r0, sp, #4
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:252
+  }
+  /* If the requested audio frequency is not the default, compute the prescaler */
+  else
+  {
+    /* Check the frame length (For the Prescaler computing) */
+    if(I2S_InitStruct->I2S_DataFormat == I2S_DataFormat_16b)
+ 100:	2b00      	cmp	r3, #0
+ 102:	bf0c      	ite	eq
+ 104:	2501      	moveq	r5, #1
+ 106:	2502      	movne	r5, #2
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:313
+      /* Get the source clock value: based on System Clock value */
+      sourceclock = RCC_Clocks.SYSCLK_Frequency;
+    }        
+#else /* STM32F10X_HD */
+    /* I2S Clock source is System clock: Get System Clock frequency */
+    RCC_GetClocksFreq(&RCC_Clocks);      
+ 108:	f7ff fffe 	bl	0 <RCC_GetClocksFreq>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:320
+    /* Get the source clock value: based on System Clock value */
+    sourceclock = RCC_Clocks.SYSCLK_Frequency;    
+#endif /* STM32F10X_CL */    
+
+    /* Compute the Real divider depending on the MCLK output state with a flaoting point */
+    if(I2S_InitStruct->I2S_MCLKOutput == I2S_MCLKOutput_Enable)
+ 10c:	88e3      	ldrh	r3, [r4, #6]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:316
+#else /* STM32F10X_HD */
+    /* I2S Clock source is System clock: Get System Clock frequency */
+    RCC_GetClocksFreq(&RCC_Clocks);      
+      
+    /* Get the source clock value: based on System Clock value */
+    sourceclock = RCC_Clocks.SYSCLK_Frequency;    
+ 10e:	9901      	ldr	r1, [sp, #4]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:320
+#endif /* STM32F10X_CL */    
+
+    /* Compute the Real divider depending on the MCLK output state with a flaoting point */
+    if(I2S_InitStruct->I2S_MCLKOutput == I2S_MCLKOutput_Enable)
+ 110:	f5b3 7f00 	cmp.w	r3, #512	; 0x200
+ 114:	68a0      	ldr	r0, [r4, #8]
+ 116:	d103      	bne.n	120 <I2S_Init+0x120>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:323
+    {
+      /* MCLK output is enabled */
+      tmp = (uint16_t)(((((sourceclock / 256) * 10) / I2S_InitStruct->I2S_AudioFreq)) + 5);
+ 118:	0a0a      	lsrs	r2, r1, #8
+ 11a:	f5a3 73fb 	sub.w	r3, r3, #502	; 0x1f6
+ 11e:	e003      	b.n	128 <I2S_Init+0x128>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:328
+    }
+    else
+    {
+      /* MCLK output is disabled */
+      tmp = (uint16_t)(((((sourceclock / (32 * packetlength)) *10 ) / I2S_InitStruct->I2S_AudioFreq)) + 5);
+ 120:	016a      	lsls	r2, r5, #5
+ 122:	fbb1 f2f2 	udiv	r2, r1, r2
+ 126:	230a      	movs	r3, #10
+ 128:	4353      	muls	r3, r2
+ 12a:	fbb3 f3f0 	udiv	r3, r3, r0
+ 12e:	3305      	adds	r3, #5
+ 130:	b29a      	uxth	r2, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:332
+    }
+    
+    /* Remove the flaoting point */
+    tmp = tmp / 10;  
+ 132:	230a      	movs	r3, #10
+ 134:	fbb2 f3f3 	udiv	r3, r2, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:338
+      
+    /* Check the parity of the divider */
+    i2sodd = (uint16_t)(tmp & (uint16_t)0x0001);
+   
+    /* Compute the i2sdiv prescaler */
+    i2sdiv = (uint16_t)((tmp - i2sodd) / 2);
+ 138:	f003 0201 	and.w	r2, r3, #1	; 0x1
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:341
+   
+    /* Get the Mask for the Odd bit (SPI_I2SPR[8]) register */
+    i2sodd = (uint16_t) (i2sodd << 8);
+ 13c:	0212      	lsls	r2, r2, #8
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:338
+      
+    /* Check the parity of the divider */
+    i2sodd = (uint16_t)(tmp & (uint16_t)0x0001);
+   
+    /* Compute the i2sdiv prescaler */
+    i2sdiv = (uint16_t)((tmp - i2sodd) / 2);
+ 13e:	f3c3 014f 	ubfx	r1, r3, #1, #16
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:341
+   
+    /* Get the Mask for the Odd bit (SPI_I2SPR[8]) register */
+    i2sodd = (uint16_t) (i2sodd << 8);
+ 142:	b292      	uxth	r2, r2
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:345
+  }
+  
+  /* Test if the divider is 1 or 0 or greater than 0xFF */
+  if ((i2sdiv < 2) || (i2sdiv > 0xFF))
+ 144:	1e8b      	subs	r3, r1, #2
+ 146:	b29b      	uxth	r3, r3
+ 148:	2bfe      	cmp	r3, #254
+ 14a:	bf28      	it	cs
+ 14c:	2200      	movcs	r2, #0
+ 14e:	bf28      	it	cs
+ 150:	2102      	movcs	r1, #2
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:353
+    i2sdiv = 2;
+    i2sodd = 0;
+  }
+
+  /* Write to SPIx I2SPR register the computed value */
+  SPIx->I2SPR = (uint16_t)(i2sdiv | (uint16_t)(i2sodd | (uint16_t)I2S_InitStruct->I2S_MCLKOutput));  
+ 152:	ea41 0302 	orr.w	r3, r1, r2
+ 156:	88e2      	ldrh	r2, [r4, #6]
+ 158:	4313      	orrs	r3, r2
+ 15a:	b29b      	uxth	r3, r3
+ 15c:	8433      	strh	r3, [r6, #32]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:356
+ 
+  /* Configure the I2S with the SPI_InitStruct values */
+  tmpreg |= (uint16_t)(I2S_Mode_Select | (uint16_t)(I2S_InitStruct->I2S_Mode | \
+ 15e:	8823      	ldrh	r3, [r4, #0]
+ 160:	8862      	ldrh	r2, [r4, #2]
+ 162:	ea47 0303 	orr.w	r3, r7, r3
+ 166:	f443 6300 	orr.w	r3, r3, #2048	; 0x800
+ 16a:	4313      	orrs	r3, r2
+ 16c:	88a2      	ldrh	r2, [r4, #4]
+ 16e:	4313      	orrs	r3, r2
+ 170:	89a2      	ldrh	r2, [r4, #12]
+ 172:	4313      	orrs	r3, r2
+ 174:	b29b      	uxth	r3, r3
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:361
+                  (uint16_t)(I2S_InitStruct->I2S_Standard | (uint16_t)(I2S_InitStruct->I2S_DataFormat | \
+                  (uint16_t)I2S_InitStruct->I2S_CPOL))));
+ 
+  /* Write to SPIx I2SCFGR */  
+  SPIx->I2SCFGR = tmpreg;   
+ 176:	83b3      	strh	r3, [r6, #28]
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:362
+}
+ 178:	b007      	add	sp, #28
+ 17a:	bdf0      	pop	{r4, r5, r6, r7, pc}
+ 17c:	40003800 	.word	0x40003800
+ 180:	00000000 	.word	0x00000000
+ 184:	00017700 	.word	0x00017700
+Disassembly of section .text.SPI_I2S_DeInit:
+
+00000000 <SPI_I2S_DeInit>:
+SPI_I2S_DeInit():
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:121
+  * @retval None
+  */
+void SPI_I2S_DeInit(SPI_TypeDef* SPIx)
+{
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   0:	4b17      	ldr	r3, [pc, #92]	(60 <SPI_I2S_DeInit+0x60>)
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:119
+  *   reset values (Affects also the I2Ss).
+  * @param  SPIx: where x can be 1, 2 or 3 to select the SPI peripheral.
+  * @retval None
+  */
+void SPI_I2S_DeInit(SPI_TypeDef* SPIx)
+{
+   2:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:121
+  /* Check the parameters */
+  assert_param(IS_SPI_ALL_PERIPH(SPIx));
+   4:	4298      	cmp	r0, r3
+   6:	d00c      	beq.n	22 <SPI_I2S_DeInit+0x22>
+   8:	f5a3 4378 	sub.w	r3, r3, #63488	; 0xf800
+   c:	4298      	cmp	r0, r3
+   e:	d013      	beq.n	38 <SPI_I2S_DeInit+0x38>
+  10:	f503 6380 	add.w	r3, r3, #1024	; 0x400
+  14:	4298      	cmp	r0, r3
+  16:	d017      	beq.n	48 <SPI_I2S_DeInit+0x48>
+  18:	4812      	ldr	r0, [pc, #72]	(64 <SPI_I2S_DeInit+0x64>)
+  1a:	2179      	movs	r1, #121
+  1c:	f7ff fffe 	bl	0 <assert_failed>
+  20:	e01c      	b.n	5c <SPI_I2S_DeInit+0x5c>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:126
+
+  if (SPIx == SPI1)
+  {
+    /* Enable SPI1 reset state */
+    RCC_APB2PeriphResetCmd(RCC_APB2Periph_SPI1, ENABLE);
+  22:	2101      	movs	r1, #1
+  24:	f44f 5080 	mov.w	r0, #4096	; 0x1000
+  28:	f7ff fffe 	bl	0 <RCC_APB2PeriphResetCmd>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:128
+    /* Release SPI1 from reset state */
+    RCC_APB2PeriphResetCmd(RCC_APB2Periph_SPI1, DISABLE);
+  2c:	f44f 5080 	mov.w	r0, #4096	; 0x1000
+  30:	2100      	movs	r1, #0
+  32:	f7ff fffe 	bl	0 <RCC_APB2PeriphResetCmd>
+  36:	e011      	b.n	5c <SPI_I2S_DeInit+0x5c>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:133
+  }
+  else if (SPIx == SPI2)
+  {
+    /* Enable SPI2 reset state */
+    RCC_APB1PeriphResetCmd(RCC_APB1Periph_SPI2, ENABLE);
+  38:	f44f 4080 	mov.w	r0, #16384	; 0x4000
+  3c:	2101      	movs	r1, #1
+  3e:	f7ff fffe 	bl	0 <RCC_APB1PeriphResetCmd>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:135
+    /* Release SPI2 from reset state */
+    RCC_APB1PeriphResetCmd(RCC_APB1Periph_SPI2, DISABLE);
+  42:	f44f 4080 	mov.w	r0, #16384	; 0x4000
+  46:	e006      	b.n	56 <SPI_I2S_DeInit+0x56>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:142
+  else
+  {
+    if (SPIx == SPI3)
+    {
+      /* Enable SPI3 reset state */
+      RCC_APB1PeriphResetCmd(RCC_APB1Periph_SPI3, ENABLE);
+  48:	f44f 4000 	mov.w	r0, #32768	; 0x8000
+  4c:	2101      	movs	r1, #1
+  4e:	f7ff fffe 	bl	0 <RCC_APB1PeriphResetCmd>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:144
+      /* Release SPI3 from reset state */
+      RCC_APB1PeriphResetCmd(RCC_APB1Periph_SPI3, DISABLE);
+  52:	f44f 4000 	mov.w	r0, #32768	; 0x8000
+  56:	2100      	movs	r1, #0
+  58:	f7ff fffe 	bl	0 <RCC_APB1PeriphResetCmd>
+D:\Wk\Wk.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_spi.c:147
+    }
+  }
+}
+  5c:	bd10      	pop	{r4, pc}
+  5e:	46c0      	nop			(mov r8, r8)
+  60:	40013000 	.word	0x40013000
+  64:	00000000 	.word	0x00000000

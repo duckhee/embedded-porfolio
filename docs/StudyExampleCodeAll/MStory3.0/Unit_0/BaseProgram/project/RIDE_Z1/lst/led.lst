@@ -1,0 +1,372 @@
+
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_Z1\obj\led.o:     file format elf32-littlearm
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_Z1\obj\led.o
+
+Disassembly of section .text.LED_Toggle_Blue:
+
+00000000 <LED_Toggle_Blue>:
+LED_Toggle_Blue():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:65
+{
+    GPIO_SetBits(GPIO_LED, GPIO_LED3_PIN);
+}
+
+void LED_Toggle_Blue (void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:66
+    GPIO_WriteBit(GPIO_LED, GPIO_LED3_PIN,
+   2:	4c07      	ldr	r4, [pc, #28]	(20 <LED_Toggle_Blue+0x20>)
+   4:	f44f 7180 	mov.w	r1, #256	; 0x100
+   8:	4620      	mov	r0, r4
+   a:	f7ff fffe 	bl	0 <GPIO_ReadOutputDataBit>
+   e:	f1c0 0201 	rsb	r2, r0, #1	; 0x1
+  12:	f44f 7180 	mov.w	r1, #256	; 0x100
+  16:	4620      	mov	r0, r4
+  18:	b2d2      	uxtb	r2, r2
+  1a:	f7ff fffe 	bl	0 <GPIO_WriteBit>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:68
+                  (BitAction)(1-GPIO_ReadOutputDataBit(GPIO_LED, GPIO_LED3_PIN)));
+}
+  1e:	bd10      	pop	{r4, pc}
+  20:	40010c00 	.word	0x40010c00
+Disassembly of section .text.LED_Toggle_Yellow:
+
+00000000 <LED_Toggle_Yellow>:
+LED_Toggle_Yellow():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:49
+{
+    GPIO_SetBits(GPIO_LED, GPIO_LED2_PIN);
+}
+
+void LED_Toggle_Yellow (void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:50
+    GPIO_WriteBit(GPIO_LED, GPIO_LED2_PIN,
+   2:	4c06      	ldr	r4, [pc, #24]	(1c <LED_Toggle_Yellow+0x1c>)
+   4:	2120      	movs	r1, #32
+   6:	4620      	mov	r0, r4
+   8:	f7ff fffe 	bl	0 <GPIO_ReadOutputDataBit>
+   c:	f1c0 0201 	rsb	r2, r0, #1	; 0x1
+  10:	2120      	movs	r1, #32
+  12:	4620      	mov	r0, r4
+  14:	b2d2      	uxtb	r2, r2
+  16:	f7ff fffe 	bl	0 <GPIO_WriteBit>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:52
+                  (BitAction)(1-GPIO_ReadOutputDataBit(GPIO_LED, GPIO_LED2_PIN)));
+}
+  1a:	bd10      	pop	{r4, pc}
+  1c:	40010c00 	.word	0x40010c00
+Disassembly of section .text.LED_Toggle_Red:
+
+00000000 <LED_Toggle_Red>:
+LED_Toggle_Red():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:33
+{
+    GPIO_SetBits(GPIO_LED, GPIO_LED1_PIN);
+}
+
+void LED_Toggle_Red (void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:34
+    GPIO_WriteBit(GPIO_LED, GPIO_LED1_PIN,
+   2:	4c07      	ldr	r4, [pc, #28]	(20 <LED_Toggle_Red+0x20>)
+   4:	f44f 7100 	mov.w	r1, #512	; 0x200
+   8:	4620      	mov	r0, r4
+   a:	f7ff fffe 	bl	0 <GPIO_ReadOutputDataBit>
+   e:	f1c0 0201 	rsb	r2, r0, #1	; 0x1
+  12:	f44f 7100 	mov.w	r1, #512	; 0x200
+  16:	4620      	mov	r0, r4
+  18:	b2d2      	uxtb	r2, r2
+  1a:	f7ff fffe 	bl	0 <GPIO_WriteBit>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:36
+                  (BitAction)(1-GPIO_ReadOutputDataBit(GPIO_LED, GPIO_LED1_PIN)));
+}
+  1e:	bd10      	pop	{r4, pc}
+  20:	40010c00 	.word	0x40010c00
+Disassembly of section .text.LED_Off_Blue:
+
+00000000 <LED_Off_Blue>:
+LED_Off_Blue():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:60
+{
+    GPIO_ResetBits(GPIO_LED, GPIO_LED3_PIN);
+}
+
+void LED_Off_Blue (void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:61
+    GPIO_SetBits(GPIO_LED, GPIO_LED3_PIN);
+   2:	4803      	ldr	r0, [pc, #12]	(10 <LED_Off_Blue+0x10>)
+   4:	f44f 7180 	mov.w	r1, #256	; 0x100
+   8:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:62
+}
+   c:	bd10      	pop	{r4, pc}
+   e:	46c0      	nop			(mov r8, r8)
+  10:	40010c00 	.word	0x40010c00
+Disassembly of section .text.LED_Off_Yellow:
+
+00000000 <LED_Off_Yellow>:
+LED_Off_Yellow():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:44
+{
+    GPIO_ResetBits(GPIO_LED, GPIO_LED2_PIN);
+}
+
+void LED_Off_Yellow (void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:45
+    GPIO_SetBits(GPIO_LED, GPIO_LED2_PIN);
+   2:	4802      	ldr	r0, [pc, #8]	(c <LED_Off_Yellow+0xc>)
+   4:	2120      	movs	r1, #32
+   6:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:46
+}
+   a:	bd10      	pop	{r4, pc}
+   c:	40010c00 	.word	0x40010c00
+Disassembly of section .text.LED_Off_Red:
+
+00000000 <LED_Off_Red>:
+LED_Off_Red():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:28
+{
+    GPIO_ResetBits(GPIO_LED, GPIO_LED1_PIN);
+}
+
+void LED_Off_Red (void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:29
+    GPIO_SetBits(GPIO_LED, GPIO_LED1_PIN);
+   2:	4803      	ldr	r0, [pc, #12]	(10 <LED_Off_Red+0x10>)
+   4:	f44f 7100 	mov.w	r1, #512	; 0x200
+   8:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:30
+}
+   c:	bd10      	pop	{r4, pc}
+   e:	46c0      	nop			(mov r8, r8)
+  10:	40010c00 	.word	0x40010c00
+Disassembly of section .text.LED_Off_All:
+
+00000000 <LED_Off_All>:
+LED_Off_All():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:78
+    LED_On_Yellow();
+    LED_On_Blue();
+}
+
+void LED_Off_All (void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:79
+    LED_Off_Red();
+   2:	f7ff fffe 	bl	0 <LED_Off_All>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:80
+    LED_Off_Yellow();
+   6:	f7ff fffe 	bl	0 <LED_Off_All>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:81
+    LED_Off_Blue();
+   a:	f7ff fffe 	bl	0 <LED_Off_All>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:82
+}
+   e:	bd10      	pop	{r4, pc}
+Disassembly of section .text.LED_On_Blue:
+
+00000000 <LED_On_Blue>:
+LED_On_Blue():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:55
+    GPIO_WriteBit(GPIO_LED, GPIO_LED2_PIN,
+                  (BitAction)(1-GPIO_ReadOutputDataBit(GPIO_LED, GPIO_LED2_PIN)));
+}
+
+void LED_On_Blue (void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:56
+    GPIO_ResetBits(GPIO_LED, GPIO_LED3_PIN);
+   2:	4803      	ldr	r0, [pc, #12]	(10 <LED_On_Blue+0x10>)
+   4:	f44f 7180 	mov.w	r1, #256	; 0x100
+   8:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:57
+}
+   c:	bd10      	pop	{r4, pc}
+   e:	46c0      	nop			(mov r8, r8)
+  10:	40010c00 	.word	0x40010c00
+Disassembly of section .text.LED_On_Yellow:
+
+00000000 <LED_On_Yellow>:
+LED_On_Yellow():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:39
+    GPIO_WriteBit(GPIO_LED, GPIO_LED1_PIN,
+                  (BitAction)(1-GPIO_ReadOutputDataBit(GPIO_LED, GPIO_LED1_PIN)));
+}
+
+void LED_On_Yellow (void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:40
+    GPIO_ResetBits(GPIO_LED, GPIO_LED2_PIN);
+   2:	4802      	ldr	r0, [pc, #8]	(c <LED_On_Yellow+0xc>)
+   4:	2120      	movs	r1, #32
+   6:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:41
+}
+   a:	bd10      	pop	{r4, pc}
+   c:	40010c00 	.word	0x40010c00
+Disassembly of section .text.LED_On_Red:
+
+00000000 <LED_On_Red>:
+LED_On_Red():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:23
+ * GPIO_LED2_PIN  // YELLOW
+ * GPIO_LED3_PIN  // BLUE
+ */
+
+void LED_On_Red (void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:24
+    GPIO_ResetBits(GPIO_LED, GPIO_LED1_PIN);
+   2:	4803      	ldr	r0, [pc, #12]	(10 <LED_On_Red+0x10>)
+   4:	f44f 7100 	mov.w	r1, #512	; 0x200
+   8:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:25
+}
+   c:	bd10      	pop	{r4, pc}
+   e:	46c0      	nop			(mov r8, r8)
+  10:	40010c00 	.word	0x40010c00
+Disassembly of section .text.LED_OnOffAll_Mult:
+
+00000000 <LED_OnOffAll_Mult>:
+LED_OnOffAll_Mult():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:85
+    LED_Off_Yellow();
+    LED_Off_Blue();
+}
+
+void LED_OnOffAll_Mult(uint32_t count)
+{
+   0:	b510      	push	{r4, lr}
+   2:	4604      	mov	r4, r0
+   4:	e018      	b.n	38 <LED_OnOffAll_Mult+0x38>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:88
+    for(; count > 0; count --)
+    {
+        LED_Off_Red();
+   6:	f7ff fffe 	bl	0 <LED_OnOffAll_Mult>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:89
+        LED_On_Yellow();
+   a:	f7ff fffe 	bl	0 <LED_OnOffAll_Mult>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:90
+        LED_On_Blue();
+   e:	f7ff fffe 	bl	0 <LED_OnOffAll_Mult>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:91
+        delay_1_second();
+  12:	f7ff fffe 	bl	0 <delay_1_second>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:93
+
+        LED_On_Red();
+  16:	f7ff fffe 	bl	0 <LED_OnOffAll_Mult>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:94
+        LED_Off_Yellow();
+  1a:	f7ff fffe 	bl	0 <LED_OnOffAll_Mult>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:95
+        LED_On_Blue();
+  1e:	f7ff fffe 	bl	0 <LED_OnOffAll_Mult>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:96
+        delay_1_second();
+  22:	f7ff fffe 	bl	0 <delay_1_second>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:98
+
+        LED_On_Red();
+  26:	f7ff fffe 	bl	0 <LED_OnOffAll_Mult>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:99
+        LED_On_Yellow();
+  2a:	f7ff fffe 	bl	0 <LED_OnOffAll_Mult>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:100
+        LED_Off_Blue();
+  2e:	f7ff fffe 	bl	0 <LED_OnOffAll_Mult>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:101
+        delay_1_second();
+  32:	f7ff fffe 	bl	0 <delay_1_second>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:86
+    LED_Off_Blue();
+}
+
+void LED_OnOffAll_Mult(uint32_t count)
+{
+    for(; count > 0; count --)
+  36:	3c01      	subs	r4, #1
+  38:	2c00      	cmp	r4, #0
+  3a:	d1e4      	bne.n	6 <delay_1_second+0x6>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:103
+        LED_On_Red();
+        LED_On_Yellow();
+        LED_Off_Blue();
+        delay_1_second();
+    }
+}
+  3c:	bd10      	pop	{r4, pc}
+  3e:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.LED_On_All:
+
+00000000 <LED_On_All>:
+LED_On_All():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:71
+    GPIO_WriteBit(GPIO_LED, GPIO_LED3_PIN,
+                  (BitAction)(1-GPIO_ReadOutputDataBit(GPIO_LED, GPIO_LED3_PIN)));
+}
+
+void LED_On_All (void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:72
+    LED_On_Red();
+   2:	f7ff fffe 	bl	0 <LED_On_All>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:73
+    LED_On_Yellow();
+   6:	f7ff fffe 	bl	0 <LED_On_All>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:74
+    LED_On_Blue();
+   a:	f7ff fffe 	bl	0 <LED_On_All>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:75
+}
+   e:	bd10      	pop	{r4, pc}
+Disassembly of section .text.LED_Test:
+
+00000000 <LED_Test>:
+LED_Test():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:106
+        delay_1_second();
+    }
+}
+
+void LED_Test(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:107
+    LED_On_All();
+   2:	f7ff fffe 	bl	0 <LED_Test>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:108
+    delay_1_second();
+   6:	f7ff fffe 	bl	0 <delay_1_second>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:109
+    LED_Off_All();
+   a:	f7ff fffe 	bl	0 <LED_Test>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:110
+    delay_1_second();
+   e:	f7ff fffe 	bl	0 <delay_1_second>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:112
+
+    LED_OnOffAll_Mult(3);
+  12:	2003      	movs	r0, #3
+  14:	f7ff fffe 	bl	0 <LED_Test>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/led.c:113
+}
+  18:	bd10      	pop	{r4, pc}
+  1a:	46c0      	nop			(mov r8, r8)

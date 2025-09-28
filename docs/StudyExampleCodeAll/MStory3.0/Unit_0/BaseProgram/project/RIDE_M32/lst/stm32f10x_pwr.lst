@@ -1,0 +1,471 @@
+
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\stm32f10x_pwr.o:     file format elf32-littlearm
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\stm32f10x_pwr.o
+
+Disassembly of section .text.__WFI:
+
+00000000 <__WFI>:
+__WFI():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\..\..\..\..\Libraries\CMSIS\Core\CM3/core_cm3.h:797
+
+static __INLINE void __enable_fault_irq()         { __ASM volatile ("cpsie f"); }
+static __INLINE void __disable_fault_irq()        { __ASM volatile ("cpsid f"); }
+
+static __INLINE void __NOP()                      { __ASM volatile ("nop"); }
+static __INLINE void __WFI()                      { __ASM volatile ("wfi"); }
+   0:	bf30      	wfi
+   2:	4770      	bx	lr
+Disassembly of section .text.PWR_EnterSTANDBYMode:
+
+00000000 <PWR_EnterSTANDBYMode>:
+PWR_EnterSTANDBYMode():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:243
+  * @retval None
+  */
+void PWR_EnterSTANDBYMode(void)
+{
+  /* Clear Wake-up flag */
+  PWR->CR |= CR_CWUF_Set;
+   0:	4a08      	ldr	r2, [pc, #32]	(24 <PWR_EnterSTANDBYMode+0x24>)
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:241
+  * @brief  Enters STANDBY mode.
+  * @param  None
+  * @retval None
+  */
+void PWR_EnterSTANDBYMode(void)
+{
+   2:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:243
+  /* Clear Wake-up flag */
+  PWR->CR |= CR_CWUF_Set;
+   4:	6813      	ldr	r3, [r2, #0]
+   6:	f043 0304 	orr.w	r3, r3, #4	; 0x4
+   a:	6013      	str	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:245
+  /* Select STANDBY mode */
+  PWR->CR |= CR_PDDS_Set;
+   c:	6813      	ldr	r3, [r2, #0]
+   e:	f043 0302 	orr.w	r3, r3, #2	; 0x2
+  12:	6013      	str	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:247
+  /* Set SLEEPDEEP bit of Cortex System Control Register */
+  *(__IO uint32_t *) SCB_SysCtrl |= SysCtrl_SLEEPDEEP_Set;
+  14:	4a04      	ldr	r2, [pc, #16]	(28 <PWR_EnterSTANDBYMode+0x28>)
+  16:	6813      	ldr	r3, [r2, #0]
+  18:	f043 0304 	orr.w	r3, r3, #4	; 0x4
+  1c:	6013      	str	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:253
+/* This option is used to ensure that store operations are completed */
+#if defined ( __CC_ARM   )
+  __force_stores();
+#endif
+  /* Request Wait For Interrupt */
+  __WFI();
+  1e:	f7ff fffe 	bl	0 <PWR_EnterSTANDBYMode>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:254
+}
+  22:	bd10      	pop	{r4, pc}
+  24:	40007000 	.word	0x40007000
+  28:	e000ed10 	.word	0xe000ed10
+Disassembly of section .text.PWR_ClearFlag:
+
+00000000 <PWR_ClearFlag>:
+PWR_ClearFlag():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:294
+  * @retval None
+  */
+void PWR_ClearFlag(uint32_t PWR_FLAG)
+{
+  /* Check the parameters */
+  assert_param(IS_PWR_CLEAR_FLAG(PWR_FLAG));
+   0:	1e43      	subs	r3, r0, #1
+   2:	2b01      	cmp	r3, #1
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:292
+  *     @arg PWR_FLAG_WU: Wake Up flag
+  *     @arg PWR_FLAG_SB: StandBy flag
+  * @retval None
+  */
+void PWR_ClearFlag(uint32_t PWR_FLAG)
+{
+   4:	b510      	push	{r4, lr}
+   6:	4604      	mov	r4, r0
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:294
+  /* Check the parameters */
+  assert_param(IS_PWR_CLEAR_FLAG(PWR_FLAG));
+   8:	d904      	bls.n	14 <PWR_ClearFlag+0x14>
+   a:	4805      	ldr	r0, [pc, #20]	(20 <PWR_ClearFlag+0x20>)
+   c:	f44f 7193 	mov.w	r1, #294	; 0x126
+  10:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:296
+         
+  PWR->CR |=  PWR_FLAG << 2;
+  14:	4a03      	ldr	r2, [pc, #12]	(24 <PWR_ClearFlag+0x24>)
+  16:	6813      	ldr	r3, [r2, #0]
+  18:	ea43 0384 	orr.w	r3, r3, r4, lsl #2
+  1c:	6013      	str	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:297
+}
+  1e:	bd10      	pop	{r4, pc}
+  20:	00000000 	.word	0x00000000
+  24:	40007000 	.word	0x40007000
+Disassembly of section .text.PWR_GetFlagStatus:
+
+00000000 <PWR_GetFlagStatus>:
+PWR_GetFlagStatus():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:269
+  */
+FlagStatus PWR_GetFlagStatus(uint32_t PWR_FLAG)
+{
+  FlagStatus bitstatus = RESET;
+  /* Check the parameters */
+  assert_param(IS_PWR_GET_FLAG(PWR_FLAG));
+   0:	1e43      	subs	r3, r0, #1
+   2:	2b01      	cmp	r3, #1
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:266
+  *     @arg PWR_FLAG_SB: StandBy flag
+  *     @arg PWR_FLAG_PVDO: PVD Output
+  * @retval The new state of PWR_FLAG (SET or RESET).
+  */
+FlagStatus PWR_GetFlagStatus(uint32_t PWR_FLAG)
+{
+   4:	b510      	push	{r4, lr}
+   6:	4604      	mov	r4, r0
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:269
+  FlagStatus bitstatus = RESET;
+  /* Check the parameters */
+  assert_param(IS_PWR_GET_FLAG(PWR_FLAG));
+   8:	d906      	bls.n	18 <PWR_GetFlagStatus+0x18>
+   a:	2804      	cmp	r0, #4
+   c:	d004      	beq.n	18 <PWR_GetFlagStatus+0x18>
+   e:	4806      	ldr	r0, [pc, #24]	(28 <PWR_GetFlagStatus+0x28>)
+  10:	f240 110d 	movw	r1, #269	; 0x10d
+  14:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:271
+  
+  if ((PWR->CSR & PWR_FLAG) != (uint32_t)RESET)
+  18:	4b04      	ldr	r3, [pc, #16]	(2c <PWR_GetFlagStatus+0x2c>)
+  1a:	685b      	ldr	r3, [r3, #4]
+  1c:	421c      	tst	r4, r3
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:281
+  {
+    bitstatus = RESET;
+  }
+  /* Return the flag status */
+  return bitstatus;
+}
+  1e:	bf0c      	ite	eq
+  20:	2000      	moveq	r0, #0
+  22:	2001      	movne	r0, #1
+  24:	bd10      	pop	{r4, pc}
+  26:	46c0      	nop			(mov r8, r8)
+  28:	00000000 	.word	0x00000000
+  2c:	40007000 	.word	0x40007000
+Disassembly of section .text.PWR_EnterSTOPMode:
+
+00000000 <PWR_EnterSTOPMode>:
+PWR_EnterSTOPMode():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:208
+  */
+void PWR_EnterSTOPMode(uint32_t PWR_Regulator, uint8_t PWR_STOPEntry)
+{
+  uint32_t tmpreg = 0;
+  /* Check the parameters */
+  assert_param(IS_PWR_REGULATOR(PWR_Regulator));
+   0:	2801      	cmp	r0, #1
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:205
+  *     @arg PWR_STOPEntry_WFI: enter STOP mode with WFI instruction
+  *     @arg PWR_STOPEntry_WFE: enter STOP mode with WFE instruction
+  * @retval None
+  */
+void PWR_EnterSTOPMode(uint32_t PWR_Regulator, uint8_t PWR_STOPEntry)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+   4:	4604      	mov	r4, r0
+   6:	460d      	mov	r5, r1
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:208
+  uint32_t tmpreg = 0;
+  /* Check the parameters */
+  assert_param(IS_PWR_REGULATOR(PWR_Regulator));
+   8:	d903      	bls.n	12 <PWR_EnterSTOPMode+0x12>
+   a:	480f      	ldr	r0, [pc, #60]	(48 <PWR_EnterSTOPMode+0x48>)
+   c:	21d0      	movs	r1, #208
+   e:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:209
+  assert_param(IS_PWR_STOP_ENTRY(PWR_STOPEntry));
+  12:	1e6b      	subs	r3, r5, #1
+  14:	b2db      	uxtb	r3, r3
+  16:	2b01      	cmp	r3, #1
+  18:	d903      	bls.n	22 <PWR_EnterSTOPMode+0x22>
+  1a:	480b      	ldr	r0, [pc, #44]	(48 <PWR_EnterSTOPMode+0x48>)
+  1c:	21d1      	movs	r1, #209
+  1e:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:212
+  
+  /* Select the regulator state in STOP mode ---------------------------------*/
+  tmpreg = PWR->CR;
+  22:	4a0a      	ldr	r2, [pc, #40]	(4c <PWR_EnterSTOPMode+0x4c>)
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:223
+  PWR->CR = tmpreg;
+  /* Set SLEEPDEEP bit of Cortex System Control Register */
+  *(__IO uint32_t *) SCB_SysCtrl |= SysCtrl_SLEEPDEEP_Set;
+  
+  /* Select STOP mode entry --------------------------------------------------*/
+  if(PWR_STOPEntry == PWR_STOPEntry_WFI)
+  24:	2d01      	cmp	r5, #1
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:212
+  /* Check the parameters */
+  assert_param(IS_PWR_REGULATOR(PWR_Regulator));
+  assert_param(IS_PWR_STOP_ENTRY(PWR_STOPEntry));
+  
+  /* Select the regulator state in STOP mode ---------------------------------*/
+  tmpreg = PWR->CR;
+  26:	6813      	ldr	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:214
+  /* Clear PDDS and LPDS bits */
+  tmpreg &= CR_DS_Mask;
+  28:	f023 0303 	bic.w	r3, r3, #3	; 0x3
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:216
+  /* Set LPDS bit according to PWR_Regulator value */
+  tmpreg |= PWR_Regulator;
+  2c:	ea44 0303 	orr.w	r3, r4, r3
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:218
+  /* Store the new value */
+  PWR->CR = tmpreg;
+  30:	6013      	str	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:220
+  /* Set SLEEPDEEP bit of Cortex System Control Register */
+  *(__IO uint32_t *) SCB_SysCtrl |= SysCtrl_SLEEPDEEP_Set;
+  32:	4a07      	ldr	r2, [pc, #28]	(50 <PWR_EnterSTOPMode+0x50>)
+  34:	6813      	ldr	r3, [r2, #0]
+  36:	f043 0304 	orr.w	r3, r3, #4	; 0x4
+  3a:	6013      	str	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:223
+  
+  /* Select STOP mode entry --------------------------------------------------*/
+  if(PWR_STOPEntry == PWR_STOPEntry_WFI)
+  3c:	d102      	bne.n	44 <PWR_EnterSTOPMode+0x44>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:226
+  {   
+    /* Request Wait For Interrupt */
+    __WFI();
+  3e:	f7ff fffe 	bl	0 <PWR_EnterSTOPMode>
+  42:	e000      	b.n	46 <PWR_EnterSTOPMode+0x46>
+__WFE():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\..\..\..\..\Libraries\CMSIS\Core\CM3/core_cm3.h:798
+static __INLINE void __WFE()                      { __ASM volatile ("wfe"); }
+  44:	bf20      	wfe
+PWR_EnterSTOPMode():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:233
+  else
+  {
+    /* Request Wait For Event */
+    __WFE();
+  }
+}
+  46:	bd70      	pop	{r4, r5, r6, pc}
+  48:	00000000 	.word	0x00000000
+  4c:	40007000 	.word	0x40007000
+  50:	e000ed10 	.word	0xe000ed10
+Disassembly of section .text.PWR_WakeUpPinCmd:
+
+00000000 <PWR_WakeUpPinCmd>:
+PWR_WakeUpPinCmd():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:188
+  * @retval None
+  */
+void PWR_WakeUpPinCmd(FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+   0:	2801      	cmp	r0, #1
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:186
+  * @param  NewState: new state of the WakeUp Pin functionality.
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void PWR_WakeUpPinCmd(FunctionalState NewState)
+{
+   2:	b510      	push	{r4, lr}
+   4:	4604      	mov	r4, r0
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:188
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+   6:	d903      	bls.n	10 <PWR_WakeUpPinCmd+0x10>
+   8:	4803      	ldr	r0, [pc, #12]	(18 <PWR_WakeUpPinCmd+0x18>)
+   a:	21bc      	movs	r1, #188
+   c:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:189
+  *(__IO uint32_t *) CSR_EWUP_BB = (uint32_t)NewState;
+  10:	4b02      	ldr	r3, [pc, #8]	(1c <PWR_WakeUpPinCmd+0x1c>)
+  12:	601c      	str	r4, [r3, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:190
+}
+  14:	bd10      	pop	{r4, pc}
+  16:	46c0      	nop			(mov r8, r8)
+  18:	00000000 	.word	0x00000000
+  1c:	420e00a0 	.word	0x420e00a0
+Disassembly of section .text.PWR_PVDLevelConfig:
+
+00000000 <PWR_PVDLevelConfig>:
+PWR_PVDLevelConfig():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:166
+  *     @arg PWR_PVDLevel_2V8: PVD detection level set to 2.8V
+  *     @arg PWR_PVDLevel_2V9: PVD detection level set to 2.9V
+  * @retval None
+  */
+void PWR_PVDLevelConfig(uint32_t PWR_PVDLevel)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:169
+  uint32_t tmpreg = 0;
+  /* Check the parameters */
+  assert_param(IS_PWR_PVD_LEVEL(PWR_PVDLevel));
+   2:	4604      	mov	r4, r0
+   4:	b188      	cbz	r0, 2a <PWR_PVDLevelConfig+0x2a>
+   6:	2820      	cmp	r0, #32
+   8:	d00f      	beq.n	2a <PWR_PVDLevelConfig+0x2a>
+   a:	2840      	cmp	r0, #64
+   c:	d00d      	beq.n	2a <PWR_PVDLevelConfig+0x2a>
+   e:	2860      	cmp	r0, #96
+  10:	d00b      	beq.n	2a <PWR_PVDLevelConfig+0x2a>
+  12:	2880      	cmp	r0, #128
+  14:	d009      	beq.n	2a <PWR_PVDLevelConfig+0x2a>
+  16:	28a0      	cmp	r0, #160
+  18:	d007      	beq.n	2a <PWR_PVDLevelConfig+0x2a>
+  1a:	28c0      	cmp	r0, #192
+  1c:	d005      	beq.n	2a <PWR_PVDLevelConfig+0x2a>
+  1e:	28e0      	cmp	r0, #224
+  20:	d003      	beq.n	2a <PWR_PVDLevelConfig+0x2a>
+  22:	4806      	ldr	r0, [pc, #24]	(3c <PWR_PVDLevelConfig+0x3c>)
+  24:	21a9      	movs	r1, #169
+  26:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:170
+  tmpreg = PWR->CR;
+  2a:	4a05      	ldr	r2, [pc, #20]	(40 <PWR_PVDLevelConfig+0x40>)
+  2c:	6813      	ldr	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:172
+  /* Clear PLS[7:5] bits */
+  tmpreg &= CR_PLS_Mask;
+  2e:	f023 03e0 	bic.w	r3, r3, #224	; 0xe0
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:174
+  /* Set PLS[7:5] bits according to PWR_PVDLevel value */
+  tmpreg |= PWR_PVDLevel;
+  32:	ea44 0303 	orr.w	r3, r4, r3
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:176
+  /* Store the new value */
+  PWR->CR = tmpreg;
+  36:	6013      	str	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:177
+}
+  38:	bd10      	pop	{r4, pc}
+  3a:	46c0      	nop			(mov r8, r8)
+  3c:	00000000 	.word	0x00000000
+  40:	40007000 	.word	0x40007000
+Disassembly of section .text.PWR_PVDCmd:
+
+00000000 <PWR_PVDCmd>:
+PWR_PVDCmd():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:147
+  * @retval None
+  */
+void PWR_PVDCmd(FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+   0:	2801      	cmp	r0, #1
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:145
+  * @param  NewState: new state of the PVD.
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void PWR_PVDCmd(FunctionalState NewState)
+{
+   2:	b510      	push	{r4, lr}
+   4:	4604      	mov	r4, r0
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:147
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+   6:	d903      	bls.n	10 <PWR_PVDCmd+0x10>
+   8:	4803      	ldr	r0, [pc, #12]	(18 <PWR_PVDCmd+0x18>)
+   a:	2193      	movs	r1, #147
+   c:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:148
+  *(__IO uint32_t *) CR_PVDE_BB = (uint32_t)NewState;
+  10:	4b02      	ldr	r3, [pc, #8]	(1c <PWR_PVDCmd+0x1c>)
+  12:	601c      	str	r4, [r3, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:149
+}
+  14:	bd10      	pop	{r4, pc}
+  16:	46c0      	nop			(mov r8, r8)
+  18:	00000000 	.word	0x00000000
+  1c:	420e0010 	.word	0x420e0010
+Disassembly of section .text.PWR_BackupAccessCmd:
+
+00000000 <PWR_BackupAccessCmd>:
+PWR_BackupAccessCmd():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:134
+  * @retval None
+  */
+void PWR_BackupAccessCmd(FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+   0:	2801      	cmp	r0, #1
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:132
+  * @param  NewState: new state of the access to the RTC and backup registers.
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void PWR_BackupAccessCmd(FunctionalState NewState)
+{
+   2:	b510      	push	{r4, lr}
+   4:	4604      	mov	r4, r0
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:134
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+   6:	d903      	bls.n	10 <PWR_BackupAccessCmd+0x10>
+   8:	4803      	ldr	r0, [pc, #12]	(18 <PWR_BackupAccessCmd+0x18>)
+   a:	2186      	movs	r1, #134
+   c:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:135
+  *(__IO uint32_t *) CR_DBP_BB = (uint32_t)NewState;
+  10:	4b02      	ldr	r3, [pc, #8]	(1c <PWR_BackupAccessCmd+0x1c>)
+  12:	601c      	str	r4, [r3, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:136
+}
+  14:	bd10      	pop	{r4, pc}
+  16:	46c0      	nop			(mov r8, r8)
+  18:	00000000 	.word	0x00000000
+  1c:	420e0020 	.word	0x420e0020
+Disassembly of section .text.PWR_DeInit:
+
+00000000 <PWR_DeInit>:
+PWR_DeInit():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:121
+  * @param  None
+  * @retval None
+  */
+void PWR_DeInit(void)
+{
+  RCC_APB1PeriphResetCmd(RCC_APB1Periph_PWR, ENABLE);
+   0:	2101      	movs	r1, #1
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:120
+  * @brief  Deinitializes the PWR peripheral registers to their default reset values.
+  * @param  None
+  * @retval None
+  */
+void PWR_DeInit(void)
+{
+   2:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:121
+  RCC_APB1PeriphResetCmd(RCC_APB1Periph_PWR, ENABLE);
+   4:	f04f 5080 	mov.w	r0, #268435456	; 0x10000000
+   8:	f7ff fffe 	bl	0 <RCC_APB1PeriphResetCmd>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:122
+  RCC_APB1PeriphResetCmd(RCC_APB1Periph_PWR, DISABLE);
+   c:	f04f 5080 	mov.w	r0, #268435456	; 0x10000000
+  10:	2100      	movs	r1, #0
+  12:	f7ff fffe 	bl	0 <RCC_APB1PeriphResetCmd>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_pwr.c:123
+}
+  16:	bd10      	pop	{r4, pc}

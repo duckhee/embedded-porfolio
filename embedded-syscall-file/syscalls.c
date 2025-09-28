@@ -31,6 +31,7 @@ __attribute__ ((used)) int _write(int fd, char *ptr, int len) {
     return len;
 }
 
+/*
 __attribute__((used)) int _read(int fd, char *ptr, int len) {
     size_t i;
     for (i = 0; i < len; ++i) {
@@ -42,6 +43,69 @@ __attribute__((used)) int _read(int fd, char *ptr, int len) {
     }
     return i;
 }
+*/
+
+__attribute__((used)) int _read(int file, char *ptr, int len) {
+    int i = 0;
+    char ch;
+
+    while (i < len) {
+        // USART 수신 대기
+//        while (!(USART1->SR & USART_FLAG_RXNE));
+        while (USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET);
+        ch = USART_ReceiveData(USART1);  // 수신된 문자 읽기
+
+        if (ch == '\r' || ch == '\n') {  // Enter 입력 시 처리
+//            ptr[i++] = '\n';
+//            _write(0, "\r\n", 2);  // 개행 에코
+            break;
+        } else {
+            ptr[i++] = ch;
+//            _write(0, &ch, 1);  // 에코 출력
+        }
+    }
+
+    return i;
+}
+
+
+/** TODO Checking GPT Version */
+/*
+__attribute__((used)) int _read(int fd, char *ptr, int len) {
+    size_t i;
+    for (i = 0; i < len; ++i) {
+        while ((USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET));
+        char ch = USART_ReceiveData(USART1) & 0xFF;  // 8비트 마스킹
+
+        ptr[i] = ch;
+
+        // 개행 문자('\n')이면 종료
+        if (ch == '\n') {
+            ++i;  // '\n'까지 포함해서 카운트
+            break;
+        }
+    }
+    return i;
+}
+
+ __attribute__((used)) int _read(int fd, char *ptr, int len) {
+    size_t i;
+    for (i = 0; i < len; i++) {
+        uint8_t ch;
+        while ((USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET));
+        ch = USART_ReceiveData(USART1);
+        if (ch == '\r') {
+            *ptr++ = '\n';
+//            USART_SendData(USART1, '\r\n');
+//            while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
+            break;
+        } else {
+            *ptr++ = ch;
+        }
+    }
+    return i;
+}
+ */
 
 /*
 __attribute__ ((used)) int _read(int fd, char *ptr, int len)

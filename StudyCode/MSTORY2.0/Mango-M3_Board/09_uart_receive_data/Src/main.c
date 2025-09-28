@@ -355,7 +355,9 @@ int main(void) {
         printf("x> quit\n\n");
 
         ch = USART_GetCharacter(USART1);
-        printf(" is selected\n\n");
+
+        scanf("%c", &ch);
+        printf("%c is selected\n\n", ch);
 
         switch ((char) ch) {
             case '0':
@@ -391,18 +393,25 @@ __attribute__((used)) int _write(int fd, char *ptr, int len) {
     }
     return len;
 }
+
 //
 //__attribute__ ((used)) int _read(int fd, char *ptr, int len) {
 //    while ((USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET));
 //    return USART_ReceiveData(USART1);
 //}
+__attribute__ ((used)) int _read(int fd, char *ptr, int len) {
+    int i = 0;
+    for (; i < len; i++) {
+        while (USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET);
+        char ch = USART_ReceiveData(USART1) & 0xFF;
+        ptr[i] = ch;
 
-__attribute__((used)) int _read(int fd, char *ptr, int len) {
-    size_t i;
-    for (i = 0; i < len; ++i) {
-        while ((USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET));
-        *ptr++ = USART_ReceiveData(USART1);
-        if (*ptr == '\n') {
+        // 에코 백 (터미널에서 입력한 것을 다시 출력)
+        USART_SendData(USART1, ch);
+        while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
+
+        if (ch == '\r' || ch == '\n') {
+            // 줄바꿈 입력되면 종료
             break;
         }
     }

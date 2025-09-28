@@ -1,0 +1,611 @@
+
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_Z1\obj\main.o:     file format elf32-littlearm
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_Z1\obj\main.o
+
+Disassembly of section .text.CAN_Config:
+
+00000000 <CAN_Config>:
+CAN_Config():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:48
+  * @brief  Configures the CAN.
+  * @param  None
+  * @retval None
+  */
+void CAN_Config(void)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:50
+  /* CAN register init */
+  CAN_DeInit(CAN1);
+   2:	4e19      	ldr	r6, [pc, #100]	(68 <CAN_Config+0x68>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:51
+  CAN_StructInit(&CAN_InitStructure);
+   4:	4c19      	ldr	r4, [pc, #100]	(6c <CAN_Config+0x6c>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:50
+  * @retval None
+  */
+void CAN_Config(void)
+{
+  /* CAN register init */
+  CAN_DeInit(CAN1);
+   6:	4630      	mov	r0, r6
+   8:	f7ff fffe 	bl	0 <CAN_DeInit>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:51
+  CAN_StructInit(&CAN_InitStructure);
+   c:	4620      	mov	r0, r4
+   e:	f7ff fffe 	bl	0 <CAN_StructInit>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:62
+  CAN_InitStructure.CAN_NART = DISABLE;
+  CAN_InitStructure.CAN_RFLM = DISABLE;
+  CAN_InitStructure.CAN_TXFP = DISABLE;
+  CAN_InitStructure.CAN_Mode = CAN_Mode_Normal;
+  CAN_InitStructure.CAN_SJW = CAN_SJW_1tq;
+  CAN_InitStructure.CAN_BS1 = CAN_BS1_3tq;
+  12:	2302      	movs	r3, #2
+  14:	7123      	strb	r3, [r4, #4]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:63
+  CAN_InitStructure.CAN_BS2 = CAN_BS2_5tq;
+  16:	18db      	adds	r3, r3, r3
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:54
+  /* CAN register init */
+  CAN_DeInit(CAN1);
+  CAN_StructInit(&CAN_InitStructure);
+
+  /* CAN cell init */
+  CAN_InitStructure.CAN_TTCM = DISABLE;
+  18:	2500      	movs	r5, #0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:63
+  CAN_InitStructure.CAN_RFLM = DISABLE;
+  CAN_InitStructure.CAN_TXFP = DISABLE;
+  CAN_InitStructure.CAN_Mode = CAN_Mode_Normal;
+  CAN_InitStructure.CAN_SJW = CAN_SJW_1tq;
+  CAN_InitStructure.CAN_BS1 = CAN_BS1_3tq;
+  CAN_InitStructure.CAN_BS2 = CAN_BS2_5tq;
+  1a:	7163      	strb	r3, [r4, #5]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:64
+  CAN_InitStructure.CAN_Prescaler = 10;
+  1c:	f04f 030a 	mov.w	r3, #10	; 0xa
+  20:	8023      	strh	r3, [r4, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:66
+
+  CAN_Init(CAN1, &CAN_InitStructure);
+  22:	4621      	mov	r1, r4
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:54
+  /* CAN register init */
+  CAN_DeInit(CAN1);
+  CAN_StructInit(&CAN_InitStructure);
+
+  /* CAN cell init */
+  CAN_InitStructure.CAN_TTCM = DISABLE;
+  24:	71a5      	strb	r5, [r4, #6]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:55
+  CAN_InitStructure.CAN_ABOM = DISABLE;
+  26:	71e5      	strb	r5, [r4, #7]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:56
+  CAN_InitStructure.CAN_AWUM = DISABLE;
+  28:	7225      	strb	r5, [r4, #8]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:57
+  CAN_InitStructure.CAN_NART = DISABLE;
+  2a:	7265      	strb	r5, [r4, #9]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:58
+  CAN_InitStructure.CAN_RFLM = DISABLE;
+  2c:	72a5      	strb	r5, [r4, #10]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:59
+  CAN_InitStructure.CAN_TXFP = DISABLE;
+  2e:	72e5      	strb	r5, [r4, #11]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:60
+  CAN_InitStructure.CAN_Mode = CAN_Mode_Normal;
+  30:	70a5      	strb	r5, [r4, #2]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:61
+  CAN_InitStructure.CAN_SJW = CAN_SJW_1tq;
+  32:	70e5      	strb	r5, [r4, #3]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:66
+  CAN_InitStructure.CAN_BS1 = CAN_BS1_3tq;
+  CAN_InitStructure.CAN_BS2 = CAN_BS2_5tq;
+  CAN_InitStructure.CAN_Prescaler = 10;
+
+  CAN_Init(CAN1, &CAN_InitStructure);
+  34:	4630      	mov	r0, r6
+  36:	f7ff fffe 	bl	0 <CAN_Init>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:69
+
+ /* CAN filter init */
+  CAN_FilterInitStructure.CAN_FilterNumber=0;
+  3a:	480d      	ldr	r0, [pc, #52]	(70 <CAN_Config+0x70>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:71
+  CAN_FilterInitStructure.CAN_FilterMode=CAN_FilterMode_IdMask;
+  CAN_FilterInitStructure.CAN_FilterScale=CAN_FilterScale_32bit;
+  3c:	2401      	movs	r4, #1
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:69
+  CAN_InitStructure.CAN_Prescaler = 10;
+
+  CAN_Init(CAN1, &CAN_InitStructure);
+
+ /* CAN filter init */
+  CAN_FilterInitStructure.CAN_FilterNumber=0;
+  3e:	7285      	strb	r5, [r0, #10]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:70
+  CAN_FilterInitStructure.CAN_FilterMode=CAN_FilterMode_IdMask;
+  40:	72c5      	strb	r5, [r0, #11]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:71
+  CAN_FilterInitStructure.CAN_FilterScale=CAN_FilterScale_32bit;
+  42:	7304      	strb	r4, [r0, #12]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:72
+  CAN_FilterInitStructure.CAN_FilterIdHigh=0x0000;
+  44:	8005      	strh	r5, [r0, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:73
+  CAN_FilterInitStructure.CAN_FilterIdLow=0x0000;
+  46:	8045      	strh	r5, [r0, #2]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:74
+  CAN_FilterInitStructure.CAN_FilterMaskIdHigh=0x0000;
+  48:	8085      	strh	r5, [r0, #4]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:75
+  CAN_FilterInitStructure.CAN_FilterMaskIdLow=0x0000;
+  4a:	80c5      	strh	r5, [r0, #6]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:76
+  CAN_FilterInitStructure.CAN_FilterFIFOAssignment=0;
+  4c:	8105      	strh	r5, [r0, #8]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:77
+  CAN_FilterInitStructure.CAN_FilterActivation=ENABLE;
+  4e:	7344      	strb	r4, [r0, #13]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:78
+  CAN_FilterInit(&CAN_FilterInitStructure);
+  50:	f7ff fffe 	bl	0 <CAN_FilterInit>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:81
+  
+   /* transmit */
+  TxMessage.StdId = 0x321;
+  54:	4b07      	ldr	r3, [pc, #28]	(74 <CAN_Config+0x74>)
+  56:	f240 3221 	movw	r2, #801	; 0x321
+  5a:	601a      	str	r2, [r3, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:82
+  TxMessage.ExtId = 0x01;
+  5c:	605c      	str	r4, [r3, #4]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:83
+  TxMessage.RTR = CAN_RTR_DATA;
+  5e:	725d      	strb	r5, [r3, #9]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:84
+  TxMessage.IDE = CAN_ID_STD;
+  60:	721d      	strb	r5, [r3, #8]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:85
+  TxMessage.DLC = 1;
+  62:	729c      	strb	r4, [r3, #10]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:87
+  
+}
+  64:	bd70      	pop	{r4, r5, r6, pc}
+  66:	46c0      	nop			(mov r8, r8)
+  68:	40006400 	.word	0x40006400
+	...
+Disassembly of section .text.CAN_Normal_Test:
+
+00000000 <CAN_Normal_Test>:
+CAN_Normal_Test():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:90
+
+void CAN_Normal_Test(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:93
+    uint8_t ch = 0;
+
+    printf("CAN_Normal_Test()\n");
+   2:	480d      	ldr	r0, [pc, #52]	(38 <CAN_Normal_Test+0x38>)
+   4:	f7ff fffe 	bl	0 <puts>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:96
+
+    /* CAN configuration */
+    CAN_Config();
+   8:	f7ff fffe 	bl	0 <CAN_Normal_Test>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:98
+
+    CAN_ITConfig(CAN1, CAN_IT_FMP0, ENABLE);
+   c:	480b      	ldr	r0, [pc, #44]	(3c <CAN_Normal_Test+0x3c>)
+   e:	2102      	movs	r1, #2
+  10:	2201      	movs	r2, #1
+  12:	f7ff fffe 	bl	0 <CAN_ITConfig>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:103
+
+    /* Infinite loop */
+    while(1)
+    {
+        ch = USART_GetCharacter(USART1);
+  16:	480a      	ldr	r0, [pc, #40]	(2c <USART_GetCharacter+0x2c>)
+  18:	f7ff fffe 	bl	0 <USART_GetCharacter>
+  1c:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:105
+
+        Delay(500);
+  1e:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
+  22:	f7ff fffe 	bl	0 <Delay>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:107
+
+        printf(" is selected\n");
+  26:	4807      	ldr	r0, [pc, #28]	(20 <puts+0x20>)
+  28:	f7ff fffe 	bl	0 <puts>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:109
+
+        TxMessage.Data[0] = ch;
+  2c:	4906      	ldr	r1, [pc, #24]	(48 <CAN_Normal_Test+0x48>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:110
+        CAN_Transmit(CAN1, &TxMessage);
+  2e:	4803      	ldr	r0, [pc, #12]	(3c <CAN_Normal_Test+0x3c>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:109
+
+        Delay(500);
+
+        printf(" is selected\n");
+
+        TxMessage.Data[0] = ch;
+  30:	72cc      	strb	r4, [r1, #11]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:110
+        CAN_Transmit(CAN1, &TxMessage);
+  32:	f7ff fffe 	bl	0 <CAN_Transmit>
+  36:	e7ee      	b.n	ffffffe0 <g_TestProcessState+0xffffffe0>
+  38:	00000000 	.word	0x00000000
+  3c:	40006400 	.word	0x40006400
+  40:	40013800 	.word	0x40013800
+  44:	00000012 	.word	0x00000012
+  48:	00000000 	.word	0x00000000
+Disassembly of section .text.USB_Test_Start:
+
+00000000 <USB_Test_Start>:
+USB_Test_Start():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:32
+    printf("PCLK2_Frequency = %d\n",rcc_clocks.PCLK2_Frequency );
+    printf("ADCCLK_Frequency = %d\n",rcc_clocks.ADCCLK_Frequency );
+}
+
+void USB_Test_Start (void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:33
+    USB_Interrupts_Config();
+   2:	f7ff fffe 	bl	0 <USB_Interrupts_Config>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:34
+    Set_USBClock();
+   6:	f7ff fffe 	bl	0 <Set_USBClock>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:35
+    USB_Init();
+   a:	f7ff fffe 	bl	0 <USB_Init>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:36
+}
+   e:	bd10      	pop	{r4, pc}
+Disassembly of section .text.System_Information:
+
+00000000 <System_Information>:
+System_Information():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:23
+bool g_TestProcessState = FALSE;
+
+/* functions */
+
+void System_Information()
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:24
+    printf("SYSCLK_Frequency = %d\n",rcc_clocks.SYSCLK_Frequency );
+   2:	4c0b      	ldr	r4, [pc, #44]	(30 <System_Information+0x30>)
+   4:	480b      	ldr	r0, [pc, #44]	(34 <System_Information+0x34>)
+   6:	6821      	ldr	r1, [r4, #0]
+   8:	f7ff fffe 	bl	0 <printf>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:25
+    printf("HCLK_Frequency = %d\n",rcc_clocks.HCLK_Frequency );
+   c:	6861      	ldr	r1, [r4, #4]
+   e:	480a      	ldr	r0, [pc, #40]	(38 <System_Information+0x38>)
+  10:	f7ff fffe 	bl	0 <printf>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:26
+    printf("PCLK1_Frequency = %d\n",rcc_clocks.PCLK1_Frequency );
+  14:	68a1      	ldr	r1, [r4, #8]
+  16:	4809      	ldr	r0, [pc, #36]	(3c <System_Information+0x3c>)
+  18:	f7ff fffe 	bl	0 <printf>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:27
+    printf("PCLK2_Frequency = %d\n",rcc_clocks.PCLK2_Frequency );
+  1c:	68e1      	ldr	r1, [r4, #12]
+  1e:	4808      	ldr	r0, [pc, #32]	(40 <System_Information+0x40>)
+  20:	f7ff fffe 	bl	0 <printf>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:28
+    printf("ADCCLK_Frequency = %d\n",rcc_clocks.ADCCLK_Frequency );
+  24:	6921      	ldr	r1, [r4, #16]
+  26:	4807      	ldr	r0, [pc, #28]	(44 <System_Information+0x44>)
+  28:	f7ff fffe 	bl	0 <printf>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:29
+}
+  2c:	bd10      	pop	{r4, pc}
+  2e:	46c0      	nop			(mov r8, r8)
+  30:	00000000 	.word	0x00000000
+  34:	0000001f 	.word	0x0000001f
+  38:	00000036 	.word	0x00000036
+  3c:	0000004b 	.word	0x0000004b
+  40:	00000061 	.word	0x00000061
+  44:	00000077 	.word	0x00000077
+Disassembly of section .text.main:
+
+00000000 <main>:
+main():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:121
+ * Input  : None
+ * Output : None
+ * Return : None
+ */
+int main(void)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:127
+    uint8_t ch;
+
+    /* System Clocks Configuration */
+    RCC_Configuration();
+
+    RCC_GetClocksFreq(&rcc_clocks);
+   2:	4c3e      	ldr	r4, [pc, #248]	(fc <main+0xfc>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:125
+int main(void)
+{
+    uint8_t ch;
+
+    /* System Clocks Configuration */
+    RCC_Configuration();
+   4:	f7ff fffe 	bl	0 <RCC_Configuration>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:127
+
+    RCC_GetClocksFreq(&rcc_clocks);
+   8:	4620      	mov	r0, r4
+   a:	f7ff fffe 	bl	0 <RCC_GetClocksFreq>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:130
+
+    /* NVIC configuration */
+    NVIC_Configuration();
+   e:	f7ff fffe 	bl	0 <NVIC_Configuration>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:133
+
+    /* Configure the GPIO ports */
+    GPIO_Configuration();
+  12:	f7ff fffe 	bl	0 <GPIO_Configuration>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:136
+
+    /* EXTI configuration */
+    EXTI_Configuration();
+  16:	f7ff fffe 	bl	0 <EXTI_Configuration>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:139
+
+    /* UART initialization */
+    USART1_Init();
+  1a:	f7ff fffe 	bl	0 <USART1_Init>
+SysTick_Config():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_Z1\..\..\..\..\Libraries\CMSIS\Core\CM3/core_cm3.h:1303
+ */
+static __INLINE uint32_t SysTick_Config(uint32_t ticks)
+{ 
+  if (ticks > SYSTICK_MAXCOUNT)  return (1);                                             /* Reload value impossible */
+
+  SysTick->LOAD  =  (ticks & SYSTICK_MAXCOUNT) - 1;                                      /* set reload register */
+  1e:	6823      	ldr	r3, [r4, #0]
+  20:	f44f 727a 	mov.w	r2, #1000	; 0x3e8
+  24:	fbb3 f3f2 	udiv	r3, r3, r2
+  28:	f023 437f 	bic.w	r3, r3, #4278190080	; 0xff000000
+  2c:	4a34      	ldr	r2, [pc, #208]	(100 <main+0x100>)
+  2e:	3b01      	subs	r3, #1
+  30:	6053      	str	r3, [r2, #4]
+NVIC_SetPriority():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_Z1\..\..\..\..\Libraries\CMSIS\Core\CM3/core_cm3.h:1187
+ * Note: The priority cannot be set for every core interrupt.
+ */
+static __INLINE void NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
+{
+  if(IRQn < 0) {
+    SCB->SHP[((uint32_t)(IRQn) & 0xF)-4] = ((priority << (8 - __NVIC_PRIO_BITS)) & 0xff); } /* set Priority for Cortex-M3 System Interrupts */
+  32:	4b34      	ldr	r3, [pc, #208]	(104 <main+0x104>)
+  34:	f06f 010f 	mvn.w	r1, #15	; 0xf
+  38:	f883 1023 	strb.w	r1, [r3, #35]
+SysTick_Config():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_Z1\..\..\..\..\Libraries\CMSIS\Core\CM3/core_cm3.h:1305
+{ 
+  if (ticks > SYSTICK_MAXCOUNT)  return (1);                                             /* Reload value impossible */
+
+  SysTick->LOAD  =  (ticks & SYSTICK_MAXCOUNT) - 1;                                      /* set reload register */
+  NVIC_SetPriority (SysTick_IRQn, (1<<__NVIC_PRIO_BITS) - 1);                            /* set Priority for Cortex-M0 System Interrupts */
+  SysTick->VAL   =  (0x00);                                                              /* Load the SysTick Counter Value */
+  3c:	2000      	movs	r0, #0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_Z1\..\..\..\..\Libraries\CMSIS\Core\CM3/core_cm3.h:1306
+  SysTick->CTRL = (1 << SYSTICK_CLKSOURCE) | (1<<SYSTICK_ENABLE) | (1<<SYSTICK_TICKINT); /* Enable SysTick IRQ and SysTick Timer */
+  3e:	2307      	movs	r3, #7
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_Z1\..\..\..\..\Libraries\CMSIS\Core\CM3/core_cm3.h:1305
+{ 
+  if (ticks > SYSTICK_MAXCOUNT)  return (1);                                             /* Reload value impossible */
+
+  SysTick->LOAD  =  (ticks & SYSTICK_MAXCOUNT) - 1;                                      /* set reload register */
+  NVIC_SetPriority (SysTick_IRQn, (1<<__NVIC_PRIO_BITS) - 1);                            /* set Priority for Cortex-M0 System Interrupts */
+  SysTick->VAL   =  (0x00);                                                              /* Load the SysTick Counter Value */
+  40:	6090      	str	r0, [r2, #8]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_Z1\..\..\..\..\Libraries\CMSIS\Core\CM3/core_cm3.h:1306
+  SysTick->CTRL = (1 << SYSTICK_CLKSOURCE) | (1<<SYSTICK_ENABLE) | (1<<SYSTICK_TICKINT); /* Enable SysTick IRQ and SysTick Timer */
+  42:	6013      	str	r3, [r2, #0]
+main():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:148
+    { 
+        /* Capture error */ 
+        while (1);
+    }
+
+    USB_Cable_Config(DISABLE);
+  44:	f7ff fffe 	bl	0 <USB_Cable_Config>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:150
+
+    Delay(500);
+  48:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
+  4c:	f7ff fffe 	bl	0 <Delay>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:154
+
+    while(1)
+    {
+        printf("\n---------------------\n");
+  50:	482d      	ldr	r0, [pc, #180]	(b8 <puts+0xb8>)
+  52:	f7ff fffe 	bl	0 <puts>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:158
+#ifdef BOARD_DEF_MANGO_M32
+        printf("Mango M32 test start...\n");
+#elif  BOARD_DEF_MANGO_Z1
+        printf("Mango Z1 test start...\n");
+  56:	482d      	ldr	r0, [pc, #180]	(b8 <puts+0xb8>)
+  58:	f7ff fffe 	bl	0 <puts>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:160
+#endif
+        printf("Press menu key\n");
+  5c:	482c      	ldr	r0, [pc, #176]	(b4 <puts+0xb4>)
+  5e:	f7ff fffe 	bl	0 <puts>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:161
+        printf("---------------------\n");
+  62:	482c      	ldr	r0, [pc, #176]	(b4 <puts+0xb4>)
+  64:	f7ff fffe 	bl	0 <puts>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:162
+        printf("0> System Information\n");
+  68:	482b      	ldr	r0, [pc, #172]	(b0 <puts+0xb0>)
+  6a:	f7ff fffe 	bl	0 <puts>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:163
+        printf("---------------------\n");
+  6e:	4829      	ldr	r0, [pc, #164]	(a8 <puts+0xa8>)
+  70:	f7ff fffe 	bl	0 <puts>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:164
+        printf("1> LED Test\n");
+  74:	4829      	ldr	r0, [pc, #164]	(a8 <puts+0xa8>)
+  76:	f7ff fffe 	bl	0 <puts>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:165
+        printf("2> KEY Test\n");
+  7a:	4829      	ldr	r0, [pc, #164]	(a8 <puts+0xa8>)
+  7c:	f7ff fffe 	bl	0 <puts>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:169
+#ifdef BOARD_DEF_MANGO_M32
+        printf("3> 7-Segment Test\n");
+#elif  BOARD_DEF_MANGO_Z1
+        printf("3> ZigBee Test\n");
+  80:	4828      	ldr	r0, [pc, #160]	(a4 <puts+0xa4>)
+  82:	f7ff fffe 	bl	0 <puts>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:171
+#endif
+        printf("4> USB HID Test\n");
+  86:	4828      	ldr	r0, [pc, #160]	(a4 <puts+0xa4>)
+  88:	f7ff fffe 	bl	0 <puts>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:172
+        printf("5> CAN Normal Test\n");
+  8c:	4827      	ldr	r0, [pc, #156]	(a0 <puts+0xa0>)
+  8e:	f7ff fffe 	bl	0 <puts>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:173
+        printf("---------------------\n");
+  92:	4820      	ldr	r0, [pc, #128]	(84 <puts+0x84>)
+  94:	f7ff fffe 	bl	0 <puts>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:174
+        printf("x> quit\n\n");
+  98:	4825      	ldr	r0, [pc, #148]	(98 <puts+0x98>)
+  9a:	f7ff fffe 	bl	0 <puts>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:176
+
+        ch = USART_GetCharacter(USART1);
+  9e:	4825      	ldr	r0, [pc, #148]	(98 <USART_GetCharacter+0x98>)
+  a0:	f7ff fffe 	bl	0 <USART_GetCharacter>
+  a4:	4605      	mov	r5, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:177
+        printf(" is selected\n\n");
+  a6:	4824      	ldr	r0, [pc, #144]	(138 <main+0x138>)
+  a8:	f7ff fffe 	bl	0 <puts>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:179
+
+        switch((char)ch)
+  ac:	b26b      	sxtb	r3, r5
+  ae:	3b30      	subs	r3, #48
+  b0:	2b05      	cmp	r3, #5
+  b2:	d81f      	bhi.n	f4 <main+0xf4>
+  b4:	e8df f003 	tbb	[pc, r3]
+  b8:	0c090603 	.word	0x0c090603
+  bc:	1c0f      	.short	0x1c0f
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:182
+        {
+        case '0':
+            System_Information();
+  be:	f7ff fffe 	bl	0 <main>
+  c2:	e017      	b.n	32 <LED_Test+0x32>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:186
+            break;
+
+        case '1':
+            LED_Test();
+  c4:	f7ff fffe 	bl	0 <LED_Test>
+  c8:	e014      	b.n	2c <KEY_Test+0x2c>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:190
+            break;
+
+        case '2':
+            KEY_Test();
+  ca:	f7ff fffe 	bl	0 <KEY_Test>
+  ce:	e011      	b.n	26 <ZigBee_Test+0x26>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:197
+
+        case '3':
+#ifdef BOARD_DEF_MANGO_M32
+            Seven_Segment_Test();
+#elif  BOARD_DEF_MANGO_Z1
+            ZigBee_Test();
+  d0:	f7ff fffe 	bl	0 <ZigBee_Test>
+  d4:	e00e      	b.n	f4 <main+0xf4>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:202
+#endif
+            break;
+
+        case '4':
+            g_TestProcessState = TRUE;
+  d6:	4b19      	ldr	r3, [pc, #100]	(13c <main+0x13c>)
+  d8:	2401      	movs	r4, #1
+  da:	701c      	strb	r4, [r3, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:205
+
+            /* USB initialization */
+            USB_Test_Start();
+  dc:	f7ff fffe 	bl	0 <main>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:206
+            Delay(500);
+  e0:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
+  e4:	f7ff fffe 	bl	0 <Delay>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:207
+            USB_Cable_Config(ENABLE);
+  e8:	4620      	mov	r0, r4
+  ea:	f7ff fffe 	bl	0 <USB_Cable_Config>
+  ee:	e001      	b.n	6 <main+0x6>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:211
+            break;
+
+        case '5':
+            CAN_Normal_Test();
+  f0:	f7ff fffe 	bl	0 <main>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:215
+            break;
+        }
+
+        if('x' == (char)ch)
+  f4:	2d78      	cmp	r5, #120
+  f6:	d1ab      	bne.n	50 <main+0x50>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/main.c:222
+            break;
+        }
+    }
+
+    return 0;
+}
+  f8:	2000      	movs	r0, #0
+  fa:	bd70      	pop	{r4, r5, r6, pc}
+  fc:	00000000 	.word	0x00000000
+ 100:	e000e010 	.word	0xe000e010
+ 104:	e000ed00 	.word	0xe000ed00
+ 108:	0000008e 	.word	0x0000008e
+ 10c:	000000a5 	.word	0x000000a5
+ 110:	000000bc 	.word	0x000000bc
+ 114:	000000cb 	.word	0x000000cb
+ 118:	000000e1 	.word	0x000000e1
+ 11c:	000000f7 	.word	0x000000f7
+ 120:	00000103 	.word	0x00000103
+ 124:	0000010f 	.word	0x0000010f
+ 128:	0000011e 	.word	0x0000011e
+ 12c:	0000012e 	.word	0x0000012e
+ 130:	00000141 	.word	0x00000141
+ 134:	40013800 	.word	0x40013800
+ 138:	0000014a 	.word	0x0000014a
+ 13c:	00000000 	.word	0x00000000

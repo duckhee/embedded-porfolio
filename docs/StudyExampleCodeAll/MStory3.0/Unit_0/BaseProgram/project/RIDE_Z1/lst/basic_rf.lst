@@ -1,0 +1,801 @@
+
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_Z1\obj\basic_rf.o:     file format elf32-littlearm
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_Z1\obj\basic_rf.o
+
+Disassembly of section .text.basicRfPacketIsReady:
+
+00000000 <basicRfPacketIsReady>:
+basicRfPacketIsReady():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:519
+*
+* @return      uint8 - TRUE if a packet is ready to be read by higher layer
+*/
+uint8 basicRfPacketIsReady(void)
+{
+    return rxi.isReady;
+   0:	4b01      	ldr	r3, [pc, #4]	(8 <basicRfPacketIsReady+0x8>)
+   2:	7b98      	ldrb	r0, [r3, #14]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:520
+}
+   4:	4770      	bx	lr
+   6:	46c0      	nop			(mov r8, r8)
+   8:	00000000 	.word	0x00000000
+Disassembly of section .text.basicRfReceiveOff:
+
+00000000 <basicRfReceiveOff>:
+basicRfReceiveOff():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:611
+* @param       txState - file scope variable
+*
+* @return      none
+*/
+void basicRfReceiveOff(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:612
+    DEBUG_MSG_FUNC_START;
+   2:	4804      	ldr	r0, [pc, #16]	(14 <basicRfReceiveOff+0x14>)
+   4:	f7ff fffe 	bl	0 <DebugMsg_FunctionStart>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:613
+    txState.receiveOn = FALSE;
+   8:	4b03      	ldr	r3, [pc, #12]	(18 <basicRfReceiveOff+0x18>)
+   a:	2200      	movs	r2, #0
+   c:	709a      	strb	r2, [r3, #2]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:614
+    halRfReceiveOff();
+   e:	f7ff fffe 	bl	0 <halRfReceiveOff>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:615
+}
+  12:	bd10      	pop	{r4, pc}
+	...
+Disassembly of section .text.basicRfReceiveOn:
+
+00000000 <basicRfReceiveOn>:
+basicRfReceiveOn():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:594
+* @param       txState - file scope variable
+*
+* @return      none
+*/
+void basicRfReceiveOn(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:595
+    DEBUG_MSG_FUNC_START;
+   2:	4804      	ldr	r0, [pc, #16]	(14 <basicRfReceiveOn+0x14>)
+   4:	f7ff fffe 	bl	0 <DebugMsg_FunctionStart>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:596
+    txState.receiveOn = TRUE;
+   8:	4b03      	ldr	r3, [pc, #12]	(18 <basicRfReceiveOn+0x18>)
+   a:	2201      	movs	r2, #1
+   c:	709a      	strb	r2, [r3, #2]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:597
+    halRfReceiveOn();
+   e:	f7ff fffe 	bl	0 <halRfReceiveOn>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:598
+}
+  12:	bd10      	pop	{r4, pc}
+  14:	00000012 	.word	0x00000012
+  18:	00000000 	.word	0x00000000
+Disassembly of section .text.basicRfGetRssi:
+
+00000000 <basicRfGetRssi>:
+basicRfGetRssi():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:566
+* @param       none
+
+* @return      int8 - RSSI value
+*/
+int8 basicRfGetRssi(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:580
+    }
+    else{
+        return (rxi.rssi - 256) - halRfGetRssiOffset();
+    }
+#else
+    return rxi.rssi - halRfGetRssiOffset();
+   2:	4b03      	ldr	r3, [pc, #12]	(10 <basicRfGetRssi+0x10>)
+   4:	7b5c      	ldrb	r4, [r3, #13]
+   6:	f7ff fffe 	bl	0 <halRfGetRssiOffset>
+   a:	1a24      	subs	r4, r4, r0
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:582
+#endif
+}
+   c:	b260      	sxtb	r0, r4
+   e:	bd10      	pop	{r4, pc}
+  10:	0000      	.short	0x0000
+	...
+Disassembly of section .text.basicRfReceive:
+
+00000000 <basicRfReceive>:
+basicRfReceive():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:537
+*                    incoming packet
+*
+* @return      uint8 - number of bytes actually copied into buffer
+*/
+uint8 basicRfReceive(uint8* pRxData, uint8 len, int16* pRssi)
+{
+   0:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   4:	4616      	mov	r6, r2
+   6:	4605      	mov	r5, r0
+   8:	460f      	mov	r7, r1
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:540
+    // Accessing shared variables -> this is a critical region
+    // Critical region start
+    halIntOff();
+   a:	f7ff fffe 	bl	0 <halIntOff>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:542
+
+    memcpy(pRxData, rxi.pPayload, min(rxi.length, len));
+   e:	4b0d      	ldr	r3, [pc, #52]	(44 <basicRfReceive+0x44>)
+  10:	4639      	mov	r1, r7
+  12:	7998      	ldrb	r0, [r3, #6]
+  14:	689c      	ldr	r4, [r3, #8]
+  16:	f7ff fffe 	bl	0 <min>
+  1a:	4621      	mov	r1, r4
+  1c:	4602      	mov	r2, r0
+  1e:	4628      	mov	r0, r5
+  20:	f7ff fffe 	bl	0 <memcpy>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:544
+
+    if(pRssi != NULL) {
+  24:	b11e      	cbz	r6, a <basicRfReceive+0xa>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:545
+        *pRssi = basicRfGetRssi();
+  26:	f7ff fffe 	bl	0 <basicRfReceive>
+  2a:	b240      	sxtb	r0, r0
+  2c:	8030      	strh	r0, [r6, #0]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:547
+    }
+    rxi.isReady = FALSE;
+  2e:	4c05      	ldr	r4, [pc, #20]	(44 <basicRfReceive+0x44>)
+  30:	2300      	movs	r3, #0
+  32:	73a3      	strb	r3, [r4, #14]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:549
+
+    halIntOn();
+  34:	f7ff fffe 	bl	0 <halIntOn>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:552
+    // Critical region end
+
+    return min(rxi.length, len);
+  38:	79a0      	ldrb	r0, [r4, #6]
+  3a:	4639      	mov	r1, r7
+  3c:	f7ff fffe 	bl	0 <min>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:553
+}
+  40:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+  44:	00000000 	.word	0x00000000
+Disassembly of section .text.basicRfSendPacket:
+
+00000000 <basicRfSendPacket>:
+basicRfSendPacket():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:424
+*              mpdu - file scope variable. Buffer for the frame to send
+*
+* @return      basicRFStatus_t - HAL_RF_SUCCESS or HAL_RF_FAILED
+*/
+uint8 basicRfSendPacket(uint16 destAddr, uint8* pPayload, uint8 length)
+{
+   0:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:431
+    uint8 status;
+
+    // DEBUG_MSG_FUNC_START;
+
+    // Turn on receiver if its not on
+    if(!txState.receiveOn) {
+   4:	4b32      	ldr	r3, [pc, #200]	(d0 <basicRfSendPacket+0xd0>)
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:424
+*              mpdu - file scope variable. Buffer for the frame to send
+*
+* @return      basicRFStatus_t - HAL_RF_SUCCESS or HAL_RF_FAILED
+*/
+uint8 basicRfSendPacket(uint16 destAddr, uint8* pPayload, uint8 length)
+{
+   6:	4607      	mov	r7, r0
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:431
+    uint8 status;
+
+    // DEBUG_MSG_FUNC_START;
+
+    // Turn on receiver if its not on
+    if(!txState.receiveOn) {
+   8:	789b      	ldrb	r3, [r3, #2]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:424
+*              mpdu - file scope variable. Buffer for the frame to send
+*
+* @return      basicRFStatus_t - HAL_RF_SUCCESS or HAL_RF_FAILED
+*/
+uint8 basicRfSendPacket(uint16 destAddr, uint8* pPayload, uint8 length)
+{
+   a:	4688      	mov	r8, r1
+   c:	4614      	mov	r4, r2
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:431
+    uint8 status;
+
+    // DEBUG_MSG_FUNC_START;
+
+    // Turn on receiver if its not on
+    if(!txState.receiveOn) {
+   e:	b90b      	cbnz	r3, 14 <basicRfSendPacket+0x14>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:432
+        basicRfReceiveOn();
+  10:	f7ff fffe 	bl	0 <basicRfSendPacket>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:436
+    }
+
+    // Check packet length
+    length = min(length, BASIC_RF_MAX_PAYLOAD_SIZE);
+  14:	2167      	movs	r1, #103
+  16:	4620      	mov	r0, r4
+  18:	f7ff fffe 	bl	0 <min>
+  1c:	4606      	mov	r6, r0
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:439
+
+    // Wait until the transceiver is idle
+    halRfWaitTransceiverReady();
+  1e:	f7ff fffe 	bl	0 <halRfWaitTransceiverReady>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:442
+
+    // Turn off RX frame done interrupt to avoid interference on the SPI interface
+    halRfDisableRxInterrupt();
+  22:	f7ff fffe 	bl	0 <halRfDisableRxInterrupt>
+basicRfBuildHeader():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:160
+static uint8 basicRfBuildHeader(uint8* buffer, uint16 destAddr, uint8 payloadLength)
+{
+    basicRfPktHdr_t *pHdr;
+    uint16 fcf;
+
+    pHdr= (basicRfPktHdr_t*)buffer;
+  26:	482a      	ldr	r0, [pc, #168]	(d0 <basicRfSendPacket+0xd0>)
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:163
+
+    // Populate packet header
+    pHdr->packetLength = payloadLength + BASIC_RF_PACKET_OVERHEAD_SIZE;
+  28:	f106 030b 	add.w	r3, r6, #11	; 0xb
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:165
+    //pHdr->frameControlField = pConfig->ackRequest ? BASIC_RF_FCF_ACK : BASIC_RF_FCF_NOACK;
+    fcf= pConfig->ackRequest ? BASIC_RF_FCF_ACK : BASIC_RF_FCF_NOACK;
+  2c:	6fc4      	ldr	r4, [r0, #124]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:163
+    uint16 fcf;
+
+    pHdr= (basicRfPktHdr_t*)buffer;
+
+    // Populate packet header
+    pHdr->packetLength = payloadLength + BASIC_RF_PACKET_OVERHEAD_SIZE;
+  2e:	7203      	strb	r3, [r0, #8]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:165
+    //pHdr->frameControlField = pConfig->ackRequest ? BASIC_RF_FCF_ACK : BASIC_RF_FCF_NOACK;
+    fcf= pConfig->ackRequest ? BASIC_RF_FCF_ACK : BASIC_RF_FCF_NOACK;
+  30:	7965      	ldrb	r5, [r4, #5]
+  32:	f648 0241 	movw	r2, #34881	; 0x8841
+  36:	f648 0361 	movw	r3, #34913	; 0x8861
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:160
+static uint8 basicRfBuildHeader(uint8* buffer, uint16 destAddr, uint8 payloadLength)
+{
+    basicRfPktHdr_t *pHdr;
+    uint16 fcf;
+
+    pHdr= (basicRfPktHdr_t*)buffer;
+  3a:	f100 0108 	add.w	r1, r0, #8	; 0x8
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:165
+
+    // Populate packet header
+    pHdr->packetLength = payloadLength + BASIC_RF_PACKET_OVERHEAD_SIZE;
+    //pHdr->frameControlField = pConfig->ackRequest ? BASIC_RF_FCF_ACK : BASIC_RF_FCF_NOACK;
+    fcf= pConfig->ackRequest ? BASIC_RF_FCF_ACK : BASIC_RF_FCF_NOACK;
+  3e:	2d00      	cmp	r5, #0
+  40:	bf08      	it	eq
+  42:	4613      	moveq	r3, r2
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:166
+    pHdr->fcf0 = LOBYTE(fcf);
+  44:	704b      	strb	r3, [r1, #1]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:167
+    pHdr->fcf1 = HIBYTE(fcf);
+  46:	f06f 0377 	mvn.w	r3, #119	; 0x77
+  4a:	708b      	strb	r3, [r1, #2]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:168
+    pHdr->seqNumber= txState.txSeqNumber;
+  4c:	7803      	ldrb	r3, [r0, #0]
+  4e:	70cb      	strb	r3, [r1, #3]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:169
+    pHdr->panId= pConfig->panId;
+  50:	8863      	ldrh	r3, [r4, #2]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:170
+    pHdr->destAddr= destAddr;
+  52:	80cf      	strh	r7, [r1, #6]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:169
+    //pHdr->frameControlField = pConfig->ackRequest ? BASIC_RF_FCF_ACK : BASIC_RF_FCF_NOACK;
+    fcf= pConfig->ackRequest ? BASIC_RF_FCF_ACK : BASIC_RF_FCF_NOACK;
+    pHdr->fcf0 = LOBYTE(fcf);
+    pHdr->fcf1 = HIBYTE(fcf);
+    pHdr->seqNumber= txState.txSeqNumber;
+    pHdr->panId= pConfig->panId;
+  54:	808b      	strh	r3, [r1, #4]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:171
+    pHdr->destAddr= destAddr;
+    pHdr->srcAddr= pConfig->myAddr;
+  56:	8824      	ldrh	r4, [r4, #0]
+  58:	810c      	strh	r4, [r1, #8]
+  5a:	2100      	movs	r1, #0
+  5c:	e004      	b.n	68 <basicRfSendPacket+0x68>
+basicRfBuildMpdu():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:217
+
+    hdrLength = basicRfBuildHeader(txMpdu, destAddr, payloadLength);
+
+    for(n=0;n<payloadLength;n++)
+    {
+        txMpdu[hdrLength+n] = pPayload[n];
+  5e:	f818 3001 	ldrb.w	r3, [r8, r1]
+  62:	1842      	adds	r2, r0, r1
+  64:	7293      	strb	r3, [r2, #10]
+  66:	3101      	adds	r1, #1
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:215
+{
+    uint8 hdrLength, n;
+
+    hdrLength = basicRfBuildHeader(txMpdu, destAddr, payloadLength);
+
+    for(n=0;n<payloadLength;n++)
+  68:	b2cb      	uxtb	r3, r1
+  6a:	42b3      	cmp	r3, r6
+  6c:	4819      	ldr	r0, [pc, #100]	(d4 <basicRfSendPacket+0xd4>)
+  6e:	d3f6      	bcc.n	5e <basicRfSendPacket+0x5e>
+basicRfSendPacket():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:454
+
+    #ifdef SECURITY_CCM
+    halRfWriteTxBufSecure(txMpdu, mpduLength, length, BASIC_RF_LEN_AUTH, BASIC_RF_SECURITY_M);
+    txState.frameCounter++;     // Increment frame counter field
+    #else
+    halRfWriteTxBuf(txMpdu, mpduLength);
+  70:	f106 010a 	add.w	r1, r6, #10	; 0xa
+  74:	b2c9      	uxtb	r1, r1
+  76:	f7ff fffe 	bl	0 <halRfWriteTxBuf>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:458
+    #endif
+
+    // Turn on RX frame done interrupt for ACK reception
+    halRfEnableRxInterrupt();
+  7a:	f7ff fffe 	bl	0 <halRfEnableRxInterrupt>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:461
+
+    // Send frame with CCA. return HAL_RF_FAILED if not successful
+    if(halRfTransmit() != HAL_RF_SUCCESS) {
+  7e:	f7ff fffe 	bl	0 <halRfTransmit>
+  82:	b120      	cbz	r0, 8e <basicRfSendPacket+0x8e>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:462
+        DEBUG_MSG_FUNC_ERROR;
+  84:	4814      	ldr	r0, [pc, #80]	(d8 <basicRfSendPacket+0xd8>)
+  86:	f44f 71e7 	mov.w	r1, #462	; 0x1ce
+  8a:	f7ff fffe 	bl	0 <DebugMsg_FunctionError>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:467
+        status = HAL_RF_FAILED;
+    }
+
+    // Wait for the acknowledge to be received, if any
+    if (pConfig->ackRequest) {
+  8e:	4c10      	ldr	r4, [pc, #64]	(d0 <basicRfSendPacket+0xd0>)
+  90:	6fe3      	ldr	r3, [r4, #124]
+  92:	795b      	ldrb	r3, [r3, #5]
+  94:	b16b      	cbz	r3, b2 <basicRfSendPacket+0xb2>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:468
+        txState.ackReceived = FALSE;
+  96:	2300      	movs	r3, #0
+  98:	7063      	strb	r3, [r4, #1]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:475
+        // We'll enter RX automatically, so just wait until we can be sure that the ack reception should have finished
+        // The timeout consists of a 12-symbol turnaround time, the ack packet duration, and a small margin
+#if 0 // POOH
+        halMcuWaitUs((12 * BASIC_RF_SYMBOL_DURATION) + (BASIC_RF_ACK_DURATION) + (2 * BASIC_RF_SYMBOL_DURATION) + 10);
+#else
+        Delay(200);
+  9a:	20c8      	movs	r0, #200
+  9c:	f7ff fffe 	bl	0 <Delay>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:479
+#endif
+
+        // If an acknowledgment has been received (by RxFrmDoneIsr), the ackReceived flag should be set
+        status = txState.ackReceived ? HAL_RF_SUCCESS : HAL_RF_FAILED;
+  a0:	7863      	ldrb	r3, [r4, #1]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:485
+
+    } else {
+        status = HAL_RF_SUCCESS;
+    }
+
+    if(HAL_RF_FAILED == status)
+  a2:	b933      	cbnz	r3, b2 <basicRfSendPacket+0xb2>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:487
+    {
+        DEBUG_MSG_FUNC_ERROR;
+  a4:	480c      	ldr	r0, [pc, #48]	(d8 <basicRfSendPacket+0xd8>)
+  a6:	f240 11e7 	movw	r1, #487	; 0x1e7
+  aa:	f7ff fffe 	bl	0 <DebugMsg_FunctionError>
+  ae:	2401      	movs	r4, #1
+  b0:	e000      	b.n	b4 <basicRfSendPacket+0xb4>
+  b2:	2400      	movs	r4, #0
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:491
+    }
+
+    // Turn off the receiver if it should not continue to be enabled
+    if (!txState.receiveOn) {
+  b4:	4b06      	ldr	r3, [pc, #24]	(d0 <basicRfSendPacket+0xd0>)
+  b6:	789b      	ldrb	r3, [r3, #2]
+  b8:	b90b      	cbnz	r3, be <basicRfSendPacket+0xbe>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:492
+        basicRfReceiveOff();
+  ba:	f7ff fffe 	bl	0 <basicRfSendPacket>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:495
+    }
+
+    if(status == HAL_RF_SUCCESS) {
+  be:	b91c      	cbnz	r4, c8 <basicRfSendPacket+0xc8>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:496
+        txState.txSeqNumber++;
+  c0:	4a03      	ldr	r2, [pc, #12]	(d0 <basicRfSendPacket+0xd0>)
+  c2:	7813      	ldrb	r3, [r2, #0]
+  c4:	3301      	adds	r3, #1
+  c6:	7013      	strb	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:505
+    halRfIncNonceTx();          // Increment nonce value
+#endif
+
+    return status;
+
+}
+  c8:	4620      	mov	r0, r4
+  ca:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+  ce:	46c0      	nop			(mov r8, r8)
+  d0:	00000000 	.word	0x00000000
+  d4:	00000008 	.word	0x00000008
+  d8:	00000023 	.word	0x00000023
+Disassembly of section .text.basicRfInit:
+
+00000000 <basicRfInit>:
+basicRfInit():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:370
+*                    frame
+*
+* @return      none
+*/
+uint8 basicRfInit(basicRfCfg_t* pRfConfig)
+{
+   0:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   4:	4607      	mov	r7, r0
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:371
+    if (halRfInit()==HAL_RF_FAILED)
+   6:	f7ff fffe 	bl	0 <halRfInit>
+   a:	2801      	cmp	r0, #1
+   c:	d01b      	beq.n	46 <basicRfInit+0x46>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:374
+        return HAL_RF_FAILED;
+
+    halIntOff();
+   e:	f7ff fffe 	bl	0 <halIntOff>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:377
+
+    // Set the protocol configuration
+    pConfig = pRfConfig;
+  12:	4c0e      	ldr	r4, [pc, #56]	(4c <basicRfInit+0x4c>)
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:378
+    rxi.pPayload   = NULL;
+  14:	4b0e      	ldr	r3, [pc, #56]	(50 <basicRfInit+0x50>)
+  16:	2500      	movs	r5, #0
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:380
+
+    txState.receiveOn = TRUE;
+  18:	2601      	movs	r6, #1
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:378
+
+    halIntOff();
+
+    // Set the protocol configuration
+    pConfig = pRfConfig;
+    rxi.pPayload   = NULL;
+  1a:	609d      	str	r5, [r3, #8]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:377
+        return HAL_RF_FAILED;
+
+    halIntOff();
+
+    // Set the protocol configuration
+    pConfig = pRfConfig;
+  1c:	67e7      	str	r7, [r4, #124]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:380
+    rxi.pPayload   = NULL;
+
+    txState.receiveOn = TRUE;
+  1e:	70a6      	strb	r6, [r4, #2]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:381
+    txState.frameCounter = 0;
+  20:	6065      	str	r5, [r4, #4]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:384
+
+    // Set channel
+    halRfSetChannel(pConfig->channel);
+  22:	7938      	ldrb	r0, [r7, #4]
+  24:	f7ff fffe 	bl	0 <halRfSetChannel>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:387
+
+    // Write the short address and the PAN ID to the CC2520 RAM
+    halRfSetShortAddr(pConfig->myAddr);
+  28:	6fe3      	ldr	r3, [r4, #124]
+  2a:	8818      	ldrh	r0, [r3, #0]
+  2c:	f7ff fffe 	bl	0 <halRfSetShortAddr>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:388
+    halRfSetPanId(pConfig->panId);
+  30:	6fe3      	ldr	r3, [r4, #124]
+  32:	8858      	ldrh	r0, [r3, #2]
+  34:	f7ff fffe 	bl	0 <halRfSetPanId>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:401
+    // Set up receive interrupt (received data or acknowlegment)
+    halRfRxInterruptConfig(basicRfRxFrmDoneIsr);
+    halIntOn();
+#else
+    // And clear the exception
+    CLEAR_EXC_RX_FRM_DONE();
+  38:	2088      	movs	r0, #136
+  3a:	f7ff fffe 	bl	0 <CC2520_BCLR>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:402
+    CC2520_GPIO_0_Interrupt_Setting(ENABLE);
+  3e:	4630      	mov	r0, r6
+  40:	f7ff fffe 	bl	0 <CC2520_GPIO_0_Interrupt_Setting>
+  44:	4628      	mov	r0, r5
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:406
+#endif
+
+    return HAL_RF_SUCCESS;
+}
+  46:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+  4a:	46c0      	nop			(mov r8, r8)
+	...
+Disassembly of section .text.basicRfRxFrmDoneIsr:
+
+00000000 <basicRfRxFrmDoneIsr>:
+basicRfRxFrmDoneIsr():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:236
+*              txState - file scope variable that keeps tx state info
+*
+* @return      none
+*/
+void basicRfRxFrmDoneIsr(void)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:244
+    #ifdef SECURITY_CCM
+    uint8 authStatus=0;
+    #endif
+
+    // Map header to packet buffer
+    pHdr= (basicRfPktHdr_t*)rxMpdu;
+   2:	4d29      	ldr	r5, [pc, #164]	(a8 <basicRfRxFrmDoneIsr+0xa8>)
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:247
+
+    // Clear interrupt and disable new RX frame done interrupt
+    halRfDisableRxInterrupt();
+   4:	f7ff fffe 	bl	0 <halRfDisableRxInterrupt>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:244
+    #ifdef SECURITY_CCM
+    uint8 authStatus=0;
+    #endif
+
+    // Map header to packet buffer
+    pHdr= (basicRfPktHdr_t*)rxMpdu;
+   8:	f105 0680 	add.w	r6, r5, #128	; 0x80
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:250
+
+    // Clear interrupt and disable new RX frame done interrupt
+    halRfDisableRxInterrupt();
+
+    // Enable all other interrupt sources (enables interrupt nesting)
+    halIntOn();
+   c:	f7ff fffe 	bl	0 <halIntOn>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:253
+
+    // Read payload length.
+    halRfReadRxBuf(&pHdr->packetLength,1);
+  10:	2101      	movs	r1, #1
+  12:	4630      	mov	r0, r6
+  14:	f7ff fffe 	bl	0 <halRfReadRxBuf>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:254
+    pHdr->packetLength &= BASIC_RF_PLD_LEN_MASK; // Ignore MSB
+  18:	f895 3080 	ldrb.w	r3, [r5, #128]
+  1c:	4c23      	ldr	r4, [pc, #140]	(ac <basicRfRxFrmDoneIsr+0xac>)
+  1e:	f003 017f 	and.w	r1, r3, #127	; 0x7f
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:262
+    printf("pHdr->packetLength: %d\n", pHdr->packetLength);
+#endif
+
+    // Is this an acknowledgment packet?
+    // Only ack packets may be 5 bytes in total.
+    if (pHdr->packetLength == BASIC_RF_ACK_PACKET_SIZE) {
+  22:	2905      	cmp	r1, #5
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:254
+    // Enable all other interrupt sources (enables interrupt nesting)
+    halIntOn();
+
+    // Read payload length.
+    halRfReadRxBuf(&pHdr->packetLength,1);
+    pHdr->packetLength &= BASIC_RF_PLD_LEN_MASK; // Ignore MSB
+  24:	f885 1080 	strb.w	r1, [r5, #128]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:262
+    printf("pHdr->packetLength: %d\n", pHdr->packetLength);
+#endif
+
+    // Is this an acknowledgment packet?
+    // Only ack packets may be 5 bytes in total.
+    if (pHdr->packetLength == BASIC_RF_ACK_PACKET_SIZE) {
+  28:	d112      	bne.n	50 <basicRfRxFrmDoneIsr+0x50>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:265
+
+        // Read the packet
+        halRfReadRxBuf(&rxMpdu[1], pHdr->packetLength);
+  2a:	f105 0081 	add.w	r0, r5, #129	; 0x81
+  2e:	f7ff fffe 	bl	0 <halRfReadRxBuf>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:275
+    	UINT16_NTOH(pHdr->srcAddr);
+        #ifdef SECURITY_CCM
+        UINT32_NTOH(pHdr->frameCounter);
+        #endif
+
+        rxi.ackRequest = !!(pHdr->fcf0 & BASIC_RF_FCF_ACK_BM_L);
+  32:	7873      	ldrb	r3, [r6, #1]
+  34:	f3c3 1340 	ubfx	r3, r3, #5, #1
+  38:	7323      	strb	r3, [r4, #12]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:281
+
+        // Read the status word and check for CRC OK
+        pStatusWord= rxMpdu + 4;
+
+        // Indicate the successful ACK reception if CRC and sequence number OK
+        if ((pStatusWord[1] & BASIC_RF_CRC_OK_BM) && (pHdr->seqNumber == txState.txSeqNumber)) {
+  3a:	f995 3085 	ldrsb.w	r3, [r5, #133]
+  3e:	2b00      	cmp	r3, #0
+  40:	da2c      	bge.n	9c <basicRfRxFrmDoneIsr+0x9c>
+  42:	78f2      	ldrb	r2, [r6, #3]
+  44:	782b      	ldrb	r3, [r5, #0]
+  46:	429a      	cmp	r2, r3
+  48:	d128      	bne.n	9c <basicRfRxFrmDoneIsr+0x9c>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:282
+            txState.ackReceived = TRUE;
+  4a:	2301      	movs	r3, #1
+  4c:	706b      	strb	r3, [r5, #1]
+  4e:	e025      	b.n	9c <basicRfRxFrmDoneIsr+0x9c>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:291
+    } else {
+
+        // It is assumed that the radio rejects packets with invalid length.
+        // Subtract the number of bytes in the frame overhead to get actual payload.
+
+        rxi.length = pHdr->packetLength - BASIC_RF_PACKET_OVERHEAD_SIZE;
+  50:	f1a1 030b 	sub.w	r3, r1, #11	; 0xb
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:298
+        #ifdef SECURITY_CCM
+        rxi.length -= (BASIC_RF_AUX_HDR_LENGTH + BASIC_RF_LEN_MIC);
+        authStatus = halRfReadRxBufSecure(&rxMpdu[1], pHdr->packetLength, rxi.length,
+                                        BASIC_RF_LEN_AUTH, BASIC_RF_SECURITY_M);
+        #else
+        halRfReadRxBuf(&rxMpdu[1], pHdr->packetLength);
+  54:	f105 0081 	add.w	r0, r5, #129	; 0x81
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:291
+    } else {
+
+        // It is assumed that the radio rejects packets with invalid length.
+        // Subtract the number of bytes in the frame overhead to get actual payload.
+
+        rxi.length = pHdr->packetLength - BASIC_RF_PACKET_OVERHEAD_SIZE;
+  58:	71a3      	strb	r3, [r4, #6]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:298
+        #ifdef SECURITY_CCM
+        rxi.length -= (BASIC_RF_AUX_HDR_LENGTH + BASIC_RF_LEN_MIC);
+        authStatus = halRfReadRxBufSecure(&rxMpdu[1], pHdr->packetLength, rxi.length,
+                                        BASIC_RF_LEN_AUTH, BASIC_RF_SECURITY_M);
+        #else
+        halRfReadRxBuf(&rxMpdu[1], pHdr->packetLength);
+  5a:	f7ff fffe 	bl	0 <halRfReadRxBuf>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:309
+    	UINT16_NTOH(pHdr->srcAddr);
+        #ifdef SECURITY_CCM
+        UINT32_NTOH(pHdr->frameCounter);
+        #endif
+
+        rxi.ackRequest = !!(pHdr->fcf0 & BASIC_RF_FCF_ACK_BM_L);
+  5e:	7870      	ldrb	r0, [r6, #1]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:318
+
+        // Read the packet payload
+        rxi.pPayload = rxMpdu + BASIC_RF_HDR_SIZE;
+
+        // Read the FCS to get the RSSI and CRC
+        pStatusWord= rxi.pPayload+rxi.length;
+  60:	f994 2006 	ldrsb.w	r2, [r4, #6]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:309
+    	UINT16_NTOH(pHdr->srcAddr);
+        #ifdef SECURITY_CCM
+        UINT32_NTOH(pHdr->frameCounter);
+        #endif
+
+        rxi.ackRequest = !!(pHdr->fcf0 & BASIC_RF_FCF_ACK_BM_L);
+  64:	f3c0 1340 	ubfx	r3, r0, #5, #1
+  68:	7323      	strb	r3, [r4, #12]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:312
+
+        // Read the source address
+        rxi.srcAddr= pHdr->srcAddr;
+  6a:	8933      	ldrh	r3, [r6, #8]
+  6c:	8063      	strh	r3, [r4, #2]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:315
+
+        // Read the packet payload
+        rxi.pPayload = rxMpdu + BASIC_RF_HDR_SIZE;
+  6e:	f105 038a 	add.w	r3, r5, #138	; 0x8a
+  72:	60a3      	str	r3, [r4, #8]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:318
+
+        // Read the FCS to get the RSSI and CRC
+        pStatusWord= rxi.pPayload+rxi.length;
+  74:	1899      	adds	r1, r3, r2
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:322
+        #ifdef SECURITY_CCM
+        pStatusWord+= BASIC_RF_LEN_MIC;
+        #endif
+        rxi.rssi = pStatusWord[0];
+  76:	5c9b      	ldrb	r3, [r3, r2]
+  78:	7363      	strb	r3, [r4, #13]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:326
+
+        // Notify the application about the received data packet if the CRC is OK
+        // Throw packet if the previous packet had the same sequence number
+        if( (pStatusWord[1] & BASIC_RF_CRC_OK_BM) && (rxi.seqNumber != pHdr->seqNumber) ) {
+  7a:	f991 3001 	ldrsb.w	r3, [r1, #1]
+  7e:	2b00      	cmp	r3, #0
+  80:	da09      	bge.n	96 <basicRfRxFrmDoneIsr+0x96>
+  82:	7822      	ldrb	r2, [r4, #0]
+  84:	78f3      	ldrb	r3, [r6, #3]
+  86:	429a      	cmp	r2, r3
+  88:	d005      	beq.n	96 <basicRfRxFrmDoneIsr+0x96>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:336
+                    (BASIC_RF_FCF_NOACK_L | BASIC_RF_SEC_ENABLED_FCF_BM_L)) {
+                        rxi.isReady = TRUE;
+                }
+            }
+            #else
+            if ( ((pHdr->fcf0 & (BASIC_RF_FCF_BM_L)) == BASIC_RF_FCF_NOACK_L) ) {
+  8a:	f000 03df 	and.w	r3, r0, #223	; 0xdf
+  8e:	2b41      	cmp	r3, #65
+  90:	d101      	bne.n	96 <basicRfRxFrmDoneIsr+0x96>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:337
+                rxi.isReady = TRUE;
+  92:	2301      	movs	r3, #1
+  94:	73a3      	strb	r3, [r4, #14]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:342
+            }
+            #endif
+        }
+
+        rxi.seqNumber = pHdr->seqNumber;
+  96:	78f2      	ldrb	r2, [r6, #3]
+  98:	4b04      	ldr	r3, [pc, #16]	(ac <basicRfRxFrmDoneIsr+0xac>)
+  9a:	701a      	strb	r2, [r3, #0]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:346
+    }
+
+    // Enable RX frame done interrupt again
+    halIntOff();
+  9c:	f7ff fffe 	bl	0 <halIntOff>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:347
+    halRfEnableRxInterrupt();
+  a0:	f7ff fffe 	bl	0 <halRfEnableRxInterrupt>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/basic_rf.c:348
+}
+  a4:	bd70      	pop	{r4, r5, r6, pc}
+  a6:	46c0      	nop			(mov r8, r8)
+	...

@@ -1,0 +1,430 @@
+
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\seven_segment.o:     file format elf32-littlearm
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\seven_segment.o
+
+Disassembly of section .text.PowerOn_7_SEG:
+
+00000000 <PowerOn_7_SEG>:
+PowerOn_7_SEG():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:19
+/* functions */
+
+
+void PowerOn_7_SEG(void)
+{
+    GPIO_7_SEG->BRR |= GPIO_7_SEG_POWER_PIN;
+   0:	4a02      	ldr	r2, [pc, #8]	(c <PowerOn_7_SEG+0xc>)
+   2:	6953      	ldr	r3, [r2, #20]
+   4:	f443 7380 	orr.w	r3, r3, #256	; 0x100
+   8:	6153      	str	r3, [r2, #20]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:20
+}
+   a:	4770      	bx	lr
+   c:	40011000 	.word	0x40011000
+Disassembly of section .text.PowerOff_7_SEG:
+
+00000000 <PowerOff_7_SEG>:
+PowerOff_7_SEG():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:24
+
+void PowerOff_7_SEG(void)
+{
+    GPIO_7_SEG->BSRR |= GPIO_7_SEG_POWER_PIN;
+   0:	4a02      	ldr	r2, [pc, #8]	(c <PowerOff_7_SEG+0xc>)
+   2:	6913      	ldr	r3, [r2, #16]
+   4:	f443 7380 	orr.w	r3, r3, #256	; 0x100
+   8:	6113      	str	r3, [r2, #16]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:25
+}
+   a:	4770      	bx	lr
+   c:	40011000 	.word	0x40011000
+Disassembly of section .text.On_7_SEG_OnePin:
+
+00000000 <On_7_SEG_OnePin>:
+On_7_SEG_OnePin():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:29
+
+void On_7_SEG_OnePin(uint16_t pinNum)
+{
+    GPIO_7_SEG->BRR |= pinNum;
+   0:	4b02      	ldr	r3, [pc, #8]	(c <On_7_SEG_OnePin+0xc>)
+   2:	695a      	ldr	r2, [r3, #20]
+   4:	4310      	orrs	r0, r2
+   6:	6158      	str	r0, [r3, #20]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:30
+}
+   8:	4770      	bx	lr
+   a:	46c0      	nop			(mov r8, r8)
+   c:	40011000 	.word	0x40011000
+Disassembly of section .text.Off_7_SEG_OnePin:
+
+00000000 <Off_7_SEG_OnePin>:
+Off_7_SEG_OnePin():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:34
+
+void Off_7_SEG_OnePin(uint16_t pinNum)
+{
+    GPIO_7_SEG->BSRR |= pinNum;
+   0:	4b02      	ldr	r3, [pc, #8]	(c <Off_7_SEG_OnePin+0xc>)
+   2:	691a      	ldr	r2, [r3, #16]
+   4:	4310      	orrs	r0, r2
+   6:	6118      	str	r0, [r3, #16]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:35
+}
+   8:	4770      	bx	lr
+   a:	46c0      	nop			(mov r8, r8)
+   c:	40011000 	.word	0x40011000
+Disassembly of section .text.On_7_SEG_AllPin:
+
+00000000 <On_7_SEG_AllPin>:
+On_7_SEG_AllPin():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:38
+
+void On_7_SEG_AllPin(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:39
+    On_7_SEG_OnePin
+   2:	20ff      	movs	r0, #255
+   4:	f7ff fffe 	bl	0 <On_7_SEG_AllPin>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:43
+        (GPIO_7_SEG_A_PIN | GPIO_7_SEG_B_PIN | GPIO_7_SEG_C_PIN
+         | GPIO_7_SEG_D_PIN | GPIO_7_SEG_E_PIN | GPIO_7_SEG_F_PIN
+         | GPIO_7_SEG_G_PIN | GPIO_7_SEG_DP_PIN);
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.Off_7_SEG_AllPin:
+
+00000000 <Off_7_SEG_AllPin>:
+Off_7_SEG_AllPin():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:46
+
+void Off_7_SEG_AllPin(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:47
+    Off_7_SEG_OnePin
+   2:	20ff      	movs	r0, #255
+   4:	f7ff fffe 	bl	0 <Off_7_SEG_AllPin>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:51
+        (GPIO_7_SEG_A_PIN | GPIO_7_SEG_B_PIN | GPIO_7_SEG_C_PIN
+         | GPIO_7_SEG_D_PIN | GPIO_7_SEG_E_PIN | GPIO_7_SEG_F_PIN
+         | GPIO_7_SEG_G_PIN | GPIO_7_SEG_DP_PIN);
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.OutPut_7_SEG_Number:
+
+00000000 <OutPut_7_SEG_Number>:
+OutPut_7_SEG_Number():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:54
+
+void OutPut_7_SEG_Number(unsigned int num)
+{
+   0:	b510      	push	{r4, lr}
+   2:	4604      	mov	r4, r0
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:55
+    Off_7_SEG_AllPin();
+   4:	f7ff fffe 	bl	0 <OutPut_7_SEG_Number>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:57
+
+    switch(num)
+   8:	2c09      	cmp	r4, #9
+   a:	d81b      	bhi.n	44 <OutPut_7_SEG_Number+0x44>
+   c:	e8df f004 	tbb	[pc, r4]
+  10:	0b090705 	.word	0x0b090705
+  14:	13110f0d 	.word	0x13110f0d
+  18:	1715      	.short	0x1715
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:60
+    {
+    case 0:
+        On_7_SEG_OnePin
+  1a:	203f      	movs	r0, #63
+  1c:	e010      	b.n	40 <OutPut_7_SEG_Number+0x40>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:66
+            (GPIO_7_SEG_A_PIN | GPIO_7_SEG_B_PIN | GPIO_7_SEG_C_PIN
+            | GPIO_7_SEG_D_PIN | GPIO_7_SEG_E_PIN | GPIO_7_SEG_F_PIN);
+        break;
+
+    case 1:
+        On_7_SEG_OnePin
+  1e:	2006      	movs	r0, #6
+  20:	e00e      	b.n	40 <OutPut_7_SEG_Number+0x40>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:71
+            (GPIO_7_SEG_B_PIN | GPIO_7_SEG_C_PIN);
+        break;
+
+    case 2:
+        On_7_SEG_OnePin
+  22:	209b      	movs	r0, #155
+  24:	e00c      	b.n	40 <OutPut_7_SEG_Number+0x40>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:77
+            (GPIO_7_SEG_A_PIN | GPIO_7_SEG_B_PIN | GPIO_7_SEG_D_PIN
+            | GPIO_7_SEG_E_PIN | GPIO_7_SEG_G_PIN);
+        break;
+
+    case 3:
+        On_7_SEG_OnePin
+  26:	208f      	movs	r0, #143
+  28:	e00a      	b.n	40 <OutPut_7_SEG_Number+0x40>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:83
+            (GPIO_7_SEG_A_PIN | GPIO_7_SEG_B_PIN | GPIO_7_SEG_C_PIN
+            | GPIO_7_SEG_D_PIN | GPIO_7_SEG_G_PIN);
+        break;
+
+    case 4:
+        On_7_SEG_OnePin
+  2a:	20a6      	movs	r0, #166
+  2c:	e008      	b.n	40 <OutPut_7_SEG_Number+0x40>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:89
+            (GPIO_7_SEG_B_PIN | GPIO_7_SEG_C_PIN
+            | GPIO_7_SEG_F_PIN | GPIO_7_SEG_G_PIN);
+        break;
+
+    case 5:
+        On_7_SEG_OnePin
+  2e:	20ad      	movs	r0, #173
+  30:	e006      	b.n	40 <OutPut_7_SEG_Number+0x40>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:95
+            (GPIO_7_SEG_A_PIN | GPIO_7_SEG_C_PIN | GPIO_7_SEG_D_PIN
+            | GPIO_7_SEG_F_PIN | GPIO_7_SEG_G_PIN);
+        break;
+
+    case 6:
+        On_7_SEG_OnePin
+  32:	20bd      	movs	r0, #189
+  34:	e004      	b.n	40 <OutPut_7_SEG_Number+0x40>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:101
+            (GPIO_7_SEG_A_PIN | GPIO_7_SEG_C_PIN | GPIO_7_SEG_D_PIN
+            | GPIO_7_SEG_E_PIN | GPIO_7_SEG_F_PIN | GPIO_7_SEG_G_PIN);
+        break;
+
+    case 7:
+        On_7_SEG_OnePin
+  36:	2027      	movs	r0, #39
+  38:	e002      	b.n	40 <OutPut_7_SEG_Number+0x40>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:107
+            (GPIO_7_SEG_A_PIN | GPIO_7_SEG_B_PIN | GPIO_7_SEG_C_PIN
+            | GPIO_7_SEG_F_PIN);
+        break;
+
+    case 8:
+        On_7_SEG_OnePin
+  3a:	20bf      	movs	r0, #191
+  3c:	e000      	b.n	40 <OutPut_7_SEG_Number+0x40>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:114
+            | GPIO_7_SEG_D_PIN | GPIO_7_SEG_E_PIN | GPIO_7_SEG_F_PIN
+            | GPIO_7_SEG_G_PIN);
+        break;
+
+    case 9:
+        On_7_SEG_OnePin
+  3e:	20af      	movs	r0, #175
+  40:	f7ff fffe 	bl	0 <OutPut_7_SEG_Number>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:119
+            (GPIO_7_SEG_A_PIN | GPIO_7_SEG_B_PIN | GPIO_7_SEG_C_PIN
+            | GPIO_7_SEG_D_PIN | GPIO_7_SEG_F_PIN | GPIO_7_SEG_G_PIN);
+        break;
+    }
+}
+  44:	bd10      	pop	{r4, pc}
+  46:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.Seven_Segment_Test:
+
+00000000 <Seven_Segment_Test>:
+Seven_Segment_Test():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:124
+
+void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct);
+
+void Seven_Segment_Test(void)
+{
+   0:	b513      	push	{r0, r1, r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:128
+    GPIO_InitTypeDef GPIO_InitStructure;
+    int i;
+    
+    printf("Seven_Segment_Test\n");
+   2:	4827      	ldr	r0, [pc, #156]	(a0 <Seven_Segment_Test+0xa0>)
+   4:	f7ff fffe 	bl	0 <puts>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:130
+
+    RCC->APB2ENR |= RCC_APB2Periph_GPIOC;
+   8:	4a26      	ldr	r2, [pc, #152]	(a4 <Seven_Segment_Test+0xa4>)
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:139
+        = GPIO_7_SEG_POWER_PIN | GPIO_7_SEG_A_PIN | GPIO_7_SEG_B_PIN
+          | GPIO_7_SEG_C_PIN | GPIO_7_SEG_D_PIN | GPIO_7_SEG_E_PIN
+          | GPIO_7_SEG_F_PIN | GPIO_7_SEG_G_PIN | GPIO_7_SEG_DP_PIN;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_Init(GPIO_7_SEG, &GPIO_InitStructure);
+   a:	a901      	add	r1, sp, #4
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:130
+    GPIO_InitTypeDef GPIO_InitStructure;
+    int i;
+    
+    printf("Seven_Segment_Test\n");
+
+    RCC->APB2ENR |= RCC_APB2Periph_GPIOC;
+   c:	6993      	ldr	r3, [r2, #24]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:139
+        = GPIO_7_SEG_POWER_PIN | GPIO_7_SEG_A_PIN | GPIO_7_SEG_B_PIN
+          | GPIO_7_SEG_C_PIN | GPIO_7_SEG_D_PIN | GPIO_7_SEG_E_PIN
+          | GPIO_7_SEG_F_PIN | GPIO_7_SEG_G_PIN | GPIO_7_SEG_DP_PIN;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_Init(GPIO_7_SEG, &GPIO_InitStructure);
+   e:	4826      	ldr	r0, [pc, #152]	(a8 <Seven_Segment_Test+0xa8>)
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:130
+    GPIO_InitTypeDef GPIO_InitStructure;
+    int i;
+    
+    printf("Seven_Segment_Test\n");
+
+    RCC->APB2ENR |= RCC_APB2Periph_GPIOC;
+  10:	f043 0310 	orr.w	r3, r3, #16	; 0x10
+  14:	6193      	str	r3, [r2, #24]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:133
+
+    /* Configure gpio as output : LED1, LED2, LED3 */
+    GPIO_InitStructure.GPIO_Pin
+  16:	f240 13ff 	movw	r3, #511	; 0x1ff
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:138
+        = GPIO_7_SEG_POWER_PIN | GPIO_7_SEG_A_PIN | GPIO_7_SEG_B_PIN
+          | GPIO_7_SEG_C_PIN | GPIO_7_SEG_D_PIN | GPIO_7_SEG_E_PIN
+          | GPIO_7_SEG_F_PIN | GPIO_7_SEG_G_PIN | GPIO_7_SEG_DP_PIN;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+  1a:	2410      	movs	r4, #16
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:133
+    printf("Seven_Segment_Test\n");
+
+    RCC->APB2ENR |= RCC_APB2Periph_GPIOC;
+
+    /* Configure gpio as output : LED1, LED2, LED3 */
+    GPIO_InitStructure.GPIO_Pin
+  1c:	f8ad 3004 	strh.w	r3, [sp, #4]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:137
+        = GPIO_7_SEG_POWER_PIN | GPIO_7_SEG_A_PIN | GPIO_7_SEG_B_PIN
+          | GPIO_7_SEG_C_PIN | GPIO_7_SEG_D_PIN | GPIO_7_SEG_E_PIN
+          | GPIO_7_SEG_F_PIN | GPIO_7_SEG_G_PIN | GPIO_7_SEG_DP_PIN;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+  20:	2303      	movs	r3, #3
+  22:	f88d 3006 	strb.w	r3, [sp, #6]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:138
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+  26:	f88d 4007 	strb.w	r4, [sp, #7]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:139
+    GPIO_Init(GPIO_7_SEG, &GPIO_InitStructure);
+  2a:	f7ff fffe 	bl	0 <GPIO_Init>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:141
+
+    PowerOn_7_SEG();
+  2e:	f7ff fffe 	bl	0 <Seven_Segment_Test>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:143
+
+    delay_1_second();
+  32:	f7ff fffe 	bl	0 <delay_1_second>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:144
+    Off_7_SEG_AllPin();
+  36:	f7ff fffe 	bl	0 <Seven_Segment_Test>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:146
+
+    On_7_SEG_OnePin(GPIO_7_SEG_A_PIN);
+  3a:	2001      	movs	r0, #1
+  3c:	f7ff fffe 	bl	0 <Seven_Segment_Test>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:147
+    delay_1_second();
+  40:	f7ff fffe 	bl	0 <delay_1_second>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:148
+    On_7_SEG_OnePin(GPIO_7_SEG_B_PIN);
+  44:	2002      	movs	r0, #2
+  46:	f7ff fffe 	bl	0 <Seven_Segment_Test>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:149
+    delay_1_second();
+  4a:	f7ff fffe 	bl	0 <delay_1_second>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:150
+    On_7_SEG_OnePin(GPIO_7_SEG_C_PIN);
+  4e:	2004      	movs	r0, #4
+  50:	f7ff fffe 	bl	0 <Seven_Segment_Test>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:151
+    delay_1_second();
+  54:	f7ff fffe 	bl	0 <delay_1_second>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:152
+    On_7_SEG_OnePin(GPIO_7_SEG_D_PIN);
+  58:	2008      	movs	r0, #8
+  5a:	f7ff fffe 	bl	0 <Seven_Segment_Test>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:153
+    delay_1_second();
+  5e:	f7ff fffe 	bl	0 <delay_1_second>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:154
+    On_7_SEG_OnePin(GPIO_7_SEG_E_PIN);
+  62:	4620      	mov	r0, r4
+  64:	f7ff fffe 	bl	0 <Seven_Segment_Test>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:155
+    delay_1_second();
+  68:	f7ff fffe 	bl	0 <delay_1_second>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:156
+    On_7_SEG_OnePin(GPIO_7_SEG_F_PIN);
+  6c:	2020      	movs	r0, #32
+  6e:	f7ff fffe 	bl	0 <Seven_Segment_Test>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:157
+    delay_1_second();
+  72:	f7ff fffe 	bl	0 <delay_1_second>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:158
+    On_7_SEG_OnePin(GPIO_7_SEG_G_PIN);
+  76:	2080      	movs	r0, #128
+  78:	f7ff fffe 	bl	0 <Seven_Segment_Test>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:159
+    delay_1_second();
+  7c:	f7ff fffe 	bl	0 <delay_1_second>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:160
+    On_7_SEG_OnePin(GPIO_7_SEG_DP_PIN);
+  80:	2040      	movs	r0, #64
+  82:	f7ff fffe 	bl	0 <Seven_Segment_Test>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:161
+    delay_1_second();
+  86:	f7ff fffe 	bl	0 <delay_1_second>
+  8a:	2400      	movs	r4, #0
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:165
+
+    for(i=0; i<10; i++)
+    {
+        OutPut_7_SEG_Number(i);
+  8c:	4620      	mov	r0, r4
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:163
+    On_7_SEG_OnePin(GPIO_7_SEG_G_PIN);
+    delay_1_second();
+    On_7_SEG_OnePin(GPIO_7_SEG_DP_PIN);
+    delay_1_second();
+
+    for(i=0; i<10; i++)
+  8e:	3401      	adds	r4, #1
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:165
+    {
+        OutPut_7_SEG_Number(i);
+  90:	f7ff fffe 	bl	0 <Seven_Segment_Test>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:166
+        delay_1_second();
+  94:	f7ff fffe 	bl	0 <delay_1_second>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:163
+    On_7_SEG_OnePin(GPIO_7_SEG_G_PIN);
+    delay_1_second();
+    On_7_SEG_OnePin(GPIO_7_SEG_DP_PIN);
+    delay_1_second();
+
+    for(i=0; i<10; i++)
+  98:	2c0a      	cmp	r4, #10
+  9a:	d1f7      	bne.n	8c <Seven_Segment_Test+0x8c>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/seven_segment.c:168
+    {
+        OutPut_7_SEG_Number(i);
+        delay_1_second();
+    }
+}
+  9c:	bd1c      	pop	{r2, r3, r4, pc}
+  9e:	46c0      	nop			(mov r8, r8)
+  a0:	00000000 	.word	0x00000000
+  a4:	40021000 	.word	0x40021000
+  a8:	40011000 	.word	0x40011000

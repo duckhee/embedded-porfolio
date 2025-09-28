@@ -8,7 +8,7 @@
  */
 
 /* includes */
-
+#include <stdio.h>
 #include "platform_config.h"
 
 /* functions */
@@ -366,9 +366,9 @@ int main(void) {
         printf("---------------------\n");
         printf("x> quit\n\n");
 
-        ch = USART_GetCharacter(USART1);
-//        scanf("%d", &ch);
-        printf("value ch : %d\r\n", ch);
+//        ch = USART_GetCharacter(USART1);
+        scanf("%c", &ch);
+        printf("value ch : %c\r\n", ch);
         printf(" is selected\n\n");
 
         switch ((char) ch) {
@@ -405,3 +405,25 @@ __attribute__((used)) int _write(int fd, char *ptr, int len) {
     return len;
 }
 
+__attribute__((used)) int _read(int file, char *ptr, int len) {
+    int i = 0;
+    char ch;
+
+    while (i < len) {
+        // USART 수신 대기
+//        while (!(USART1->SR & USART_FLAG_RXNE));
+        while (USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET);
+        ch = USART_ReceiveData(USART1);  // 수신된 문자 읽기
+
+        if (ch == '\r' || ch == '\n') {  // Enter 입력 시 처리
+//            ptr[i++] = '\n';
+//            _write(0, "\r\n", 2);  // 개행 에코
+            break;
+        } else {
+            ptr[i++] = ch;
+//            _write(0, &ch, 1);  // 에코 출력
+        }
+    }
+
+    return i;
+}

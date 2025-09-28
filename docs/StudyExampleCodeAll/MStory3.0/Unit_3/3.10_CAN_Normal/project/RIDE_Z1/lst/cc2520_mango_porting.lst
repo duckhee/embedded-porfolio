@@ -1,0 +1,266 @@
+
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_Z1\obj\cc2520_mango_porting.o:     file format elf32-littlearm
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_Z1\obj\cc2520_mango_porting.o
+
+Disassembly of section .text.CC2520_SPI_WAIT_RXRDY:
+
+00000000 <CC2520_SPI_WAIT_RXRDY>:
+CC2520_SPI_WAIT_RXRDY():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:86
+{
+    return SPI_I2S_ReceiveData(SPI1);
+}
+
+void CC2520_SPI_WAIT_RXRDY(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:88
+    /* Wait for SPI1 data reception */
+    while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_RXNE) == RESET);
+   2:	4803      	ldr	r0, [pc, #12]	(10 <CC2520_SPI_WAIT_RXRDY+0x10>)
+   4:	2101      	movs	r1, #1
+   6:	f7ff fffe 	bl	0 <SPI_I2S_GetFlagStatus>
+   a:	2800      	cmp	r0, #0
+   c:	d0f9      	beq.n	2 <SPI_I2S_GetFlagStatus+0x2>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:89
+}
+   e:	bd10      	pop	{r4, pc}
+  10:	40013000 	.word	0x40013000
+Disassembly of section .text.CC2520_SPI_RX:
+
+00000000 <CC2520_SPI_RX>:
+CC2520_SPI_RX():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:81
+    /* Send SPI1 data */
+    SPI_I2S_SendData(SPI1, data);
+}
+
+u8 CC2520_SPI_RX(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:82
+    return SPI_I2S_ReceiveData(SPI1);
+   2:	4802      	ldr	r0, [pc, #8]	(c <CC2520_SPI_RX+0xc>)
+   4:	f7ff fffe 	bl	0 <SPI_I2S_ReceiveData>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:83
+}
+   8:	b2c0      	uxtb	r0, r0
+   a:	bd10      	pop	{r4, pc}
+   c:	40013000 	.word	0x40013000
+Disassembly of section .text.CC2520_SPI_TX:
+
+00000000 <CC2520_SPI_TX>:
+CC2520_SPI_TX():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:73
+// #define CC2520_SPI_RX()         (CC2520_SPI_RX_REG)
+// #define CC2520_SPI_WAIT_RXRDY() st( while (!CC2520_SPI_RX_IS_READY()); )
+// #define CC2520_SPI_END()        st( CC2520_CSN_OPIN(1); )
+
+void CC2520_SPI_TX(u8 data)
+{
+   0:	b510      	push	{r4, lr}
+   2:	4604      	mov	r4, r0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:75
+    /* Wait for SPI1 Tx buffer empty */
+    while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_TXE) == RESET);
+   4:	4805      	ldr	r0, [pc, #20]	(1c <CC2520_SPI_TX+0x1c>)
+   6:	2102      	movs	r1, #2
+   8:	f7ff fffe 	bl	0 <SPI_I2S_GetFlagStatus>
+   c:	2800      	cmp	r0, #0
+   e:	d0f9      	beq.n	4 <CC2520_SPI_TX+0x4>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:77
+    /* Send SPI1 data */
+    SPI_I2S_SendData(SPI1, data);
+  10:	4802      	ldr	r0, [pc, #8]	(1c <CC2520_SPI_TX+0x1c>)
+  12:	4621      	mov	r1, r4
+  14:	f7ff fffe 	bl	0 <SPI_I2S_SendData>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:78
+}
+  18:	bd10      	pop	{r4, pc}
+  1a:	46c0      	nop			(mov r8, r8)
+  1c:	40013000 	.word	0x40013000
+Disassembly of section .text.CC2520_VREG_EN_OPIN:
+
+00000000 <CC2520_VREG_EN_OPIN>:
+CC2520_VREG_EN_OPIN():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:54
+        GPIO_SetBits(GPIO_RF_RESET, GPIO_RF_RESET_PIN);
+    }
+}
+
+void CC2520_VREG_EN_OPIN(u8 data)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:55
+    if(0 == data)
+   2:	b920      	cbnz	r0, e <CC2520_VREG_EN_OPIN+0xe>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:57
+    {
+        GPIO_ResetBits(GPIO_RF_VREG_EN, GPIO_RF_VREG_EN_PIN);
+   4:	4804      	ldr	r0, [pc, #16]	(18 <CC2520_VREG_EN_OPIN+0x18>)
+   6:	2180      	movs	r1, #128
+   8:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+   c:	e003      	b.n	16 <CC2520_VREG_EN_OPIN+0x16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:61
+    }
+    else
+    {
+        GPIO_SetBits(GPIO_RF_VREG_EN, GPIO_RF_VREG_EN_PIN);
+   e:	4802      	ldr	r0, [pc, #8]	(18 <CC2520_VREG_EN_OPIN+0x18>)
+  10:	2180      	movs	r1, #128
+  12:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:63
+    }
+}
+  16:	bd10      	pop	{r4, pc}
+  18:	40011000 	.word	0x40011000
+Disassembly of section .text.CC2520_RESET_OPIN:
+
+00000000 <CC2520_RESET_OPIN>:
+CC2520_RESET_OPIN():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:42
+// Outputs: Power and reset control
+// #define CC2520_RESET_OPIN(v)            MCU_IO_SET(5,7,v)
+// #define CC2520_VREG_EN_OPIN(v)          MCU_IO_SET(1,0,v)
+
+void CC2520_RESET_OPIN(u8 data)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:43
+    if(0 == data)
+   2:	b920      	cbnz	r0, e <CC2520_RESET_OPIN+0xe>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:45
+    {
+        GPIO_ResetBits(GPIO_RF_RESET, GPIO_RF_RESET_PIN);
+   4:	4804      	ldr	r0, [pc, #16]	(18 <CC2520_RESET_OPIN+0x18>)
+   6:	2140      	movs	r1, #64
+   8:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+   c:	e003      	b.n	16 <CC2520_RESET_OPIN+0x16>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:49
+    }
+    else
+    {
+        GPIO_SetBits(GPIO_RF_RESET, GPIO_RF_RESET_PIN);
+   e:	4802      	ldr	r0, [pc, #8]	(18 <CC2520_RESET_OPIN+0x18>)
+  10:	2140      	movs	r1, #64
+  12:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:51
+    }
+}
+  16:	bd10      	pop	{r4, pc}
+  18:	40011000 	.word	0x40011000
+Disassembly of section .text.CC2520_GPIO_0_Interrupt_Setting:
+
+00000000 <CC2520_GPIO_0_Interrupt_Setting>:
+CC2520_GPIO_0_Interrupt_Setting():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:11
+#include "misc.h"
+#include "stm32f10x_exti.h"
+#include "stm32f10x_gpio.h"
+
+void CC2520_GPIO_0_Interrupt_Setting(FunctionalState  fStateE)
+{
+   0:	b530      	push	{r4, r5, lr}
+   2:	4605      	mov	r5, r0
+   4:	b085      	sub	sp, #20
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:16
+    NVIC_InitTypeDef NVIC_InitStructure;
+    EXTI_InitTypeDef EXTI_InitStructure;
+
+    /* Configure one bit for preemption priority */
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
+   6:	f44f 60c0 	mov.w	r0, #1536	; 0x600
+   a:	f7ff fffe 	bl	0 <NVIC_PriorityGroupConfig>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:20
+
+    /* Enable the EXTI8 Interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel                   = EXTI9_5_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+   e:	2400      	movs	r4, #0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:19
+
+    /* Configure one bit for preemption priority */
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
+
+    /* Enable the EXTI8 Interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel                   = EXTI9_5_IRQn;
+  10:	2317      	movs	r3, #23
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:23
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority        = 0;
+    NVIC_InitStructure.NVIC_IRQChannelCmd                = fStateE;
+    NVIC_Init(&NVIC_InitStructure);
+  12:	a803      	add	r0, sp, #12
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:19
+
+    /* Configure one bit for preemption priority */
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
+
+    /* Enable the EXTI8 Interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel                   = EXTI9_5_IRQn;
+  14:	f88d 300c 	strb.w	r3, [sp, #12]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:20
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+  18:	f88d 400d 	strb.w	r4, [sp, #13]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:21
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority        = 0;
+  1c:	f88d 400e 	strb.w	r4, [sp, #14]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:22
+    NVIC_InitStructure.NVIC_IRQChannelCmd                = fStateE;
+  20:	f88d 500f 	strb.w	r5, [sp, #15]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:23
+    NVIC_Init(&NVIC_InitStructure);
+  24:	f7ff fffe 	bl	0 <NVIC_Init>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:26
+
+    /* Connect EXTI Line to gpio pin */
+    GPIO_EXTILineConfig(GPIO_PORTSOURCE_RF_GPIO0, GPIO_PINSOURCE_RF_GPIO0);
+  28:	2002      	movs	r0, #2
+  2a:	2108      	movs	r1, #8
+  2c:	f7ff fffe 	bl	0 <GPIO_EXTILineConfig>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:29
+
+    /* Configure EXTI Line to generate an interrupt */
+    EXTI_ClearITPendingBit(GPIO_EXTI_Line_RF_GPIO0);
+  30:	f44f 7080 	mov.w	r0, #256	; 0x100
+  34:	f7ff fffe 	bl	0 <EXTI_ClearITPendingBit>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:30
+    EXTI_InitStructure.EXTI_Line    = GPIO_EXTI_Line_RF_GPIO0;
+  38:	f44f 7380 	mov.w	r3, #256	; 0x100
+  3c:	9301      	str	r3, [sp, #4]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:34
+    EXTI_InitStructure.EXTI_Mode    = EXTI_Mode_Interrupt;
+    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
+    EXTI_InitStructure.EXTI_LineCmd = fStateE;
+    EXTI_Init(&EXTI_InitStructure);
+  3e:	a801      	add	r0, sp, #4
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:32
+
+    /* Configure EXTI Line to generate an interrupt */
+    EXTI_ClearITPendingBit(GPIO_EXTI_Line_RF_GPIO0);
+    EXTI_InitStructure.EXTI_Line    = GPIO_EXTI_Line_RF_GPIO0;
+    EXTI_InitStructure.EXTI_Mode    = EXTI_Mode_Interrupt;
+    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
+  40:	2308      	movs	r3, #8
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:31
+    GPIO_EXTILineConfig(GPIO_PORTSOURCE_RF_GPIO0, GPIO_PINSOURCE_RF_GPIO0);
+
+    /* Configure EXTI Line to generate an interrupt */
+    EXTI_ClearITPendingBit(GPIO_EXTI_Line_RF_GPIO0);
+    EXTI_InitStructure.EXTI_Line    = GPIO_EXTI_Line_RF_GPIO0;
+    EXTI_InitStructure.EXTI_Mode    = EXTI_Mode_Interrupt;
+  42:	f88d 4008 	strb.w	r4, [sp, #8]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:32
+    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
+  46:	f88d 3009 	strb.w	r3, [sp, #9]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:33
+    EXTI_InitStructure.EXTI_LineCmd = fStateE;
+  4a:	f88d 500a 	strb.w	r5, [sp, #10]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:34
+    EXTI_Init(&EXTI_InitStructure);
+  4e:	f7ff fffe 	bl	0 <EXTI_Init>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\cc2520/cc2520_mango_porting.c:35
+}
+  52:	b005      	add	sp, #20
+  54:	bd30      	pop	{r4, r5, pc}
+  56:	46c0      	nop			(mov r8, r8)
