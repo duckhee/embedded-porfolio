@@ -1,0 +1,251 @@
+
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_Z1\obj\system_stm32f10x.o:     file format elf32-littlearm
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_Z1\obj\system_stm32f10x.o
+
+Disassembly of section .text.SystemInit:
+
+00000000 <SystemInit>:
+SystemInit():
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:191
+  */
+void SystemInit (void)
+{
+  /* Reset the RCC clock configuration to the default reset state(for debug purpose) */
+  /* Set HSION bit */
+  RCC->CR |= (uint32_t)0x00000001;
+   0:	4a3a      	ldr	r2, [pc, #232]	(ec <SystemInit+0xec>)
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:188
+  * @note   This function should be used only after reset.
+  * @param  None
+  * @retval None
+  */
+void SystemInit (void)
+{
+   2:	b082      	sub	sp, #8
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:191
+  /* Reset the RCC clock configuration to the default reset state(for debug purpose) */
+  /* Set HSION bit */
+  RCC->CR |= (uint32_t)0x00000001;
+   4:	6813      	ldr	r3, [r2, #0]
+   6:	f043 0301 	orr.w	r3, r3, #1	; 0x1
+   a:	6013      	str	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:195
+
+  /* Reset SW, HPRE, PPRE1, PPRE2, ADCPRE and MCO bits */
+#ifndef STM32F10X_CL
+  RCC->CFGR &= (uint32_t)0xF8FF0000;
+   c:	6851      	ldr	r1, [r2, #4]
+   e:	4b38      	ldr	r3, [pc, #224]	(f0 <SystemInit+0xf0>)
+  10:	ea01 0303 	and.w	r3, r1, r3
+  14:	6053      	str	r3, [r2, #4]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:201
+#else
+  RCC->CFGR &= (uint32_t)0xF0FF0000;
+#endif /* STM32F10X_CL */   
+  
+  /* Reset HSEON, CSSON and PLLON bits */
+  RCC->CR &= (uint32_t)0xFEF6FFFF;
+  16:	6813      	ldr	r3, [r2, #0]
+  18:	f023 7384 	bic.w	r3, r3, #17301504	; 0x1080000
+  1c:	f423 3380 	bic.w	r3, r3, #65536	; 0x10000
+  20:	6013      	str	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:204
+
+  /* Reset HSEBYP bit */
+  RCC->CR &= (uint32_t)0xFFFBFFFF;
+  22:	6813      	ldr	r3, [r2, #0]
+  24:	f423 2380 	bic.w	r3, r3, #262144	; 0x40000
+  28:	6013      	str	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:207
+
+  /* Reset PLLSRC, PLLXTPRE, PLLMUL and USBPRE/OTGFSPRE bits */
+  RCC->CFGR &= (uint32_t)0xFF80FFFF;
+  2a:	6853      	ldr	r3, [r2, #4]
+  2c:	f423 03fe 	bic.w	r3, r3, #8323072	; 0x7f0000
+  30:	6053      	str	r3, [r2, #4]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:211
+
+#ifndef STM32F10X_CL
+  /* Disable all interrupts and clear pending bits  */
+  RCC->CIR = 0x009F0000;
+  32:	f44f 031f 	mov.w	r3, #10420224	; 0x9f0000
+  36:	6093      	str	r3, [r2, #8]
+SetSysClockTo72():
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:820
+  * @param  None
+  * @retval None
+  */
+static void SetSysClockTo72(void)
+{
+  __IO uint32_t StartUpCounter = 0, HSEStatus = 0;
+  38:	f5a3 031f 	sub.w	r3, r3, #10420224	; 0x9f0000
+  3c:	9301      	str	r3, [sp, #4]
+  3e:	9300      	str	r3, [sp, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:824
+  
+  /* SYSCLK, HCLK, PCLK2 and PCLK1 configuration ---------------------------*/    
+  /* Enable HSE */    
+  RCC->CR |= ((uint32_t)RCC_CR_HSEON);
+  40:	6813      	ldr	r3, [r2, #0]
+  42:	f443 3380 	orr.w	r3, r3, #65536	; 0x10000
+  46:	6013      	str	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:829
+ 
+  /* Wait till HSE is ready and if Time out is reached exit */
+  do
+  {
+    HSEStatus = RCC->CR & RCC_CR_HSERDY;
+  48:	4b28      	ldr	r3, [pc, #160]	(ec <SystemInit+0xec>)
+  4a:	681b      	ldr	r3, [r3, #0]
+  4c:	f403 3300 	and.w	r3, r3, #131072	; 0x20000
+  50:	9300      	str	r3, [sp, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:830
+    StartUpCounter++;  
+  52:	9b01      	ldr	r3, [sp, #4]
+  54:	3301      	adds	r3, #1
+  56:	9301      	str	r3, [sp, #4]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:831
+  } while((HSEStatus == 0) && (StartUpCounter != HSEStartUp_TimeOut));
+  58:	9b00      	ldr	r3, [sp, #0]
+  5a:	b91b      	cbnz	r3, 64 <SystemInit+0x64>
+  5c:	9b01      	ldr	r3, [sp, #4]
+  5e:	f5b3 6fa0 	cmp.w	r3, #1280	; 0x500
+  62:	d1f1      	bne.n	48 <SystemInit+0x48>
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:833
+
+  if ((RCC->CR & RCC_CR_HSERDY) != RESET)
+  64:	4b21      	ldr	r3, [pc, #132]	(ec <SystemInit+0xec>)
+  66:	681b      	ldr	r3, [r3, #0]
+  68:	f413 3300 	ands.w	r3, r3, #131072	; 0x20000
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:835
+  {
+    HSEStatus = (uint32_t)0x01;
+  6c:	bf18      	it	ne
+  6e:	2301      	movne	r3, #1
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:839
+  }
+  else
+  {
+    HSEStatus = (uint32_t)0x00;
+  70:	9300      	str	r3, [sp, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:842
+  }  
+
+  if (HSEStatus == (uint32_t)0x01)
+  72:	9b00      	ldr	r3, [sp, #0]
+  74:	2b01      	cmp	r3, #1
+  76:	d136      	bne.n	e6 <SystemInit+0xe6>
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:845
+  {
+    /* Enable Prefetch Buffer */
+    FLASH->ACR |= FLASH_ACR_PRFTBE;
+  78:	4a1e      	ldr	r2, [pc, #120]	(f4 <SystemInit+0xf4>)
+  7a:	6813      	ldr	r3, [r2, #0]
+  7c:	f043 0310 	orr.w	r3, r3, #16	; 0x10
+  80:	6013      	str	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:848
+
+    /* Flash 2 wait state */
+    FLASH->ACR &= (uint32_t)((uint32_t)~FLASH_ACR_LATENCY);
+  82:	6813      	ldr	r3, [r2, #0]
+  84:	f023 0303 	bic.w	r3, r3, #3	; 0x3
+  88:	6013      	str	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:849
+    FLASH->ACR |= (uint32_t)FLASH_ACR_LATENCY_2;    
+  8a:	6813      	ldr	r3, [r2, #0]
+  8c:	f043 0302 	orr.w	r3, r3, #2	; 0x2
+  90:	6013      	str	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:853
+
+ 
+    /* HCLK = SYSCLK */
+    RCC->CFGR |= (uint32_t)RCC_CFGR_HPRE_DIV1;
+  92:	f5a2 5280 	sub.w	r2, r2, #4096	; 0x1000
+  96:	6853      	ldr	r3, [r2, #4]
+  98:	6053      	str	r3, [r2, #4]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:856
+      
+    /* PCLK2 = HCLK */
+    RCC->CFGR |= (uint32_t)RCC_CFGR_PPRE2_DIV1;
+  9a:	6853      	ldr	r3, [r2, #4]
+  9c:	6053      	str	r3, [r2, #4]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:859
+    
+    /* PCLK1 = HCLK/2 */
+    RCC->CFGR |= (uint32_t)RCC_CFGR_PPRE1_DIV2;
+  9e:	6853      	ldr	r3, [r2, #4]
+  a0:	f443 6380 	orr.w	r3, r3, #1024	; 0x400
+  a4:	6053      	str	r3, [r2, #4]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:885
+    RCC->CFGR &= (uint32_t)~(RCC_CFGR_PLLXTPRE | RCC_CFGR_PLLSRC | RCC_CFGR_PLLMULL);
+    RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLXTPRE_PREDIV1 | RCC_CFGR_PLLSRC_PREDIV1 | 
+                            RCC_CFGR_PLLMULL9); 
+#else    
+    /*  PLL configuration: PLLCLK = HSE * 9 = 72 MHz */
+    RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_PLLSRC | RCC_CFGR_PLLXTPRE |
+  a6:	6853      	ldr	r3, [r2, #4]
+  a8:	f423 137c 	bic.w	r3, r3, #4128768	; 0x3f0000
+  ac:	6053      	str	r3, [r2, #4]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:888
+                                        RCC_CFGR_PLLMULL));
+#ifdef EXT_CLOCK_SOURCE_12M
+    RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLSRC_HSE | RCC_CFGR_PLLMULL6);
+  ae:	6853      	ldr	r3, [r2, #4]
+  b0:	f443 1388 	orr.w	r3, r3, #1114112	; 0x110000
+  b4:	6053      	str	r3, [r2, #4]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:895
+    RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLSRC_HSE | RCC_CFGR_PLLMULL9);
+#endif
+#endif /* STM32F10X_CL */
+
+    /* Enable PLL */
+    RCC->CR |= RCC_CR_PLLON;
+  b6:	6813      	ldr	r3, [r2, #0]
+  b8:	f043 7380 	orr.w	r3, r3, #16777216	; 0x1000000
+  bc:	6013      	str	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:898
+
+    /* Wait till PLL is ready */
+    while((RCC->CR & RCC_CR_PLLRDY) == 0)
+  be:	4a0b      	ldr	r2, [pc, #44]	(ec <SystemInit+0xec>)
+  c0:	6813      	ldr	r3, [r2, #0]
+  c2:	f013 7f00 	tst.w	r3, #33554432	; 0x2000000
+  c6:	d0fa      	beq.n	be <SystemInit+0xbe>
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:903
+    {
+    }
+    
+    /* Select PLL as system clock source */
+    RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_SW));
+  c8:	6853      	ldr	r3, [r2, #4]
+  ca:	f023 0303 	bic.w	r3, r3, #3	; 0x3
+  ce:	6053      	str	r3, [r2, #4]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:904
+    RCC->CFGR |= (uint32_t)RCC_CFGR_SW_PLL;    
+  d0:	6853      	ldr	r3, [r2, #4]
+  d2:	f043 0302 	orr.w	r3, r3, #2	; 0x2
+  d6:	6053      	str	r3, [r2, #4]
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:907
+
+    /* Wait till PLL is used as system clock source */
+    while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS) != (uint32_t)0x08)
+  d8:	4b04      	ldr	r3, [pc, #16]	(ec <SystemInit+0xec>)
+  da:	685b      	ldr	r3, [r3, #4]
+  dc:	f003 030c 	and.w	r3, r3, #12	; 0xc
+  e0:	2b08      	cmp	r3, #8
+  e2:	d1f9      	bne.n	d8 <SystemInit+0xd8>
+  e4:	e000      	b.n	e8 <SystemInit+0xe8>
+  e6:	e7fe      	b.n	e6 <SystemInit+0xe6>
+SystemInit():
+D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3/system_stm32f10x.c:227
+    
+  /* Configure the System clock frequency, HCLK, PCLK2 and PCLK1 prescalers */
+  /* Configure the Flash Latency cycles and enable prefetch buffer */
+  SetSysClock();
+
+}
+  e8:	b002      	add	sp, #8
+  ea:	4770      	bx	lr
+  ec:	40021000 	.word	0x40021000
+  f0:	f8ff0000 	.word	0xf8ff0000
+  f4:	40022000 	.word	0x40022000

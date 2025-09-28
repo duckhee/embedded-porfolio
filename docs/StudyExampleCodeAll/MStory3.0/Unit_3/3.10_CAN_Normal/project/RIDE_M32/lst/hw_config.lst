@@ -1,0 +1,1334 @@
+
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_M32\obj\hw_config.o:     file format elf32-littlearm
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_M32\obj\hw_config.o
+
+Disassembly of section .text.Get_SerialNum:
+
+00000000 <Get_SerialNum>:
+Get_SerialNum():
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:415
+*******************************************************************************/
+void Get_SerialNum(void)
+{
+  uint32_t Device_Serial0, Device_Serial1, Device_Serial2;
+  
+  Device_Serial0 = *(uint32_t*)(0x1FFFF7E8);
+   0:	4b12      	ldr	r3, [pc, #72]	(4c <Get_SerialNum+0x4c>)
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:412
+* Input          : None.
+* Output         : None.
+* Return         : None.
+*******************************************************************************/
+void Get_SerialNum(void)
+{
+   2:	b510      	push	{r4, lr}
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:415
+  uint32_t Device_Serial0, Device_Serial1, Device_Serial2;
+  
+  Device_Serial0 = *(uint32_t*)(0x1FFFF7E8);
+   4:	6819      	ldr	r1, [r3, #0]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:416
+  Device_Serial1 = *(uint32_t*)(0x1FFFF7EC);
+   6:	3304      	adds	r3, #4
+   8:	6818      	ldr	r0, [r3, #0]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:417
+  Device_Serial2 = *(uint32_t*)(0x1FFFF7F0);
+   a:	3304      	adds	r3, #4
+   c:	681c      	ldr	r4, [r3, #0]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:419
+  
+  if(Device_Serial0 != 0)
+   e:	b1d9      	cbz	r1, 48 <Get_SerialNum+0x48>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:421
+  {
+     CustomHID_StringSerial[2] = (uint8_t)(Device_Serial0 & 0x000000FF);  
+  10:	4a0f      	ldr	r2, [pc, #60]	(50 <Get_SerialNum+0x50>)
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:422
+     CustomHID_StringSerial[4] = (uint8_t)((Device_Serial0 & 0x0000FF00) >> 8);
+  12:	f3c1 2307 	ubfx	r3, r1, #8, #8
+  16:	7113      	strb	r3, [r2, #4]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:423
+     CustomHID_StringSerial[6] = (uint8_t)((Device_Serial0 & 0x00FF0000) >> 16);
+  18:	f3c1 4307 	ubfx	r3, r1, #16, #8
+  1c:	7193      	strb	r3, [r2, #6]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:424
+     CustomHID_StringSerial[8] = (uint8_t)((Device_Serial0 & 0xFF000000) >> 24);  
+  1e:	0e0b      	lsrs	r3, r1, #24
+  20:	7213      	strb	r3, [r2, #8]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:427
+
+     CustomHID_StringSerial[10] = (uint8_t)(Device_Serial1 & 0x000000FF);  
+     CustomHID_StringSerial[12] = (uint8_t)((Device_Serial1 & 0x0000FF00) >> 8);
+  22:	f3c0 2307 	ubfx	r3, r0, #8, #8
+  26:	7313      	strb	r3, [r2, #12]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:428
+     CustomHID_StringSerial[14] = (uint8_t)((Device_Serial1 & 0x00FF0000) >> 16);
+  28:	f3c0 4307 	ubfx	r3, r0, #16, #8
+  2c:	7393      	strb	r3, [r2, #14]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:429
+     CustomHID_StringSerial[16] = (uint8_t)((Device_Serial1 & 0xFF000000) >> 24); 
+  2e:	0e03      	lsrs	r3, r0, #24
+  30:	7413      	strb	r3, [r2, #16]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:432
+
+     CustomHID_StringSerial[18] = (uint8_t)(Device_Serial2 & 0x000000FF);  
+     CustomHID_StringSerial[20] = (uint8_t)((Device_Serial2 & 0x0000FF00) >> 8);
+  32:	f3c4 2307 	ubfx	r3, r4, #8, #8
+  36:	7513      	strb	r3, [r2, #20]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:433
+     CustomHID_StringSerial[22] = (uint8_t)((Device_Serial2 & 0x00FF0000) >> 16);
+  38:	f3c4 4307 	ubfx	r3, r4, #16, #8
+  3c:	7593      	strb	r3, [r2, #22]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:434
+     CustomHID_StringSerial[24] = (uint8_t)((Device_Serial2 & 0xFF000000) >> 24); 
+  3e:	0e23      	lsrs	r3, r4, #24
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:421
+  Device_Serial1 = *(uint32_t*)(0x1FFFF7EC);
+  Device_Serial2 = *(uint32_t*)(0x1FFFF7F0);
+  
+  if(Device_Serial0 != 0)
+  {
+     CustomHID_StringSerial[2] = (uint8_t)(Device_Serial0 & 0x000000FF);  
+  40:	7091      	strb	r1, [r2, #2]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:426
+     CustomHID_StringSerial[4] = (uint8_t)((Device_Serial0 & 0x0000FF00) >> 8);
+     CustomHID_StringSerial[6] = (uint8_t)((Device_Serial0 & 0x00FF0000) >> 16);
+     CustomHID_StringSerial[8] = (uint8_t)((Device_Serial0 & 0xFF000000) >> 24);  
+
+     CustomHID_StringSerial[10] = (uint8_t)(Device_Serial1 & 0x000000FF);  
+  42:	7290      	strb	r0, [r2, #10]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:431
+     CustomHID_StringSerial[12] = (uint8_t)((Device_Serial1 & 0x0000FF00) >> 8);
+     CustomHID_StringSerial[14] = (uint8_t)((Device_Serial1 & 0x00FF0000) >> 16);
+     CustomHID_StringSerial[16] = (uint8_t)((Device_Serial1 & 0xFF000000) >> 24); 
+
+     CustomHID_StringSerial[18] = (uint8_t)(Device_Serial2 & 0x000000FF);  
+  44:	7494      	strb	r4, [r2, #18]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:434
+     CustomHID_StringSerial[20] = (uint8_t)((Device_Serial2 & 0x0000FF00) >> 8);
+     CustomHID_StringSerial[22] = (uint8_t)((Device_Serial2 & 0x00FF0000) >> 16);
+     CustomHID_StringSerial[24] = (uint8_t)((Device_Serial2 & 0xFF000000) >> 24); 
+  46:	7613      	strb	r3, [r2, #24]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:436
+  }   
+}
+  48:	bd10      	pop	{r4, pc}
+  4a:	46c0      	nop			(mov r8, r8)
+  4c:	1ffff7e8 	.word	0x1ffff7e8
+  50:	00000000 	.word	0x00000000
+Disassembly of section .text.Delay:
+
+00000000 <Delay>:
+Delay():
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:444
+  * @brief  Inserts a delay time.
+  * @param  nTime: specifies the delay time length, in milliseconds.
+  * @retval None
+  */
+void Delay(__IO uint32_t nTime)
+{ 
+   0:	b082      	sub	sp, #8
+   2:	9001      	str	r0, [sp, #4]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:445
+  TimingDelay = nTime;
+   4:	9a01      	ldr	r2, [sp, #4]
+   6:	4b04      	ldr	r3, [pc, #16]	(18 <Delay+0x18>)
+   8:	601a      	str	r2, [r3, #0]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:447
+
+  while(TimingDelay != 0);
+   a:	4b03      	ldr	r3, [pc, #12]	(18 <Delay+0x18>)
+   c:	681b      	ldr	r3, [r3, #0]
+   e:	2b00      	cmp	r3, #0
+  10:	d1fb      	bne.n	a <Delay+0xa>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:448
+}
+  12:	b002      	add	sp, #8
+  14:	4770      	bx	lr
+  16:	46c0      	nop			(mov r8, r8)
+  18:	00000000 	.word	0x00000000
+Disassembly of section .text.delay_100_milli_second:
+
+00000000 <delay_100_milli_second>:
+delay_100_milli_second():
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:36
+{
+    Delay(1000);
+}
+
+void delay_100_milli_second(void)
+{
+   0:	b510      	push	{r4, lr}
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:37
+    Delay(100);
+   2:	2064      	movs	r0, #100
+   4:	f7ff fffe 	bl	0 <delay_100_milli_second>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:38
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.delay_1_second:
+
+00000000 <delay_1_second>:
+delay_1_second():
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:31
+static volatile uint32_t TimingDelay;
+
+/* functions */
+
+void delay_1_second(void)
+{
+   0:	b510      	push	{r4, lr}
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:32
+    Delay(1000);
+   2:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
+   6:	f7ff fffe 	bl	0 <delay_1_second>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:33
+}
+   a:	bd10      	pop	{r4, pc}
+Disassembly of section .text.TimingDelay_Decrement:
+
+00000000 <TimingDelay_Decrement>:
+TimingDelay_Decrement():
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:457
+  * @param  None
+  * @retval None
+  */
+void TimingDelay_Decrement(void)
+{
+  if (TimingDelay != 0x00)
+   0:	4a03      	ldr	r2, [pc, #12]	(10 <TimingDelay_Decrement+0x10>)
+   2:	6813      	ldr	r3, [r2, #0]
+   4:	b113      	cbz	r3, c <TimingDelay_Decrement+0xc>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:459
+  { 
+    TimingDelay--;
+   6:	6813      	ldr	r3, [r2, #0]
+   8:	3b01      	subs	r3, #1
+   a:	6013      	str	r3, [r2, #0]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:461
+  }
+}
+   c:	4770      	bx	lr
+   e:	46c0      	nop			(mov r8, r8)
+  10:	00000000 	.word	0x00000000
+Disassembly of section .text.USART_GetCharacter:
+
+00000000 <USART_GetCharacter>:
+USART_GetCharacter():
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:547
+
+    return ch;
+}
+
+uint8_t USART_GetCharacter(USART_TypeDef *  usart_p)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+   2:	4605      	mov	r5, r0
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:551
+    uint8_t data;
+
+    /* Loop until the end of transmission */
+    while(USART_GetFlagStatus(usart_p, USART_FLAG_RXNE) == RESET);
+   4:	4628      	mov	r0, r5
+   6:	2120      	movs	r1, #32
+   8:	f7ff fffe 	bl	0 <USART_GetFlagStatus>
+   c:	2800      	cmp	r0, #0
+   e:	d0f9      	beq.n	4 <USART_GetCharacter+0x4>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:554
+
+    /* Write a character to the USART */
+    data = USART_ReceiveData(usart_p);
+  10:	4628      	mov	r0, r5
+  12:	f7ff fffe 	bl	0 <USART_ReceiveData>
+  16:	b2c4      	uxtb	r4, r0
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:556
+
+    USART_SendData(usart_p, data);
+  18:	4621      	mov	r1, r4
+  1a:	4628      	mov	r0, r5
+  1c:	f7ff fffe 	bl	0 <USART_SendData>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:557
+    while(USART_GetFlagStatus(usart_p, USART_FLAG_TXE) == RESET);
+  20:	4628      	mov	r0, r5
+  22:	2180      	movs	r1, #128
+  24:	f7ff fffe 	bl	0 <USART_GetFlagStatus>
+  28:	2800      	cmp	r0, #0
+  2a:	d0f9      	beq.n	20 <USART_GetFlagStatus+0x20>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:561
+
+    if( data == '\r' )  return (int)('\n');
+    else                return(data);
+}
+  2c:	2c0d      	cmp	r4, #13
+  2e:	bf14      	ite	ne
+  30:	4620      	movne	r0, r4
+  32:	200a      	moveq	r0, #10
+  34:	bd70      	pop	{r4, r5, r6, pc}
+  36:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.__io_putchar:
+
+00000000 <__io_putchar>:
+__io_putchar():
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:532
+ * Return : None
+ */
+PUTCHAR_PROTOTYPE
+{
+    /* Write a character to the USART */  
+    if( ch == '\n') {
+   0:	280a      	cmp	r0, #10
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:530
+ * Input  : None
+ * Output : None
+ * Return : None
+ */
+PUTCHAR_PROTOTYPE
+{
+   2:	b510      	push	{r4, lr}
+   4:	4604      	mov	r4, r0
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:532
+    /* Write a character to the USART */  
+    if( ch == '\n') {
+   6:	d10c      	bne.n	22 <__io_putchar+0x22>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:533
+        USART_SendData(USART1, '\r');
+   8:	480c      	ldr	r0, [pc, #48]	(3c <__io_putchar+0x3c>)
+   a:	210d      	movs	r1, #13
+   c:	f7ff fffe 	bl	0 <USART_SendData>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:534
+        while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
+  10:	480a      	ldr	r0, [pc, #40]	(3c <__io_putchar+0x3c>)
+  12:	2180      	movs	r1, #128
+  14:	f7ff fffe 	bl	0 <USART_GetFlagStatus>
+  18:	2800      	cmp	r0, #0
+  1a:	d0f9      	beq.n	10 <__io_putchar+0x10>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:535
+        USART_SendData(USART1, '\n');
+  1c:	4807      	ldr	r0, [pc, #28]	(3c <__io_putchar+0x3c>)
+  1e:	210a      	movs	r1, #10
+  20:	e001      	b.n	26 <__io_putchar+0x26>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:537
+    }else {
+        USART_SendData(USART1, (u8) ch);
+  22:	4806      	ldr	r0, [pc, #24]	(3c <__io_putchar+0x3c>)
+  24:	b2e1      	uxtb	r1, r4
+  26:	f7ff fffe 	bl	0 <USART_SendData>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:541
+    }
+
+    /* Loop until the end of transmission */
+    while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
+  2a:	4804      	ldr	r0, [pc, #16]	(3c <__io_putchar+0x3c>)
+  2c:	2180      	movs	r1, #128
+  2e:	f7ff fffe 	bl	0 <USART_GetFlagStatus>
+  32:	2800      	cmp	r0, #0
+  34:	d0f9      	beq.n	2a <USART_GetFlagStatus+0x2a>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:544
+
+    return ch;
+}
+  36:	4620      	mov	r0, r4
+  38:	bd10      	pop	{r4, pc}
+  3a:	46c0      	nop			(mov r8, r8)
+  3c:	40013800 	.word	0x40013800
+Disassembly of section .text.EXTI_Configuration:
+
+00000000 <EXTI_Configuration>:
+EXTI_Configuration():
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:371
+* Input         : None.
+* Output        : None.
+* Return value  : The direction value.
+*******************************************************************************/
+void EXTI_Configuration(void)
+{ 
+   0:	e92d 4177 	stmdb	sp!, {r0, r1, r2, r4, r5, r6, r8, lr}
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:376
+    EXTI_InitTypeDef EXTI_InitStructure;
+
+    /* Configure gpio as input : Button Left-WKUP */
+    /* Connect EXTI Line to gpio pin */
+    GPIO_EXTILineConfig(GPIO_PORTSOURCE_KEY, GPIO_PINSOURCE_KEY1);
+   4:	2000      	movs	r0, #0
+   6:	4601      	mov	r1, r0
+   8:	f7ff fffe 	bl	0 <GPIO_EXTILineConfig>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:379
+
+    /* Configure EXTI Line to generate an interrupt */
+    EXTI_InitStructure.EXTI_Line    = GPIO_EXTI_Line_KEY1;
+   c:	2501      	movs	r5, #1
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:380
+    EXTI_InitStructure.EXTI_Mode    = EXTI_Mode_Interrupt;
+   e:	2400      	movs	r4, #0
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:381
+    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;
+  10:	f04f 080c 	mov.w	r8, #12	; 0xc
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:383
+    EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+    EXTI_Init(&EXTI_InitStructure);
+  14:	4668      	mov	r0, sp
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:379
+    /* Configure gpio as input : Button Left-WKUP */
+    /* Connect EXTI Line to gpio pin */
+    GPIO_EXTILineConfig(GPIO_PORTSOURCE_KEY, GPIO_PINSOURCE_KEY1);
+
+    /* Configure EXTI Line to generate an interrupt */
+    EXTI_InitStructure.EXTI_Line    = GPIO_EXTI_Line_KEY1;
+  16:	9500      	str	r5, [sp, #0]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:380
+    EXTI_InitStructure.EXTI_Mode    = EXTI_Mode_Interrupt;
+  18:	f88d 4004 	strb.w	r4, [sp, #4]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:381
+    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;
+  1c:	f88d 8005 	strb.w	r8, [sp, #5]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:382
+    EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+  20:	f88d 5006 	strb.w	r5, [sp, #6]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:383
+    EXTI_Init(&EXTI_InitStructure);
+  24:	f7ff fffe 	bl	0 <EXTI_Init>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:387
+
+    /* Configure gpio as input : Button Right-USER */
+    /* Connect EXTI Line to gpio pin */
+    GPIO_EXTILineConfig(GPIO_PORTSOURCE_KEY, GPIO_PINSOURCE_KEY2);
+  28:	4620      	mov	r0, r4
+  2a:	4629      	mov	r1, r5
+  2c:	f7ff fffe 	bl	0 <GPIO_EXTILineConfig>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:390
+
+    /* Configure EXTI Line to generate an interrupt */  
+    EXTI_InitStructure.EXTI_Line    = GPIO_EXTI_Line_KEY2;
+  30:	2302      	movs	r3, #2
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:394
+    EXTI_InitStructure.EXTI_Mode    = EXTI_Mode_Interrupt;
+    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;
+    EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+    EXTI_Init(&EXTI_InitStructure);
+  32:	4668      	mov	r0, sp
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:383
+    /* Configure EXTI Line to generate an interrupt */
+    EXTI_InitStructure.EXTI_Line    = GPIO_EXTI_Line_KEY1;
+    EXTI_InitStructure.EXTI_Mode    = EXTI_Mode_Interrupt;
+    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;
+    EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+    EXTI_Init(&EXTI_InitStructure);
+  34:	466e      	mov	r6, sp
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:390
+    /* Configure gpio as input : Button Right-USER */
+    /* Connect EXTI Line to gpio pin */
+    GPIO_EXTILineConfig(GPIO_PORTSOURCE_KEY, GPIO_PINSOURCE_KEY2);
+
+    /* Configure EXTI Line to generate an interrupt */  
+    EXTI_InitStructure.EXTI_Line    = GPIO_EXTI_Line_KEY2;
+  36:	9300      	str	r3, [sp, #0]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:391
+    EXTI_InitStructure.EXTI_Mode    = EXTI_Mode_Interrupt;
+  38:	f88d 4004 	strb.w	r4, [sp, #4]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:392
+    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;
+  3c:	f88d 8005 	strb.w	r8, [sp, #5]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:393
+    EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+  40:	f88d 5006 	strb.w	r5, [sp, #6]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:394
+    EXTI_Init(&EXTI_InitStructure);
+  44:	f7ff fffe 	bl	0 <EXTI_Init>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:402
+//    EXTI_ClearITPendingBit(EXTI_Line18);
+//    EXTI_InitStructure.EXTI_Line    = EXTI_Line18; // USB resume from suspend mode
+//    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
+//    EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+//    EXTI_Init(&EXTI_InitStructure);
+}
+  48:	e8bd 817e 	ldmia.w	sp!, {r1, r2, r3, r4, r5, r6, r8, pc}
+Disassembly of section .text.GPIO_Configuration:
+
+00000000 <GPIO_Configuration>:
+GPIO_Configuration():
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:294
+ * Input  : None
+ * Output : None
+ * Return : None
+ */
+void GPIO_Configuration(void)
+{
+   0:	e92d 4777 	stmdb	sp!, {r0, r1, r2, r4, r5, r6, r8, r9, sl, lr}
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:303
+
+    /* Configure USARTx_Tx as alternate function push-pull */
+    GPIO_InitStructure.GPIO_Pin   = GPIO_USART_Tx_Pin;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AF_PP;
+    GPIO_Init(GPIO_USART, &GPIO_InitStructure);
+   4:	4d25      	ldr	r5, [pc, #148]	(9c <GPIO_Configuration+0x9c>)
+   6:	ae01      	add	r6, sp, #4
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:301
+
+    // UART configuration ...
+
+    /* Configure USARTx_Tx as alternate function push-pull */
+    GPIO_InitStructure.GPIO_Pin   = GPIO_USART_Tx_Pin;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+   8:	f04f 0803 	mov.w	r8, #3	; 0x3
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:300
+    GPIO_InitTypeDef GPIO_InitStructure;
+
+    // UART configuration ...
+
+    /* Configure USARTx_Tx as alternate function push-pull */
+    GPIO_InitStructure.GPIO_Pin   = GPIO_USART_Tx_Pin;
+   c:	f44f 7a00 	mov.w	sl, #512	; 0x200
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:302
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AF_PP;
+  10:	f04f 0918 	mov.w	r9, #24	; 0x18
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:303
+    GPIO_Init(GPIO_USART, &GPIO_InitStructure);
+  14:	4628      	mov	r0, r5
+  16:	4631      	mov	r1, r6
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:307
+
+    /* Configure USARTx_Rx as input floating */
+    GPIO_InitStructure.GPIO_Pin  = GPIO_USART_Rx_Pin;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+  18:	2404      	movs	r4, #4
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:300
+    GPIO_InitTypeDef GPIO_InitStructure;
+
+    // UART configuration ...
+
+    /* Configure USARTx_Tx as alternate function push-pull */
+    GPIO_InitStructure.GPIO_Pin   = GPIO_USART_Tx_Pin;
+  1a:	f8ad a004 	strh.w	sl, [sp, #4]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:301
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+  1e:	f88d 8006 	strb.w	r8, [sp, #6]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:302
+    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AF_PP;
+  22:	f88d 9007 	strb.w	r9, [sp, #7]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:303
+    GPIO_Init(GPIO_USART, &GPIO_InitStructure);
+  26:	f7ff fffe 	bl	0 <GPIO_Init>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:306
+
+    /* Configure USARTx_Rx as input floating */
+    GPIO_InitStructure.GPIO_Pin  = GPIO_USART_Rx_Pin;
+  2a:	f44f 6380 	mov.w	r3, #1024	; 0x400
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:308
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+    GPIO_Init(GPIO_USART, &GPIO_InitStructure);
+  2e:	4628      	mov	r0, r5
+  30:	4631      	mov	r1, r6
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:306
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AF_PP;
+    GPIO_Init(GPIO_USART, &GPIO_InitStructure);
+
+    /* Configure USARTx_Rx as input floating */
+    GPIO_InitStructure.GPIO_Pin  = GPIO_USART_Rx_Pin;
+  32:	f8ad 3004 	strh.w	r3, [sp, #4]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:307
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+  36:	f88d 4007 	strb.w	r4, [sp, #7]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:308
+    GPIO_Init(GPIO_USART, &GPIO_InitStructure);
+  3a:	f7ff fffe 	bl	0 <GPIO_Init>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:315
+    // Key configuration ...
+
+    /* Configure gpio as input : Button WKUP & USER */
+    GPIO_InitStructure.GPIO_Pin  = GPIO_KEY1_PIN | GPIO_KEY2_PIN;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+    GPIO_Init(GPIO_KEY, &GPIO_InitStructure);
+  3e:	4628      	mov	r0, r5
+  40:	4631      	mov	r1, r6
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:314
+
+    // Key configuration ...
+
+    /* Configure gpio as input : Button WKUP & USER */
+    GPIO_InitStructure.GPIO_Pin  = GPIO_KEY1_PIN | GPIO_KEY2_PIN;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+  42:	f88d 4007 	strb.w	r4, [sp, #7]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:313
+    GPIO_Init(GPIO_USART, &GPIO_InitStructure);
+
+    // Key configuration ...
+
+    /* Configure gpio as input : Button WKUP & USER */
+    GPIO_InitStructure.GPIO_Pin  = GPIO_KEY1_PIN | GPIO_KEY2_PIN;
+  46:	f8ad 8004 	strh.w	r8, [sp, #4]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:328
+//    GPIO_Init(GPIO_LED, &GPIO_InitStructure);
+
+    // USB_DISCONNECT configuration ...
+
+    /* USB_DISCONNECT used as USB pull-up */
+    GPIO_InitStructure.GPIO_Pin   = GPIO_USB_DISCONNECT_PIN;
+  4a:	34fc      	adds	r4, #252
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:315
+    // Key configuration ...
+
+    /* Configure gpio as input : Button WKUP & USER */
+    GPIO_InitStructure.GPIO_Pin  = GPIO_KEY1_PIN | GPIO_KEY2_PIN;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+    GPIO_Init(GPIO_KEY, &GPIO_InitStructure);
+  4c:	f7ff fffe 	bl	0 <GPIO_Init>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:330
+    // USB_DISCONNECT configuration ...
+
+    /* USB_DISCONNECT used as USB pull-up */
+    GPIO_InitStructure.GPIO_Pin   = GPIO_USB_DISCONNECT_PIN;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_Out_OD;
+  50:	2314      	movs	r3, #20
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:331
+    GPIO_Init(GPIO_USB_DISCONNECT, &GPIO_InitStructure);
+  52:	4628      	mov	r0, r5
+  54:	4631      	mov	r1, r6
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:328
+//    GPIO_Init(GPIO_LED, &GPIO_InitStructure);
+
+    // USB_DISCONNECT configuration ...
+
+    /* USB_DISCONNECT used as USB pull-up */
+    GPIO_InitStructure.GPIO_Pin   = GPIO_USB_DISCONNECT_PIN;
+  56:	f8ad 4004 	strh.w	r4, [sp, #4]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:330
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_Out_OD;
+  5a:	f88d 3007 	strb.w	r3, [sp, #7]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:329
+
+    // USB_DISCONNECT configuration ...
+
+    /* USB_DISCONNECT used as USB pull-up */
+    GPIO_InitStructure.GPIO_Pin   = GPIO_USB_DISCONNECT_PIN;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+  5e:	f88d 8006 	strb.w	r8, [sp, #6]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:331
+    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_Out_OD;
+    GPIO_Init(GPIO_USB_DISCONNECT, &GPIO_InitStructure);
+  62:	f7ff fffe 	bl	0 <GPIO_Init>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:350
+    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_IN_FLOATING;
+    GPIO_Init(GPIO_RF_GPIO5, &GPIO_InitStructure);
+#endif
+
+    /* Configure CAN pin: RX */
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_CAN_RX;
+  66:	f8ad 4004 	strh.w	r4, [sp, #4]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:352
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+    GPIO_Init(GPIO_CAN, &GPIO_InitStructure);
+  6a:	4c0d      	ldr	r4, [pc, #52]	(a0 <GPIO_Configuration+0xa0>)
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:351
+    GPIO_Init(GPIO_RF_GPIO5, &GPIO_InitStructure);
+#endif
+
+    /* Configure CAN pin: RX */
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_CAN_RX;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+  6c:	2348      	movs	r3, #72
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:352
+    GPIO_Init(GPIO_CAN, &GPIO_InitStructure);
+  6e:	4620      	mov	r0, r4
+  70:	4631      	mov	r1, r6
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:351
+    GPIO_Init(GPIO_RF_GPIO5, &GPIO_InitStructure);
+#endif
+
+    /* Configure CAN pin: RX */
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_CAN_RX;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+  72:	f88d 3007 	strb.w	r3, [sp, #7]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:352
+    GPIO_Init(GPIO_CAN, &GPIO_InitStructure);
+  76:	f7ff fffe 	bl	0 <GPIO_Init>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:358
+
+    /* Configure CAN pin: TX */
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_CAN_TX;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(GPIO_CAN, &GPIO_InitStructure);
+  7a:	4620      	mov	r0, r4
+  7c:	4631      	mov	r1, r6
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:355
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_CAN_RX;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+    GPIO_Init(GPIO_CAN, &GPIO_InitStructure);
+
+    /* Configure CAN pin: TX */
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_CAN_TX;
+  7e:	f8ad a004 	strh.w	sl, [sp, #4]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:356
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+  82:	f88d 9007 	strb.w	r9, [sp, #7]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:357
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+  86:	f88d 8006 	strb.w	r8, [sp, #6]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:358
+    GPIO_Init(GPIO_CAN, &GPIO_InitStructure);
+  8a:	f7ff fffe 	bl	0 <GPIO_Init>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:360
+
+    GPIO_PinRemapConfig(GPIO_Remap_CAN , ENABLE);
+  8e:	f44f 10ea 	mov.w	r0, #1916928	; 0x1d4000
+  92:	2101      	movs	r1, #1
+  94:	f7ff fffe 	bl	0 <GPIO_PinRemapConfig>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:361
+}
+  98:	e8bd 877e 	ldmia.w	sp!, {r1, r2, r3, r4, r5, r6, r8, r9, sl, pc}
+  9c:	40010800 	.word	0x40010800
+  a0:	40010c00 	.word	0x40010c00
+Disassembly of section .text.USB_Cable_Config:
+
+00000000 <USB_Cable_Config>:
+USB_Cable_Config():
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:276
+* Input          : NewState: new state.
+* Output         : None.
+* Return         : None
+*******************************************************************************/
+void USB_Cable_Config (FunctionalState NewState)
+{ 
+   0:	b510      	push	{r4, lr}
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:277
+    if (NewState != DISABLE)
+   2:	b128      	cbz	r0, 10 <USB_Cable_Config+0x10>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:279
+    {
+        GPIO_ResetBits(GPIO_USB_DISCONNECT, GPIO_USB_DISCONNECT_PIN);
+   4:	4805      	ldr	r0, [pc, #20]	(1c <USB_Cable_Config+0x1c>)
+   6:	f44f 7180 	mov.w	r1, #256	; 0x100
+   a:	f7ff fffe 	bl	0 <GPIO_ResetBits>
+   e:	e004      	b.n	1a <USB_Cable_Config+0x1a>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:283
+    }
+    else
+    {
+        GPIO_SetBits(GPIO_USB_DISCONNECT, GPIO_USB_DISCONNECT_PIN);
+  10:	4802      	ldr	r0, [pc, #8]	(1c <USB_Cable_Config+0x1c>)
+  12:	f44f 7180 	mov.w	r1, #256	; 0x100
+  16:	f7ff fffe 	bl	0 <GPIO_SetBits>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:285
+    }
+}
+  1a:	bd10      	pop	{r4, pc}
+  1c:	40010800 	.word	0x40010800
+Disassembly of section .text.USB_Interrupts_Config:
+
+00000000 <USB_Interrupts_Config>:
+USB_Interrupts_Config():
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:240
+* Input          : None.
+* Output         : None.
+* Return         : None.
+*******************************************************************************/
+void USB_Interrupts_Config(void)
+{
+   0:	b573      	push	{r0, r1, r4, r5, r6, lr}
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:244
+    NVIC_InitTypeDef NVIC_InitStructure;
+
+    /* 2 bit for pre-emption priority, 2 bits for subpriority */
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+   2:	f44f 60a0 	mov.w	r0, #1280	; 0x500
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:251
+    /* Enable the USB interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel = USB_LP_CAN1_RX0_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+   6:	ad01      	add	r5, sp, #4
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:244
+void USB_Interrupts_Config(void)
+{
+    NVIC_InitTypeDef NVIC_InitStructure;
+
+    /* 2 bit for pre-emption priority, 2 bits for subpriority */
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+   8:	f7ff fffe 	bl	0 <NVIC_PriorityGroupConfig>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:249
+
+    /* Enable the USB interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel = USB_LP_CAN1_RX0_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+   c:	2400      	movs	r4, #0
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:248
+    /* 2 bit for pre-emption priority, 2 bits for subpriority */
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+
+    /* Enable the USB interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel = USB_LP_CAN1_RX0_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+   e:	2601      	movs	r6, #1
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:247
+
+    /* 2 bit for pre-emption priority, 2 bits for subpriority */
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+
+    /* Enable the USB interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel = USB_LP_CAN1_RX0_IRQn;
+  10:	2314      	movs	r3, #20
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:251
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+  12:	4628      	mov	r0, r5
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:247
+
+    /* 2 bit for pre-emption priority, 2 bits for subpriority */
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+
+    /* Enable the USB interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel = USB_LP_CAN1_RX0_IRQn;
+  14:	f88d 3004 	strb.w	r3, [sp, #4]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:248
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+  18:	f88d 6005 	strb.w	r6, [sp, #5]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:249
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+  1c:	f88d 4006 	strb.w	r4, [sp, #6]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:250
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+  20:	f88d 6007 	strb.w	r6, [sp, #7]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:251
+    NVIC_Init(&NVIC_InitStructure);
+  24:	f7ff fffe 	bl	0 <NVIC_Init>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:254
+
+    /* Enable the USB Wake-up interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel = USBWakeUp_IRQn;
+  28:	232a      	movs	r3, #42
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:258
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+  2a:	4628      	mov	r0, r5
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:254
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+
+    /* Enable the USB Wake-up interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel = USBWakeUp_IRQn;
+  2c:	f88d 3004 	strb.w	r3, [sp, #4]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:255
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+  30:	f88d 4005 	strb.w	r4, [sp, #5]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:256
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+  34:	f88d 4006 	strb.w	r4, [sp, #6]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:257
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+  38:	f88d 6007 	strb.w	r6, [sp, #7]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:258
+    NVIC_Init(&NVIC_InitStructure);
+  3c:	f7ff fffe 	bl	0 <NVIC_Init>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:261
+    
+    /* Enable the DMA1 Channel1 Interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel = DMA1_Channel1_IRQn;
+  40:	230b      	movs	r3, #11
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:265
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+  42:	4628      	mov	r0, r5
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:261
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+    
+    /* Enable the DMA1 Channel1 Interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel = DMA1_Channel1_IRQn;
+  44:	f88d 3004 	strb.w	r3, [sp, #4]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:262
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+  48:	f88d 4005 	strb.w	r4, [sp, #5]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:263
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+  4c:	f88d 4006 	strb.w	r4, [sp, #6]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:264
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+  50:	f88d 6007 	strb.w	r6, [sp, #7]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:265
+    NVIC_Init(&NVIC_InitStructure);
+  54:	f7ff fffe 	bl	0 <NVIC_Init>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:266
+}
+  58:	bd7c      	pop	{r2, r3, r4, r5, r6, pc}
+  5a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.Leave_LowPowerMode:
+
+00000000 <Leave_LowPowerMode>:
+Leave_LowPowerMode():
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:197
+* Input          : None.
+* Output         : None.
+* Return         : None.
+*******************************************************************************/
+void Leave_LowPowerMode(void)
+{
+   0:	b510      	push	{r4, lr}
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:201
+    DEVICE_INFO *pInfo = &Device_Info;
+
+    /* Enable HSE */
+    RCC_HSEConfig(RCC_HSE_ON);
+   2:	f44f 3080 	mov.w	r0, #65536	; 0x10000
+   6:	f7ff fffe 	bl	0 <RCC_HSEConfig>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:204
+
+    /* Wait till HSE is ready */
+    RCC_WaitForHSEStartUp();
+   a:	f7ff fffe 	bl	0 <RCC_WaitForHSEStartUp>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:207
+
+    /* Enable PLL */
+    RCC_PLLCmd(ENABLE);
+   e:	2001      	movs	r0, #1
+  10:	f7ff fffe 	bl	0 <RCC_PLLCmd>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:210
+
+    /* Wait till PLL is ready */
+    while (RCC_GetFlagStatus(RCC_FLAG_PLLRDY) == RESET)
+  14:	2039      	movs	r0, #57
+  16:	f7ff fffe 	bl	0 <RCC_GetFlagStatus>
+  1a:	2800      	cmp	r0, #0
+  1c:	d0fa      	beq.n	14 <Leave_LowPowerMode+0x14>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:214
+    {}
+
+    /* Select PLL as system clock source */
+    RCC_SYSCLKConfig(RCC_SYSCLKSource_PLLCLK);
+  1e:	2002      	movs	r0, #2
+  20:	f7ff fffe 	bl	0 <RCC_SYSCLKConfig>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:217
+
+    /* Wait till PLL is used as system clock source */
+    while (RCC_GetSYSCLKSource() != 0x08)
+  24:	f7ff fffe 	bl	0 <RCC_GetSYSCLKSource>
+  28:	2808      	cmp	r0, #8
+  2a:	d1fb      	bne.n	24 <Leave_LowPowerMode+0x24>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:221
+    {}
+
+    /* Set the device state to the correct state */
+    if (pInfo->Current_Configuration != 0)
+  2c:	4b04      	ldr	r3, [pc, #16]	(40 <Leave_LowPowerMode+0x40>)
+  2e:	4a05      	ldr	r2, [pc, #20]	(44 <Leave_LowPowerMode+0x44>)
+  30:	7a9b      	ldrb	r3, [r3, #10]
+  32:	b10b      	cbz	r3, 38 <Leave_LowPowerMode+0x38>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:224
+    {
+        /* Device configured */
+        bDeviceState = CONFIGURED;
+  34:	2305      	movs	r3, #5
+  36:	e000      	b.n	3a <Leave_LowPowerMode+0x3a>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:228
+    }
+    else 
+    {
+        bDeviceState = ATTACHED;
+  38:	2301      	movs	r3, #1
+  3a:	6013      	str	r3, [r2, #0]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:230
+    }
+}
+  3c:	bd10      	pop	{r4, pc}
+  3e:	46c0      	nop			(mov r8, r8)
+	...
+Disassembly of section .text.Enter_LowPowerMode:
+
+00000000 <Enter_LowPowerMode>:
+Enter_LowPowerMode():
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:178
+* Return         : None.
+*******************************************************************************/
+void Enter_LowPowerMode(void)
+{
+    /* Set the device state to suspend */
+    bDeviceState = SUSPENDED;
+   0:	4b04      	ldr	r3, [pc, #16]	(14 <Enter_LowPowerMode+0x14>)
+   2:	2203      	movs	r2, #3
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:186
+    /* Clear EXTI Line18 pending bit */
+    EXTI_ClearITPendingBit(GPIO_EXTI_Line_KEY1);
+#endif
+
+    /* Request to enter STOP mode with regulator in low power mode */
+    PWR_EnterSTOPMode(PWR_Regulator_LowPower, PWR_STOPEntry_WFI);
+   4:	2001      	movs	r0, #1
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:176
+* Input          : None.
+* Output         : None.
+* Return         : None.
+*******************************************************************************/
+void Enter_LowPowerMode(void)
+{
+   6:	b510      	push	{r4, lr}
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:178
+    /* Set the device state to suspend */
+    bDeviceState = SUSPENDED;
+   8:	601a      	str	r2, [r3, #0]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:186
+    /* Clear EXTI Line18 pending bit */
+    EXTI_ClearITPendingBit(GPIO_EXTI_Line_KEY1);
+#endif
+
+    /* Request to enter STOP mode with regulator in low power mode */
+    PWR_EnterSTOPMode(PWR_Regulator_LowPower, PWR_STOPEntry_WFI);
+   a:	4601      	mov	r1, r0
+   c:	f7ff fffe 	bl	0 <PWR_EnterSTOPMode>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:187
+}
+  10:	bd10      	pop	{r4, pc}
+  12:	46c0      	nop			(mov r8, r8)
+  14:	00000000 	.word	0x00000000
+Disassembly of section .text.Set_USBClock:
+
+00000000 <Set_USBClock>:
+Set_USBClock():
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:162
+* Return         : None.
+*******************************************************************************/
+void Set_USBClock(void)
+{
+    /* Select USBCLK source */
+    RCC_USBCLKConfig(RCC_USBCLKSource_PLLCLK_1Div5);
+   0:	2000      	movs	r0, #0
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:160
+* Input          : None.
+* Output         : None.
+* Return         : None.
+*******************************************************************************/
+void Set_USBClock(void)
+{
+   2:	b510      	push	{r4, lr}
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:162
+    /* Select USBCLK source */
+    RCC_USBCLKConfig(RCC_USBCLKSource_PLLCLK_1Div5);
+   4:	f7ff fffe 	bl	0 <RCC_USBCLKConfig>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:165
+
+    /* Enable USB clock */
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_USB, ENABLE);
+   8:	f44f 0000 	mov.w	r0, #8388608	; 0x800000
+   c:	2101      	movs	r1, #1
+   e:	f7ff fffe 	bl	0 <RCC_APB1PeriphClockCmd>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:166
+}
+  12:	bd10      	pop	{r4, pc}
+Disassembly of section .text.NVIC_Configuration:
+
+00000000 <NVIC_Configuration>:
+NVIC_Configuration():
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:117
+* Input          : None
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void NVIC_Configuration(void)
+{ 
+   0:	b573      	push	{r0, r1, r4, r5, r6, lr}
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:125
+#ifdef  VECT_TAB_RAM
+    /* Set the Vector Table base location at 0x20000000 */ 
+    NVIC_SetVectorTable(NVIC_VectTab_RAM, 0x0); 
+#else  /* VECT_TAB_FLASH  */
+    /* Set the Vector Table base location at 0x08000000 */ 
+    NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x0);   
+   2:	2100      	movs	r1, #0
+   4:	f04f 6000 	mov.w	r0, #134217728	; 0x8000000
+   8:	f7ff fffe 	bl	0 <NVIC_SetVectorTable>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:136
+    /* Enable the EXTI0 Interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+   c:	ae01      	add	r6, sp, #4
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:129
+    /* Set the Vector Table base location at 0x08000000 */ 
+    NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x0);   
+#endif
+
+    /* Configure one bit for preemption priority */
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
+   e:	f44f 60e0 	mov.w	r0, #1792	; 0x700
+  12:	f7ff fffe 	bl	0 <NVIC_PriorityGroupConfig>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:133
+
+    /* Enable the EXTI0 Interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+  16:	2400      	movs	r4, #0
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:135
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+  18:	2501      	movs	r5, #1
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:132
+
+    /* Configure one bit for preemption priority */
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
+
+    /* Enable the EXTI0 Interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;
+  1a:	2306      	movs	r3, #6
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:136
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+  1c:	4630      	mov	r0, r6
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:132
+
+    /* Configure one bit for preemption priority */
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
+
+    /* Enable the EXTI0 Interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;
+  1e:	f88d 3004 	strb.w	r3, [sp, #4]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:133
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+  22:	f88d 4005 	strb.w	r4, [sp, #5]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:134
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+  26:	f88d 4006 	strb.w	r4, [sp, #6]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:135
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+  2a:	f88d 5007 	strb.w	r5, [sp, #7]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:136
+    NVIC_Init(&NVIC_InitStructure);
+  2e:	f7ff fffe 	bl	0 <NVIC_Init>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:139
+
+    /* Enable the EXTI1 Interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel = EXTI1_IRQn;
+  32:	2307      	movs	r3, #7
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:143
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+  34:	4630      	mov	r0, r6
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:139
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+
+    /* Enable the EXTI1 Interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel = EXTI1_IRQn;
+  36:	f88d 3004 	strb.w	r3, [sp, #4]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:140
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+  3a:	f88d 4005 	strb.w	r4, [sp, #5]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:141
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+  3e:	f88d 5006 	strb.w	r5, [sp, #6]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:142
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+  42:	f88d 5007 	strb.w	r5, [sp, #7]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:143
+    NVIC_Init(&NVIC_InitStructure);
+  46:	f7ff fffe 	bl	0 <NVIC_Init>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:145
+
+    NVIC_InitStructure.NVIC_IRQChannel = USB_LP_CAN1_RX0_IRQn;
+  4a:	2314      	movs	r3, #20
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:149
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0x0;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0x0;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+  4c:	4630      	mov	r0, r6
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:145
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+
+    NVIC_InitStructure.NVIC_IRQChannel = USB_LP_CAN1_RX0_IRQn;
+  4e:	f88d 3004 	strb.w	r3, [sp, #4]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:146
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0x0;
+  52:	f88d 4005 	strb.w	r4, [sp, #5]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:147
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0x0;
+  56:	f88d 4006 	strb.w	r4, [sp, #6]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:148
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+  5a:	f88d 5007 	strb.w	r5, [sp, #7]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:149
+    NVIC_Init(&NVIC_InitStructure);
+  5e:	f7ff fffe 	bl	0 <NVIC_Init>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:150
+}
+  62:	bd7c      	pop	{r2, r3, r4, r5, r6, pc}
+Disassembly of section .text.RCC_Configuration:
+
+00000000 <RCC_Configuration>:
+RCC_Configuration():
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:81
+ * Input  : None
+ * Output : None
+ * Return : None
+ */
+void RCC_Configuration(void)
+{
+   0:	b510      	push	{r4, lr}
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:82
+    SystemInit();
+   2:	f7ff fffe 	bl	0 <SystemInit>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:85
+
+    /* Enable GPIOA clock */
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+   6:	2004      	movs	r0, #4
+   8:	2101      	movs	r1, #1
+   a:	f7ff fffe 	bl	0 <RCC_APB2PeriphClockCmd>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:88
+
+    /* Enable GPIOB clock */
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+   e:	2008      	movs	r0, #8
+  10:	2101      	movs	r1, #1
+  12:	f7ff fffe 	bl	0 <RCC_APB2PeriphClockCmd>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:91
+
+    /* Enable GPIOC clock */
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
+  16:	2010      	movs	r0, #16
+  18:	2101      	movs	r1, #1
+  1a:	f7ff fffe 	bl	0 <RCC_APB2PeriphClockCmd>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:94
+
+    /* Enable GPIOD clock */
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);
+  1e:	2020      	movs	r0, #32
+  20:	2101      	movs	r1, #1
+  22:	f7ff fffe 	bl	0 <RCC_APB2PeriphClockCmd>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:97
+
+    /* Enable USART1 clocks */
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);
+  26:	2101      	movs	r1, #1
+  28:	f44f 4080 	mov.w	r0, #16384	; 0x4000
+  2c:	f7ff fffe 	bl	0 <RCC_APB2PeriphClockCmd>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:100
+
+    /* Enable AFIO clock */
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);
+  30:	2001      	movs	r0, #1
+  32:	4601      	mov	r1, r0
+  34:	f7ff fffe 	bl	0 <RCC_APB2PeriphClockCmd>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:106
+
+    /* Enable DMA1 clock */
+//    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);
+
+    /* CAN1 Periph clock enable */
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_CAN1, ENABLE);
+  38:	f04f 7000 	mov.w	r0, #33554432	; 0x2000000
+  3c:	2101      	movs	r1, #1
+  3e:	f7ff fffe 	bl	0 <RCC_APB1PeriphClockCmd>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:107
+}
+  42:	bd10      	pop	{r4, pc}
+Disassembly of section .text.USART1_Init:
+
+00000000 <USART1_Init>:
+USART1_Init():
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:47
+ * Input  : None
+ * Output : None
+ * Return : None
+ */
+void USART1_Init(void)
+{
+   0:	b51f      	push	{r0, r1, r2, r3, r4, lr}
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:68
+    USART_InitStructure.USART_HardwareFlowControl
+                                         = USART_HardwareFlowControl_None;
+    USART_InitStructure.USART_Mode       = USART_Mode_Rx | USART_Mode_Tx;
+
+    /* Configure the USARTx */ 
+    USART_Init(USART1, &USART_InitStructure);
+   2:	4c0d      	ldr	r4, [pc, #52]	(38 <USART1_Init+0x38>)
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:59
+     - One Stop Bit
+     - No parity
+     - Hardware flow control disabled (RTS and CTS signals)
+     - Receive and transmit enabled
+     */
+    USART_InitStructure.USART_BaudRate   = 115200;
+   4:	f44f 33e1 	mov.w	r3, #115200	; 0x1c200
+   8:	9300      	str	r3, [sp, #0]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:60
+    USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+   a:	f5a3 33e1 	sub.w	r3, r3, #115200	; 0x1c200
+   e:	f8ad 3004 	strh.w	r3, [sp, #4]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:61
+    USART_InitStructure.USART_StopBits   = USART_StopBits_1;
+  12:	f8ad 3006 	strh.w	r3, [sp, #6]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:62
+    USART_InitStructure.USART_Parity     = USART_Parity_No ;
+  16:	f8ad 3008 	strh.w	r3, [sp, #8]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:63
+    USART_InitStructure.USART_HardwareFlowControl
+  1a:	f8ad 300c 	strh.w	r3, [sp, #12]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:68
+                                         = USART_HardwareFlowControl_None;
+    USART_InitStructure.USART_Mode       = USART_Mode_Rx | USART_Mode_Tx;
+
+    /* Configure the USARTx */ 
+    USART_Init(USART1, &USART_InitStructure);
+  1e:	4620      	mov	r0, r4
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:65
+    USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+    USART_InitStructure.USART_StopBits   = USART_StopBits_1;
+    USART_InitStructure.USART_Parity     = USART_Parity_No ;
+    USART_InitStructure.USART_HardwareFlowControl
+                                         = USART_HardwareFlowControl_None;
+    USART_InitStructure.USART_Mode       = USART_Mode_Rx | USART_Mode_Tx;
+  20:	f04f 030c 	mov.w	r3, #12	; 0xc
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:68
+
+    /* Configure the USARTx */ 
+    USART_Init(USART1, &USART_InitStructure);
+  24:	4669      	mov	r1, sp
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:65
+    USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+    USART_InitStructure.USART_StopBits   = USART_StopBits_1;
+    USART_InitStructure.USART_Parity     = USART_Parity_No ;
+    USART_InitStructure.USART_HardwareFlowControl
+                                         = USART_HardwareFlowControl_None;
+    USART_InitStructure.USART_Mode       = USART_Mode_Rx | USART_Mode_Tx;
+  26:	f8ad 300a 	strh.w	r3, [sp, #10]
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:68
+
+    /* Configure the USARTx */ 
+    USART_Init(USART1, &USART_InitStructure);
+  2a:	f7ff fffe 	bl	0 <USART_Init>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:71
+
+    /* Enable the USART1 */
+    USART_Cmd(USART1, ENABLE);
+  2e:	4620      	mov	r0, r4
+  30:	2101      	movs	r1, #1
+  32:	f7ff fffe 	bl	0 <USART_Cmd>
+C:\Users\Administrator\Downloads\MStory3.0\Unit_3\3.10_CAN_Normal\src/hw_config.c:72
+}
+  36:	bd1f      	pop	{r0, r1, r2, r3, r4, pc}
+  38:	40013800 	.word	0x40013800

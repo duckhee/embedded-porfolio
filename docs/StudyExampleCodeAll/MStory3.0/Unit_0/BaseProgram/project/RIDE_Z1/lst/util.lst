@@ -1,0 +1,266 @@
+
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_Z1\obj\util.o:     file format elf32-littlearm
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_Z1\obj\util.o
+
+Disassembly of section .text.utilChipIdToStr:
+
+00000000 <utilChipIdToStr>:
+utilChipIdToStr():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:33
+*/
+const char* utilChipIdToStr(uint8 chipID)
+{
+    const char* szId;
+
+    switch(chipID) {
+   0:	2885      	cmp	r0, #133
+   2:	d00d      	beq.n	20 <utilChipIdToStr+0x20>
+   4:	d805      	bhi.n	12 <utilChipIdToStr+0x12>
+   6:	2881      	cmp	r0, #129
+   8:	d016      	beq.n	38 <utilChipIdToStr+0x38>
+   a:	2884      	cmp	r0, #132
+   c:	d00e      	beq.n	2c <utilChipIdToStr+0x2c>
+   e:	b148      	cbz	r0, 24 <utilChipIdToStr+0x24>
+  10:	e014      	b.n	3c <utilChipIdToStr+0x3c>
+  12:	28a5      	cmp	r0, #165
+  14:	d00c      	beq.n	30 <utilChipIdToStr+0x30>
+  16:	28b5      	cmp	r0, #181
+  18:	d00c      	beq.n	34 <utilChipIdToStr+0x34>
+  1a:	2889      	cmp	r0, #137
+  1c:	d10e      	bne.n	3c <utilChipIdToStr+0x3c>
+  1e:	e003      	b.n	28 <utilChipIdToStr+0x28>
+  20:	4807      	ldr	r0, [pc, #28]	(40 <utilChipIdToStr+0x40>)
+  22:	e00c      	b.n	3e <utilChipIdToStr+0x3e>
+  24:	4807      	ldr	r0, [pc, #28]	(44 <utilChipIdToStr+0x44>)
+  26:	e00a      	b.n	3e <utilChipIdToStr+0x3e>
+  28:	4807      	ldr	r0, [pc, #28]	(48 <utilChipIdToStr+0x48>)
+  2a:	e008      	b.n	3e <utilChipIdToStr+0x3e>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:42
+    case HAL_RF_CHIP_ID_CC2430:
+        szId= "2430";
+        break;
+    case HAL_RF_CHIP_ID_CC2431:
+        szId= "2431";
+        break;
+  2c:	4807      	ldr	r0, [pc, #28]	(4c <utilChipIdToStr+0x4c>)
+  2e:	e006      	b.n	3e <utilChipIdToStr+0x3e>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:45
+    case HAL_RF_CHIP_ID_CC2520:
+        szId= "2520";
+        break;
+  30:	4807      	ldr	r0, [pc, #28]	(50 <utilChipIdToStr+0x50>)
+  32:	e004      	b.n	3e <utilChipIdToStr+0x3e>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:48
+    case HAL_RF_CHIP_ID_CC2530:
+        szId= "2530";
+        break;
+  34:	4807      	ldr	r0, [pc, #28]	(54 <utilChipIdToStr+0x54>)
+  36:	e002      	b.n	3e <utilChipIdToStr+0x3e>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:51
+    case HAL_RF_CHIP_ID_CC2531:
+        szId= "2531";
+        break;
+  38:	4807      	ldr	r0, [pc, #28]	(58 <utilChipIdToStr+0x58>)
+  3a:	e000      	b.n	3e <utilChipIdToStr+0x3e>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:54
+    case HAL_RF_CHIP_ID_CC2510:
+        szId= "2510";
+        break;
+  3c:	4807      	ldr	r0, [pc, #28]	(5c <utilChipIdToStr+0x5c>)
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:60
+    default:
+        szId= "";
+    };
+
+    return szId;
+}
+  3e:	4770      	bx	lr
+  40:	00000000 	.word	0x00000000
+  44:	00000005 	.word	0x00000005
+  48:	0000000a 	.word	0x0000000a
+  4c:	0000000f 	.word	0x0000000f
+  50:	00000014 	.word	0x00000014
+  54:	00000019 	.word	0x00000019
+  58:	0000001e 	.word	0x0000001e
+  5c:	00000023 	.word	0x00000023
+Disassembly of section .text.convInt32ToText:
+
+00000000 <convInt32ToText>:
+convInt32ToText():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:72
+* @param       int32 value
+*
+* @return      char* - pointer to text buffer which is a file scope allocated array
+*/
+char* convInt32ToText(int32 value)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:83
+
+    pLast = pValueToTextBuffer;
+
+    // Record the sign of the value
+    negative = (value < 0);
+    value = ABS(value);
+   2:	ea80 71e0 	eor.w	r1, r0, r0, asr #31
+   6:	4c15      	ldr	r4, [pc, #84]	(5c <convInt32ToText+0x5c>)
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:72
+* @param       int32 value
+*
+* @return      char* - pointer to text buffer which is a file scope allocated array
+*/
+char* convInt32ToText(int32 value)
+{
+   8:	4684      	mov	ip, r0
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:83
+
+    pLast = pValueToTextBuffer;
+
+    // Record the sign of the value
+    negative = (value < 0);
+    value = ABS(value);
+   a:	eba1 71e0 	sub.w	r1, r1, r0, asr #31
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:87
+
+    // Print the value in the reverse order
+    do {
+        *(pLast++) = '0' + (uint8)(value % 10);
+   e:	230a      	movs	r3, #10
+  10:	fb91 f2f3 	sdiv	r2, r1, r3
+  14:	fb03 1312 	mls	r3, r3, r2, r1
+  18:	3330      	adds	r3, #48
+  1a:	f804 3c01 	strb.w	r3, [r4, #-1]
+  1e:	4620      	mov	r0, r4
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:89
+        value /= 10;
+    } while (value);
+  20:	4611      	mov	r1, r2
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:88
+    value = ABS(value);
+
+    // Print the value in the reverse order
+    do {
+        *(pLast++) = '0' + (uint8)(value % 10);
+        value /= 10;
+  22:	3401      	adds	r4, #1
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:89
+    } while (value);
+  24:	2a00      	cmp	r2, #0
+  26:	d1f2      	bne.n	e <convInt32ToText+0xe>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:92
+
+    // Add the '-' when the number is negative, and terminate the string
+    if (negative) *(pLast++) = '-';
+  28:	f1bc 0f00 	cmp.w	ip, #0	; 0x0
+  2c:	da02      	bge.n	34 <convInt32ToText+0x34>
+  2e:	232d      	movs	r3, #45
+  30:	7003      	strb	r3, [r0, #0]
+  32:	4620      	mov	r0, r4
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:93
+    *(pLast--) = 0x00;
+  34:	4601      	mov	r1, r0
+  36:	2300      	movs	r3, #0
+  38:	f801 3901 	strb.w	r3, [r1], #-1
+  3c:	4808      	ldr	r0, [pc, #32]	(60 <convInt32ToText+0x60>)
+  3e:	e005      	b.n	4c <convInt32ToText+0x4c>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:98
+
+    // Now reverse the string
+    pFirst = pValueToTextBuffer;
+    while (pLast > pFirst) {
+        last = *pLast;
+  40:	784a      	ldrb	r2, [r1, #1]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:99
+        *(pLast--) = *pFirst;
+  42:	f810 3c01 	ldrb.w	r3, [r0, #-1]
+  46:	704b      	strb	r3, [r1, #1]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:100
+        *(pFirst++) = last;
+  48:	f800 2c01 	strb.w	r2, [r0, #-1]
+  4c:	4602      	mov	r2, r0
+  4e:	460b      	mov	r3, r1
+  50:	3001      	adds	r0, #1
+  52:	3901      	subs	r1, #1
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:97
+    if (negative) *(pLast++) = '-';
+    *(pLast--) = 0x00;
+
+    // Now reverse the string
+    pFirst = pValueToTextBuffer;
+    while (pLast > pFirst) {
+  54:	4293      	cmp	r3, r2
+  56:	d8f3      	bhi.n	40 <convInt32ToText+0x40>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:104
+        *(pLast--) = *pFirst;
+        *(pFirst++) = last;
+    }
+
+    return pValueToTextBuffer;
+}
+  58:	4801      	ldr	r0, [pc, #4]	(60 <convInt32ToText+0x60>)
+  5a:	bd10      	pop	{r4, pc}
+  5c:	00000001 	.word	0x00000001
+  60:	00000000 	.word	0x00000000
+Disassembly of section .text.min:
+
+00000000 <min>:
+min():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:122
+uint8 min(uint8 v1, uint8 v2)
+{
+    if(v1 < v2)
+        return v1;
+    else return v2;
+}
+   0:	4281      	cmp	r1, r0
+   2:	bf38      	it	cc
+   4:	4608      	movcc	r0, r1
+   6:	4770      	bx	lr
+Disassembly of section .text.utilReverseBuf:
+
+00000000 <utilReverseBuf>:
+utilReverseBuf():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:135
+*              uint8 length - length of buffer
+*
+* @return      void
+*/
+void utilReverseBuf(uint8* pBuf, uint8 length)
+{
+   0:	3901      	subs	r1, #1
+   2:	1841      	adds	r1, r0, r1
+   4:	e005      	b.n	12 <utilReverseBuf+0x12>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:140
+   uint8 temp;
+   uint8* pBufLast = (pBuf + length - 1);
+
+   while(pBufLast > pBuf){
+     temp = *pBuf;
+   6:	f810 2c01 	ldrb.w	r2, [r0, #-1]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:141
+     *pBuf++ = *pBufLast;
+   a:	784b      	ldrb	r3, [r1, #1]
+   c:	f800 3c01 	strb.w	r3, [r0, #-1]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:142
+     *pBufLast-- = temp;	
+  10:	704a      	strb	r2, [r1, #1]
+  12:	4602      	mov	r2, r0
+  14:	460b      	mov	r3, r1
+  16:	3001      	adds	r0, #1
+  18:	3901      	subs	r1, #1
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:139
+void utilReverseBuf(uint8* pBuf, uint8 length)
+{
+   uint8 temp;
+   uint8* pBufLast = (pBuf + length - 1);
+
+   while(pBufLast > pBuf){
+  1a:	4293      	cmp	r3, r2
+  1c:	d8f3      	bhi.n	6 <utilReverseBuf+0x6>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/util.c:144
+     temp = *pBuf;
+     *pBuf++ = *pBufLast;
+     *pBufLast-- = temp;	
+  }
+}
+  1e:	4770      	bx	lr

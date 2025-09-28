@@ -1,0 +1,146 @@
+
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\debug.o:     file format elf32-littlearm
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\debug.o
+
+Disassembly of section .text.assert_failed:
+
+00000000 <assert_failed>:
+assert_failed():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/debug.c:61
+*                  - line: assert_param error line source number
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void assert_failed(uint8_t* file, uint32_t line)
+{ 
+   0:	4603      	mov	r3, r0
+   2:	460a      	mov	r2, r1
+   4:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/debug.c:64
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+    printf("Wrong parameters value: file %s on line %d\r\n", file, line);
+   6:	4802      	ldr	r0, [pc, #8]	(10 <assert_failed+0x10>)
+   8:	4619      	mov	r1, r3
+   a:	f7ff fffe 	bl	0 <printf>
+   e:	e7fe      	b.n	0 <assert_failed>
+  10:	00000000 	.word	0x00000000
+Disassembly of section .text.DebugMsg_Assert:
+
+00000000 <DebugMsg_Assert>:
+DebugMsg_Assert():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/debug.c:47
+}
+
+#ifdef  USE_FULL_ASSERT
+
+void DebugMsg_Assert(char const * fName_p, int lineNum)
+{
+   0:	4603      	mov	r3, r0
+   2:	460a      	mov	r2, r1
+   4:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/debug.c:48
+    printf("!!! ASSERT FAILED !!! %s() %d\n", fName_p, lineNum);
+   6:	4619      	mov	r1, r3
+   8:	4801      	ldr	r0, [pc, #4]	(10 <DebugMsg_Assert+0x10>)
+   a:	f7ff fffe 	bl	0 <printf>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/debug.c:49
+}
+   e:	bd10      	pop	{r4, pc}
+  10:	0000002d 	.word	0x0000002d
+Disassembly of section .text.DebugMsg_FunctionError:
+
+00000000 <DebugMsg_FunctionError>:
+DebugMsg_FunctionError():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/debug.c:38
+    printf("%s() %d\n", fName_p, lineNum);
+#endif
+}
+
+void DebugMsg_FunctionError(char const * fName_p, int lineNum)
+{
+   0:	4603      	mov	r3, r0
+   2:	460a      	mov	r2, r1
+   4:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/debug.c:40
+#ifdef  DEBUG_MSG_LEVEL0
+    printf("[ERROR] %s() %d\n", fName_p, lineNum);
+   6:	4619      	mov	r1, r3
+   8:	4801      	ldr	r0, [pc, #4]	(10 <DebugMsg_FunctionError+0x10>)
+   a:	f7ff fffe 	bl	0 <printf>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/debug.c:42
+#endif
+}
+   e:	bd10      	pop	{r4, pc}
+  10:	0000004c 	.word	0x0000004c
+Disassembly of section .text.DebugMsg_FunctionNotify:
+
+00000000 <DebugMsg_FunctionNotify>:
+DebugMsg_FunctionNotify():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/debug.c:31
+    printf("%s() E\n", fName_p);
+#endif
+}
+
+void DebugMsg_FunctionNotify(char const * fName_p, int lineNum)
+{
+   0:	4603      	mov	r3, r0
+   2:	460a      	mov	r2, r1
+   4:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/debug.c:33
+#ifdef  DEBUG_MSG_LEVEL0
+    printf("%s() %d\n", fName_p, lineNum);
+   6:	4619      	mov	r1, r3
+   8:	4801      	ldr	r0, [pc, #4]	(10 <DebugMsg_FunctionNotify+0x10>)
+   a:	f7ff fffe 	bl	0 <printf>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/debug.c:35
+#endif
+}
+   e:	bd10      	pop	{r4, pc}
+  10:	0000005d 	.word	0x0000005d
+Disassembly of section .text.DebugMsg_FunctionEnd:
+
+00000000 <DebugMsg_FunctionEnd>:
+DebugMsg_FunctionEnd():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/debug.c:24
+    printf("%s() S\n", fName_p);
+#endif
+}
+
+void DebugMsg_FunctionEnd(char const * fName_p)
+{
+   0:	4601      	mov	r1, r0
+   2:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/debug.c:26
+#ifdef  DEBUG_MSG_LEVEL0
+    printf("%s() E\n", fName_p);
+   4:	4801      	ldr	r0, [pc, #4]	(c <DebugMsg_FunctionEnd+0xc>)
+   6:	f7ff fffe 	bl	0 <printf>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/debug.c:28
+#endif
+}
+   a:	bd10      	pop	{r4, pc}
+   c:	00000066 	.word	0x00000066
+Disassembly of section .text.DebugMsg_FunctionStart:
+
+00000000 <DebugMsg_FunctionStart>:
+DebugMsg_FunctionStart():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/debug.c:17
+#include "hw_config.h"
+
+/* functions */
+
+void DebugMsg_FunctionStart(char const * fName_p)
+{
+   0:	4601      	mov	r1, r0
+   2:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/debug.c:19
+#ifdef  DEBUG_MSG_LEVEL0
+    printf("%s() S\n", fName_p);
+   4:	4801      	ldr	r0, [pc, #4]	(c <DebugMsg_FunctionStart+0xc>)
+   6:	f7ff fffe 	bl	0 <printf>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/debug.c:21
+#endif
+}
+   a:	bd10      	pop	{r4, pc}
+   c:	0000006e 	.word	0x0000006e

@@ -1,0 +1,42 @@
+
+/*
+!!!Linker default script generated automatically !!!
+Please note that this file and all script files included from this one can not be modified directly
+If you need to use your own script please do it from Ride7 LD linker options taking this one as example
+*/
+
+SEARCH_DIR(".")
+SEARCH_DIR("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj")
+SEARCH_DIR("C:\Program Files\Raisonance\Ride\Lib\ARM")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\usb_pwr.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\debug.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\hw_config.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\key.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\led.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\main.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\seven_segment.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\stm32f10x_it.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\usb_desc.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\usb_endp.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\usb_istr.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\usb_prop.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\system_stm32f10x.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\startup_stm32f10x_md.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\usb_regs.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\usb_core.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\usb_init.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\usb_int.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\usb_mem.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\stm32f10x_usart.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\misc.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\stm32f10x_adc.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\stm32f10x_dma.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\stm32f10x_exti.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\stm32f10x_gpio.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\stm32f10x_rcc.o")
+INPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\stm32f10x_pwr.o")
+INCLUDE "D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\STM32F103_128K_20K_FLASH.ld"
+EXTERN( __io_putchar )
+EXTERN( _write )
+INPUT("STM32x_io_putchar_thumb.a")
+OUTPUT("D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\MStory.elf")

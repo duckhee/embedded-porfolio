@@ -1,0 +1,4 @@
+
+<Project Header="Project 'MStory'" Path=".\MStory.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="MStory" >
+	<ApplicationBuild Header="MStory" Extern=".\MStory.rapp" Path=".\MStory.rapp" OutputFile=".\MStory.elf" sate="96" />
+</Project>

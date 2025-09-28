@@ -1,0 +1,368 @@
+
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\main.o:     file format elf32-littlearm
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\obj\main.o
+
+Disassembly of section .text.USB_Test_Start:
+
+00000000 <USB_Test_Start>:
+USB_Test_Start():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:34
+    printf("PCLK2_Frequency = %d\n",rcc_clocks.PCLK2_Frequency );
+    printf("ADCCLK_Frequency = %d\n",rcc_clocks.ADCCLK_Frequency );
+}
+
+void USB_Test_Start (void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:35
+    USB_Interrupts_Config();
+   2:	f7ff fffe 	bl	0 <USB_Interrupts_Config>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:37
+
+    Set_USBClock();
+   6:	f7ff fffe 	bl	0 <Set_USBClock>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:39
+
+    USB_Init();
+   a:	f7ff fffe 	bl	0 <USB_Init>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:40
+}
+   e:	bd10      	pop	{r4, pc}
+Disassembly of section .text.System_Information:
+
+00000000 <System_Information>:
+System_Information():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:23
+bool g_TestProcessState = FALSE;
+
+/* functions */
+
+void System_Information()
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:26
+    DEBUG_MSG_FUNC_START;
+
+    printf("SYSCLK_Frequency = %d\n",rcc_clocks.SYSCLK_Frequency );
+   2:	4c0c      	ldr	r4, [pc, #48]	(34 <System_Information+0x34>)
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:24
+
+/* functions */
+
+void System_Information()
+{
+    DEBUG_MSG_FUNC_START;
+   4:	480c      	ldr	r0, [pc, #48]	(38 <System_Information+0x38>)
+   6:	f7ff fffe 	bl	0 <DebugMsg_FunctionStart>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:26
+
+    printf("SYSCLK_Frequency = %d\n",rcc_clocks.SYSCLK_Frequency );
+   a:	6821      	ldr	r1, [r4, #0]
+   c:	480b      	ldr	r0, [pc, #44]	(3c <System_Information+0x3c>)
+   e:	f7ff fffe 	bl	0 <printf>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:27
+    printf("HCLK_Frequency = %d\n",rcc_clocks.HCLK_Frequency );
+  12:	6861      	ldr	r1, [r4, #4]
+  14:	480a      	ldr	r0, [pc, #40]	(40 <System_Information+0x40>)
+  16:	f7ff fffe 	bl	0 <printf>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:28
+    printf("PCLK1_Frequency = %d\n",rcc_clocks.PCLK1_Frequency );
+  1a:	68a1      	ldr	r1, [r4, #8]
+  1c:	4809      	ldr	r0, [pc, #36]	(44 <System_Information+0x44>)
+  1e:	f7ff fffe 	bl	0 <printf>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:29
+    printf("PCLK2_Frequency = %d\n",rcc_clocks.PCLK2_Frequency );
+  22:	68e1      	ldr	r1, [r4, #12]
+  24:	4808      	ldr	r0, [pc, #32]	(48 <System_Information+0x48>)
+  26:	f7ff fffe 	bl	0 <printf>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:30
+    printf("ADCCLK_Frequency = %d\n",rcc_clocks.ADCCLK_Frequency );
+  2a:	6921      	ldr	r1, [r4, #16]
+  2c:	4807      	ldr	r0, [pc, #28]	(4c <System_Information+0x4c>)
+  2e:	f7ff fffe 	bl	0 <printf>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:31
+}
+  32:	bd10      	pop	{r4, pc}
+	...
+  40:	00000017 	.word	0x00000017
+  44:	0000002c 	.word	0x0000002c
+  48:	00000042 	.word	0x00000042
+  4c:	00000058 	.word	0x00000058
+Disassembly of section .text.main:
+
+00000000 <main>:
+main():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:49
+ * Input  : None
+ * Output : None
+ * Return : None
+ */
+int main(void)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:55
+    uint8_t ch;
+
+    /* System Clocks Configuration */
+    RCC_Configuration();
+
+    RCC_GetClocksFreq(&rcc_clocks);
+   2:	4c3b      	ldr	r4, [pc, #236]	(f0 <main+0xf0>)
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:53
+int main(void)
+{
+    uint8_t ch;
+
+    /* System Clocks Configuration */
+    RCC_Configuration();
+   4:	f7ff fffe 	bl	0 <RCC_Configuration>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:55
+
+    RCC_GetClocksFreq(&rcc_clocks);
+   8:	4620      	mov	r0, r4
+   a:	f7ff fffe 	bl	0 <RCC_GetClocksFreq>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:58
+
+    /* NVIC configuration */
+    NVIC_Configuration();
+   e:	f7ff fffe 	bl	0 <NVIC_Configuration>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:61
+
+    /* Configure the GPIO ports */
+    GPIO_Configuration();
+  12:	f7ff fffe 	bl	0 <GPIO_Configuration>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:64
+
+    /* EXTI configuration */
+    EXTI_Configuration();
+  16:	f7ff fffe 	bl	0 <EXTI_Configuration>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:67
+
+    /* UART initialization */
+    USART1_Init();
+  1a:	f7ff fffe 	bl	0 <USART1_Init>
+SysTick_Config():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\..\..\..\..\Libraries\CMSIS\Core\CM3/core_cm3.h:1303
+ */
+static __INLINE uint32_t SysTick_Config(uint32_t ticks)
+{ 
+  if (ticks > SYSTICK_MAXCOUNT)  return (1);                                             /* Reload value impossible */
+
+  SysTick->LOAD  =  (ticks & SYSTICK_MAXCOUNT) - 1;                                      /* set reload register */
+  1e:	6823      	ldr	r3, [r4, #0]
+  20:	f44f 727a 	mov.w	r2, #1000	; 0x3e8
+  24:	fbb3 f3f2 	udiv	r3, r3, r2
+  28:	f023 437f 	bic.w	r3, r3, #4278190080	; 0xff000000
+  2c:	4a31      	ldr	r2, [pc, #196]	(f4 <main+0xf4>)
+  2e:	3b01      	subs	r3, #1
+  30:	6053      	str	r3, [r2, #4]
+NVIC_SetPriority():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\..\..\..\..\Libraries\CMSIS\Core\CM3/core_cm3.h:1187
+ * Note: The priority cannot be set for every core interrupt.
+ */
+static __INLINE void NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
+{
+  if(IRQn < 0) {
+    SCB->SHP[((uint32_t)(IRQn) & 0xF)-4] = ((priority << (8 - __NVIC_PRIO_BITS)) & 0xff); } /* set Priority for Cortex-M3 System Interrupts */
+  32:	4b31      	ldr	r3, [pc, #196]	(f8 <main+0xf8>)
+  34:	f06f 010f 	mvn.w	r1, #15	; 0xf
+  38:	f883 1023 	strb.w	r1, [r3, #35]
+SysTick_Config():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\..\..\..\..\Libraries\CMSIS\Core\CM3/core_cm3.h:1305
+{ 
+  if (ticks > SYSTICK_MAXCOUNT)  return (1);                                             /* Reload value impossible */
+
+  SysTick->LOAD  =  (ticks & SYSTICK_MAXCOUNT) - 1;                                      /* set reload register */
+  NVIC_SetPriority (SysTick_IRQn, (1<<__NVIC_PRIO_BITS) - 1);                            /* set Priority for Cortex-M0 System Interrupts */
+  SysTick->VAL   =  (0x00);                                                              /* Load the SysTick Counter Value */
+  3c:	2000      	movs	r0, #0
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\..\..\..\..\Libraries\CMSIS\Core\CM3/core_cm3.h:1306
+  SysTick->CTRL = (1 << SYSTICK_CLKSOURCE) | (1<<SYSTICK_ENABLE) | (1<<SYSTICK_TICKINT); /* Enable SysTick IRQ and SysTick Timer */
+  3e:	2307      	movs	r3, #7
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\..\..\..\..\Libraries\CMSIS\Core\CM3/core_cm3.h:1305
+{ 
+  if (ticks > SYSTICK_MAXCOUNT)  return (1);                                             /* Reload value impossible */
+
+  SysTick->LOAD  =  (ticks & SYSTICK_MAXCOUNT) - 1;                                      /* set reload register */
+  NVIC_SetPriority (SysTick_IRQn, (1<<__NVIC_PRIO_BITS) - 1);                            /* set Priority for Cortex-M0 System Interrupts */
+  SysTick->VAL   =  (0x00);                                                              /* Load the SysTick Counter Value */
+  40:	6090      	str	r0, [r2, #8]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_M32\..\..\..\..\Libraries\CMSIS\Core\CM3/core_cm3.h:1306
+  SysTick->CTRL = (1 << SYSTICK_CLKSOURCE) | (1<<SYSTICK_ENABLE) | (1<<SYSTICK_TICKINT); /* Enable SysTick IRQ and SysTick Timer */
+  42:	6013      	str	r3, [r2, #0]
+main():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:76
+    { 
+        /* Capture error */ 
+        while (1);
+    }
+
+    USB_Cable_Config(DISABLE);
+  44:	f7ff fffe 	bl	0 <USB_Cable_Config>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:78
+
+    Delay(500);
+  48:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
+  4c:	f7ff fffe 	bl	0 <Delay>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:82
+
+    while(1)
+    {
+        printf("\n---------------------\n");
+  50:	482a      	ldr	r0, [pc, #168]	(ac <puts+0xac>)
+  52:	f7ff fffe 	bl	0 <puts>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:84
+#ifdef BOARD_DEF_MANGO_M32
+        printf("Mango M32 test start...\n");
+  56:	482a      	ldr	r0, [pc, #168]	(ac <puts+0xac>)
+  58:	f7ff fffe 	bl	0 <puts>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:88
+#elif  BOARD_DEF_MANGO_Z1
+        printf("Mango Z1 test start...\n");
+#endif
+        printf("Press menu key\n");
+  5c:	4829      	ldr	r0, [pc, #164]	(a8 <puts+0xa8>)
+  5e:	f7ff fffe 	bl	0 <puts>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:89
+        printf("---------------------\n");
+  62:	4829      	ldr	r0, [pc, #164]	(a8 <puts+0xa8>)
+  64:	f7ff fffe 	bl	0 <puts>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:90
+        printf("0> System Information\n");
+  68:	4828      	ldr	r0, [pc, #160]	(a4 <puts+0xa4>)
+  6a:	f7ff fffe 	bl	0 <puts>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:91
+        printf("---------------------\n");
+  6e:	4826      	ldr	r0, [pc, #152]	(9c <puts+0x9c>)
+  70:	f7ff fffe 	bl	0 <puts>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:92
+        printf("1> LED Test\n");
+  74:	4826      	ldr	r0, [pc, #152]	(9c <puts+0x9c>)
+  76:	f7ff fffe 	bl	0 <puts>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:93
+        printf("2> KEY Test\n");
+  7a:	4826      	ldr	r0, [pc, #152]	(9c <puts+0x9c>)
+  7c:	f7ff fffe 	bl	0 <puts>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:95
+#ifdef BOARD_DEF_MANGO_M32
+        printf("3> 7-Segment Test\n");
+  80:	4825      	ldr	r0, [pc, #148]	(98 <puts+0x98>)
+  82:	f7ff fffe 	bl	0 <puts>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:99
+#elif  BOARD_DEF_MANGO_Z1
+        printf("3> ZigBee Test\n");
+#endif
+        printf("4> USB HID Test\n");
+  86:	4825      	ldr	r0, [pc, #148]	(98 <puts+0x98>)
+  88:	f7ff fffe 	bl	0 <puts>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:100
+        printf("---------------------\n");
+  8c:	481e      	ldr	r0, [pc, #120]	(7c <puts+0x7c>)
+  8e:	f7ff fffe 	bl	0 <puts>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:101
+        printf("x> quit\n\n");
+  92:	4823      	ldr	r0, [pc, #140]	(90 <puts+0x90>)
+  94:	f7ff fffe 	bl	0 <puts>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:103
+
+        ch = USART_GetCharacter(USART1);
+  98:	4822      	ldr	r0, [pc, #136]	(8c <USART_GetCharacter+0x8c>)
+  9a:	f7ff fffe 	bl	0 <USART_GetCharacter>
+  9e:	4605      	mov	r5, r0
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:104
+        printf(" is selected\n\n");
+  a0:	4821      	ldr	r0, [pc, #132]	(128 <main+0x128>)
+  a2:	f7ff fffe 	bl	0 <puts>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:106
+
+        switch((char)ch)
+  a6:	b26b      	sxtb	r3, r5
+  a8:	3b30      	subs	r3, #48
+  aa:	2b04      	cmp	r3, #4
+  ac:	d81c      	bhi.n	e8 <main+0xe8>
+  ae:	e8df f003 	tbb	[pc, r3]
+  b2:	0603      	.short	0x0603
+  b4:	000f0c09 	.word	0x000f0c09
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:109
+        {
+        case '0':
+            System_Information();
+  b8:	f7ff fffe 	bl	0 <main>
+  bc:	e014      	b.n	2c <LED_Test+0x2c>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:113
+            break;
+
+        case '1':
+            LED_Test();
+  be:	f7ff fffe 	bl	0 <LED_Test>
+  c2:	e011      	b.n	26 <KEY_Test+0x26>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:117
+            break;
+
+        case '2':
+            KEY_Test();
+  c4:	f7ff fffe 	bl	0 <KEY_Test>
+  c8:	e00e      	b.n	20 <Seven_Segment_Test+0x20>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:122
+            break;
+
+        case '3':
+#ifdef BOARD_DEF_MANGO_M32
+            Seven_Segment_Test();
+  ca:	f7ff fffe 	bl	0 <Seven_Segment_Test>
+  ce:	e00b      	b.n	e8 <main+0xe8>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:129
+            ZigBee_Test();
+#endif
+            break;
+
+        case '4':
+            g_TestProcessState = TRUE;
+  d0:	4b16      	ldr	r3, [pc, #88]	(12c <main+0x12c>)
+  d2:	2401      	movs	r4, #1
+  d4:	701c      	strb	r4, [r3, #0]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:132
+
+            /* USB initialization */
+            USB_Test_Start();
+  d6:	f7ff fffe 	bl	0 <main>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:133
+            Delay(500);
+  da:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
+  de:	f7ff fffe 	bl	0 <Delay>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:134
+            USB_Cable_Config(ENABLE);
+  e2:	4620      	mov	r0, r4
+  e4:	f7ff fffe 	bl	0 <USB_Cable_Config>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:138
+            break;
+        }
+
+        if('x' == (char)ch)
+  e8:	2d78      	cmp	r5, #120
+  ea:	d1b1      	bne.n	50 <main+0x50>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/main.c:145
+            break;
+        }
+    }
+
+    return 0;
+}
+  ec:	2000      	movs	r0, #0
+  ee:	bd70      	pop	{r4, r5, r6, pc}
+  f0:	00000000 	.word	0x00000000
+  f4:	e000e010 	.word	0xe000e010
+  f8:	e000ed00 	.word	0xe000ed00
+  fc:	0000006f 	.word	0x0000006f
+ 100:	00000086 	.word	0x00000086
+ 104:	0000009e 	.word	0x0000009e
+ 108:	000000ad 	.word	0x000000ad
+ 10c:	000000c3 	.word	0x000000c3
+ 110:	000000d9 	.word	0x000000d9
+ 114:	000000e5 	.word	0x000000e5
+ 118:	000000f1 	.word	0x000000f1
+ 11c:	00000103 	.word	0x00000103
+ 120:	00000113 	.word	0x00000113
+ 124:	40013800 	.word	0x40013800
+ 128:	0000011c 	.word	0x0000011c
+ 12c:	00000000 	.word	0x00000000

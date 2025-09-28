@@ -1,0 +1,367 @@
+
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_Z1\obj\misc.o:     file format elf32-littlearm
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_Z1\obj\misc.o
+
+Disassembly of section .text.SysTick_CLKSourceConfig:
+
+00000000 <SysTick_CLKSourceConfig>:
+SysTick_CLKSourceConfig():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:200
+  * @retval None
+  */
+void SysTick_CLKSourceConfig(uint32_t SysTick_CLKSource)
+{
+  /* Check the parameters */
+  assert_param(IS_SYSTICK_CLK_SOURCE(SysTick_CLKSource));
+   0:	2804      	cmp	r0, #4
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:198
+  *     @arg SysTick_CLKSource_HCLK_Div8: AHB clock divided by 8 selected as SysTick clock source.
+  *     @arg SysTick_CLKSource_HCLK: AHB clock selected as SysTick clock source.
+  * @retval None
+  */
+void SysTick_CLKSourceConfig(uint32_t SysTick_CLKSource)
+{
+   2:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:200
+  /* Check the parameters */
+  assert_param(IS_SYSTICK_CLK_SOURCE(SysTick_CLKSource));
+   4:	d007      	beq.n	16 <SysTick_CLKSourceConfig+0x16>
+   6:	f110 0f05 	cmn.w	r0, #5	; 0x5
+   a:	d009      	beq.n	20 <SysTick_CLKSourceConfig+0x20>
+   c:	4807      	ldr	r0, [pc, #28]	(2c <SysTick_CLKSourceConfig+0x2c>)
+   e:	21c8      	movs	r1, #200
+  10:	f7ff fffe 	bl	0 <assert_failed>
+  14:	e004      	b.n	20 <SysTick_CLKSourceConfig+0x20>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:203
+  if (SysTick_CLKSource == SysTick_CLKSource_HCLK)
+  {
+    SysTick->CTRL |= SysTick_CLKSource_HCLK;
+  16:	4a06      	ldr	r2, [pc, #24]	(30 <SysTick_CLKSourceConfig+0x30>)
+  18:	6813      	ldr	r3, [r2, #0]
+  1a:	f043 0304 	orr.w	r3, r3, #4	; 0x4
+  1e:	e003      	b.n	28 <SysTick_CLKSourceConfig+0x28>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:207
+  }
+  else
+  {
+    SysTick->CTRL &= SysTick_CLKSource_HCLK_Div8;
+  20:	4a03      	ldr	r2, [pc, #12]	(30 <SysTick_CLKSourceConfig+0x30>)
+  22:	6813      	ldr	r3, [r2, #0]
+  24:	f023 0304 	bic.w	r3, r3, #4	; 0x4
+  28:	6013      	str	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:209
+  }
+}
+  2a:	bd10      	pop	{r4, pc}
+  2c:	00000000 	.word	0x00000000
+  30:	e000e010 	.word	0xe000e010
+Disassembly of section .text.NVIC_SystemLPConfig:
+
+00000000 <NVIC_SystemLPConfig>:
+NVIC_SystemLPConfig():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:176
+  * @retval None
+  */
+void NVIC_SystemLPConfig(uint8_t LowPowerMode, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_NVIC_LP(LowPowerMode));
+   0:	2810      	cmp	r0, #16
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:174
+  *     @arg NVIC_LP_SLEEPONEXIT
+  * @param  NewState: new state of LP condition. This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void NVIC_SystemLPConfig(uint8_t LowPowerMode, FunctionalState NewState)
+{
+   2:	b570      	push	{r4, r5, r6, lr}
+   4:	4604      	mov	r4, r0
+   6:	460d      	mov	r5, r1
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:176
+  /* Check the parameters */
+  assert_param(IS_NVIC_LP(LowPowerMode));
+   8:	d007      	beq.n	1a <NVIC_SystemLPConfig+0x1a>
+   a:	2804      	cmp	r0, #4
+   c:	d005      	beq.n	1a <NVIC_SystemLPConfig+0x1a>
+   e:	2802      	cmp	r0, #2
+  10:	d003      	beq.n	1a <NVIC_SystemLPConfig+0x1a>
+  12:	480b      	ldr	r0, [pc, #44]	(40 <NVIC_SystemLPConfig+0x40>)
+  14:	21b0      	movs	r1, #176
+  16:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:177
+  assert_param(IS_FUNCTIONAL_STATE(NewState));  
+  1a:	2d01      	cmp	r5, #1
+  1c:	d903      	bls.n	26 <NVIC_SystemLPConfig+0x26>
+  1e:	4808      	ldr	r0, [pc, #32]	(40 <NVIC_SystemLPConfig+0x40>)
+  20:	21b1      	movs	r1, #177
+  22:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:179
+  
+  if (NewState != DISABLE)
+  26:	b125      	cbz	r5, 32 <NVIC_SystemLPConfig+0x32>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:181
+  {
+    SCB->SCR |= LowPowerMode;
+  28:	4a06      	ldr	r2, [pc, #24]	(44 <NVIC_SystemLPConfig+0x44>)
+  2a:	6913      	ldr	r3, [r2, #16]
+  2c:	ea44 0303 	orr.w	r3, r4, r3
+  30:	e003      	b.n	3a <NVIC_SystemLPConfig+0x3a>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:185
+  }
+  else
+  {
+    SCB->SCR &= (uint32_t)(~(uint32_t)LowPowerMode);
+  32:	4a04      	ldr	r2, [pc, #16]	(44 <NVIC_SystemLPConfig+0x44>)
+  34:	6913      	ldr	r3, [r2, #16]
+  36:	ea23 0304 	bic.w	r3, r3, r4
+  3a:	6113      	str	r3, [r2, #16]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:187
+  }
+}
+  3c:	bd70      	pop	{r4, r5, r6, pc}
+  3e:	46c0      	nop			(mov r8, r8)
+  40:	00000000 	.word	0x00000000
+  44:	e000ed00 	.word	0xe000ed00
+Disassembly of section .text.NVIC_SetVectorTable:
+
+00000000 <NVIC_SetVectorTable>:
+NVIC_SetVectorTable():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:157
+  * @retval None
+  */
+void NVIC_SetVectorTable(uint32_t NVIC_VectTab, uint32_t Offset)
+{ 
+  /* Check the parameters */
+  assert_param(IS_NVIC_VECTTAB(NVIC_VectTab));
+   0:	f1b0 5f00 	cmp.w	r0, #536870912	; 0x20000000
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:155
+  *     @arg NVIC_VectTab_FLASH
+  * @param  Offset: Vector Table base offset field. This value must be a multiple of 0x100.
+  * @retval None
+  */
+void NVIC_SetVectorTable(uint32_t NVIC_VectTab, uint32_t Offset)
+{ 
+   4:	b570      	push	{r4, r5, r6, lr}
+   6:	4604      	mov	r4, r0
+   8:	460d      	mov	r5, r1
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:157
+  /* Check the parameters */
+  assert_param(IS_NVIC_VECTTAB(NVIC_VectTab));
+   a:	d006      	beq.n	1a <NVIC_SetVectorTable+0x1a>
+   c:	f1b0 6f00 	cmp.w	r0, #134217728	; 0x8000000
+  10:	d003      	beq.n	1a <NVIC_SetVectorTable+0x1a>
+  12:	4809      	ldr	r0, [pc, #36]	(38 <NVIC_SetVectorTable+0x38>)
+  14:	219d      	movs	r1, #157
+  16:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:158
+  assert_param(IS_NVIC_OFFSET(Offset));  
+  1a:	4b08      	ldr	r3, [pc, #32]	(3c <NVIC_SetVectorTable+0x3c>)
+  1c:	429d      	cmp	r5, r3
+  1e:	d903      	bls.n	28 <NVIC_SetVectorTable+0x28>
+  20:	4805      	ldr	r0, [pc, #20]	(38 <NVIC_SetVectorTable+0x38>)
+  22:	219e      	movs	r1, #158
+  24:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:160
+   
+  SCB->VTOR = NVIC_VectTab | (Offset & (uint32_t)0x1FFFFF80);
+  28:	f025 4360 	bic.w	r3, r5, #3758096384	; 0xe0000000
+  2c:	f023 037f 	bic.w	r3, r3, #127	; 0x7f
+  30:	4a03      	ldr	r2, [pc, #12]	(40 <NVIC_SetVectorTable+0x40>)
+  32:	4323      	orrs	r3, r4
+  34:	6093      	str	r3, [r2, #8]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:161
+}
+  36:	bd70      	pop	{r4, r5, r6, pc}
+  38:	00000000 	.word	0x00000000
+  3c:	0007fffe 	.word	0x0007fffe
+  40:	e000ed00 	.word	0xe000ed00
+Disassembly of section .text.NVIC_Init:
+
+00000000 <NVIC_Init>:
+NVIC_Init():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:116
+void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
+{
+  uint32_t tmppriority = 0x00, tmppre = 0x00, tmpsub = 0x0F;
+  
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NVIC_InitStruct->NVIC_IRQChannelCmd));
+   0:	78c3      	ldrb	r3, [r0, #3]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:112
+  * @param  NVIC_InitStruct: pointer to a NVIC_InitTypeDef structure that contains
+  *   the configuration information for the specified NVIC peripheral.
+  * @retval None
+  */
+void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
+{
+   2:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:116
+  uint32_t tmppriority = 0x00, tmppre = 0x00, tmpsub = 0x0F;
+  
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NVIC_InitStruct->NVIC_IRQChannelCmd));
+   4:	2b01      	cmp	r3, #1
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:112
+  * @param  NVIC_InitStruct: pointer to a NVIC_InitTypeDef structure that contains
+  *   the configuration information for the specified NVIC peripheral.
+  * @retval None
+  */
+void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
+{
+   6:	4604      	mov	r4, r0
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:116
+  uint32_t tmppriority = 0x00, tmppre = 0x00, tmpsub = 0x0F;
+  
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NVIC_InitStruct->NVIC_IRQChannelCmd));
+   8:	d903      	bls.n	12 <NVIC_Init+0x12>
+   a:	481e      	ldr	r0, [pc, #120]	(84 <NVIC_Init+0x84>)
+   c:	2174      	movs	r1, #116
+   e:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:117
+  assert_param(IS_NVIC_PREEMPTION_PRIORITY(NVIC_InitStruct->NVIC_IRQChannelPreemptionPriority));  
+  12:	7863      	ldrb	r3, [r4, #1]
+  14:	2b0f      	cmp	r3, #15
+  16:	d903      	bls.n	20 <NVIC_Init+0x20>
+  18:	481a      	ldr	r0, [pc, #104]	(84 <NVIC_Init+0x84>)
+  1a:	2175      	movs	r1, #117
+  1c:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:118
+  assert_param(IS_NVIC_SUB_PRIORITY(NVIC_InitStruct->NVIC_IRQChannelSubPriority));
+  20:	78a3      	ldrb	r3, [r4, #2]
+  22:	2b0f      	cmp	r3, #15
+  24:	d903      	bls.n	2e <NVIC_Init+0x2e>
+  26:	4817      	ldr	r0, [pc, #92]	(84 <NVIC_Init+0x84>)
+  28:	2176      	movs	r1, #118
+  2a:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:120
+    
+  if (NVIC_InitStruct->NVIC_IRQChannelCmd != DISABLE)
+  2e:	78e3      	ldrb	r3, [r4, #3]
+  30:	f894 c000 	ldrb.w	ip, [r4]
+  34:	b1d3      	cbz	r3, 6c <NVIC_Init+0x6c>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:123
+  {
+    /* Compute the Corresponding IRQ Priority --------------------------------*/    
+    tmppriority = (0x700 - ((SCB->AIRCR) & (uint32_t)0x700))>> 0x08;
+  36:	4b14      	ldr	r3, [pc, #80]	(88 <NVIC_Init+0x88>)
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:127
+    tmppre = (0x4 - tmppriority);
+    tmpsub = tmpsub >> tmppriority;
+
+    tmppriority = (uint32_t)NVIC_InitStruct->NVIC_IRQChannelPreemptionPriority << tmppre;
+  38:	7861      	ldrb	r1, [r4, #1]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:123
+  assert_param(IS_NVIC_SUB_PRIORITY(NVIC_InitStruct->NVIC_IRQChannelSubPriority));
+    
+  if (NVIC_InitStruct->NVIC_IRQChannelCmd != DISABLE)
+  {
+    /* Compute the Corresponding IRQ Priority --------------------------------*/    
+    tmppriority = (0x700 - ((SCB->AIRCR) & (uint32_t)0x700))>> 0x08;
+  3a:	68da      	ldr	r2, [r3, #12]
+  3c:	43d2      	mvns	r2, r2
+  3e:	f3c2 2202 	ubfx	r2, r2, #8, #3
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:127
+    tmppre = (0x4 - tmppriority);
+    tmpsub = tmpsub >> tmppriority;
+
+    tmppriority = (uint32_t)NVIC_InitStruct->NVIC_IRQChannelPreemptionPriority << tmppre;
+  42:	f1c2 0304 	rsb	r3, r2, #4	; 0x4
+  46:	4099      	lsls	r1, r3
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:128
+    tmppriority |=  NVIC_InitStruct->NVIC_IRQChannelSubPriority & tmpsub;
+  48:	230f      	movs	r3, #15
+  4a:	40d3      	lsrs	r3, r2
+  4c:	78a2      	ldrb	r2, [r4, #2]
+  4e:	4013      	ands	r3, r2
+  50:	430b      	orrs	r3, r1
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:131
+    tmppriority = tmppriority << 0x04;
+        
+    NVIC->IP[NVIC_InitStruct->NVIC_IRQChannel] = tmppriority;
+  52:	4a0e      	ldr	r2, [pc, #56]	(8c <NVIC_Init+0x8c>)
+  54:	011b      	lsls	r3, r3, #4
+  56:	b2db      	uxtb	r3, r3
+  58:	4462      	add	r2, ip
+  5a:	f882 3300 	strb.w	r3, [r2, #768]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:134
+    
+    /* Enable the Selected IRQ Channels --------------------------------------*/
+    NVIC->ISER[NVIC_InitStruct->NVIC_IRQChannel >> 0x05] =
+  5e:	f00c 021f 	and.w	r2, ip, #31	; 0x1f
+  62:	2301      	movs	r3, #1
+  64:	ea4f 115c 	mov.w	r1, ip, lsr #5
+  68:	4093      	lsls	r3, r2
+  6a:	e006      	b.n	7a <NVIC_Init+0x7a>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:140
+      (uint32_t)0x01 << (NVIC_InitStruct->NVIC_IRQChannel & (uint8_t)0x1F);
+  }
+  else
+  {
+    /* Disable the Selected IRQ Channels -------------------------------------*/
+    NVIC->ICER[NVIC_InitStruct->NVIC_IRQChannel >> 0x05] =
+  6c:	f00c 021f 	and.w	r2, ip, #31	; 0x1f
+  70:	2301      	movs	r3, #1
+  72:	4093      	lsls	r3, r2
+  74:	ea4f 115c 	mov.w	r1, ip, lsr #5
+  78:	3120      	adds	r1, #32
+  7a:	4a04      	ldr	r2, [pc, #16]	(8c <NVIC_Init+0x8c>)
+  7c:	f842 3021 	str.w	r3, [r2, r1, lsl #2]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:143
+      (uint32_t)0x01 << (NVIC_InitStruct->NVIC_IRQChannel & (uint8_t)0x1F);
+  }
+}
+  80:	bd10      	pop	{r4, pc}
+  82:	46c0      	nop			(mov r8, r8)
+  84:	00000000 	.word	0x00000000
+  88:	e000ed00 	.word	0xe000ed00
+  8c:	e000e100 	.word	0xe000e100
+Disassembly of section .text.NVIC_PriorityGroupConfig:
+
+00000000 <NVIC_PriorityGroupConfig>:
+NVIC_PriorityGroupConfig():
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:98
+  * @retval None
+  */
+void NVIC_PriorityGroupConfig(uint32_t NVIC_PriorityGroup)
+{
+  /* Check the parameters */
+  assert_param(IS_NVIC_PRIORITY_GROUP(NVIC_PriorityGroup));
+   0:	f5b0 6fe0 	cmp.w	r0, #1792	; 0x700
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:96
+  *     @arg NVIC_PriorityGroup_4: 4 bits for pre-emption priority
+  *                                0 bits for subpriority
+  * @retval None
+  */
+void NVIC_PriorityGroupConfig(uint32_t NVIC_PriorityGroup)
+{
+   4:	b510      	push	{r4, lr}
+   6:	4604      	mov	r4, r0
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:98
+  /* Check the parameters */
+  assert_param(IS_NVIC_PRIORITY_GROUP(NVIC_PriorityGroup));
+   8:	d00f      	beq.n	2a <NVIC_PriorityGroupConfig+0x2a>
+   a:	f5b0 6fc0 	cmp.w	r0, #1536	; 0x600
+   e:	d00c      	beq.n	2a <NVIC_PriorityGroupConfig+0x2a>
+  10:	f5b0 6fa0 	cmp.w	r0, #1280	; 0x500
+  14:	d009      	beq.n	2a <NVIC_PriorityGroupConfig+0x2a>
+  16:	f5b0 6f80 	cmp.w	r0, #1024	; 0x400
+  1a:	d006      	beq.n	2a <NVIC_PriorityGroupConfig+0x2a>
+  1c:	f5b0 7f40 	cmp.w	r0, #768	; 0x300
+  20:	d003      	beq.n	2a <NVIC_PriorityGroupConfig+0x2a>
+  22:	4805      	ldr	r0, [pc, #20]	(38 <NVIC_PriorityGroupConfig+0x38>)
+  24:	2162      	movs	r1, #98
+  26:	f7ff fffe 	bl	0 <assert_failed>
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:101
+  
+  /* Set the PRIGROUP[10:8] bits according to NVIC_PriorityGroup value */
+  SCB->AIRCR = AIRCR_VECTKEY_MASK | NVIC_PriorityGroup;
+  2a:	f044 63be 	orr.w	r3, r4, #99614720	; 0x5f00000
+  2e:	4a03      	ldr	r2, [pc, #12]	(3c <NVIC_PriorityGroupConfig+0x3c>)
+  30:	f443 2320 	orr.w	r3, r3, #655360	; 0xa0000
+  34:	60d3      	str	r3, [r2, #12]
+D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c:102
+}
+  36:	bd10      	pop	{r4, pc}
+  38:	00000000 	.word	0x00000000
+  3c:	e000ed00 	.word	0xe000ed00

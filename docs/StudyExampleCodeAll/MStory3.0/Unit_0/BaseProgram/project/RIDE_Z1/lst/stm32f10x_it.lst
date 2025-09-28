@@ -1,0 +1,907 @@
+
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_Z1\obj\stm32f10x_it.o:     file format elf32-littlearm
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_Z1\obj\stm32f10x_it.o
+
+Disassembly of section .text.NMI_Handler:
+
+00000000 <NMI_Handler>:
+NMI_Handler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:55
+  * @param  None
+  * @retval None
+  */
+void NMI_Handler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.HardFault_Handler:
+
+00000000 <HardFault_Handler>:
+HardFault_Handler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:63
+  * @brief  This function handles Hard Fault exception.
+  * @param  None
+  * @retval None
+  */
+void HardFault_Handler(void)
+{
+   0:	e7fe      	b.n	0 <HardFault_Handler>
+EXTI9_5_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:715
+void USBWakeUp_IRQHandler(void)
+{
+#if 1
+    EXTI_ClearITPendingBit(EXTI_Line18);
+#endif
+}
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.MemManage_Handler:
+
+00000000 <MemManage_Handler>:
+MemManage_Handler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:76
+  * @brief  This function handles Memory Manage exception.
+  * @param  None
+  * @retval None
+  */
+void MemManage_Handler(void)
+{
+   0:	e7fe      	b.n	0 <MemManage_Handler>
+EXTI9_5_IRQHandler():
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.BusFault_Handler:
+
+00000000 <BusFault_Handler>:
+BusFault_Handler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:89
+  * @brief  This function handles Bus Fault exception.
+  * @param  None
+  * @retval None
+  */
+void BusFault_Handler(void)
+{
+   0:	e7fe      	b.n	0 <BusFault_Handler>
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.UsageFault_Handler:
+
+00000000 <UsageFault_Handler>:
+UsageFault_Handler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:102
+  * @brief  This function handles Usage Fault exception.
+  * @param  None
+  * @retval None
+  */
+void UsageFault_Handler(void)
+{
+   0:	e7fe      	b.n	0 <UsageFault_Handler>
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.SVC_Handler:
+
+00000000 <SVC_Handler>:
+SVC_Handler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:116
+  * @param  None
+  * @retval None
+  */
+void SVC_Handler(void)
+{
+}
+   0:	4770      	bx	lr
+DMA1_Channel1_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:354
+    if((ADC_ConvertedValueX >>4) - (ADC_ConvertedValueX_1 >>4) > 4)
+    {
+        Send_Buffer[1] = (uint8_t)(ADC_ConvertedValueX >>4);
+        UserToPMABufferCopy(Send_Buffer, ENDP1_TXADDR, 2);
+        SetEPTxCount(ENDP1, 2);
+        SetEPTxValid(ENDP1);
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.DebugMon_Handler:
+
+00000000 <DebugMon_Handler>:
+DebugMon_Handler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:125
+  * @param  None
+  * @retval None
+  */
+void DebugMon_Handler(void)
+{
+}
+   0:	4770      	bx	lr
+EXTI1_IRQHandler():
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.PendSV_Handler:
+
+00000000 <PendSV_Handler>:
+PendSV_Handler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:134
+  * @param  None
+  * @retval None
+  */
+void PendSV_Handler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.WWDG_IRQHandler:
+
+00000000 <WWDG_IRQHandler>:
+WWDG_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:162
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void WWDG_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.PVD_IRQHandler:
+
+00000000 <PVD_IRQHandler>:
+PVD_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:173
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void PVD_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.TAMPER_IRQHandler:
+
+00000000 <TAMPER_IRQHandler>:
+TAMPER_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:184
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void TAMPER_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.RTC_IRQHandler:
+
+00000000 <RTC_IRQHandler>:
+RTC_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:195
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void RTC_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.FLASH_IRQHandler:
+
+00000000 <FLASH_IRQHandler>:
+FLASH_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:206
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void FLASH_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.RCC_IRQHandler:
+
+00000000 <RCC_IRQHandler>:
+RCC_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:217
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void RCC_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.EXTI2_IRQHandler:
+
+00000000 <EXTI2_IRQHandler>:
+EXTI2_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:314
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void EXTI2_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.EXTI3_IRQHandler:
+
+00000000 <EXTI3_IRQHandler>:
+EXTI3_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:325
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void EXTI3_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.EXTI4_IRQHandler:
+
+00000000 <EXTI4_IRQHandler>:
+EXTI4_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:336
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void EXTI4_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.DMA1_Channel2_IRQHandler:
+
+00000000 <DMA1_Channel2_IRQHandler>:
+DMA1_Channel2_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:370
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void DMA1_Channel2_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.DMA1_Channel3_IRQHandler:
+
+00000000 <DMA1_Channel3_IRQHandler>:
+DMA1_Channel3_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:381
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void DMA1_Channel3_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.DMA1_Channel4_IRQHandler:
+
+00000000 <DMA1_Channel4_IRQHandler>:
+DMA1_Channel4_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:392
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void DMA1_Channel4_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.DMA1_Channel5_IRQHandler:
+
+00000000 <DMA1_Channel5_IRQHandler>:
+DMA1_Channel5_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:403
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void DMA1_Channel5_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.DMA1_Channel6_IRQHandler:
+
+00000000 <DMA1_Channel6_IRQHandler>:
+DMA1_Channel6_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:414
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void DMA1_Channel6_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.DMA1_Channel7_IRQHandler:
+
+00000000 <DMA1_Channel7_IRQHandler>:
+DMA1_Channel7_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:425
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void DMA1_Channel7_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.ADC1_2_IRQHandler:
+
+00000000 <ADC1_2_IRQHandler>:
+ADC1_2_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:436
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void ADC1_2_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.USB_HP_CAN1_TX_IRQHandler:
+
+00000000 <USB_HP_CAN1_TX_IRQHandler>:
+USB_HP_CAN1_TX_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:448
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void USB_HP_CAN1_TX_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CAN1_RX1_IRQHandler:
+
+00000000 <CAN1_RX1_IRQHandler>:
+CAN1_RX1_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:472
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void CAN1_RX1_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CAN1_SCE_IRQHandler:
+
+00000000 <CAN1_SCE_IRQHandler>:
+CAN1_SCE_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:483
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void CAN1_SCE_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.TIM1_BRK_IRQHandler:
+
+00000000 <TIM1_BRK_IRQHandler>:
+TIM1_BRK_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:512
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void TIM1_BRK_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.TIM1_UP_IRQHandler:
+
+00000000 <TIM1_UP_IRQHandler>:
+TIM1_UP_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:524
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void TIM1_UP_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.TIM1_TRG_COM_IRQHandler:
+
+00000000 <TIM1_TRG_COM_IRQHandler>:
+TIM1_TRG_COM_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:536
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void TIM1_TRG_COM_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.TIM1_CC_IRQHandler:
+
+00000000 <TIM1_CC_IRQHandler>:
+RTCAlarm_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:547
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void TIM1_CC_IRQHandler(void)
+{
+}
+   0:	4770      	bx	lr
+TIM1_CC_IRQHandler():
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.TIM2_IRQHandler:
+
+00000000 <TIM2_IRQHandler>:
+RTCAlarm_IRQHandler():
+   0:	4770      	bx	lr
+TIM2_IRQHandler():
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.TIM3_IRQHandler:
+
+00000000 <TIM3_IRQHandler>:
+RTCAlarm_IRQHandler():
+   0:	4770      	bx	lr
+TIM3_IRQHandler():
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.TIM4_IRQHandler:
+
+00000000 <TIM4_IRQHandler>:
+RTCAlarm_IRQHandler():
+   0:	4770      	bx	lr
+TIM4_IRQHandler():
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.I2C1_EV_IRQHandler:
+
+00000000 <I2C1_EV_IRQHandler>:
+RTCAlarm_IRQHandler():
+   0:	4770      	bx	lr
+I2C1_EV_IRQHandler():
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.I2C1_ER_IRQHandler:
+
+00000000 <I2C1_ER_IRQHandler>:
+RTCAlarm_IRQHandler():
+   0:	4770      	bx	lr
+I2C1_ER_IRQHandler():
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.I2C2_EV_IRQHandler:
+
+00000000 <I2C2_EV_IRQHandler>:
+RTCAlarm_IRQHandler():
+   0:	4770      	bx	lr
+I2C2_EV_IRQHandler():
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.I2C2_ER_IRQHandler:
+
+00000000 <I2C2_ER_IRQHandler>:
+RTCAlarm_IRQHandler():
+   0:	4770      	bx	lr
+I2C2_ER_IRQHandler():
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.SPI1_IRQHandler:
+
+00000000 <SPI1_IRQHandler>:
+RTCAlarm_IRQHandler():
+   0:	4770      	bx	lr
+SPI1_IRQHandler():
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.SPI2_IRQHandler:
+
+00000000 <SPI2_IRQHandler>:
+RTCAlarm_IRQHandler():
+   0:	4770      	bx	lr
+SPI2_IRQHandler():
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.USART1_IRQHandler:
+
+00000000 <USART1_IRQHandler>:
+RTCAlarm_IRQHandler():
+   0:	4770      	bx	lr
+USART1_IRQHandler():
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.USART2_IRQHandler:
+
+00000000 <USART2_IRQHandler>:
+RTCAlarm_IRQHandler():
+   0:	4770      	bx	lr
+USART2_IRQHandler():
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.USART3_IRQHandler:
+
+00000000 <USART3_IRQHandler>:
+RTCAlarm_IRQHandler():
+   0:	4770      	bx	lr
+USART3_IRQHandler():
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.EXTI15_10_IRQHandler:
+
+00000000 <EXTI15_10_IRQHandler>:
+RTCAlarm_IRQHandler():
+   0:	4770      	bx	lr
+EXTI15_10_IRQHandler():
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.RTCAlarm_IRQHandler:
+
+00000000 <RTCAlarm_IRQHandler>:
+RTCAlarm_IRQHandler():
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.USBWakeUp_IRQHandler:
+
+00000000 <USBWakeUp_IRQHandler>:
+   0:	b510      	push	{r4, lr}
+USBWakeUp_IRQHandler():
+   2:	f44f 2080 	mov.w	r0, #262144	; 0x40000
+   6:	f7ff fffe 	bl	0 <EXTI_ClearITPendingBit>
+EXTI9_5_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:715
+void USBWakeUp_IRQHandler(void)
+{
+#if 1
+    EXTI_ClearITPendingBit(EXTI_Line18);
+#endif
+}
+   a:	bd10      	pop	{r4, pc}
+Disassembly of section .text.EXTI9_5_IRQHandler:
+
+00000000 <EXTI9_5_IRQHandler>:
+HardFault_Handler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:63
+  * @brief  This function handles Hard Fault exception.
+  * @param  None
+  * @retval None
+  */
+void HardFault_Handler(void)
+{
+   0:	b510      	push	{r4, lr}
+EXTI9_5_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:715
+void USBWakeUp_IRQHandler(void)
+{
+#if 1
+    EXTI_ClearITPendingBit(EXTI_Line18);
+#endif
+}
+   2:	f44f 7080 	mov.w	r0, #256	; 0x100
+   6:	f7ff fffe 	bl	0 <EXTI_GetITStatus>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:76
+  * @brief  This function handles Memory Manage exception.
+  * @param  None
+  * @retval None
+  */
+void MemManage_Handler(void)
+{
+   a:	b128      	cbz	r0, e <basicRfRxFrmDoneIsr+0xe>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:497
+void EXTI9_5_IRQHandler(void)
+{
+#ifdef  BOARD_DEF_MANGO_Z1
+    if(EXTI_GetITStatus(GPIO_EXTI_Line_RF_GPIO0) != RESET)
+    {
+        basicRfRxFrmDoneIsr();
+   c:	f7ff fffe 	bl	0 <basicRfRxFrmDoneIsr>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:498
+        EXTI_ClearITPendingBit(GPIO_EXTI_Line_RF_GPIO0);
+  10:	f44f 7080 	mov.w	r0, #256	; 0x100
+  14:	f7ff fffe 	bl	0 <EXTI_ClearITPendingBit>
+BusFault_Handler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:89
+  * @brief  This function handles Bus Fault exception.
+  * @param  None
+  * @retval None
+  */
+void BusFault_Handler(void)
+{
+  18:	bd10      	pop	{r4, pc}
+EXTI9_5_IRQHandler():
+  1a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.USB_LP_CAN1_RX0_IRQHandler:
+
+00000000 <USB_LP_CAN1_RX0_IRQHandler>:
+USB_LP_CAN1_RX0_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:459
+* Input          : None
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void USB_LP_CAN1_RX0_IRQHandler(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:460
+    USB_Istr();
+   2:	f7ff fffe 	bl	0 <USB_Istr>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:461
+}
+   6:	bd10      	pop	{r4, pc}
+Disassembly of section .text.DMA1_Channel1_IRQHandler:
+
+00000000 <DMA1_Channel1_IRQHandler>:
+DMA1_Channel1_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:346
+* Input          : None
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void DMA1_Channel1_IRQHandler(void)
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:347
+    Send_Buffer[0] = 0x07;
+   2:	480f      	ldr	r0, [pc, #60]	(40 <DMA1_Channel1_IRQHandler+0x40>)
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:349
+
+    if((ADC_ConvertedValueX >>4) - (ADC_ConvertedValueX_1 >>4) > 4)
+   4:	4d0f      	ldr	r5, [pc, #60]	(44 <DMA1_Channel1_IRQHandler+0x44>)
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:347
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void DMA1_Channel1_IRQHandler(void)
+{
+    Send_Buffer[0] = 0x07;
+   6:	2307      	movs	r3, #7
+   8:	7003      	strb	r3, [r0, #0]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:349
+
+    if((ADC_ConvertedValueX >>4) - (ADC_ConvertedValueX_1 >>4) > 4)
+   a:	4c0f      	ldr	r4, [pc, #60]	(48 <DMA1_Channel1_IRQHandler+0x48>)
+   c:	682b      	ldr	r3, [r5, #0]
+   e:	091a      	lsrs	r2, r3, #4
+  10:	6823      	ldr	r3, [r4, #0]
+  12:	eba2 1313 	sub.w	r3, r2, r3, lsr #4
+  16:	2b04      	cmp	r3, #4
+  18:	d90e      	bls.n	38 <DMA1_Channel1_IRQHandler+0x38>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:351
+    {
+        Send_Buffer[1] = (uint8_t)(ADC_ConvertedValueX >>4);
+  1a:	7042      	strb	r2, [r0, #1]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:352
+        UserToPMABufferCopy(Send_Buffer, ENDP1_TXADDR, 2);
+  1c:	f44f 7180 	mov.w	r1, #256	; 0x100
+  20:	2202      	movs	r2, #2
+  22:	f7ff fffe 	bl	0 <UserToPMABufferCopy>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:353
+        SetEPTxCount(ENDP1, 2);
+  26:	2001      	movs	r0, #1
+  28:	2102      	movs	r1, #2
+  2a:	f7ff fffe 	bl	0 <SetEPTxCount>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:354
+        SetEPTxValid(ENDP1);
+  2e:	2001      	movs	r0, #1
+  30:	f7ff fffe 	bl	0 <SetEPTxValid>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:355
+        ADC_ConvertedValueX_1 = ADC_ConvertedValueX;
+  34:	682b      	ldr	r3, [r5, #0]
+  36:	6023      	str	r3, [r4, #0]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:358
+    }
+
+    DMA_ClearFlag(DMA1_FLAG_TC1);
+  38:	2002      	movs	r0, #2
+  3a:	f7ff fffe 	bl	0 <DMA_ClearFlag>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:359
+}
+  3e:	bd70      	pop	{r4, r5, r6, pc}
+	...
+Disassembly of section .text.EXTI1_IRQHandler:
+
+00000000 <EXTI1_IRQHandler>:
+EXTI1_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:277
+*******************************************************************************/
+
+static bool toggle_data_key2 = FALSE;
+
+void EXTI1_IRQHandler(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:278
+    if(EXTI_GetITStatus(GPIO_EXTI_Line_KEY2) != RESET) {
+   2:	2002      	movs	r0, #2
+   4:	f7ff fffe 	bl	0 <EXTI_GetITStatus>
+   8:	b310      	cbz	r0, 50 <EXTI1_IRQHandler+0x50>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:279
+        printf("Right-USER Button Press\n");
+   a:	4812      	ldr	r0, [pc, #72]	(54 <EXTI1_IRQHandler+0x54>)
+   c:	f7ff fffe 	bl	0 <puts>
+DebugMon_Handler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:125
+  * @param  None
+  * @retval None
+  */
+void DebugMon_Handler(void)
+{
+}
+  10:	4b11      	ldr	r3, [pc, #68]	(58 <EXTI1_IRQHandler+0x58>)
+EXTI1_IRQHandler():
+  12:	7819      	ldrb	r1, [r3, #0]
+  14:	2901      	cmp	r1, #1
+  16:	d118      	bne.n	4a <EXTI1_IRQHandler+0x4a>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:283
+    if(EXTI_GetITStatus(GPIO_EXTI_Line_KEY2) != RESET) {
+        printf("Right-USER Button Press\n");
+
+        if(TRUE == g_TestProcessState)
+        {
+            Send_Buffer[0] = 0x06;
+  18:	4810      	ldr	r0, [pc, #64]	(5c <EXTI1_IRQHandler+0x5c>)
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:285
+
+            if(toggle_data_key2)
+  1a:	4a11      	ldr	r2, [pc, #68]	(60 <EXTI1_IRQHandler+0x60>)
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:283
+    if(EXTI_GetITStatus(GPIO_EXTI_Line_KEY2) != RESET) {
+        printf("Right-USER Button Press\n");
+
+        if(TRUE == g_TestProcessState)
+        {
+            Send_Buffer[0] = 0x06;
+  1c:	2306      	movs	r3, #6
+  1e:	7003      	strb	r3, [r0, #0]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:285
+
+            if(toggle_data_key2)
+  20:	7813      	ldrb	r3, [r2, #0]
+  22:	b11b      	cbz	r3, 2c <EXTI1_IRQHandler+0x2c>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:287
+            {
+                toggle_data_key2 = FALSE;
+  24:	2300      	movs	r3, #0
+  26:	7013      	strb	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:288
+                Send_Buffer[1] = 0x01;
+  28:	7041      	strb	r1, [r0, #1]
+  2a:	e001      	b.n	30 <EXTI1_IRQHandler+0x30>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:292
+            }
+            else
+            {
+                toggle_data_key2 = TRUE;
+  2c:	7011      	strb	r1, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:293
+                Send_Buffer[1] = 0x00;
+  2e:	7043      	strb	r3, [r0, #1]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:296
+            }
+
+            UserToPMABufferCopy(Send_Buffer, ENDP1_TXADDR, 2);
+  30:	480a      	ldr	r0, [pc, #40]	(5c <EXTI1_IRQHandler+0x5c>)
+  32:	f44f 7180 	mov.w	r1, #256	; 0x100
+  36:	2202      	movs	r2, #2
+  38:	f7ff fffe 	bl	0 <UserToPMABufferCopy>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:297
+            SetEPTxCount(ENDP1, 2);
+  3c:	2001      	movs	r0, #1
+  3e:	2102      	movs	r1, #2
+  40:	f7ff fffe 	bl	0 <SetEPTxCount>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:298
+            SetEPTxValid(ENDP1);
+  44:	2001      	movs	r0, #1
+  46:	f7ff fffe 	bl	0 <SetEPTxValid>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:301
+        }
+
+        EXTI_ClearITPendingBit(GPIO_EXTI_Line_KEY2);
+  4a:	2002      	movs	r0, #2
+  4c:	f7ff fffe 	bl	0 <EXTI_ClearITPendingBit>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:303
+    }
+}
+  50:	bd10      	pop	{r4, pc}
+  52:	46c0      	nop			(mov r8, r8)
+	...
+Disassembly of section .text.EXTI0_IRQHandler:
+
+00000000 <EXTI0_IRQHandler>:
+EXTI0_IRQHandler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:230
+*******************************************************************************/
+
+static bool toggle_data_key1 = FALSE;
+
+void EXTI0_IRQHandler(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:231
+    if(EXTI_GetITStatus(GPIO_EXTI_Line_KEY1) != RESET) {
+   2:	2001      	movs	r0, #1
+   4:	f7ff fffe 	bl	0 <EXTI_GetITStatus>
+   8:	b310      	cbz	r0, 50 <EXTI0_IRQHandler+0x50>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:232
+        printf("Left-WKUP Button Press\n");
+   a:	4812      	ldr	r0, [pc, #72]	(54 <EXTI0_IRQHandler+0x54>)
+   c:	f7ff fffe 	bl	0 <puts>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:242
+        {
+          Resume(RESUME_INTERNAL);
+        }
+#endif
+
+        if(TRUE == g_TestProcessState)
+  10:	4b11      	ldr	r3, [pc, #68]	(58 <EXTI0_IRQHandler+0x58>)
+  12:	7819      	ldrb	r1, [r3, #0]
+  14:	2901      	cmp	r1, #1
+  16:	d118      	bne.n	4a <EXTI0_IRQHandler+0x4a>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:244
+        {
+            Send_Buffer[0] = 0x05;
+  18:	4810      	ldr	r0, [pc, #64]	(5c <EXTI0_IRQHandler+0x5c>)
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:246
+
+            if(toggle_data_key1)
+  1a:	4a11      	ldr	r2, [pc, #68]	(60 <EXTI0_IRQHandler+0x60>)
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:244
+        }
+#endif
+
+        if(TRUE == g_TestProcessState)
+        {
+            Send_Buffer[0] = 0x05;
+  1c:	2305      	movs	r3, #5
+  1e:	7003      	strb	r3, [r0, #0]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:246
+
+            if(toggle_data_key1)
+  20:	7853      	ldrb	r3, [r2, #1]
+  22:	b11b      	cbz	r3, 2c <EXTI0_IRQHandler+0x2c>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:248
+            {
+                toggle_data_key1 = FALSE;
+  24:	2300      	movs	r3, #0
+  26:	7053      	strb	r3, [r2, #1]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:249
+                Send_Buffer[1] = 0x01;
+  28:	7041      	strb	r1, [r0, #1]
+  2a:	e001      	b.n	30 <EXTI0_IRQHandler+0x30>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:253
+            }
+            else
+            {
+                toggle_data_key1 = TRUE;
+  2c:	7051      	strb	r1, [r2, #1]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:254
+                Send_Buffer[1] = 0x00;
+  2e:	7043      	strb	r3, [r0, #1]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:257
+            }
+
+            UserToPMABufferCopy(Send_Buffer, ENDP1_TXADDR, 2);
+  30:	480a      	ldr	r0, [pc, #40]	(5c <EXTI0_IRQHandler+0x5c>)
+  32:	f44f 7180 	mov.w	r1, #256	; 0x100
+  36:	2202      	movs	r2, #2
+  38:	f7ff fffe 	bl	0 <UserToPMABufferCopy>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:258
+            SetEPTxCount(ENDP1, 2);
+  3c:	2001      	movs	r0, #1
+  3e:	2102      	movs	r1, #2
+  40:	f7ff fffe 	bl	0 <SetEPTxCount>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:259
+            SetEPTxValid(ENDP1);
+  44:	2001      	movs	r0, #1
+  46:	f7ff fffe 	bl	0 <SetEPTxValid>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:262
+        }
+
+        EXTI_ClearITPendingBit(GPIO_EXTI_Line_KEY1);
+  4a:	2001      	movs	r0, #1
+  4c:	f7ff fffe 	bl	0 <EXTI_ClearITPendingBit>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:264
+    }
+}
+  50:	bd10      	pop	{r4, pc}
+  52:	46c0      	nop			(mov r8, r8)
+  54:	00000018 	.word	0x00000018
+	...
+Disassembly of section .text.SysTick_Handler:
+
+00000000 <SysTick_Handler>:
+SysTick_Handler():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:142
+  * @brief  This function handles SysTick Handler.
+  * @param  None
+  * @retval None
+  */
+void SysTick_Handler(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:143
+    TimingDelay_Decrement();
+   2:	f7ff fffe 	bl	0 <TimingDelay_Decrement>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src/stm32f10x_it.c:144
+}
+   6:	bd10      	pop	{r4, pc}

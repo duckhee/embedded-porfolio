@@ -1,0 +1,391 @@
+
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_Z1\obj\usb_pwr.o:     file format elf32-littlearm
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_Z1\obj\usb_pwr.o
+
+Disassembly of section .text.PowerOn:
+
+00000000 <PowerOn>:
+PowerOn():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:62
+  /*** cable plugged-in ? ***/
+//  USB_Cable_Config(ENABLE);
+
+  /*** CNTR_PWDN = 0 ***/
+  wRegVal = CNTR_FRES;
+  _SetCNTR(wRegVal);
+   0:	4906      	ldr	r1, [pc, #24]	(1c <PowerOn+0x1c>)
+   2:	2301      	movs	r3, #1
+   4:	600b      	str	r3, [r1, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:68
+
+  /*** CNTR_FRES = 0 ***/
+  wInterrupt_Mask = 0;
+  _SetCNTR(wInterrupt_Mask);
+  /*** Clear pending interrupts ***/
+  _SetISTR(0);
+   6:	4b06      	ldr	r3, [pc, #24]	(20 <PowerOn+0x20>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:66
+  wRegVal = CNTR_FRES;
+  _SetCNTR(wRegVal);
+
+  /*** CNTR_FRES = 0 ***/
+  wInterrupt_Mask = 0;
+  _SetCNTR(wInterrupt_Mask);
+   8:	2000      	movs	r0, #0
+   a:	6008      	str	r0, [r1, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:68
+  /*** Clear pending interrupts ***/
+  _SetISTR(0);
+   c:	6018      	str	r0, [r3, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:70
+  /*** Set interrupt mask ***/
+  wInterrupt_Mask = CNTR_RESETM | CNTR_SUSPM | CNTR_WKUPM;
+   e:	4b05      	ldr	r3, [pc, #20]	(24 <PowerOn+0x24>)
+  10:	f44f 52e0 	mov.w	r2, #7168	; 0x1c00
+  14:	801a      	strh	r2, [r3, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:71
+  _SetCNTR(wInterrupt_Mask);
+  16:	600a      	str	r2, [r1, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:74
+
+  return USB_SUCCESS;
+}
+  18:	4770      	bx	lr
+  1a:	46c0      	nop			(mov r8, r8)
+  1c:	5c40      	.short	0x5c40
+  1e:	4000      	.short	0x4000
+  20:	40005c44 	.word	0x40005c44
+  24:	00000000 	.word	0x00000000
+Disassembly of section .text.Resume_Init:
+
+00000000 <Resume_Init>:
+Resume_Init():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:141
+* Input          : None.
+* Output         : None.
+* Return         : USB_SUCCESS.
+*******************************************************************************/
+void Resume_Init(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:149
+  /* ------------------ ONLY WITH BUS-POWERED DEVICES ---------------------- */
+  /* restart the clocks */
+  /* ...  */
+
+  /* CNTR_LPMODE = 0 */
+  wCNTR = _GetCNTR();
+   2:	4c06      	ldr	r4, [pc, #24]	(1c <Resume_Init+0x1c>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:151
+  wCNTR &= (~CNTR_LPMODE);
+  _SetCNTR(wCNTR);
+   4:	f64f 73fb 	movw	r3, #65531	; 0xfffb
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:149
+  /* ------------------ ONLY WITH BUS-POWERED DEVICES ---------------------- */
+  /* restart the clocks */
+  /* ...  */
+
+  /* CNTR_LPMODE = 0 */
+  wCNTR = _GetCNTR();
+   8:	6822      	ldr	r2, [r4, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:151
+  wCNTR &= (~CNTR_LPMODE);
+  _SetCNTR(wCNTR);
+   a:	ea02 0303 	and.w	r3, r2, r3
+   e:	6023      	str	r3, [r4, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:155
+
+  /* restore full power */
+  /* ... on connected devices */
+  Leave_LowPowerMode();
+  10:	f7ff fffe 	bl	0 <Leave_LowPowerMode>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:158
+
+  /* reset FSUSP bit */
+  _SetCNTR(IMR_MSK);
+  14:	f44f 433f 	mov.w	r3, #48896	; 0xbf00
+  18:	6023      	str	r3, [r4, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:163
+
+  /* reverse suspend preparation */
+  /* ... */
+
+}
+  1a:	bd10      	pop	{r4, pc}
+  1c:	5c40      	.short	0x5c40
+  1e:	4000      	.short	0x4000
+Disassembly of section .text.Resume:
+
+00000000 <Resume>:
+Resume():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:181
+*******************************************************************************/
+void Resume(RESUME_STATE eResumeSetVal)
+{
+  uint16_t wCNTR;
+
+  if (eResumeSetVal != RESUME_ESOF)
+   0:	2807      	cmp	r0, #7
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:182
+    ResumeS.eState = eResumeSetVal;
+   2:	bf18      	it	ne
+   4:	4b1f      	ldrne	r3, [pc, #124]	(84 <Resume+0x84>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:178
+*                  decrementing of the ESOF counter in different states.
+* Output         : None.
+* Return         : None.
+*******************************************************************************/
+void Resume(RESUME_STATE eResumeSetVal)
+{
+   6:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:184
+  uint16_t wCNTR;
+
+  if (eResumeSetVal != RESUME_ESOF)
+    ResumeS.eState = eResumeSetVal;
+
+  switch (ResumeS.eState)
+   8:	4c1e      	ldr	r4, [pc, #120]	(84 <Resume+0x84>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:182
+void Resume(RESUME_STATE eResumeSetVal)
+{
+  uint16_t wCNTR;
+
+  if (eResumeSetVal != RESUME_ESOF)
+    ResumeS.eState = eResumeSetVal;
+   a:	bf18      	it	ne
+   c:	7018      	strbne	r0, [r3, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:184
+
+  switch (ResumeS.eState)
+   e:	7823      	ldrb	r3, [r4, #0]
+  10:	2b05      	cmp	r3, #5
+  12:	d833      	bhi.n	7c <Resume+0x7c>
+  14:	e8df f003 	tbb	[pc, r3]
+  18:	0e0a0603 	.word	0x0e0a0603
+  1c:	2116      	.short	0x2116
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:187
+  {
+    case RESUME_EXTERNAL:
+      Resume_Init();
+  1e:	f7ff fffe 	bl	0 <Resume>
+  22:	e02b      	b.n	5a <Resume+0x5a>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:191
+      ResumeS.eState = RESUME_OFF;
+      break;
+    case RESUME_INTERNAL:
+      Resume_Init();
+  24:	f7ff fffe 	bl	0 <Resume>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:192
+      ResumeS.eState = RESUME_START;
+  28:	2304      	movs	r3, #4
+  2a:	e028      	b.n	7e <Resume+0x7e>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:195
+      break;
+    case RESUME_LATER:
+      ResumeS.bESOFcnt = 2;
+  2c:	2302      	movs	r3, #2
+  2e:	7063      	strb	r3, [r4, #1]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:196
+      ResumeS.eState = RESUME_WAIT;
+  30:	3301      	adds	r3, #1
+  32:	e024      	b.n	7e <Resume+0x7e>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:199
+      break;
+    case RESUME_WAIT:
+      ResumeS.bESOFcnt--;
+  34:	7863      	ldrb	r3, [r4, #1]
+  36:	3b01      	subs	r3, #1
+  38:	b2db      	uxtb	r3, r3
+  3a:	7063      	strb	r3, [r4, #1]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:200
+      if (ResumeS.bESOFcnt == 0)
+  3c:	7863      	ldrb	r3, [r4, #1]
+  3e:	b9fb      	cbnz	r3, 80 <Resume+0x80>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:201
+        ResumeS.eState = RESUME_START;
+  40:	2204      	movs	r2, #4
+  42:	e018      	b.n	76 <Resume+0x76>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:204
+      break;
+    case RESUME_START:
+      wCNTR = _GetCNTR();
+  44:	4a10      	ldr	r2, [pc, #64]	(88 <Resume+0x88>)
+  46:	6813      	ldr	r3, [r2, #0]
+  48:	b29b      	uxth	r3, r3
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:206
+      wCNTR |= CNTR_RESUME;
+      _SetCNTR(wCNTR);
+  4a:	f043 0310 	orr.w	r3, r3, #16	; 0x10
+  4e:	6013      	str	r3, [r2, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:207
+      ResumeS.eState = RESUME_ON;
+  50:	2305      	movs	r3, #5
+  52:	7023      	strb	r3, [r4, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:208
+      ResumeS.bESOFcnt = 10;
+  54:	18db      	adds	r3, r3, r3
+  56:	7063      	strb	r3, [r4, #1]
+  58:	e012      	b.n	80 <Resume+0x80>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:211
+      break;
+    case RESUME_ON:
+      ResumeS.bESOFcnt--;
+  5a:	7863      	ldrb	r3, [r4, #1]
+  5c:	3b01      	subs	r3, #1
+  5e:	b2db      	uxtb	r3, r3
+  60:	7063      	strb	r3, [r4, #1]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:212
+      if (ResumeS.bESOFcnt == 0)
+  62:	7863      	ldrb	r3, [r4, #1]
+  64:	b963      	cbnz	r3, 80 <Resume+0x80>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:214
+      {
+        wCNTR = _GetCNTR();
+  66:	4908      	ldr	r1, [pc, #32]	(88 <Resume+0x88>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:216
+        wCNTR &= (~CNTR_RESUME);
+        _SetCNTR(wCNTR);
+  68:	f64f 73ef 	movw	r3, #65519	; 0xffef
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:214
+      break;
+    case RESUME_ON:
+      ResumeS.bESOFcnt--;
+      if (ResumeS.bESOFcnt == 0)
+      {
+        wCNTR = _GetCNTR();
+  6c:	680a      	ldr	r2, [r1, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:216
+        wCNTR &= (~CNTR_RESUME);
+        _SetCNTR(wCNTR);
+  6e:	ea02 0303 	and.w	r3, r2, r3
+  72:	600b      	str	r3, [r1, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:217
+        ResumeS.eState = RESUME_OFF;
+  74:	2206      	movs	r2, #6
+  76:	4b03      	ldr	r3, [pc, #12]	(84 <Resume+0x84>)
+  78:	701a      	strb	r2, [r3, #0]
+  7a:	e001      	b.n	80 <Resume+0x80>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:223
+      }
+      break;
+    case RESUME_OFF:
+    case RESUME_ESOF:
+    default:
+      ResumeS.eState = RESUME_OFF;
+  7c:	2306      	movs	r3, #6
+  7e:	7023      	strb	r3, [r4, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:226
+      break;
+  }
+}
+  80:	bd10      	pop	{r4, pc}
+  82:	46c0      	nop			(mov r8, r8)
+  84:	00000000 	.word	0x00000000
+  88:	40005c40 	.word	0x40005c40
+Disassembly of section .text.Suspend:
+
+00000000 <Suspend>:
+Suspend():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:115
+  uint16_t wCNTR;
+  /* suspend preparation */
+  /* ... */
+
+  /* macrocell enters suspend mode */
+  wCNTR = _GetCNTR();
+   0:	4b07      	ldr	r3, [pc, #28]	(20 <Suspend+0x20>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:109
+* Input          : None.
+* Output         : None.
+* Return         : USB_SUCCESS.
+*******************************************************************************/
+void Suspend(void)
+{
+   2:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:115
+  uint16_t wCNTR;
+  /* suspend preparation */
+  /* ... */
+
+  /* macrocell enters suspend mode */
+  wCNTR = _GetCNTR();
+   4:	681a      	ldr	r2, [r3, #0]
+   6:	b292      	uxth	r2, r2
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:117
+  wCNTR |= CNTR_FSUSP;
+  _SetCNTR(wCNTR);
+   8:	f042 0208 	orr.w	r2, r2, #8	; 0x8
+   c:	601a      	str	r2, [r3, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:124
+  /* ------------------ ONLY WITH BUS-POWERED DEVICES ---------------------- */
+  /* power reduction */
+  /* ... on connected devices */
+
+  /* force low-power mode in the macrocell */
+  wCNTR = _GetCNTR();
+   e:	681a      	ldr	r2, [r3, #0]
+  10:	b292      	uxth	r2, r2
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:126
+  wCNTR |= CNTR_LPMODE;
+  _SetCNTR(wCNTR);
+  12:	f042 0204 	orr.w	r2, r2, #4	; 0x4
+  16:	601a      	str	r2, [r3, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:130
+
+  /* switch-off the clocks */
+  /* ... */
+  Enter_LowPowerMode();
+  18:	f7ff fffe 	bl	0 <Enter_LowPowerMode>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:131
+}
+  1c:	bd10      	pop	{r4, pc}
+  1e:	46c0      	nop			(mov r8, r8)
+  20:	40005c40 	.word	0x40005c40
+Disassembly of section .text.PowerOff:
+
+00000000 <PowerOff>:
+PowerOff():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:84
+* Input          : None.
+* Output         : None.
+* Return         : USB_SUCCESS.
+*******************************************************************************/
+RESULT PowerOff()
+{
+   0:	b570      	push	{r4, r5, r6, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:86
+  /* disable all ints and force USB reset */
+  _SetCNTR(CNTR_FRES);
+   2:	4d06      	ldr	r5, [pc, #24]	(1c <PowerOff+0x1c>)
+   4:	2301      	movs	r3, #1
+   6:	602b      	str	r3, [r5, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:88
+  /* clear interrupt status register */
+  _SetISTR(0);
+   8:	4b05      	ldr	r3, [pc, #20]	(20 <PowerOff+0x20>)
+   a:	2400      	movs	r4, #0
+   c:	601c      	str	r4, [r3, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:91
+
+  /* Disable the Pull-Up*/
+  USB_Cable_Config(DISABLE);
+   e:	4620      	mov	r0, r4
+  10:	f7ff fffe 	bl	0 <USB_Cable_Config>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:94
+
+  /* switch-off device */
+  _SetCNTR(CNTR_FRES + CNTR_PDWN);
+  14:	2303      	movs	r3, #3
+  16:	602b      	str	r3, [r5, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_pwr.c:99
+  /* sw variables reset */
+  /* ... */
+
+  return USB_SUCCESS;
+}
+  18:	4620      	mov	r0, r4
+  1a:	bd70      	pop	{r4, r5, r6, pc}
+  1c:	5c40      	.short	0x5c40
+  1e:	4000      	.short	0x4000
+  20:	40005c44 	.word	0x40005c44

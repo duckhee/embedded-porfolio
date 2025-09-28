@@ -1,0 +1,652 @@
+
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_Z1\obj\hal_rf.o:     file format elf32-littlearm
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\project\RIDE_Z1\obj\hal_rf.o
+
+Disassembly of section .text.halRfGetRssiOffset:
+
+00000000 <halRfGetRssiOffset>:
+halRfGetRssiOffset():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:293
+* @return  uint8 - RSSI offset
+*/
+uint8 halRfGetRssiOffset(void)
+{
+    return rssiOffset;
+}
+   0:	4b01      	ldr	r3, [pc, #4]	(8 <halRfGetRssiOffset+0x8>)
+   2:	7818      	ldrb	r0, [r3, #0]
+   4:	4770      	bx	lr
+   6:	46c0      	nop			(mov r8, r8)
+   8:	00000000 	.word	0x00000000
+Disassembly of section .text.halRfSetGain:
+
+00000000 <halRfSetGain>:
+halRfSetGain():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:386
+* @param   uint8 - gain mode
+*
+* @return  none
+*/
+void halRfSetGain(uint8 gainMode)
+{
+   0:	4a03      	ldr	r2, [pc, #12]	(10 <halRfSetGain+0x10>)
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:387
+    if (gainMode==HAL_RF_GAIN_LOW) {
+   2:	b908      	cbnz	r0, 8 <halRfSetGain+0x8>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:389
+        HAL_PA_LNA_RX_LGM();
+        rssiOffset = RSSI_OFFSET_LNA_LOWGAIN;
+   4:	2347      	movs	r3, #71
+   6:	e000      	b.n	a <halRfSetGain+0xa>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:392
+    } else {
+        HAL_PA_LNA_RX_HGM();
+        rssiOffset = RSSI_OFFSET_LNA_HIGHGAIN;
+   8:	2354      	movs	r3, #84
+   a:	7013      	strb	r3, [r2, #0]
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:394
+    }
+}
+   c:	4770      	bx	lr
+   e:	46c0      	nop			(mov r8, r8)
+  10:	00000000 	.word	0x00000000
+Disassembly of section .text.halRfRxInterruptConfig:
+
+00000000 <halRfRxInterruptConfig>:
+halRfRxInterruptConfig():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:578
+    halDigioIntEnable(&pinRadio_GPIO0);
+
+    // And clear the exception
+    CLEAR_EXC_RX_FRM_DONE();
+#endif
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.halRfWaitTransceiverReady:
+
+00000000 <halRfWaitTransceiverReady>:
+halRfWaitTransceiverReady():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:590
+* @param   none
+*
+* @return  none
+*/
+void halRfWaitTransceiverReady(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:601
+    while (CC2520_GPIO2_IPIN);
+    // GPIO2 = default (RSSI_VALID)
+    CC2520_CFG_GPIO_OUT(2,CC2520_GPIO_RSSI_VALID);
+    HAL_INT_ON();
+#else
+    while (CC2520_SFD_PIN);
+   2:	4804      	ldr	r0, [pc, #16]	(14 <halRfWaitTransceiverReady+0x14>)
+   4:	f44f 6100 	mov.w	r1, #2048	; 0x800
+   8:	f7ff fffe 	bl	0 <GPIO_ReadInputDataBit>
+   c:	2800      	cmp	r0, #0
+   e:	d1f8      	bne.n	2 <GPIO_ReadInputDataBit+0x2>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:603
+#endif
+}
+  10:	bd10      	pop	{r4, pc}
+  12:	46c0      	nop			(mov r8, r8)
+  14:	40011000 	.word	0x40011000
+Disassembly of section .text.halRfEnableRxInterrupt:
+
+00000000 <halRfEnableRxInterrupt>:
+halRfEnableRxInterrupt():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:550
+* @param   none
+*
+* @return  none
+*/
+void halRfEnableRxInterrupt(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:554
+#if 0 // POOH
+    halDigioIntEnable(&pinRadio_GPIO0);
+#else
+    CC2520_GPIO_0_Interrupt_Setting(ENABLE);
+   2:	2001      	movs	r0, #1
+   4:	f7ff fffe 	bl	0 <CC2520_GPIO_0_Interrupt_Setting>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:556
+#endif
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.halRfDisableRxInterrupt:
+
+00000000 <halRfDisableRxInterrupt>:
+halRfDisableRxInterrupt():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:527
+* @param   none
+*
+* @return  none
+*/
+void halRfDisableRxInterrupt(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:529
+    // Clear the exception and the IRQ
+    CLEAR_EXC_RX_FRM_DONE();
+   2:	2088      	movs	r0, #136
+   4:	f7ff fffe 	bl	0 <CC2520_BCLR>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:534
+#if 0 // POOH
+    halDigioIntClear(&pinRadio_GPIO0);
+    halDigioIntDisable(&pinRadio_GPIO0);
+#else
+    EXTI_ClearITPendingBit(GPIO_EXTI_Line_RF_GPIO0);
+   8:	f44f 7080 	mov.w	r0, #256	; 0x100
+   c:	f7ff fffe 	bl	0 <EXTI_ClearITPendingBit>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:535
+    CC2520_GPIO_0_Interrupt_Setting(DISABLE);
+  10:	2000      	movs	r0, #0
+  12:	f7ff fffe 	bl	0 <CC2520_GPIO_0_Interrupt_Setting>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:537
+#endif
+}
+  16:	bd10      	pop	{r4, pc}
+Disassembly of section .text.halRfReceiveOff:
+
+00000000 <halRfReceiveOff>:
+halRfReceiveOff():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:512
+* @param   none
+*
+* @return  none
+*/
+void halRfReceiveOff(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:513
+    CC2520_INS_STROBE(CC2520_INS_SRFOFF);
+   2:	2045      	movs	r0, #69
+   4:	f7ff fffe 	bl	0 <CC2520_INS_STROBE>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:514
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.halRfReceiveOn:
+
+00000000 <halRfReceiveOn>:
+halRfReceiveOn():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:498
+* @param   none
+*
+* @return  none
+*/
+void halRfReceiveOn(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:499
+    CC2520_INS_STROBE(CC2520_INS_SRXON);
+   2:	2042      	movs	r0, #66
+   4:	f7ff fffe 	bl	0 <CC2520_INS_STROBE>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:500
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.halRfSetTxPower:
+
+00000000 <halRfSetTxPower>:
+halRfSetTxPower():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:355
+*/
+uint8 halRfSetTxPower(uint8 power)
+{
+    uint8 n;
+
+    switch(power)
+   0:	2801      	cmp	r0, #1
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:352
+* @param   uint8 power - power level
+*
+* @return  HAL_RF_SUCCESS or HAL_RF_FAILED
+*/
+uint8 halRfSetTxPower(uint8 power)
+{
+   2:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:355
+    uint8 n;
+
+    switch(power)
+   4:	d004      	beq.n	10 <halRfSetTxPower+0x10>
+   6:	d305      	bcc.n	14 <halRfSetTxPower+0x14>
+   8:	2802      	cmp	r0, #2
+   a:	d005      	beq.n	18 <halRfSetTxPower+0x18>
+   c:	2001      	movs	r0, #1
+   e:	e008      	b.n	22 <halRfSetTxPower+0x22>
+  10:	2132      	movs	r1, #50
+  12:	e002      	b.n	1a <halRfSetTxPower+0x1a>
+  14:	2188      	movs	r1, #136
+  16:	e000      	b.n	1a <halRfSetTxPower+0x1a>
+  18:	21f7      	movs	r1, #247
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:371
+    case HAL_RF_TXPOWER_4_DBM: n = CC2520_TXPOWER_4_DBM; break;
+#endif
+    default:
+        return HAL_RF_FAILED;
+    }
+    CC2520_REGWR8(CC2520_TXPOWER, n);
+  1a:	2030      	movs	r0, #48
+  1c:	f7ff fffe 	bl	0 <CC2520_REGWR8>
+  20:	2000      	movs	r0, #0
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:373
+    return HAL_RF_SUCCESS;
+}
+  22:	bd10      	pop	{r4, pc}
+Disassembly of section .text.halRfSetChannel:
+
+00000000 <halRfSetChannel>:
+halRfSetChannel():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:308
+*
+* @return  none
+*/
+void halRfSetChannel(uint8 channel)
+{
+    CC2520_REGWR8(CC2520_FREQCTRL, MIN_CHANNEL + ((channel - MIN_CHANNEL) * CHANNEL_SPACING));
+   0:	2105      	movs	r1, #5
+   2:	4341      	muls	r1, r0
+   4:	392c      	subs	r1, #44
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:307
+* @param   channel - logical channel number
+*
+* @return  none
+*/
+void halRfSetChannel(uint8 channel)
+{
+   6:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:308
+    CC2520_REGWR8(CC2520_FREQCTRL, MIN_CHANNEL + ((channel - MIN_CHANNEL) * CHANNEL_SPACING));
+   8:	202e      	movs	r0, #46
+   a:	b2c9      	uxtb	r1, r1
+   c:	f7ff fffe 	bl	0 <CC2520_REGWR8>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:309
+}
+  10:	bd10      	pop	{r4, pc}
+  12:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.halRfTransmit:
+
+00000000 <halRfTransmit>:
+halRfTransmit():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:439
+* @param   none
+*
+* @return  uint8 - HAL_RF_SUCCESS or HAL_RF_FAILED
+*/
+uint8 halRfTransmit(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:446
+    uint8 status=0;
+
+    // DEBUG_MSG_FUNC_START;
+
+    // Wait for RSSI to become valid
+    while(!CC2520_RSSI_VALID_PIN);
+   2:	481c      	ldr	r0, [pc, #112]	(74 <halRfTransmit+0x74>)
+   4:	f44f 6180 	mov.w	r1, #1024	; 0x400
+   8:	f7ff fffe 	bl	0 <GPIO_ReadInputDataBit>
+   c:	2800      	cmp	r0, #0
+   e:	d0f8      	beq.n	2 <halRfTransmit+0x2>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:450
+
+    // Reuse GPIO2 for TX_FRM_DONE exception
+    HAL_INT_OFF();
+    CC2520_CFG_GPIO_OUT(2, 1 + CC2520_EXC_TX_FRM_DONE);
+  10:	2022      	movs	r0, #34
+  12:	2102      	movs	r1, #2
+  14:	f7ff fffe 	bl	0 <CC2520_REGWR8>
+  18:	f640 14c4 	movw	r4, #2500	; 0x9c4
+  1c:	e00b      	b.n	36 <halRfTransmit+0x36>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:457
+
+    // Wait for the transmission to begin before exiting (makes sure that this function cannot be called
+    // a second time, and thereby cancelling the first transmission.
+    while(--timeout > 0) {
+        HAL_INT_OFF();
+        CC2520_INS_STROBE(CC2520_INS_STXONCCA);
+  1e:	2044      	movs	r0, #68
+  20:	f7ff fffe 	bl	0 <CC2520_INS_STROBE>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:459
+        HAL_INT_ON();
+        if (CC2520_SAMPLED_CCA_PIN) break;
+  24:	4813      	ldr	r0, [pc, #76]	(74 <halRfTransmit+0x74>)
+  26:	f44f 7100 	mov.w	r1, #512	; 0x200
+  2a:	f7ff fffe 	bl	0 <GPIO_ReadInputDataBit>
+  2e:	b980      	cbnz	r0, 52 <halRfTransmit+0x52>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:463
+#if 0 // POOH
+        halMcuWaitUs(20);
+#else
+        Delay(20);
+  30:	3014      	adds	r0, #20
+  32:	f7ff fffe 	bl	0 <Delay>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:455
+    CC2520_CFG_GPIO_OUT(2, 1 + CC2520_EXC_TX_FRM_DONE);
+    HAL_INT_ON();
+
+    // Wait for the transmission to begin before exiting (makes sure that this function cannot be called
+    // a second time, and thereby cancelling the first transmission.
+    while(--timeout > 0) {
+  36:	1e63      	subs	r3, r4, #1
+  38:	b29c      	uxth	r4, r3
+  3a:	2c00      	cmp	r4, #0
+  3c:	d1ef      	bne.n	1e <halRfTransmit+0x1e>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:467
+#else
+        Delay(20);
+#endif
+    }
+    if (timeout == 0) {
+        DEBUG_MSG_FUNC_ERROR;
+  3e:	480e      	ldr	r0, [pc, #56]	(78 <halRfTransmit+0x78>)
+  40:	f240 11d3 	movw	r1, #467	; 0x1d3
+  44:	f7ff fffe 	bl	0 <DebugMsg_FunctionError>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:469
+        status = HAL_RF_FAILED;
+        CC2520_INS_STROBE(CC2520_INS_SFLUSHTX);
+  48:	2048      	movs	r0, #72
+  4a:	f7ff fffe 	bl	0 <CC2520_INS_STROBE>
+  4e:	3401      	adds	r4, #1
+  50:	e00a      	b.n	68 <halRfTransmit+0x68>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:474
+    }
+    else {
+        status = HAL_RF_SUCCESS;
+        // Wait for TX_FRM_DONE exception
+        while(!CC2520_TX_FRM_DONE_PIN);
+  52:	4808      	ldr	r0, [pc, #32]	(74 <halRfTransmit+0x74>)
+  54:	f44f 6180 	mov.w	r1, #1024	; 0x400
+  58:	f7ff fffe 	bl	0 <GPIO_ReadInputDataBit>
+  5c:	2800      	cmp	r0, #0
+  5e:	d0f8      	beq.n	52 <halRfTransmit+0x52>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:476
+        HAL_INT_OFF();
+        CC2520_CLEAR_EXC(CC2520_EXC_TX_FRM_DONE);
+  60:	2081      	movs	r0, #129
+  62:	f7ff fffe 	bl	0 <CC2520_BCLR>
+  66:	2400      	movs	r4, #0
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:482
+        HAL_INT_ON();
+    }
+
+    // Reconfigure GPIO2
+    HAL_INT_OFF();
+    CC2520_CFG_GPIO_OUT(2,     CC2520_GPIO_RSSI_VALID);
+  68:	2022      	movs	r0, #34
+  6a:	212c      	movs	r1, #44
+  6c:	f7ff fffe 	bl	0 <CC2520_REGWR8>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:485
+    HAL_INT_ON();
+    return status;
+}
+  70:	4620      	mov	r0, r4
+  72:	bd10      	pop	{r4, pc}
+  74:	40011000 	.word	0x40011000
+  78:	00000000 	.word	0x00000000
+Disassembly of section .text.halRfReadRxBuf:
+
+00000000 <halRfReadRxBuf>:
+halRfReadRxBuf():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:424
+*          uint8 length - number of bytes
+*
+* @return  none
+*/
+void halRfReadRxBuf(uint8* data, uint8 length)
+{
+   0:	4603      	mov	r3, r0
+   2:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:425
+    CC2520_RXBUF(length, data);
+   4:	4608      	mov	r0, r1
+   6:	4619      	mov	r1, r3
+   8:	f7ff fffe 	bl	0 <CC2520_RXBUF>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:426
+}
+   c:	bd10      	pop	{r4, pc}
+   e:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.halRfWriteTxBuf:
+
+00000000 <halRfWriteTxBuf>:
+halRfWriteTxBuf():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:407
+*          uint8 length - number of bytes
+*
+* @return  none
+*/
+void halRfWriteTxBuf(uint8* data, uint8 length)
+{
+   0:	4603      	mov	r3, r0
+   2:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:409
+    // Copy packet to TX FIFO
+    CC2520_TXBUF(length,data);
+   4:	4608      	mov	r0, r1
+   6:	4619      	mov	r1, r3
+   8:	f7ff fffe 	bl	0 <CC2520_TXBUF>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:410
+}
+   c:	bd10      	pop	{r4, pc}
+   e:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.halRfSetPanId:
+
+00000000 <halRfSetPanId>:
+halRfSetPanId():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:337
+* @param   none
+*
+* @return  none
+*/
+void halRfSetPanId(uint16 panId)
+{
+   0:	4601      	mov	r1, r0
+   2:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:338
+    CC2520_MEMWR16(CC2520_RAM_PANID, panId);
+   4:	f240 30f2 	movw	r0, #1010	; 0x3f2
+   8:	f7ff fffe 	bl	0 <CC2520_MEMWR16>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:339
+}
+   c:	bd10      	pop	{r4, pc}
+   e:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.halRfSetShortAddr:
+
+00000000 <halRfSetShortAddr>:
+halRfSetShortAddr():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:322
+* @param   none
+*
+* @return  none
+*/
+void halRfSetShortAddr(uint16 shortAddr)
+{
+   0:	4601      	mov	r1, r0
+   2:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:323
+    CC2520_MEMWR16(CC2520_RAM_SHORTADDR, shortAddr);
+   4:	f44f 707d 	mov.w	r0, #1012	; 0x3f4
+   8:	f7ff fffe 	bl	0 <CC2520_MEMWR16>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:324
+}
+   c:	bd10      	pop	{r4, pc}
+   e:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.halRfGetRandomByte:
+
+00000000 <halRfGetRandomByte>:
+halRfGetRandomByte():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:276
+* @return  uint8 - random byte
+*/
+
+// Comment: has the random generator been initalised
+uint8 halRfGetRandomByte(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:277
+    return CC2520_RANDOM8();
+   2:	f7ff fffe 	bl	0 <CC2520_RANDOM8>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:278
+}
+   6:	bd10      	pop	{r4, pc}
+Disassembly of section .text.halRfGetChipVer:
+
+00000000 <halRfGetChipVer>:
+halRfGetChipVer():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:259
+* @param   none
+*
+* @return  uint8 - result
+*/
+uint8 halRfGetChipVer(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:260
+    return(CC2520_MEMRD8(CC2520_VERSION));
+   2:	2042      	movs	r0, #66
+   4:	f7ff fffe 	bl	0 <CC2520_MEMRD8>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:261
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.halRfGetChipId:
+
+00000000 <halRfGetChipId>:
+halRfGetChipId():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:244
+* @param   none
+*
+* @return  uint8 - result
+*/
+uint8 halRfGetChipId(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:245
+    return(CC2520_MEMRD8(CC2520_CHIPID));
+   2:	2040      	movs	r0, #64
+   4:	f7ff fffe 	bl	0 <CC2520_MEMRD8>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:246
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.halRfInit:
+
+00000000 <halRfInit>:
+halRfInit():
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:177
+* @param   none
+*
+* @return  HAL_RF_SUCCESS if the radio has started, FAILURE otherwise
+*/
+uint8 halRfInit(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:180
+    regVal_t* p;
+
+    DEBUG_MSG_FUNC_START;
+   2:	4815      	ldr	r0, [pc, #84]	(58 <halRfInit+0x58>)
+   4:	f7ff fffe 	bl	0 <DebugMsg_FunctionStart>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:186
+
+    // Avoid GPIO0 interrupts during reset
+#if 0 // POOH
+    halDigioIntDisable(&pinRadio_GPIO0);
+#else
+    CC2520_GPIO_0_Interrupt_Setting(DISABLE);
+   8:	2000      	movs	r0, #0
+   a:	f7ff fffe 	bl	0 <CC2520_GPIO_0_Interrupt_Setting>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:190
+#endif
+
+    // Make sure to pull the CC2520 RESETn and VREG_EN pins low
+    CC2520_RESET_OPIN(0);
+   e:	2000      	movs	r0, #0
+  10:	f7ff fffe 	bl	0 <CC2520_RESET_OPIN>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:191
+    CC2520_SPI_END();
+  14:	2110      	movs	r1, #16
+  16:	4811      	ldr	r0, [pc, #68]	(5c <halRfInit+0x5c>)
+  18:	f7ff fffe 	bl	0 <GPIO_SetBits>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:192
+    CC2520_VREG_EN_OPIN(0);
+  1c:	2000      	movs	r0, #0
+  1e:	f7ff fffe 	bl	0 <CC2520_VREG_EN_OPIN>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:196
+#if 0 // POOH
+    halMcuWaitUs(1100);
+#else
+    Delay(110);
+  22:	206e      	movs	r0, #110
+  24:	f7ff fffe 	bl	0 <Delay>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:205
+#if 0 // POOH
+    CC2520_MISO_DIR_OUT();
+#endif
+
+    // Enable the voltage regulator and wait for it (CC2520 power-up)
+    CC2520_VREG_EN_OPIN(1);
+  28:	2001      	movs	r0, #1
+  2a:	f7ff fffe 	bl	0 <CC2520_VREG_EN_OPIN>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:209
+#if 0 // POOH
+    halMcuWaitUs(CC2520_VREG_MAX_STARTUP_TIME);
+#else
+    Delay(200);
+  2e:	20c8      	movs	r0, #200
+  30:	f7ff fffe 	bl	0 <Delay>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:213
+#endif
+
+    // Release reset
+    CC2520_RESET_OPIN(1);
+  34:	2001      	movs	r0, #1
+  36:	f7ff fffe 	bl	0 <CC2520_RESET_OPIN>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:220
+#if 0 // POOH
+    // Wait for XOSC stable to be announced on the MISO pin
+    if (halRfWaitRadioReady()==HAL_RF_FAILED)
+        return HAL_RF_FAILED;
+#else
+    Delay(200);
+  3a:	20c8      	movs	r0, #200
+  3c:	f7ff fffe 	bl	0 <Delay>
+  40:	4c07      	ldr	r4, [pc, #28]	(60 <halRfInit+0x60>)
+  42:	e003      	b.n	4c <halRfInit+0x4c>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:226
+#endif
+
+    // Write non-default register values
+    p= regval;
+    while (p->reg!=0) {
+        CC2520_MEMWR8(p->reg,p->val);
+  44:	f814 1c03 	ldrb.w	r1, [r4, #-3]
+  48:	f7ff fffe 	bl	0 <CC2520_MEMWR8>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:225
+    Delay(200);
+#endif
+
+    // Write non-default register values
+    p= regval;
+    while (p->reg!=0) {
+  4c:	f814 0c02 	ldrb.w	r0, [r4, #-2]
+  50:	3402      	adds	r4, #2
+  52:	2800      	cmp	r0, #0
+  54:	d1f6      	bne.n	44 <halRfInit+0x44>
+D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520/hal_rf.c:231
+        CC2520_MEMWR8(p->reg,p->val);
+        p++;
+    }
+
+    return HAL_RF_SUCCESS;
+}
+  56:	bd10      	pop	{r4, pc}
+  58:	0000000e 	.word	0x0000000e
+  5c:	40010800 	.word	0x40010800
+  60:	00000003 	.word	0x00000003

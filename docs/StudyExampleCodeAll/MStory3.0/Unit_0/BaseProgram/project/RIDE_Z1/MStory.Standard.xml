@@ -1,0 +1,2453 @@
+<!-- DWF2XML 2.00.01 - Raisonance Dwarf information extractor -->
+<aoffile Filename="MStory" dwarf="1">
+ <modulelist>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\debug.c" >
+   <type Family="Base" Name="signed char" ID="37"/>
+   <type Family="Base" Name="unsigned char" ID="55"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="44" toTI="55"/>
+   <type Family="Base" Name="short int" ID="62"/>
+   <type Family="Base" Name="short unsigned int" ID="69"/>
+   <type Family="Base" Name="long int" ID="76"/>
+   <type Family="Base" Name="long unsigned int" ID="94"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="83" toTI="94"/>
+   <type Family="Base" Name="long long int" ID="101"/>
+   <type Family="Base" Name="long long unsigned int" ID="108"/>
+   <type Family="Base" Name="int" ID="115"/>
+   <type Family="Base" Name="unsigned int" ID="122"/>
+   <type Family="Base" Name="char" ID="132"/>
+   <type Family="Pointer" TI="139" toTI="145"/>
+   <type Family="Pointer" TI="150" toTI="44"/>
+   <function Name="assert_failed" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\debug.c" Line="61">
+    <parameter Name="file" TI="150" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\debug.c" Line="61" Addr="0x0" Param="Yes"/>
+    <parameter Name="line" TI="83" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\debug.c" Line="61" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="DebugMsg_Assert" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\debug.c" Line="47">
+    <parameter Name="fName_p" TI="139" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\debug.c" Line="47" Addr="0x0" Param="Yes"/>
+    <parameter Name="lineNum" TI="115" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\debug.c" Line="47" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="DebugMsg_FunctionError" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\debug.c" Line="38">
+    <parameter Name="fName_p" TI="139" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\debug.c" Line="38" Addr="0x0" Param="Yes"/>
+    <parameter Name="lineNum" TI="115" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\debug.c" Line="38" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="DebugMsg_FunctionNotify" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\debug.c" Line="31">
+    <parameter Name="fName_p" TI="139" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\debug.c" Line="31" Addr="0x0" Param="Yes"/>
+    <parameter Name="lineNum" TI="115" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\debug.c" Line="31" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="DebugMsg_FunctionStart" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\debug.c" Line="17">
+    <parameter Name="fName_p" TI="139" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\debug.c" Line="17" Addr="0x0" Param="Yes"/>
+   </function >
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" >
+   <type Family="Base" Name="signed char" ID="815"/>
+   <type Family="Base" Name="unsigned char" ID="833"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="822" toTI="833"/>
+   <type Family="Base" Name="short int" ID="840"/>
+   <type Family="Base" Name="short unsigned int" ID="858"/>
+   <type Family="typedef" Name="uint16_t" Line="58" ID="847" toTI="858"/>
+   <type Family="Base" Name="long int" ID="865"/>
+   <type Family="Base" Name="long unsigned int" ID="883"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="872" toTI="883"/>
+   <type Family="Base" Name="long long int" ID="890"/>
+   <type Family="Base" Name="long long unsigned int" ID="897"/>
+   <type Family="Base" Name="int" ID="904"/>
+   <type Family="Base" Name="unsigned int" ID="911"/>
+   <type Family="typedef" Name="FunctionalState" Line="354" ID="975" toTI="953"/>
+   <type Family="ComponentList" Line="806" ID="987">
+    <Component Name="CRL" TI="996" Line="807" Offs="0"/>
+    <Component Name="CRH" TI="1011" Line="808" Offs="4"/>
+    <Component Name="IDR" TI="1026" Line="809" Offs="8"/>
+    <Component Name="ODR" TI="1041" Line="810" Offs="12"/>
+    <Component Name="BSRR" TI="1056" Line="811" Offs="16"/>
+    <Component Name="BRR" TI="1071" Line="812" Offs="20"/>
+    <Component Name="LCKR" TI="1086" Line="813" Offs="24"/>
+   </type>
+   <type Family="ComponentList" Line="957" ID="1102">
+    <Component Name="CR1" TI="1111" Line="958" Offs="0"/>
+    <Component Name="RESERVED0" TI="1126" Line="959" Offs="2"/>
+    <Component Name="CR2" TI="1141" Line="960" Offs="4"/>
+    <Component Name="RESERVED1" TI="1156" Line="961" Offs="6"/>
+    <Component Name="SR" TI="1171" Line="962" Offs="8"/>
+    <Component Name="RESERVED2" TI="1185" Line="963" Offs="10"/>
+    <Component Name="DR" TI="1200" Line="964" Offs="12"/>
+    <Component Name="RESERVED3" TI="1214" Line="965" Offs="14"/>
+    <Component Name="CRCPR" TI="1229" Line="966" Offs="16"/>
+    <Component Name="RESERVED4" TI="1244" Line="967" Offs="18"/>
+    <Component Name="RXCRCR" TI="1259" Line="968" Offs="20"/>
+    <Component Name="RESERVED5" TI="1274" Line="969" Offs="22"/>
+    <Component Name="TXCRCR" TI="1289" Line="970" Offs="24"/>
+    <Component Name="RESERVED6" TI="1304" Line="971" Offs="26"/>
+    <Component Name="I2SCFGR" TI="1319" Line="972" Offs="28"/>
+    <Component Name="RESERVED7" TI="1334" Line="973" Offs="30"/>
+    <Component Name="I2SPR" TI="1349" Line="974" Offs="32"/>
+    <Component Name="RESERVED8" TI="1364" Line="975" Offs="34"/>
+   </type>
+   <type Family="ComponentList" Line="1031" ID="1380">
+    <Component Name="SR" TI="1389" Line="1032" Offs="0"/>
+    <Component Name="RESERVED0" TI="1403" Line="1033" Offs="2"/>
+    <Component Name="DR" TI="1418" Line="1034" Offs="4"/>
+    <Component Name="RESERVED1" TI="1432" Line="1035" Offs="6"/>
+    <Component Name="BRR" TI="1447" Line="1036" Offs="8"/>
+    <Component Name="RESERVED2" TI="1462" Line="1037" Offs="10"/>
+    <Component Name="CR1" TI="1477" Line="1038" Offs="12"/>
+    <Component Name="RESERVED3" TI="1492" Line="1039" Offs="14"/>
+    <Component Name="CR2" TI="1507" Line="1040" Offs="16"/>
+    <Component Name="RESERVED4" TI="1522" Line="1041" Offs="18"/>
+    <Component Name="CR3" TI="1537" Line="1042" Offs="20"/>
+    <Component Name="RESERVED5" TI="1552" Line="1043" Offs="22"/>
+    <Component Name="GTPR" TI="1567" Line="1044" Offs="24"/>
+    <Component Name="RESERVED6" TI="1582" Line="1045" Offs="26"/>
+   </type>
+   <type Family="typedef" Name="USART_TypeDef" Line="1046" ID="1598" toTI="1380"/>
+   <type Family="typedef" Name="EXTIMode_TypeDef" Line="53" ID="1631" toTI="1610"/>
+   <type Family="typedef" Name="EXTITrigger_TypeDef" Line="66" ID="1669" toTI="1642"/>
+   <type Family="ComponentList" Line="76" ID="1680">
+    <Component Name="EXTI_Line" TI="1688" Line="77" Offs="0"/>
+    <Component Name="EXTI_Mode" TI="1702" Line="80" Offs="4"/>
+    <Component Name="EXTI_Trigger" TI="1716" Line="83" Offs="5"/>
+    <Component Name="EXTI_LineCmd" TI="1730" Line="86" Offs="6"/>
+   </type>
+   <type Family="typedef" Name="EXTI_InitTypeDef" Line="88" ID="1745" toTI="1680"/>
+   <type Family="typedef" Name="GPIOSpeed_TypeDef" Line="62" ID="1783" toTI="1756"/>
+   <type Family="typedef" Name="GPIOMode_TypeDef" Line="79" ID="1852" toTI="1794"/>
+   <type Family="ComponentList" Line="91" ID="1863">
+    <Component Name="GPIO_Pin" TI="1871" Line="92" Offs="0"/>
+    <Component Name="GPIO_Speed" TI="1885" Line="95" Offs="2"/>
+    <Component Name="GPIO_Mode" TI="1899" Line="98" Offs="3"/>
+   </type>
+   <type Family="typedef" Name="GPIO_InitTypeDef" Line="100" ID="1914" toTI="1863"/>
+   <type Family="ComponentList" Line="50" ID="1925">
+    <Component Name="SPI_Direction" TI="1933" Line="51" Offs="0"/>
+    <Component Name="SPI_Mode" TI="1947" Line="54" Offs="2"/>
+    <Component Name="SPI_DataSize" TI="1961" Line="57" Offs="4"/>
+    <Component Name="SPI_CPOL" TI="1975" Line="60" Offs="6"/>
+    <Component Name="SPI_CPHA" TI="1989" Line="63" Offs="8"/>
+    <Component Name="SPI_NSS" TI="2003" Line="66" Offs="10"/>
+    <Component Name="SPI_BaudRatePrescaler" TI="2017" Line="70" Offs="12"/>
+    <Component Name="SPI_FirstBit" TI="2031" Line="76" Offs="14"/>
+    <Component Name="SPI_CRCPolynomial" TI="2045" Line="79" Offs="16"/>
+   </type>
+   <type Family="typedef" Name="SPI_InitTypeDef" Line="80" ID="2060" toTI="1925"/>
+   <type Family="ComponentList" Line="50" ID="2071">
+    <Component Name="USART_BaudRate" TI="2079" Line="51" Offs="0"/>
+    <Component Name="USART_WordLength" TI="2093" Line="56" Offs="4"/>
+    <Component Name="USART_StopBits" TI="2107" Line="59" Offs="6"/>
+    <Component Name="USART_Parity" TI="2121" Line="62" Offs="8"/>
+    <Component Name="USART_Mode" TI="2135" Line="69" Offs="10"/>
+    <Component Name="USART_HardwareFlowControl" TI="2149" Line="72" Offs="12"/>
+   </type>
+   <type Family="typedef" Name="USART_InitTypeDef" Line="75" ID="2164" toTI="2071"/>
+   <type Family="ComponentList" Line="50" ID="2175">
+    <Component Name="NVIC_IRQChannel" TI="2183" Line="51" Offs="0"/>
+    <Component Name="NVIC_IRQChannelPreemptionPriority" TI="2197" Line="56" Offs="1"/>
+    <Component Name="NVIC_IRQChannelSubPriority" TI="2211" Line="60" Offs="2"/>
+    <Component Name="NVIC_IRQChannelCmd" TI="2225" Line="64" Offs="3"/>
+   </type>
+   <type Family="typedef" Name="NVIC_InitTypeDef" Line="67" ID="2240" toTI="2175"/>
+   <type Family="Base" Name="char" ID="2251"/>
+   <type Family="Pointer" TI="2258" toTI="822"/>
+   <type Family="ComponentList" Name="_ENDPOINT_INFO" Line="57" ID="2264">
+    <Component Name="Usb_wLength" TI="2276" Line="80" Offs="0"/>
+    <Component Name="Usb_wOffset" TI="2290" Line="81" Offs="2"/>
+    <Component Name="PacketSize" TI="2304" Line="82" Offs="4"/>
+   <type Family="Pointer" TI="2349" toTI="2333"/>
+    <Component Name="CopyData" TI="2318" Line="83" Offs="8"/>
+   </type>
+   <type Family="typedef" Name="ENDPOINT_INFO" Line="84" ID="2355" toTI="2264"/>
+   <type Family="ComponentList" Name="BW" Line="99" ID="2366">
+    <Component Name="bb1" TI="2377" Line="100" Offs="0"/>
+    <Component Name="bb0" TI="2391" Line="101" Offs="1"/>
+   </type>
+   <type Family="ComponentList" Line="96" ID="2406">
+    <Component Name="w" TI="2414" Line="97" Offs="0"/>
+    <Component Name="bw" TI="2423" Line="103" Offs="0"/>
+   </type>
+   <type Family="typedef" Name="uint16_t_uint8_t" Line="104" ID="2434" toTI="2406"/>
+   <type Family="ComponentList" Name="_DEVICE_INFO" Line="107" ID="2445">
+    <Component Name="USBbmRequestType" TI="2457" Line="108" Offs="0"/>
+    <Component Name="USBbRequest" TI="2471" Line="109" Offs="1"/>
+    <Component Name="USBwValues" TI="2485" Line="110" Offs="2"/>
+    <Component Name="USBwIndexs" TI="2499" Line="111" Offs="4"/>
+    <Component Name="USBwLengths" TI="2513" Line="112" Offs="6"/>
+    <Component Name="ControlState" TI="2527" Line="114" Offs="8"/>
+    <Component Name="Current_Feature" TI="2541" Line="115" Offs="9"/>
+    <Component Name="Current_Configuration" TI="2555" Line="116" Offs="10"/>
+    <Component Name="Current_Interface" TI="2569" Line="117" Offs="11"/>
+    <Component Name="Current_AlternateSetting" TI="2583" Line="118" Offs="12"/>
+    <Component Name="Ctrl_Info" TI="2597" Line="121" Offs="16"/>
+   </type>
+   <type Family="typedef" Name="DEVICE_INFO" Line="122" ID="2612" toTI="2445"/>
+   <function Name="Get_SerialNum" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="390">
+    <variable Name="Device_Serial0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="391" Addr="0x1" TI="872"/>
+    <variable Name="Device_Serial1" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="391" Addr="0x0" TI="872"/>
+    <variable Name="Device_Serial2" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="391" Addr="0x4" TI="872"/>
+   </function >
+   <function Name="Delay" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="422">
+    <parameter Name="nTime" TI="921" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="422" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="delay_100_milli_second" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="36">
+   </function >
+   <function Name="delay_1_second" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="31">
+   </function >
+   <function Name="TimingDelay_Decrement" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="434">
+   </function >
+   <function Name="USART_GetCharacter" TI="822" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="525">
+   <type Family="Pointer" TI="2907" toTI="1598"/>
+    <parameter Name="usart_p" TI="2907" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="525" Addr="0x0" Param="Yes"/>
+    <variable Name="data" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="526" Addr="0x4" TI="822"/>
+   </function >
+   <function Name="__io_putchar" TI="904" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="508">
+    <parameter Name="ch" TI="904" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="508" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="GPIO_Configuration" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="285">
+    <variable Name="GPIO_InitStructure" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="286" Addr="0x34000004" TI="1914"/>
+   </function >
+   <function Name="SPIx_Init" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="450">
+    <variable Name="GPIO_InitStructure" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="453" Addr="0x34000014" TI="1914"/>
+    <variable Name="SPI_InitStructure" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="454" Addr="0x34000002" TI="2060"/>
+   <type Family="array" ID="3385" toTI="2251"/>
+    <variable Name="__FUNCTION__" FileName="" Line="0" Addr="0x8009EB4" TI="3401"/>
+   </function >
+   <function Name="EXTI_Configuration" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="349">
+    <variable Name="EXTI_InitStructure" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="350" Addr="0x34000000" TI="1745"/>
+   </function >
+   <function Name="USB_Cable_Config" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="267">
+    <parameter Name="NewState" TI="975" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="267" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="USB_Interrupts_Config" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="231">
+    <variable Name="NVIC_InitStructure" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="232" Addr="0x34000004" TI="2240"/>
+   </function >
+   <function Name="Leave_LowPowerMode" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="188">
+   <type Family="Pointer" TI="3236" toTI="2612"/>
+   </function >
+   <function Name="Enter_LowPowerMode" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="167">
+   </function >
+   <function Name="Set_USBClock" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="151">
+   </function >
+   <function Name="NVIC_Configuration" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="114">
+    <variable Name="NVIC_InitStructure" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="115" Addr="0x34000004" TI="2240"/>
+   </function >
+   <function Name="RCC_Configuration" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="81">
+   </function >
+   <function Name="USART1_Init" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="47">
+    <variable Name="USART_InitStructure" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="48" Addr="0x34000000" TI="2164"/>
+   </function >
+   <variable Name="TimingDelay" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="26" Addr="0x200008E0" TI="921"/>
+   <type Family="array" ID="3449" toTI="822"/>
+   <variable Name="ADC_ConvertedValueX" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="24" Addr="0x200008E4" TI="872"/>
+   <variable Name="ADC_ConvertedValueX_1" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\hw_config.c" Line="25" Addr="0x200008E8" TI="872"/>
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\key.c" >
+   <type Family="Base" Name="signed char" ID="3552"/>
+   <type Family="Base" Name="unsigned char" ID="3559"/>
+   <type Family="Base" Name="short int" ID="3566"/>
+   <type Family="Base" Name="short unsigned int" ID="3573"/>
+   <type Family="Base" Name="long int" ID="3580"/>
+   <type Family="Base" Name="long unsigned int" ID="3598"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="3587" toTI="3598"/>
+   <type Family="Base" Name="long long int" ID="3605"/>
+   <type Family="Base" Name="long long unsigned int" ID="3612"/>
+   <type Family="Base" Name="int" ID="3619"/>
+   <type Family="Base" Name="unsigned int" ID="3626"/>
+   <type Family="ComponentList" Line="806" ID="3641">
+    <Component Name="CRL" TI="3650" Line="807" Offs="0"/>
+    <Component Name="CRH" TI="3665" Line="808" Offs="4"/>
+    <Component Name="IDR" TI="3680" Line="809" Offs="8"/>
+    <Component Name="ODR" TI="3695" Line="810" Offs="12"/>
+    <Component Name="BSRR" TI="3710" Line="811" Offs="16"/>
+    <Component Name="BRR" TI="3725" Line="812" Offs="20"/>
+    <Component Name="LCKR" TI="3740" Line="813" Offs="24"/>
+   </type>
+   <type Family="Base" Name="char" ID="3777"/>
+   <function Name="KEY_Test" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\key.c" Line="28">
+    <variable Name="i" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\key.c" Line="29" Addr="0x4" TI="3587"/>
+   </function >
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\led.c" >
+   <type Family="Base" Name="signed char" ID="3855"/>
+   <type Family="Base" Name="unsigned char" ID="3862"/>
+   <type Family="Base" Name="short int" ID="3869"/>
+   <type Family="Base" Name="short unsigned int" ID="3876"/>
+   <type Family="Base" Name="long int" ID="3883"/>
+   <type Family="Base" Name="long unsigned int" ID="3901"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="3890" toTI="3901"/>
+   <type Family="Base" Name="long long int" ID="3908"/>
+   <type Family="Base" Name="long long unsigned int" ID="3915"/>
+   <type Family="Base" Name="int" ID="3922"/>
+   <type Family="Base" Name="unsigned int" ID="3929"/>
+   <type Family="ComponentList" Line="806" ID="3944">
+    <Component Name="CRL" TI="3953" Line="807" Offs="0"/>
+    <Component Name="CRH" TI="3968" Line="808" Offs="4"/>
+    <Component Name="IDR" TI="3983" Line="809" Offs="8"/>
+    <Component Name="ODR" TI="3998" Line="810" Offs="12"/>
+    <Component Name="BSRR" TI="4013" Line="811" Offs="16"/>
+    <Component Name="BRR" TI="4028" Line="812" Offs="20"/>
+    <Component Name="LCKR" TI="4043" Line="813" Offs="24"/>
+   </type>
+   <type Family="Base" Name="char" ID="4080"/>
+   <function Name="LED_Off_Blue" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\led.c" Line="60">
+   </function >
+   <function Name="LED_Off_Yellow" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\led.c" Line="44">
+   </function >
+   <function Name="LED_Off_Red" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\led.c" Line="28">
+   </function >
+   <function Name="LED_Off_All" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\led.c" Line="78">
+   </function >
+   <function Name="LED_On_Blue" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\led.c" Line="55">
+   </function >
+   <function Name="LED_On_Yellow" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\led.c" Line="39">
+   </function >
+   <function Name="LED_On_Red" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\led.c" Line="23">
+   </function >
+   <function Name="LED_OnOffAll_Mult" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\led.c" Line="85">
+    <parameter Name="count" TI="3890" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\led.c" Line="85" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="LED_On_All" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\led.c" Line="71">
+   </function >
+   <function Name="LED_Test" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\led.c" Line="106">
+   </function >
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\main.c" >
+   <type Family="typedef" Name="IRQn_Type" Line="301" ID="4737" toTI="4418"/>
+   <type Family="Base" Name="signed char" ID="4749"/>
+   <type Family="Base" Name="unsigned char" ID="4767"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="4756" toTI="4767"/>
+   <type Family="Base" Name="short int" ID="4774"/>
+   <type Family="Base" Name="short unsigned int" ID="4792"/>
+   <type Family="typedef" Name="uint16_t" Line="58" ID="4781" toTI="4792"/>
+   <type Family="Base" Name="long int" ID="4799"/>
+   <type Family="Base" Name="long unsigned int" ID="4817"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="4806" toTI="4817"/>
+   <type Family="Base" Name="long long int" ID="4824"/>
+   <type Family="Base" Name="long long unsigned int" ID="4831"/>
+   <type Family="Base" Name="int" ID="4838"/>
+   <type Family="Base" Name="unsigned int" ID="4845"/>
+   <type Family="ComponentList" Line="135" ID="4852">
+   <type Family="array" ID="5054" toTI="4806"/>
+    <Component Name="ISER" TI="4861" Line="136" Offs="0"/>
+   <type Family="array" ID="5078" toTI="4806"/>
+    <Component Name="RESERVED0" TI="4875" Line="137" Offs="32"/>
+    <Component Name="ICER" TI="4889" Line="138" Offs="128"/>
+    <Component Name="RSERVED1" TI="4904" Line="139" Offs="160"/>
+    <Component Name="ISPR" TI="4919" Line="140" Offs="256"/>
+    <Component Name="RESERVED2" TI="4934" Line="141" Offs="288"/>
+    <Component Name="ICPR" TI="4949" Line="142" Offs="384"/>
+    <Component Name="RESERVED3" TI="4964" Line="143" Offs="416"/>
+    <Component Name="IABR" TI="4979" Line="144" Offs="512"/>
+   <type Family="array" ID="5114" toTI="4806"/>
+    <Component Name="RESERVED4" TI="4994" Line="145" Offs="544"/>
+   <type Family="array" ID="5130" toTI="4756"/>
+    <Component Name="IP" TI="5009" Line="146" Offs="768"/>
+   <type Family="array" ID="5151" toTI="4806"/>
+    <Component Name="RESERVED5" TI="5023" Line="147" Offs="1008"/>
+    <Component Name="STIR" TI="5038" Line="148" Offs="3584"/>
+   </type>
+   <type Family="ComponentList" Line="154" ID="5173">
+    <Component Name="CPUID" TI="5181" Line="155" Offs="0"/>
+    <Component Name="ICSR" TI="5195" Line="156" Offs="4"/>
+    <Component Name="VTOR" TI="5209" Line="157" Offs="8"/>
+    <Component Name="AIRCR" TI="5223" Line="158" Offs="12"/>
+    <Component Name="SCR" TI="5237" Line="159" Offs="16"/>
+    <Component Name="CCR" TI="5251" Line="160" Offs="20"/>
+   <type Family="array" ID="5453" toTI="4756"/>
+    <Component Name="SHP" TI="5265" Line="161" Offs="24"/>
+    <Component Name="SHCSR" TI="5279" Line="162" Offs="36"/>
+    <Component Name="CFSR" TI="5293" Line="163" Offs="40"/>
+    <Component Name="HFSR" TI="5307" Line="164" Offs="44"/>
+    <Component Name="DFSR" TI="5321" Line="165" Offs="48"/>
+    <Component Name="MMFAR" TI="5335" Line="166" Offs="52"/>
+    <Component Name="BFAR" TI="5349" Line="167" Offs="56"/>
+    <Component Name="AFSR" TI="5363" Line="168" Offs="60"/>
+   <type Family="array" ID="5474" toTI="4806"/>
+    <Component Name="PFR" TI="5377" Line="169" Offs="64"/>
+    <Component Name="DFR" TI="5391" Line="170" Offs="72"/>
+    <Component Name="ADR" TI="5405" Line="171" Offs="76"/>
+   <type Family="array" ID="5500" toTI="4806"/>
+    <Component Name="MMFR" TI="5419" Line="172" Offs="80"/>
+   <type Family="array" ID="5526" toTI="4806"/>
+    <Component Name="ISAR" TI="5433" Line="173" Offs="96"/>
+   </type>
+   <type Family="ComponentList" Line="179" ID="5552">
+    <Component Name="CTRL" TI="5560" Line="180" Offs="0"/>
+    <Component Name="LOAD" TI="5574" Line="181" Offs="4"/>
+    <Component Name="VAL" TI="5588" Line="182" Offs="8"/>
+    <Component Name="CALIB" TI="5602" Line="183" Offs="12"/>
+   </type>
+   <type Family="typedef" Name="bool" Line="349" ID="5644" toTI="5622"/>
+   <type Family="ComponentList" Line="1031" ID="5678">
+    <Component Name="SR" TI="5687" Line="1032" Offs="0"/>
+    <Component Name="RESERVED0" TI="5701" Line="1033" Offs="2"/>
+    <Component Name="DR" TI="5716" Line="1034" Offs="4"/>
+    <Component Name="RESERVED1" TI="5730" Line="1035" Offs="6"/>
+    <Component Name="BRR" TI="5745" Line="1036" Offs="8"/>
+    <Component Name="RESERVED2" TI="5760" Line="1037" Offs="10"/>
+    <Component Name="CR1" TI="5775" Line="1038" Offs="12"/>
+    <Component Name="RESERVED3" TI="5790" Line="1039" Offs="14"/>
+    <Component Name="CR2" TI="5805" Line="1040" Offs="16"/>
+    <Component Name="RESERVED4" TI="5820" Line="1041" Offs="18"/>
+    <Component Name="CR3" TI="5835" Line="1042" Offs="20"/>
+    <Component Name="RESERVED5" TI="5850" Line="1043" Offs="22"/>
+    <Component Name="GTPR" TI="5865" Line="1044" Offs="24"/>
+    <Component Name="RESERVED6" TI="5880" Line="1045" Offs="26"/>
+   </type>
+   <type Family="ComponentList" Line="46" ID="5896">
+    <Component Name="SYSCLK_Frequency" TI="5904" Line="47" Offs="0"/>
+    <Component Name="HCLK_Frequency" TI="5918" Line="48" Offs="4"/>
+    <Component Name="PCLK1_Frequency" TI="5932" Line="49" Offs="8"/>
+    <Component Name="PCLK2_Frequency" TI="5946" Line="50" Offs="12"/>
+    <Component Name="ADCCLK_Frequency" TI="5960" Line="51" Offs="16"/>
+   </type>
+   <type Family="typedef" Name="RCC_ClocksTypeDef" Line="52" ID="5975" toTI="5896"/>
+   <type Family="Base" Name="char" ID="5986"/>
+   <function Name="USB_Test_Start" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\main.c" Line="34">
+   </function >
+   <function Name="System_Information" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\main.c" Line="23">
+   <type Family="array" ID="6217" toTI="5986"/>
+    <variable Name="__FUNCTION__" FileName="" Line="0" Addr="0x8009EBE" TI="6233"/>
+   </function >
+   <function Name="main" TI="4838" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\main.c" Line="49">
+    <variable Name="ch" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\main.c" Line="50" Addr="0x5" TI="4756"/>
+   </function >
+   <variable Name="g_TestProcessState" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\main.c" Line="18" Addr="0x200008EC" TI="5644"/>
+   <variable Name="rcc_clocks" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\main.c" Line="16" Addr="0x20000AFC" TI="5975"/>
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" >
+   <type Family="Base" Name="signed char" ID="6312"/>
+   <type Family="Base" Name="unsigned char" ID="6330"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="6319" toTI="6330"/>
+   <type Family="Base" Name="short int" ID="6337"/>
+   <type Family="Base" Name="short unsigned int" ID="6344"/>
+   <type Family="Base" Name="long int" ID="6351"/>
+   <type Family="Base" Name="long unsigned int" ID="6369"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="6358" toTI="6369"/>
+   <type Family="Base" Name="long long int" ID="6376"/>
+   <type Family="Base" Name="long long unsigned int" ID="6383"/>
+   <type Family="Base" Name="int" ID="6390"/>
+   <type Family="Base" Name="unsigned int" ID="6397"/>
+   <type Family="typedef" Name="bool" Line="349" ID="6429" toTI="6407"/>
+   <type Family="Base" Name="char" ID="6463"/>
+   <function Name="NMI_Handler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="54">
+   </function >
+   <function Name="HardFault_Handler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="63">
+   </function >
+   <function Name="MemManage_Handler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="76">
+   </function >
+   <function Name="BusFault_Handler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="89">
+   </function >
+   <function Name="UsageFault_Handler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="102">
+   </function >
+   <function Name="SVC_Handler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="115">
+   </function >
+   <function Name="DebugMon_Handler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="124">
+   </function >
+   <function Name="PendSV_Handler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="133">
+   </function >
+   <function Name="WWDG_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="161">
+   </function >
+   <function Name="PVD_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="172">
+   </function >
+   <function Name="TAMPER_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="183">
+   </function >
+   <function Name="RTC_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="194">
+   </function >
+   <function Name="FLASH_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="205">
+   </function >
+   <function Name="RCC_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="216">
+   </function >
+   <function Name="EXTI2_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="313">
+   </function >
+   <function Name="EXTI3_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="324">
+   </function >
+   <function Name="EXTI4_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="335">
+   </function >
+   <function Name="DMA1_Channel2_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="369">
+   </function >
+   <function Name="DMA1_Channel3_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="380">
+   </function >
+   <function Name="DMA1_Channel4_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="391">
+   </function >
+   <function Name="DMA1_Channel5_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="402">
+   </function >
+   <function Name="DMA1_Channel6_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="413">
+   </function >
+   <function Name="DMA1_Channel7_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="424">
+   </function >
+   <function Name="ADC1_2_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="435">
+   </function >
+   <function Name="USB_HP_CAN1_TX_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="447">
+   </function >
+   <function Name="CAN1_RX1_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="471">
+   </function >
+   <function Name="CAN1_SCE_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="482">
+   </function >
+   <function Name="TIM1_BRK_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="511">
+   </function >
+   <function Name="TIM1_UP_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="523">
+   </function >
+   <function Name="TIM1_TRG_COM_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="535">
+   </function >
+   <function Name="TIM1_CC_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="546">
+   </function >
+   <function Name="TIM2_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="557">
+   </function >
+   <function Name="TIM3_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="568">
+   </function >
+   <function Name="TIM4_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="579">
+   </function >
+   <function Name="I2C1_EV_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="590">
+   </function >
+   <function Name="I2C1_ER_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="601">
+   </function >
+   <function Name="I2C2_EV_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="612">
+   </function >
+   <function Name="I2C2_ER_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="623">
+   </function >
+   <function Name="SPI1_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="634">
+   </function >
+   <function Name="SPI2_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="645">
+   </function >
+   <function Name="USART1_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="656">
+   </function >
+   <function Name="USART2_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="667">
+   </function >
+   <function Name="USART3_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="678">
+   </function >
+   <function Name="EXTI15_10_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="689">
+   </function >
+   <function Name="RTCAlarm_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="700">
+   </function >
+   <function Name="USBWakeUp_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="711">
+   </function >
+   <function Name="EXTI9_5_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="493">
+   </function >
+   <function Name="USB_LP_CAN1_RX0_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="459">
+   </function >
+   <function Name="DMA1_Channel1_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="346">
+   </function >
+   <function Name="EXTI1_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="277">
+   </function >
+   <function Name="EXTI0_IRQHandler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="230">
+   </function >
+   <function Name="SysTick_Handler" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="142">
+   </function >
+   <variable Name="toggle_data_key1" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="227" Addr="0x200008EE" TI="6429"/>
+   <variable Name="toggle_data_key2" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="274" Addr="0x200008ED" TI="6429"/>
+   <type Family="array" ID="7556" toTI="6319"/>
+   <variable Name="Send_Buffer" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\stm32f10x_it.c" Line="37" Addr="0x20000B10" TI="7556"/>
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_desc.c" >
+   <type Family="Base" Name="signed char" ID="7650"/>
+   <type Family="Base" Name="unsigned char" ID="7668"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="7657" toTI="7668"/>
+   <type Family="Base" Name="short int" ID="7675"/>
+   <type Family="Base" Name="short unsigned int" ID="7682"/>
+   <type Family="Base" Name="long int" ID="7689"/>
+   <type Family="Base" Name="long unsigned int" ID="7696"/>
+   <type Family="Base" Name="long long int" ID="7703"/>
+   <type Family="Base" Name="long long unsigned int" ID="7710"/>
+   <type Family="Base" Name="int" ID="7717"/>
+   <type Family="Base" Name="unsigned int" ID="7724"/>
+   <type Family="array" ID="7734" toTI="7657"/>
+   <variable Name="CustomHID_DeviceDescriptor" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_desc.c" Line="29" Addr="0x8009ED1" TI="7768"/>
+   <type Family="array" ID="7773" toTI="7657"/>
+   <variable Name="CustomHID_ConfigDescriptor" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_desc.c" Line="58" Addr="0x8009EE3" TI="7807"/>
+   <type Family="array" ID="7812" toTI="7657"/>
+   <variable Name="CustomHID_ReportDescriptor" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_desc.c" Line="118" Addr="0x8009F0C" TI="7846"/>
+   <type Family="array" ID="7851" toTI="7657"/>
+   <variable Name="CustomHID_StringLangID" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_desc.c" Line="237" Addr="0x8009FAE" TI="7885"/>
+   <type Family="array" ID="7890" toTI="7657"/>
+   <variable Name="CustomHID_StringVendor" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_desc.c" Line="246" Addr="0x8009FB2" TI="7924"/>
+   <type Family="array" ID="7929" toTI="7657"/>
+   <variable Name="CustomHID_StringProduct" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_desc.c" Line="256" Addr="0x8009FD8" TI="7964"/>
+   <type Family="array" ID="7969" toTI="7657"/>
+   <variable Name="CustomHID_StringSerial" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_desc.c" Line="264" Addr="0x20000000" TI="7969"/>
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_endp.c" >
+   <type Family="Base" Name="signed char" ID="8042"/>
+   <type Family="Base" Name="unsigned char" ID="8060"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="8049" toTI="8060"/>
+   <type Family="Base" Name="short int" ID="8067"/>
+   <type Family="Base" Name="short unsigned int" ID="8074"/>
+   <type Family="Base" Name="long int" ID="8081"/>
+   <type Family="Base" Name="long unsigned int" ID="8099"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="8088" toTI="8099"/>
+   <type Family="Base" Name="long long int" ID="8106"/>
+   <type Family="Base" Name="long long unsigned int" ID="8113"/>
+   <type Family="Base" Name="int" ID="8120"/>
+   <type Family="Base" Name="unsigned int" ID="8127"/>
+   <type Family="ComponentList" Line="806" ID="8142">
+    <Component Name="CRL" TI="8151" Line="807" Offs="0"/>
+    <Component Name="CRH" TI="8166" Line="808" Offs="4"/>
+    <Component Name="IDR" TI="8181" Line="809" Offs="8"/>
+    <Component Name="ODR" TI="8196" Line="810" Offs="12"/>
+    <Component Name="BSRR" TI="8211" Line="811" Offs="16"/>
+    <Component Name="BRR" TI="8226" Line="812" Offs="20"/>
+    <Component Name="LCKR" TI="8241" Line="813" Offs="24"/>
+   </type>
+   <type Family="typedef" Name="BitAction" Line="110" ID="8278" toTI="8257"/>
+   <type Family="Base" Name="char" ID="8289"/>
+   <function Name="EP1_IN_Callback" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_endp.c" Line="41">
+   <type Family="array" ID="8391" toTI="8289"/>
+    <variable Name="__FUNCTION__" FileName="" Line="0" Addr="0x8009FF8" TI="8407"/>
+   </function >
+   <function Name="EP1_OUT_Callback" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_endp.c" Line="53">
+   <type Family="array" ID="8412" toTI="8289"/>
+    <variable Name="__FUNCTION__" FileName="" Line="0" Addr="0x800A008" TI="8428"/>
+   </function >
+   <type Family="array" ID="8433" toTI="8049"/>
+   <variable Name="Receive_Buffer" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_endp.c" Line="28" Addr="0x20000B12" TI="8433"/>
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_istr.c" >
+   <type Family="Base" Name="signed char" ID="8505"/>
+   <type Family="Base" Name="unsigned char" ID="8523"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="8512" toTI="8523"/>
+   <type Family="Base" Name="short int" ID="8530"/>
+   <type Family="Base" Name="short unsigned int" ID="8548"/>
+   <type Family="typedef" Name="uint16_t" Line="58" ID="8537" toTI="8548"/>
+   <type Family="Base" Name="long int" ID="8555"/>
+   <type Family="Base" Name="long unsigned int" ID="8562"/>
+   <type Family="Base" Name="long long int" ID="8569"/>
+   <type Family="Base" Name="long long unsigned int" ID="8576"/>
+   <type Family="Base" Name="int" ID="8583"/>
+   <type Family="Base" Name="unsigned int" ID="8590"/>
+   <type Family="typedef" Name="bool" Line="349" ID="8632" toTI="8610"/>
+   <type Family="Pointer" TI="8644" toTI="8512"/>
+   <type Family="typedef" Name="RESULT" Line="52" ID="8687" toTI="8650"/>
+   <type Family="Pointer" TI="8714" toTI="8698"/>
+   <type Family="ComponentList" Name="_DEVICE_PROP" Line="125" ID="8720">
+   <type Family="Pointer" TI="8903" toTI="8901"/>
+    <Component Name="Init" TI="8732" Line="126" Offs="0"/>
+   <type Family="Pointer" TI="8903" toTI="8901"/>
+    <Component Name="Reset" TI="8746" Line="127" Offs="4"/>
+   <type Family="Pointer" TI="8903" toTI="8901"/>
+    <Component Name="Process_Status_IN" TI="8760" Line="130" Offs="8"/>
+   <type Family="Pointer" TI="8903" toTI="8901"/>
+    <Component Name="Process_Status_OUT" TI="8774" Line="131" Offs="12"/>
+   <type Family="Pointer" TI="8925" toTI="8909"/>
+    <Component Name="Class_Data_Setup" TI="8788" Line="149" Offs="16"/>
+    <Component Name="Class_NoData_Setup" TI="8802" Line="160" Offs="20"/>
+   <type Family="Pointer" TI="8952" toTI="8931"/>
+    <Component Name="Class_Get_Interface_Setting" TI="8816" Line="170" Offs="24"/>
+    <Component Name="GetDeviceDescriptor" TI="8830" Line="172" Offs="28"/>
+    <Component Name="GetConfigDescriptor" TI="8844" Line="173" Offs="32"/>
+    <Component Name="GetStringDescriptor" TI="8858" Line="174" Offs="36"/>
+    <Component Name="RxEP_buffer" TI="8872" Line="176" Offs="40"/>
+    <Component Name="MaxPacketSize" TI="8886" Line="177" Offs="44"/>
+   </type>
+   <type Family="Pointer" TI="8903" toTI="8901"/>
+   <type Family="typedef" Name="DEVICE_PROP" Line="179" ID="8958" toTI="8720"/>
+   <type Family="Base" Name="char" ID="9030"/>
+   <function Name="USB_Istr" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_istr.c" Line="65">
+   </function >
+   <variable Name="wIstr" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_istr.c" Line="27" Addr="0x20000B14" TI="8605"/>
+   <variable Name="bIntPackSOF" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_istr.c" Line="28" Addr="0x200008EF" TI="8600"/>
+   <type Family="Pointer" TI="8903" toTI="8901"/>
+   <type Family="array" ID="9138" toTI="8903"/>
+   <type Family="Pointer" TI="8903" toTI="8901"/>
+   <type Family="array" ID="9138" toTI="8903"/>
+   <variable Name="pEpInt_IN" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_istr.c" Line="34" Addr="0x2000001C" TI="9138"/>
+   <type Family="Pointer" TI="8903" toTI="8901"/>
+   <type Family="array" ID="9138" toTI="8903"/>
+   <variable Name="pEpInt_OUT" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_istr.c" Line="45" Addr="0x20000038" TI="9138"/>
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" >
+   <type Family="Base" Name="signed char" ID="9228"/>
+   <type Family="Base" Name="unsigned char" ID="9246"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="9235" toTI="9246"/>
+   <type Family="Base" Name="short int" ID="9253"/>
+   <type Family="Base" Name="short unsigned int" ID="9271"/>
+   <type Family="typedef" Name="uint16_t" Line="58" ID="9260" toTI="9271"/>
+   <type Family="Base" Name="long int" ID="9278"/>
+   <type Family="Base" Name="long unsigned int" ID="9296"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="9285" toTI="9296"/>
+   <type Family="Base" Name="long long int" ID="9303"/>
+   <type Family="Base" Name="long long unsigned int" ID="9310"/>
+   <type Family="Base" Name="int" ID="9317"/>
+   <type Family="Base" Name="unsigned int" ID="9324"/>
+   <type Family="ComponentList" Line="372" ID="9361">
+    <Component Name="SR" TI="9370" Line="373" Offs="0"/>
+    <Component Name="CR1" TI="9384" Line="374" Offs="4"/>
+    <Component Name="CR2" TI="9399" Line="375" Offs="8"/>
+    <Component Name="SMPR1" TI="9414" Line="376" Offs="12"/>
+    <Component Name="SMPR2" TI="9429" Line="377" Offs="16"/>
+    <Component Name="JOFR1" TI="9444" Line="378" Offs="20"/>
+    <Component Name="JOFR2" TI="9459" Line="379" Offs="24"/>
+    <Component Name="JOFR3" TI="9474" Line="380" Offs="28"/>
+    <Component Name="JOFR4" TI="9489" Line="381" Offs="32"/>
+    <Component Name="HTR" TI="9504" Line="382" Offs="36"/>
+    <Component Name="LTR" TI="9519" Line="383" Offs="40"/>
+    <Component Name="SQR1" TI="9534" Line="384" Offs="44"/>
+    <Component Name="SQR2" TI="9549" Line="385" Offs="48"/>
+    <Component Name="SQR3" TI="9564" Line="386" Offs="52"/>
+    <Component Name="JSQR" TI="9579" Line="387" Offs="56"/>
+    <Component Name="JDR1" TI="9594" Line="388" Offs="60"/>
+    <Component Name="JDR2" TI="9609" Line="389" Offs="64"/>
+    <Component Name="JDR3" TI="9624" Line="390" Offs="68"/>
+    <Component Name="JDR4" TI="9639" Line="391" Offs="72"/>
+    <Component Name="DR" TI="9654" Line="392" Offs="76"/>
+   </type>
+   <type Family="ComponentList" Name="OneDescriptor" Line="37" ID="9803">
+   <type Family="Pointer" TI="9844" toTI="9235"/>
+    <Component Name="Descriptor" TI="9815" Line="38" Offs="0"/>
+    <Component Name="Descriptor_Size" TI="9829" Line="39" Offs="4"/>
+   </type>
+   <type Family="typedef" Name="ONE_DESCRIPTOR" Line="41" ID="9850" toTI="9803"/>
+   <type Family="typedef" Name="RESULT" Line="52" ID="9898" toTI="9861"/>
+   <type Family="ComponentList" Name="_ENDPOINT_INFO" Line="57" ID="9909">
+    <Component Name="Usb_wLength" TI="9921" Line="80" Offs="0"/>
+    <Component Name="Usb_wOffset" TI="9935" Line="81" Offs="2"/>
+    <Component Name="PacketSize" TI="9949" Line="82" Offs="4"/>
+   <type Family="Pointer" TI="9994" toTI="9978"/>
+    <Component Name="CopyData" TI="9963" Line="83" Offs="8"/>
+   </type>
+   <type Family="typedef" Name="ENDPOINT_INFO" Line="84" ID="10000" toTI="9909"/>
+   <type Family="ComponentList" Name="_DEVICE" Line="89" ID="10011">
+    <Component Name="Total_Endpoint" TI="10023" Line="90" Offs="0"/>
+    <Component Name="Total_Configuration" TI="10037" Line="91" Offs="1"/>
+   </type>
+   <type Family="typedef" Name="DEVICE" Line="93" ID="10052" toTI="10011"/>
+   <type Family="ComponentList" Name="BW" Line="99" ID="10063">
+    <Component Name="bb1" TI="10074" Line="100" Offs="0"/>
+    <Component Name="bb0" TI="10088" Line="101" Offs="1"/>
+   </type>
+   <type Family="ComponentList" Line="96" ID="10103">
+    <Component Name="w" TI="10111" Line="97" Offs="0"/>
+    <Component Name="bw" TI="10120" Line="103" Offs="0"/>
+   </type>
+   <type Family="typedef" Name="uint16_t_uint8_t" Line="104" ID="10131" toTI="10103"/>
+   <type Family="ComponentList" Name="_DEVICE_INFO" Line="107" ID="10142">
+    <Component Name="USBbmRequestType" TI="10154" Line="108" Offs="0"/>
+    <Component Name="USBbRequest" TI="10168" Line="109" Offs="1"/>
+    <Component Name="USBwValues" TI="10182" Line="110" Offs="2"/>
+    <Component Name="USBwIndexs" TI="10196" Line="111" Offs="4"/>
+    <Component Name="USBwLengths" TI="10210" Line="112" Offs="6"/>
+    <Component Name="ControlState" TI="10224" Line="114" Offs="8"/>
+    <Component Name="Current_Feature" TI="10238" Line="115" Offs="9"/>
+    <Component Name="Current_Configuration" TI="10252" Line="116" Offs="10"/>
+    <Component Name="Current_Interface" TI="10266" Line="117" Offs="11"/>
+    <Component Name="Current_AlternateSetting" TI="10280" Line="118" Offs="12"/>
+    <Component Name="Ctrl_Info" TI="10294" Line="121" Offs="16"/>
+   </type>
+   <type Family="typedef" Name="DEVICE_INFO" Line="122" ID="10309" toTI="10142"/>
+   <type Family="ComponentList" Name="_DEVICE_PROP" Line="125" ID="10320">
+   <type Family="Pointer" TI="10503" toTI="10501"/>
+    <Component Name="Init" TI="10332" Line="126" Offs="0"/>
+   <type Family="Pointer" TI="10503" toTI="10501"/>
+    <Component Name="Reset" TI="10346" Line="127" Offs="4"/>
+   <type Family="Pointer" TI="10503" toTI="10501"/>
+    <Component Name="Process_Status_IN" TI="10360" Line="130" Offs="8"/>
+   <type Family="Pointer" TI="10503" toTI="10501"/>
+    <Component Name="Process_Status_OUT" TI="10374" Line="131" Offs="12"/>
+   <type Family="Pointer" TI="10525" toTI="10509"/>
+    <Component Name="Class_Data_Setup" TI="10388" Line="149" Offs="16"/>
+    <Component Name="Class_NoData_Setup" TI="10402" Line="160" Offs="20"/>
+   <type Family="Pointer" TI="10552" toTI="10531"/>
+    <Component Name="Class_Get_Interface_Setting" TI="10416" Line="170" Offs="24"/>
+    <Component Name="GetDeviceDescriptor" TI="10430" Line="172" Offs="28"/>
+    <Component Name="GetConfigDescriptor" TI="10444" Line="173" Offs="32"/>
+    <Component Name="GetStringDescriptor" TI="10458" Line="174" Offs="36"/>
+    <Component Name="RxEP_buffer" TI="10472" Line="176" Offs="40"/>
+    <Component Name="MaxPacketSize" TI="10486" Line="177" Offs="44"/>
+   </type>
+   <type Family="Pointer" TI="10503" toTI="10501"/>
+   <type Family="typedef" Name="DEVICE_PROP" Line="179" ID="10558" toTI="10320"/>
+   <type Family="ComponentList" Name="_USER_STANDARD_REQUESTS" Line="182" ID="10569">
+   <type Family="Pointer" TI="10503" toTI="10501"/>
+    <Component Name="User_GetConfiguration" TI="10581" Line="183" Offs="0"/>
+   <type Family="Pointer" TI="10503" toTI="10501"/>
+    <Component Name="User_SetConfiguration" TI="10595" Line="184" Offs="4"/>
+   <type Family="Pointer" TI="10503" toTI="10501"/>
+    <Component Name="User_GetInterface" TI="10609" Line="185" Offs="8"/>
+   <type Family="Pointer" TI="10503" toTI="10501"/>
+    <Component Name="User_SetInterface" TI="10623" Line="186" Offs="12"/>
+   <type Family="Pointer" TI="10503" toTI="10501"/>
+    <Component Name="User_GetStatus" TI="10637" Line="187" Offs="16"/>
+   <type Family="Pointer" TI="10503" toTI="10501"/>
+    <Component Name="User_ClearFeature" TI="10651" Line="188" Offs="20"/>
+   <type Family="Pointer" TI="10503" toTI="10501"/>
+    <Component Name="User_SetEndPointFeature" TI="10665" Line="189" Offs="24"/>
+   <type Family="Pointer" TI="10503" toTI="10501"/>
+    <Component Name="User_SetDeviceFeature" TI="10679" Line="190" Offs="28"/>
+   <type Family="Pointer" TI="10503" toTI="10501"/>
+    <Component Name="User_SetDeviceAddress" TI="10693" Line="191" Offs="32"/>
+   </type>
+   <type Family="typedef" Name="USER_STANDARD_REQUESTS" Line="193" ID="10708" toTI="10569"/>
+   <type Family="Base" Name="char" ID="10817"/>
+   <function Name="CustomHID_SetDeviceAddress" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="198">
+   </function >
+   <function Name="CustomHID_Status_In" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="209">
+   </function >
+   <function Name="CustomHID_Status_Out" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="220">
+   </function >
+   <function Name="CustomHID_Data_Setup" TI="9898" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="231">
+    <parameter Name="RequestNo" TI="9235" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="231" Addr="0x0" Param="Yes"/>
+    <variable Name="CopyRoutine" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="232" Addr="0x2" TI="9994"/>
+   </function >
+   <function Name="CustomHID_Get_Interface_Setting" TI="9898" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="369">
+    <parameter Name="Interface" TI="9235" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="369" Addr="0x0" Param="Yes"/>
+    <parameter Name="AlternateSetting" TI="9235" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="369" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="CustomHID_SetProtocol" TI="9898" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="390">
+   </function >
+   <function Name="CustomHID_NoData_Setup" TI="9898" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="279">
+    <parameter Name="RequestNo" TI="9235" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="279" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="CustomHID_GetProtocolValue" TI="9844" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="404">
+    <parameter Name="Length" TI="9260" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="404" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="CustomHID_GetHIDDescriptor" TI="9844" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="355">
+    <parameter Name="Length" TI="9260" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="355" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="CustomHID_GetReportDescriptor" TI="9844" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="343">
+    <parameter Name="Length" TI="9260" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="343" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="CustomHID_GetStringDescriptor" TI="9844" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="323">
+    <parameter Name="Length" TI="9260" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="323" Addr="0x0" Param="Yes"/>
+    <variable Name="wValue0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="324" Addr="0x3" TI="9235"/>
+   </function >
+   <function Name="CustomHID_GetConfigDescriptor" TI="9844" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="311">
+    <parameter Name="Length" TI="9260" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="311" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="CustomHID_GetDeviceDescriptor" TI="9844" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="299">
+    <parameter Name="Length" TI="9260" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="299" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="CustomHID_SetConfiguration" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="180">
+   </function >
+   <function Name="CustomHID_Reset" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="138">
+   </function >
+   <function Name="CustomHID_init" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="114">
+   </function >
+   <variable Name="Device_Property" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="41" Addr="0x20000094" TI="10558"/>
+   <variable Name="User_Standard_Requests" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="56" Addr="0x200000C8" TI="10708"/>
+   <variable Name="Device_Table" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="35" Addr="0x200000C4" TI="10052"/>
+   <type Family="Pointer" TI="11514" toTI="10309"/>
+   <type Family="array" ID="11533" toTI="9235"/>
+   <type Family="array" ID="11567" toTI="9235"/>
+   <type Family="array" ID="11601" toTI="9235"/>
+   <type Family="array" ID="11635" toTI="9235"/>
+   <type Family="array" ID="11669" toTI="9235"/>
+   <type Family="array" ID="11703" toTI="9235"/>
+   <type Family="array" ID="11737" toTI="9235"/>
+   <variable Name="ProtocolValue" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="29" Addr="0x20000B18" TI="9285"/>
+   <variable Name="Device_Descriptor" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="69" Addr="0x2000008C" TI="9850"/>
+   <variable Name="Config_Descriptor" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="75" Addr="0x20000084" TI="9850"/>
+   <variable Name="CustomHID_Report_Descriptor" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="81" Addr="0x2000005C" TI="9850"/>
+   <variable Name="CustomHID_Hid_Descriptor" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="87" Addr="0x20000054" TI="9850"/>
+   <type Family="array" ID="11869" toTI="9850"/>
+   <variable Name="String_Descriptor" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_prop.c" Line="93" Addr="0x20000064" TI="11869"/>
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_pwr.c" >
+   <type Family="Base" Name="signed char" ID="11941"/>
+   <type Family="Base" Name="unsigned char" ID="11959"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="11948" toTI="11959"/>
+   <type Family="Base" Name="short int" ID="11966"/>
+   <type Family="Base" Name="short unsigned int" ID="11984"/>
+   <type Family="typedef" Name="uint16_t" Line="58" ID="11973" toTI="11984"/>
+   <type Family="Base" Name="long int" ID="11991"/>
+   <type Family="Base" Name="long unsigned int" ID="12009"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="11998" toTI="12009"/>
+   <type Family="Base" Name="long long int" ID="12016"/>
+   <type Family="Base" Name="long long unsigned int" ID="12023"/>
+   <type Family="Base" Name="int" ID="12030"/>
+   <type Family="Base" Name="unsigned int" ID="12037"/>
+   <type Family="typedef" Name="bool" Line="349" ID="12079" toTI="12057"/>
+   <type Family="typedef" Name="RESULT" Line="52" ID="12150" toTI="12113"/>
+   <type Family="typedef" Name="RESUME_STATE" Line="32" ID="12222" toTI="12161"/>
+   <type Family="Base" Name="char" ID="12233"/>
+   <type Family="ComponentList" Line="36" ID="12240">
+    <Component Name="eState" TI="12248" Line="37" Offs="0"/>
+    <Component Name="bESOFcnt" TI="12262" Line="38" Offs="1"/>
+   </type>
+   <function Name="PowerOn" TI="12150" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_pwr.c" Line="54">
+   </function >
+   <function Name="Resume_Init" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_pwr.c" Line="141">
+   </function >
+   <function Name="Resume" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_pwr.c" Line="178">
+    <parameter Name="eResumeSetVal" TI="12222" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_pwr.c" Line="178" Addr="0x0" Param="Yes"/>
+    <variable Name="wCNTR" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_pwr.c" Line="179" Addr="0x3" TI="11973"/>
+   </function >
+   <function Name="Suspend" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_pwr.c" Line="109">
+    <variable Name="wCNTR" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_pwr.c" Line="110" Addr="0x2" TI="11973"/>
+   </function >
+   <variable Name="bDeviceState" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_pwr.c" Line="27" Addr="0x200008F0" TI="12047"/>
+   <variable Name="fSuspendEnabled" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_pwr.c" Line="30" Addr="0x200000EC" TI="12529"/>
+   <variable Name="ResumeS" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\usb_pwr.c" Line="39" Addr="0x20000B1C" TI="12240"/>
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" >
+   <type Family="Base" Name="signed char" ID="12590"/>
+   <type Family="Base" Name="unsigned char" ID="12608"/>
+   <type Family="typedef" Name="uint8" Line="22" ID="12597" toTI="12608"/>
+   <type Family="Base" Name="short int" ID="12626"/>
+   <type Family="typedef" Name="int16" Line="24" ID="12615" toTI="12626"/>
+   <type Family="Base" Name="short unsigned int" ID="12644"/>
+   <type Family="typedef" Name="uint16" Line="25" ID="12633" toTI="12644"/>
+   <type Family="Base" Name="long int" ID="12651"/>
+   <type Family="Base" Name="long unsigned int" ID="12669"/>
+   <type Family="typedef" Name="uint32" Line="28" ID="12658" toTI="12669"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="12676" toTI="12608"/>
+   <type Family="typedef" Name="uint16_t" Line="58" ID="12687" toTI="12644"/>
+   <type Family="Base" Name="long long int" ID="12698"/>
+   <type Family="Base" Name="long long unsigned int" ID="12705"/>
+   <type Family="Base" Name="int" ID="12712"/>
+   <type Family="Base" Name="unsigned int" ID="12719"/>
+   <type Family="typedef" Name="u8" Line="334" ID="12734" toTI="12676"/>
+   <type Family="ComponentList" Line="1031" ID="12767">
+    <Component Name="SR" TI="12776" Line="1032" Offs="0"/>
+    <Component Name="RESERVED0" TI="12790" Line="1033" Offs="2"/>
+    <Component Name="DR" TI="12805" Line="1034" Offs="4"/>
+    <Component Name="RESERVED1" TI="12819" Line="1035" Offs="6"/>
+    <Component Name="BRR" TI="12834" Line="1036" Offs="8"/>
+    <Component Name="RESERVED2" TI="12849" Line="1037" Offs="10"/>
+    <Component Name="CR1" TI="12864" Line="1038" Offs="12"/>
+    <Component Name="RESERVED3" TI="12879" Line="1039" Offs="14"/>
+    <Component Name="CR2" TI="12894" Line="1040" Offs="16"/>
+    <Component Name="RESERVED4" TI="12909" Line="1041" Offs="18"/>
+    <Component Name="CR3" TI="12924" Line="1042" Offs="20"/>
+    <Component Name="RESERVED5" TI="12939" Line="1043" Offs="22"/>
+    <Component Name="GTPR" TI="12954" Line="1044" Offs="24"/>
+    <Component Name="RESERVED6" TI="12969" Line="1045" Offs="26"/>
+   </type>
+   <type Family="Base" Name="char" ID="12985"/>
+   <type Family="Pointer" TI="12992" toTI="12998"/>
+   <type Family="ComponentList" Line="58" ID="13003">
+    <Component Name="myAddr" TI="13011" Line="59" Offs="0"/>
+    <Component Name="panId" TI="13025" Line="60" Offs="2"/>
+    <Component Name="channel" TI="13039" Line="61" Offs="4"/>
+    <Component Name="ackRequest" TI="13053" Line="62" Offs="5"/>
+   </type>
+   <type Family="typedef" Name="basicRfCfg_t" Line="67" ID="13068" toTI="13003"/>
+   <type Family="ComponentList" Line="21" ID="13079">
+    <Component Name="seqNumber" TI="13087" Line="22" Offs="0"/>
+   <type Family="array" ID="13116" toTI="12597"/>
+    <Component Name="padding" TI="13101" Line="23" Offs="4"/>
+   </type>
+   <type Family="typedef" Name="perTestPacket_t" Line="24" ID="13132" toTI="13079"/>
+   <type Family="ComponentList" Line="27" ID="13143">
+    <Component Name="expectedSeqNum" TI="13151" Line="28" Offs="0"/>
+    <Component Name="rcvdPkts" TI="13165" Line="29" Offs="4"/>
+    <Component Name="lostPkts" TI="13179" Line="30" Offs="8"/>
+    <Component Name="rssiSum" TI="13193" Line="31" Offs="12"/>
+   </type>
+   <type Family="typedef" Name="perRxStats_t" Line="32" ID="13208" toTI="13143"/>
+   <type Family="ComponentList" Line="36" ID="13219">
+    <Component Name="iRegNum" TI="13227" Line="37" Offs="0"/>
+    <Component Name="szRegName" TI="13241" Line="38" Offs="4"/>
+   </type>
+   <type Family="typedef" Name="regKvp_t" Line="39" ID="13261" toTI="13219"/>
+   <function Name="led_rx_ok" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="195">
+   </function >
+   <function Name="led_txrx_error" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="210">
+   </function >
+   <function Name="led_tx_ok" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="180">
+   </function >
+   <type Family="Pointer" TI="13366" toTI="13261"/>
+   <type Family="array" ID="14095" toTI="12985"/>
+   <variable Name="__FUNCTION__" FileName="" Line="0" Addr="0x800A025" TI="14111"/>
+   <type Family="array" ID="14074" toTI="12985"/>
+   <variable Name="__FUNCTION__" FileName="" Line="0" Addr="0x800A02E" TI="14090"/>
+   <type Family="array" ID="13583" toTI="12615"/>
+   <type Family="array" ID="14053" toTI="12985"/>
+   <variable Name="__FUNCTION__" FileName="" Line="0" Addr="0x800A038" TI="14069"/>
+   <type Family="array" ID="14032" toTI="12985"/>
+   <variable Name="__FUNCTION__" FileName="" Line="0" Addr="0x800A04C" TI="14048"/>
+   <function Name="ZigBee_Test" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="596">
+    <variable Name="ch" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="597" Addr="0x5" TI="12734"/>
+    <variable Name="channelNum" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="598" Addr="0x5" TI="12712"/>
+    <variable Name="iteration" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="393" Addr="0xA" TI="0"/>
+    <variable Name="segNumber" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="394" Addr="0x0" TI="0"/>
+    <variable Name="perRssiBuf" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="395" Addr="0x34000016" TI="0"/>
+    <variable Name="perRssiBufCounter" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="396" Addr="0x8" TI="0"/>
+    <variable Name="rssi" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="400" Addr="0x34000076" TI="0"/>
+    <variable Name="burstSize" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="492" Addr="0x6" TI="0"/>
+    <variable Name="iteration" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="495" Addr="0x4" TI="0"/>
+    <variable Name="ch" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="496" Addr="0x1" TI="0"/>
+   <type Family="array" ID="14116" toTI="12985"/>
+    <variable Name="__FUNCTION__" FileName="" Line="0" Addr="0x800A019" TI="14132"/>
+   </function >
+   <variable Name="txPacket" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="68" Addr="0x20000964" TI="13132"/>
+   <variable Name="rxPacket" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="69" Addr="0x200008FC" TI="13132"/>
+   <type Family="array" ID="14171" toTI="12597"/>
+   <variable Name="pTxData" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="71" Addr="0x200008FB" TI="14171"/>
+   <variable Name="pRxData" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="72" Addr="0x200008FA" TI="14171"/>
+   <variable Name="basicRfConfig" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="73" Addr="0x200008F4" TI="13068"/>
+   <type Family="array" ID="14238" toTI="13261"/>
+   <variable Name="regLookup_SREG" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="84" Addr="0x200000F0" TI="14238"/>
+   <type Family="array" ID="14271" toTI="13261"/>
+   <variable Name="regLookup_FREG" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\src\zigbee_test.c" Line="120" Addr="0x200001E8" TI="14271"/>
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3\system_stm32f10x.c" >
+   <type Family="Base" Name="signed char" ID="14342"/>
+   <type Family="Base" Name="unsigned char" ID="14349"/>
+   <type Family="Base" Name="short int" ID="14356"/>
+   <type Family="Base" Name="short unsigned int" ID="14363"/>
+   <type Family="Base" Name="long int" ID="14370"/>
+   <type Family="Base" Name="long unsigned int" ID="14388"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="14377" toTI="14388"/>
+   <type Family="Base" Name="long long int" ID="14395"/>
+   <type Family="Base" Name="long long unsigned int" ID="14402"/>
+   <type Family="Base" Name="int" ID="14409"/>
+   <type Family="Base" Name="unsigned int" ID="14416"/>
+   <type Family="ComponentList" Line="714" ID="14458">
+    <Component Name="ACR" TI="14467" Line="715" Offs="0"/>
+    <Component Name="KEYR" TI="14482" Line="716" Offs="4"/>
+    <Component Name="OPTKEYR" TI="14497" Line="717" Offs="8"/>
+    <Component Name="SR" TI="14512" Line="718" Offs="12"/>
+    <Component Name="CR" TI="14526" Line="719" Offs="16"/>
+    <Component Name="AR" TI="14540" Line="720" Offs="20"/>
+    <Component Name="RESERVED" TI="14554" Line="721" Offs="24"/>
+    <Component Name="OBR" TI="14569" Line="722" Offs="28"/>
+    <Component Name="WRPR" TI="14584" Line="723" Offs="32"/>
+   </type>
+   <type Family="ComponentList" Line="879" ID="14600">
+    <Component Name="CR" TI="14609" Line="880" Offs="0"/>
+    <Component Name="CFGR" TI="14623" Line="881" Offs="4"/>
+    <Component Name="CIR" TI="14638" Line="882" Offs="8"/>
+    <Component Name="APB2RSTR" TI="14653" Line="883" Offs="12"/>
+    <Component Name="APB1RSTR" TI="14668" Line="884" Offs="16"/>
+    <Component Name="AHBENR" TI="14683" Line="885" Offs="20"/>
+    <Component Name="APB2ENR" TI="14698" Line="886" Offs="24"/>
+    <Component Name="APB1ENR" TI="14713" Line="887" Offs="28"/>
+    <Component Name="BDCR" TI="14728" Line="888" Offs="32"/>
+    <Component Name="CSR" TI="14743" Line="889" Offs="36"/>
+   </type>
+   <function Name="SystemInit" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3\system_stm32f10x.c" Line="188">
+    <variable Name="StartUpCounter" FileName="D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3\system_stm32f10x.c" Line="820" Addr="0x3400000C" TI="0"/>
+    <variable Name="HSEStatus" FileName="D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3\system_stm32f10x.c" Line="820" Addr="0x34000008" TI="0"/>
+   </function >
+   <variable Name="SystemFrequency" FileName="D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3\system_stm32f10x.c" Line="135" Addr="0x0" TI="14431"/>
+   <variable Name="SystemFrequency_SysClk" FileName="D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3\system_stm32f10x.c" Line="136" Addr="0x0" TI="14431"/>
+   <variable Name="SystemFrequency_AHBClk" FileName="D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3\system_stm32f10x.c" Line="137" Addr="0x0" TI="14431"/>
+   <variable Name="SystemFrequency_APB1Clk" FileName="D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3\system_stm32f10x.c" Line="138" Addr="0x0" TI="14431"/>
+   <variable Name="SystemFrequency_APB2Clk" FileName="D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3\system_stm32f10x.c" Line="139" Addr="0x0" TI="14431"/>
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" >
+   <type Family="Base" Name="signed char" ID="15020"/>
+   <type Family="Base" Name="unsigned char" ID="15038"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="15027" toTI="15038"/>
+   <type Family="Base" Name="short int" ID="15045"/>
+   <type Family="Base" Name="short unsigned int" ID="15063"/>
+   <type Family="typedef" Name="uint16_t" Line="58" ID="15052" toTI="15063"/>
+   <type Family="Base" Name="long int" ID="15070"/>
+   <type Family="Base" Name="long unsigned int" ID="15088"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="15077" toTI="15088"/>
+   <type Family="Base" Name="long long int" ID="15095"/>
+   <type Family="Base" Name="long long unsigned int" ID="15102"/>
+   <type Family="Base" Name="int" ID="15109"/>
+   <type Family="Base" Name="unsigned int" ID="15116"/>
+   <type Family="typedef" Name="EP_DBUF_DIR" Line="28" ID="15157" toTI="15126"/>
+   <function Name="SetBTABLE" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="119">
+    <parameter Name="wRegValue" TI="15052" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="119" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="SetEPType" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="169">
+    <parameter Name="bEpNum" TI="15027" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="169" Addr="0x0" Param="Yes"/>
+    <parameter Name="wType" TI="15052" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="169" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="SetEPTxStatus" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="194">
+    <parameter Name="bEpNum" TI="15027" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="194" Addr="0x0" Param="Yes"/>
+    <parameter Name="wState" TI="15052" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="194" Addr="0x1" Param="Yes"/>
+    <variable Name="_wRegVal" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="195" Addr="0x2" TI="15052"/>
+   </function >
+   <function Name="SetEPRxStatus" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="207">
+    <parameter Name="bEpNum" TI="15027" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="207" Addr="0x0" Param="Yes"/>
+    <parameter Name="wState" TI="15052" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="207" Addr="0x1" Param="Yes"/>
+    <variable Name="_wRegVal" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="208" Addr="0x2" TI="15052"/>
+   </function >
+   <function Name="SetEPTxValid" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="265">
+    <parameter Name="bEpNum" TI="15027" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="265" Addr="0x0" Param="Yes"/>
+    <variable Name="_wRegVal" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="266" Addr="0x3" TI="15052"/>
+   </function >
+   <function Name="SetEPRxValid" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="277">
+    <parameter Name="bEpNum" TI="15027" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="277" Addr="0x0" Param="Yes"/>
+    <variable Name="_wRegVal" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="278" Addr="0x3" TI="15052"/>
+   </function >
+   <function Name="Clear_Status_Out" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="312">
+    <parameter Name="bEpNum" TI="15027" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="312" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="ClearDTOG_RX" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="422">
+    <parameter Name="bEpNum" TI="15027" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="422" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="ClearDTOG_TX" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="433">
+    <parameter Name="bEpNum" TI="15027" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="433" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="SetEPTxAddr" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="468">
+    <parameter Name="bEpNum" TI="15027" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="468" Addr="0x0" Param="Yes"/>
+    <parameter Name="wAddr" TI="15052" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="468" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="SetEPRxAddr" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="480">
+    <parameter Name="bEpNum" TI="15027" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="480" Addr="0x0" Param="Yes"/>
+    <parameter Name="wAddr" TI="15052" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="480" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="GetEPTxAddr" TI="15052" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="491">
+    <parameter Name="bEpNum" TI="15027" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="491" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="GetEPRxAddr" TI="15052" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="502">
+    <parameter Name="bEpNum" TI="15027" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="502" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="SetEPTxCount" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="514">
+    <parameter Name="bEpNum" TI="15027" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="514" Addr="0x0" Param="Yes"/>
+    <parameter Name="wCount" TI="15052" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="514" Addr="0x1" Param="Yes"/>
+   </function >
+   <type Family="Pointer" TI="17046" toTI="15077"/>
+   <function Name="SetEPRxCount" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="538">
+    <parameter Name="bEpNum" TI="15027" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="538" Addr="0x0" Param="Yes"/>
+    <parameter Name="wCount" TI="15052" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="538" Addr="0x1" Param="Yes"/>
+    <variable Name="pdwReg" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="539" Addr="0x2" TI="17046"/>
+    <variable Name="wNBlocks" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="539" Addr="0x3" TI="15052"/>
+   </function >
+   <function Name="ByteSwap" TI="15052" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="740">
+    <parameter Name="wSwW" TI="15052" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c" Line="740" Addr="0x0" Param="Yes"/>
+   </function >
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" >
+   <type Family="Base" Name="signed char" ID="18303"/>
+   <type Family="Base" Name="unsigned char" ID="18321"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="18310" toTI="18321"/>
+   <type Family="Base" Name="short int" ID="18328"/>
+   <type Family="Base" Name="short unsigned int" ID="18346"/>
+   <type Family="typedef" Name="uint16_t" Line="58" ID="18335" toTI="18346"/>
+   <type Family="Base" Name="long int" ID="18353"/>
+   <type Family="Base" Name="long unsigned int" ID="18371"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="18360" toTI="18371"/>
+   <type Family="Base" Name="long long int" ID="18378"/>
+   <type Family="Base" Name="long long unsigned int" ID="18385"/>
+   <type Family="Base" Name="int" ID="18392"/>
+   <type Family="Base" Name="unsigned int" ID="18399"/>
+   <type Family="typedef" Name="bool" Line="349" ID="18436" toTI="18414"/>
+   <type Family="ComponentList" Name="OneDescriptor" Line="37" ID="18723">
+   <type Family="Pointer" TI="18764" toTI="18310"/>
+    <Component Name="Descriptor" TI="18735" Line="38" Offs="0"/>
+    <Component Name="Descriptor_Size" TI="18749" Line="39" Offs="4"/>
+   </type>
+   <type Family="typedef" Name="ONE_DESCRIPTOR" Line="41" ID="18770" toTI="18723"/>
+   <type Family="typedef" Name="RESULT" Line="52" ID="18818" toTI="18781"/>
+   <type Family="ComponentList" Name="_ENDPOINT_INFO" Line="57" ID="18829">
+    <Component Name="Usb_wLength" TI="18841" Line="80" Offs="0"/>
+    <Component Name="Usb_wOffset" TI="18855" Line="81" Offs="2"/>
+    <Component Name="PacketSize" TI="18869" Line="82" Offs="4"/>
+   <type Family="Pointer" TI="18914" toTI="18898"/>
+    <Component Name="CopyData" TI="18883" Line="83" Offs="8"/>
+   </type>
+   <type Family="typedef" Name="ENDPOINT_INFO" Line="84" ID="18920" toTI="18829"/>
+   <type Family="ComponentList" Name="_DEVICE" Line="89" ID="18931">
+    <Component Name="Total_Endpoint" TI="18943" Line="90" Offs="0"/>
+    <Component Name="Total_Configuration" TI="18957" Line="91" Offs="1"/>
+   </type>
+   <type Family="typedef" Name="DEVICE" Line="93" ID="18972" toTI="18931"/>
+   <type Family="ComponentList" Name="BW" Line="99" ID="18983">
+    <Component Name="bb1" TI="18994" Line="100" Offs="0"/>
+    <Component Name="bb0" TI="19008" Line="101" Offs="1"/>
+   </type>
+   <type Family="ComponentList" Line="96" ID="19023">
+    <Component Name="w" TI="19031" Line="97" Offs="0"/>
+    <Component Name="bw" TI="19040" Line="103" Offs="0"/>
+   </type>
+   <type Family="typedef" Name="uint16_t_uint8_t" Line="104" ID="19051" toTI="19023"/>
+   <type Family="ComponentList" Name="_DEVICE_INFO" Line="107" ID="19062">
+    <Component Name="USBbmRequestType" TI="19074" Line="108" Offs="0"/>
+    <Component Name="USBbRequest" TI="19088" Line="109" Offs="1"/>
+    <Component Name="USBwValues" TI="19102" Line="110" Offs="2"/>
+    <Component Name="USBwIndexs" TI="19116" Line="111" Offs="4"/>
+    <Component Name="USBwLengths" TI="19130" Line="112" Offs="6"/>
+    <Component Name="ControlState" TI="19144" Line="114" Offs="8"/>
+    <Component Name="Current_Feature" TI="19158" Line="115" Offs="9"/>
+    <Component Name="Current_Configuration" TI="19172" Line="116" Offs="10"/>
+    <Component Name="Current_Interface" TI="19186" Line="117" Offs="11"/>
+    <Component Name="Current_AlternateSetting" TI="19200" Line="118" Offs="12"/>
+    <Component Name="Ctrl_Info" TI="19214" Line="121" Offs="16"/>
+   </type>
+   <type Family="typedef" Name="DEVICE_INFO" Line="122" ID="19229" toTI="19062"/>
+   <type Family="ComponentList" Name="_DEVICE_PROP" Line="125" ID="19240">
+   <type Family="Pointer" TI="19423" toTI="19421"/>
+    <Component Name="Init" TI="19252" Line="126" Offs="0"/>
+   <type Family="Pointer" TI="19423" toTI="19421"/>
+    <Component Name="Reset" TI="19266" Line="127" Offs="4"/>
+   <type Family="Pointer" TI="19423" toTI="19421"/>
+    <Component Name="Process_Status_IN" TI="19280" Line="130" Offs="8"/>
+   <type Family="Pointer" TI="19423" toTI="19421"/>
+    <Component Name="Process_Status_OUT" TI="19294" Line="131" Offs="12"/>
+   <type Family="Pointer" TI="19445" toTI="19429"/>
+    <Component Name="Class_Data_Setup" TI="19308" Line="149" Offs="16"/>
+    <Component Name="Class_NoData_Setup" TI="19322" Line="160" Offs="20"/>
+   <type Family="Pointer" TI="19472" toTI="19451"/>
+    <Component Name="Class_Get_Interface_Setting" TI="19336" Line="170" Offs="24"/>
+    <Component Name="GetDeviceDescriptor" TI="19350" Line="172" Offs="28"/>
+    <Component Name="GetConfigDescriptor" TI="19364" Line="173" Offs="32"/>
+    <Component Name="GetStringDescriptor" TI="19378" Line="174" Offs="36"/>
+    <Component Name="RxEP_buffer" TI="19392" Line="176" Offs="40"/>
+    <Component Name="MaxPacketSize" TI="19406" Line="177" Offs="44"/>
+   </type>
+   <type Family="Pointer" TI="19423" toTI="19421"/>
+   <type Family="typedef" Name="DEVICE_PROP" Line="179" ID="19478" toTI="19240"/>
+   <type Family="ComponentList" Name="_USER_STANDARD_REQUESTS" Line="182" ID="19489">
+   <type Family="Pointer" TI="19423" toTI="19421"/>
+    <Component Name="User_GetConfiguration" TI="19501" Line="183" Offs="0"/>
+   <type Family="Pointer" TI="19423" toTI="19421"/>
+    <Component Name="User_SetConfiguration" TI="19515" Line="184" Offs="4"/>
+   <type Family="Pointer" TI="19423" toTI="19421"/>
+    <Component Name="User_GetInterface" TI="19529" Line="185" Offs="8"/>
+   <type Family="Pointer" TI="19423" toTI="19421"/>
+    <Component Name="User_SetInterface" TI="19543" Line="186" Offs="12"/>
+   <type Family="Pointer" TI="19423" toTI="19421"/>
+    <Component Name="User_GetStatus" TI="19557" Line="187" Offs="16"/>
+   <type Family="Pointer" TI="19423" toTI="19421"/>
+    <Component Name="User_ClearFeature" TI="19571" Line="188" Offs="20"/>
+   <type Family="Pointer" TI="19423" toTI="19421"/>
+    <Component Name="User_SetEndPointFeature" TI="19585" Line="189" Offs="24"/>
+   <type Family="Pointer" TI="19423" toTI="19421"/>
+    <Component Name="User_SetDeviceFeature" TI="19599" Line="190" Offs="28"/>
+   <type Family="Pointer" TI="19423" toTI="19421"/>
+    <Component Name="User_SetDeviceAddress" TI="19613" Line="191" Offs="32"/>
+   </type>
+   <type Family="typedef" Name="USER_STANDARD_REQUESTS" Line="193" ID="19628" toTI="19489"/>
+   <function Name="Standard_GetConfiguration" TI="18764" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="57">
+    <parameter Name="Length" TI="18335" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="57" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="Standard_SetConfiguration" TI="18818" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="78">
+   </function >
+   <function Name="Standard_GetInterface" TI="18764" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="103">
+    <parameter Name="Length" TI="18335" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="103" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="Standard_SetInterface" TI="18818" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="124">
+   </function >
+   <function Name="Standard_GetStatus" TI="18764" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="159">
+    <parameter Name="Length" TI="18335" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="159" Addr="0x0" Param="Yes"/>
+    <variable Name="Related_Endpoint" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="198" Addr="0x2" TI="18310"/>
+    <variable Name="wIndex0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="199" Addr="0x3" TI="18310"/>
+   </function >
+   <function Name="Standard_SetEndPointFeature" TI="18818" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="326">
+    <variable Name="wIndex0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="327" Addr="0x0" TI="18360"/>
+    <variable Name="rEP" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="329" Addr="0x1" TI="18360"/>
+    <variable Name="Status" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="330" Addr="0x4" TI="18360"/>
+    <variable Name="_wRegVal" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="358" Addr="0x2" TI="18335"/>
+    <variable Name="_wRegVal" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="364" Addr="0x2" TI="18335"/>
+   </function >
+   <function Name="Standard_SetDeviceFeature" TI="18818" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="380">
+   </function >
+   <function Name="Standard_GetDescriptorData" TI="18764" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="406">
+    <parameter Name="Length" TI="18335" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="406" Addr="0x0" Param="Yes"/>
+   <type Family="Pointer" TI="20152" toTI="18770"/>
+    <parameter Name="pDesc" TI="20152" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="406" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="SetDeviceAddress" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="990">
+    <parameter Name="Val" TI="18310" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="990" Addr="0x0" Param="Yes"/>
+    <variable Name="i" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="991" Addr="0xC" TI="18360"/>
+    <variable Name="nEP" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="992" Addr="0x4" TI="18360"/>
+   </function >
+   <function Name="NOP_Process" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="1010">
+   </function >
+   <function Name="Post0_Process" TI="18310" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="970">
+   </function >
+   <type Family="Pointer" TI="20338" toTI="18920"/>
+   <function Name="Out0_Process" TI="18310" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="929">
+    <variable Name="ControlState" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="930" Addr="0x3" TI="18360"/>
+    <variable Name="Buffer" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="435" Addr="0x5" TI="0"/>
+    <variable Name="Length" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="436" Addr="0x4" TI="0"/>
+   </function >
+   <function Name="DataStageIn" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="484">
+    <variable Name="save_wLength" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="486" Addr="0x1" TI="18360"/>
+    <variable Name="ControlState" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="487" Addr="0x7" TI="18360"/>
+    <variable Name="DataBuffer" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="489" Addr="0x5" TI="18764"/>
+    <variable Name="Length" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="490" Addr="0x4" TI="18360"/>
+   </function >
+   <function Name="In0_Process" TI="18310" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="889">
+    <variable Name="ControlState" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="890" Addr="0x3" TI="18360"/>
+   </function >
+   <function Name="Standard_ClearFeature" TI="18818" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="237">
+    <variable Name="Type_Rec" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="238" Addr="0x0" TI="18360"/>
+    <variable Name="Status" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="239" Addr="0x2" TI="18360"/>
+   <type Family="Pointer" TI="20755" toTI="18972"/>
+    <variable Name="wIndex0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="251" Addr="0x4" TI="18360"/>
+    <variable Name="rEP" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="252" Addr="0x0" TI="18360"/>
+    <variable Name="_wRegVal" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="306" Addr="0x3" TI="18335"/>
+   </function >
+   <function Name="Setup0_Process" TI="18310" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="845">
+   <type Family="ComponentList" Line="848" ID="20981">
+    <Component Name="b" TI="20990" Line="849" Offs="0"/>
+   <type Family="Pointer" TI="21203" toTI="18335"/>
+    <Component Name="w" TI="21000" Line="850" Offs="0"/>
+   </type>
+    <variable Name="Result" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="544" Addr="0x0" TI="0"/>
+    <variable Name="ControlState" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="546" Addr="0x2" TI="0"/>
+    <variable Name="CopyRoutine" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="668" Addr="0x2" TI="0"/>
+    <variable Name="Result" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="669" Addr="0x0" TI="0"/>
+    <variable Name="Request_No" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="670" Addr="0x4" TI="0"/>
+    <variable Name="Related_Endpoint" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="672" Addr="0x0" TI="0"/>
+    <variable Name="Status" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="673" Addr="0x1" TI="0"/>
+    <variable Name="wValue1" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="684" Addr="0x3" TI="0"/>
+    <variable Name="wLength" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="805" Addr="0x34000024" TI="0"/>
+   </function >
+   <type Family="Pointer" TI="21274" toTI="19229"/>
+   <type Family="Pointer" TI="21293" toTI="19478"/>
+   <type Family="Pointer" TI="21312" toTI="19628"/>
+   <variable Name="StatusInfo" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="39" Addr="0x20000B1E" TI="19051"/>
+   <variable Name="Data_Mul_MaxPacketSize" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c" Line="40" Addr="0x200009CC" TI="18436"/>
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_init.c" >
+   <type Family="Base" Name="signed char" ID="21392"/>
+   <type Family="Base" Name="unsigned char" ID="21410"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="21399" toTI="21410"/>
+   <type Family="Base" Name="short int" ID="21417"/>
+   <type Family="Base" Name="short unsigned int" ID="21435"/>
+   <type Family="typedef" Name="uint16_t" Line="58" ID="21424" toTI="21435"/>
+   <type Family="Base" Name="long int" ID="21442"/>
+   <type Family="Base" Name="long unsigned int" ID="21449"/>
+   <type Family="Base" Name="long long int" ID="21456"/>
+   <type Family="Base" Name="long long unsigned int" ID="21463"/>
+   <type Family="Base" Name="int" ID="21470"/>
+   <type Family="Base" Name="unsigned int" ID="21477"/>
+   <type Family="Pointer" TI="21487" toTI="21399"/>
+   <type Family="typedef" Name="RESULT" Line="52" ID="21530" toTI="21493"/>
+   <type Family="ComponentList" Name="_ENDPOINT_INFO" Line="57" ID="21541">
+    <Component Name="Usb_wLength" TI="21553" Line="80" Offs="0"/>
+    <Component Name="Usb_wOffset" TI="21567" Line="81" Offs="2"/>
+    <Component Name="PacketSize" TI="21581" Line="82" Offs="4"/>
+   <type Family="Pointer" TI="21626" toTI="21610"/>
+    <Component Name="CopyData" TI="21595" Line="83" Offs="8"/>
+   </type>
+   <type Family="typedef" Name="ENDPOINT_INFO" Line="84" ID="21632" toTI="21541"/>
+   <type Family="ComponentList" Name="BW" Line="99" ID="21643">
+    <Component Name="bb1" TI="21654" Line="100" Offs="0"/>
+    <Component Name="bb0" TI="21668" Line="101" Offs="1"/>
+   </type>
+   <type Family="ComponentList" Line="96" ID="21683">
+    <Component Name="w" TI="21691" Line="97" Offs="0"/>
+    <Component Name="bw" TI="21700" Line="103" Offs="0"/>
+   </type>
+   <type Family="typedef" Name="uint16_t_uint8_t" Line="104" ID="21711" toTI="21683"/>
+   <type Family="ComponentList" Name="_DEVICE_INFO" Line="107" ID="21722">
+    <Component Name="USBbmRequestType" TI="21734" Line="108" Offs="0"/>
+    <Component Name="USBbRequest" TI="21748" Line="109" Offs="1"/>
+    <Component Name="USBwValues" TI="21762" Line="110" Offs="2"/>
+    <Component Name="USBwIndexs" TI="21776" Line="111" Offs="4"/>
+    <Component Name="USBwLengths" TI="21790" Line="112" Offs="6"/>
+    <Component Name="ControlState" TI="21804" Line="114" Offs="8"/>
+    <Component Name="Current_Feature" TI="21818" Line="115" Offs="9"/>
+    <Component Name="Current_Configuration" TI="21832" Line="116" Offs="10"/>
+    <Component Name="Current_Interface" TI="21846" Line="117" Offs="11"/>
+    <Component Name="Current_AlternateSetting" TI="21860" Line="118" Offs="12"/>
+    <Component Name="Ctrl_Info" TI="21874" Line="121" Offs="16"/>
+   </type>
+   <type Family="typedef" Name="DEVICE_INFO" Line="122" ID="21889" toTI="21722"/>
+   <type Family="ComponentList" Name="_DEVICE_PROP" Line="125" ID="21900">
+   <type Family="Pointer" TI="22083" toTI="22081"/>
+    <Component Name="Init" TI="21912" Line="126" Offs="0"/>
+   <type Family="Pointer" TI="22083" toTI="22081"/>
+    <Component Name="Reset" TI="21926" Line="127" Offs="4"/>
+   <type Family="Pointer" TI="22083" toTI="22081"/>
+    <Component Name="Process_Status_IN" TI="21940" Line="130" Offs="8"/>
+   <type Family="Pointer" TI="22083" toTI="22081"/>
+    <Component Name="Process_Status_OUT" TI="21954" Line="131" Offs="12"/>
+   <type Family="Pointer" TI="22105" toTI="22089"/>
+    <Component Name="Class_Data_Setup" TI="21968" Line="149" Offs="16"/>
+    <Component Name="Class_NoData_Setup" TI="21982" Line="160" Offs="20"/>
+   <type Family="Pointer" TI="22132" toTI="22111"/>
+    <Component Name="Class_Get_Interface_Setting" TI="21996" Line="170" Offs="24"/>
+    <Component Name="GetDeviceDescriptor" TI="22010" Line="172" Offs="28"/>
+    <Component Name="GetConfigDescriptor" TI="22024" Line="173" Offs="32"/>
+    <Component Name="GetStringDescriptor" TI="22038" Line="174" Offs="36"/>
+    <Component Name="RxEP_buffer" TI="22052" Line="176" Offs="40"/>
+    <Component Name="MaxPacketSize" TI="22066" Line="177" Offs="44"/>
+   </type>
+   <type Family="Pointer" TI="22083" toTI="22081"/>
+   <type Family="typedef" Name="DEVICE_PROP" Line="179" ID="22138" toTI="21900"/>
+   <type Family="ComponentList" Name="_USER_STANDARD_REQUESTS" Line="182" ID="22149">
+   <type Family="Pointer" TI="22083" toTI="22081"/>
+    <Component Name="User_GetConfiguration" TI="22161" Line="183" Offs="0"/>
+   <type Family="Pointer" TI="22083" toTI="22081"/>
+    <Component Name="User_SetConfiguration" TI="22175" Line="184" Offs="4"/>
+   <type Family="Pointer" TI="22083" toTI="22081"/>
+    <Component Name="User_GetInterface" TI="22189" Line="185" Offs="8"/>
+   <type Family="Pointer" TI="22083" toTI="22081"/>
+    <Component Name="User_SetInterface" TI="22203" Line="186" Offs="12"/>
+   <type Family="Pointer" TI="22083" toTI="22081"/>
+    <Component Name="User_GetStatus" TI="22217" Line="187" Offs="16"/>
+   <type Family="Pointer" TI="22083" toTI="22081"/>
+    <Component Name="User_ClearFeature" TI="22231" Line="188" Offs="20"/>
+   <type Family="Pointer" TI="22083" toTI="22081"/>
+    <Component Name="User_SetEndPointFeature" TI="22245" Line="189" Offs="24"/>
+   <type Family="Pointer" TI="22083" toTI="22081"/>
+    <Component Name="User_SetDeviceFeature" TI="22259" Line="190" Offs="28"/>
+   <type Family="Pointer" TI="22083" toTI="22081"/>
+    <Component Name="User_SetDeviceAddress" TI="22273" Line="191" Offs="32"/>
+   </type>
+   <type Family="typedef" Name="USER_STANDARD_REQUESTS" Line="193" ID="22288" toTI="22149"/>
+   <function Name="USB_Init" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_init.c" Line="54">
+   </function >
+   <variable Name="Device_Info" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_init.c" Line="39" Addr="0x20000B2C" TI="21889"/>
+   <variable Name="EPindex" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_init.c" Line="24" Addr="0x20000B28" TI="21399"/>
+   <type Family="Pointer" TI="22400" toTI="21889"/>
+   <variable Name="pInformation" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_init.c" Line="29" Addr="0x20000B4C" TI="22400"/>
+   <type Family="Pointer" TI="22424" toTI="22138"/>
+   <variable Name="pProperty" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_init.c" Line="32" Addr="0x20000B24" TI="22424"/>
+   <type Family="Pointer" TI="22448" toTI="22288"/>
+   <variable Name="pUser_Standard_Requests" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_init.c" Line="40" Addr="0x20000B48" TI="22448"/>
+   <variable Name="SaveState" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_init.c" Line="37" Addr="0x20000B20" TI="21424"/>
+   <variable Name="wInterrupt_Mask" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_init.c" Line="38" Addr="0x20000B50" TI="21424"/>
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_int.c" >
+   <type Family="Base" Name="signed char" ID="22528"/>
+   <type Family="Base" Name="unsigned char" ID="22546"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="22535" toTI="22546"/>
+   <type Family="Base" Name="short int" ID="22553"/>
+   <type Family="Base" Name="short unsigned int" ID="22571"/>
+   <type Family="typedef" Name="uint16_t" Line="58" ID="22560" toTI="22571"/>
+   <type Family="Base" Name="long int" ID="22578"/>
+   <type Family="Base" Name="long unsigned int" ID="22596"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="22585" toTI="22596"/>
+   <type Family="Base" Name="long long int" ID="22603"/>
+   <type Family="Base" Name="long long unsigned int" ID="22610"/>
+   <type Family="Base" Name="int" ID="22617"/>
+   <type Family="Base" Name="unsigned int" ID="22624"/>
+   <type Family="Pointer" TI="22641" toTI="22639"/>
+   <function Name="CTR_LP" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_int.c" Line="42">
+    <variable Name="wEPVal" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_int.c" Line="43" Addr="0x4" TI="22585"/>
+    <variable Name="_wRegVal" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_int.c" Line="60" Addr="0x3" TI="22560"/>
+    <variable Name="_wRegVal" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_int.c" Line="61" Addr="0x3" TI="22560"/>
+    <variable Name="_wRegVal" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_int.c" Line="114" Addr="0x1" TI="22560"/>
+    <variable Name="_wRegVal" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_int.c" Line="115" Addr="0x2" TI="22560"/>
+   </function >
+   <variable Name="SaveRState" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_int.c" Line="23" Addr="0x20000B52" TI="22560"/>
+   <variable Name="SaveTState" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_int.c" Line="24" Addr="0x20000B54" TI="22560"/>
+   <type Family="Pointer" TI="22641" toTI="22639"/>
+   <type Family="array" ID="22896" toTI="22641"/>
+   <type Family="Pointer" TI="22641" toTI="22639"/>
+   <type Family="array" ID="22896" toTI="22641"/>
+   <type Family="Pointer" TI="22641" toTI="22639"/>
+   <type Family="array" ID="22896" toTI="22641"/>
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_mem.c" >
+   <type Family="Base" Name="signed char" ID="22976"/>
+   <type Family="Base" Name="unsigned char" ID="22994"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="22983" toTI="22994"/>
+   <type Family="Base" Name="short int" ID="23001"/>
+   <type Family="Base" Name="short unsigned int" ID="23019"/>
+   <type Family="typedef" Name="uint16_t" Line="58" ID="23008" toTI="23019"/>
+   <type Family="Base" Name="long int" ID="23026"/>
+   <type Family="Base" Name="long unsigned int" ID="23044"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="23033" toTI="23044"/>
+   <type Family="Base" Name="long long int" ID="23051"/>
+   <type Family="Base" Name="long long unsigned int" ID="23058"/>
+   <type Family="Base" Name="int" ID="23065"/>
+   <type Family="Base" Name="unsigned int" ID="23072"/>
+   <type Family="Pointer" TI="23082" toTI="22983"/>
+   <function Name="UserToPMABufferCopy" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_mem.c" Line="36">
+    <parameter Name="pbUsrBuf" TI="23082" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_mem.c" Line="36" Addr="0x0" Param="Yes"/>
+    <parameter Name="wPMABufAddr" TI="23008" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_mem.c" Line="36" Addr="0x1" Param="Yes"/>
+    <parameter Name="wNBytes" TI="23008" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_mem.c" Line="36" Addr="0x2" Param="Yes"/>
+    <variable Name="i" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_mem.c" Line="38" Addr="0x1" TI="23033"/>
+   <type Family="Pointer" TI="23210" toTI="23008"/>
+   </function >
+   <function Name="PMAToUserBufferCopy" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_mem.c" Line="61">
+    <parameter Name="pbUsrBuf" TI="23082" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_mem.c" Line="61" Addr="0x0" Param="Yes"/>
+    <parameter Name="wPMABufAddr" TI="23008" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_mem.c" Line="61" Addr="0x1" Param="Yes"/>
+    <parameter Name="wNBytes" TI="23008" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_mem.c" Line="61" Addr="0x2" Param="Yes"/>
+    <variable Name="i" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32_USB-FS-Device_Driver\src\usb_mem.c" Line="63" Addr="0x2" TI="23033"/>
+   <type Family="Pointer" TI="23316" toTI="23033"/>
+   </function >
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" >
+   <type Family="Base" Name="signed char" ID="23360"/>
+   <type Family="Base" Name="unsigned char" ID="23378"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="23367" toTI="23378"/>
+   <type Family="Base" Name="short int" ID="23385"/>
+   <type Family="Base" Name="short unsigned int" ID="23403"/>
+   <type Family="typedef" Name="uint16_t" Line="58" ID="23392" toTI="23403"/>
+   <type Family="Base" Name="long int" ID="23410"/>
+   <type Family="Base" Name="long unsigned int" ID="23428"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="23417" toTI="23428"/>
+   <type Family="Base" Name="long long int" ID="23435"/>
+   <type Family="Base" Name="long long unsigned int" ID="23442"/>
+   <type Family="Base" Name="int" ID="23449"/>
+   <type Family="Base" Name="unsigned int" ID="23456"/>
+   <type Family="typedef" Name="FlagStatus" Line="352" ID="23493" toTI="23471"/>
+   <type Family="typedef" Name="ITStatus" Line="352" ID="23505" toTI="23471"/>
+   <type Family="typedef" Name="FunctionalState" Line="354" ID="23539" toTI="23517"/>
+   <type Family="ComponentList" Line="1031" ID="23551">
+    <Component Name="SR" TI="23560" Line="1032" Offs="0"/>
+    <Component Name="RESERVED0" TI="23574" Line="1033" Offs="2"/>
+    <Component Name="DR" TI="23589" Line="1034" Offs="4"/>
+    <Component Name="RESERVED1" TI="23603" Line="1035" Offs="6"/>
+    <Component Name="BRR" TI="23618" Line="1036" Offs="8"/>
+    <Component Name="RESERVED2" TI="23633" Line="1037" Offs="10"/>
+    <Component Name="CR1" TI="23648" Line="1038" Offs="12"/>
+    <Component Name="RESERVED3" TI="23663" Line="1039" Offs="14"/>
+    <Component Name="CR2" TI="23678" Line="1040" Offs="16"/>
+    <Component Name="RESERVED4" TI="23693" Line="1041" Offs="18"/>
+    <Component Name="CR3" TI="23708" Line="1042" Offs="20"/>
+    <Component Name="RESERVED5" TI="23723" Line="1043" Offs="22"/>
+    <Component Name="GTPR" TI="23738" Line="1044" Offs="24"/>
+    <Component Name="RESERVED6" TI="23753" Line="1045" Offs="26"/>
+   </type>
+   <type Family="typedef" Name="USART_TypeDef" Line="1046" ID="23769" toTI="23551"/>
+   <type Family="ComponentList" Line="46" ID="23781">
+    <Component Name="SYSCLK_Frequency" TI="23789" Line="47" Offs="0"/>
+    <Component Name="HCLK_Frequency" TI="23803" Line="48" Offs="4"/>
+    <Component Name="PCLK1_Frequency" TI="23817" Line="49" Offs="8"/>
+    <Component Name="PCLK2_Frequency" TI="23831" Line="50" Offs="12"/>
+    <Component Name="ADCCLK_Frequency" TI="23845" Line="51" Offs="16"/>
+   </type>
+   <type Family="typedef" Name="RCC_ClocksTypeDef" Line="52" ID="23860" toTI="23781"/>
+   <type Family="ComponentList" Line="50" ID="23871">
+    <Component Name="USART_BaudRate" TI="23879" Line="51" Offs="0"/>
+    <Component Name="USART_WordLength" TI="23893" Line="56" Offs="4"/>
+    <Component Name="USART_StopBits" TI="23907" Line="59" Offs="6"/>
+    <Component Name="USART_Parity" TI="23921" Line="62" Offs="8"/>
+    <Component Name="USART_Mode" TI="23935" Line="69" Offs="10"/>
+    <Component Name="USART_HardwareFlowControl" TI="23949" Line="72" Offs="12"/>
+   </type>
+   <type Family="typedef" Name="USART_InitTypeDef" Line="75" ID="23964" toTI="23871"/>
+   <type Family="ComponentList" Line="82" ID="23975">
+    <Component Name="USART_Clock" TI="23983" Line="84" Offs="0"/>
+    <Component Name="USART_CPOL" TI="23997" Line="87" Offs="2"/>
+    <Component Name="USART_CPHA" TI="24011" Line="90" Offs="4"/>
+    <Component Name="USART_LastBit" TI="24025" Line="93" Offs="6"/>
+   </type>
+   <type Family="typedef" Name="USART_ClockInitTypeDef" Line="96" ID="24040" toTI="23975"/>
+   <type Family="Pointer" TI="24088" toTI="23964"/>
+   <type Family="Pointer" TI="24133" toTI="24040"/>
+   <type Family="Pointer" TI="24222" toTI="23769"/>
+   <function Name="USART_GetFlagStatus" TI="23493" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" Line="784">
+    <parameter Name="USARTx" TI="24222" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" Line="784" Addr="0x0" Param="Yes"/>
+    <parameter Name="USART_FLAG" TI="23392" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" Line="784" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="USART_ReceiveData" TI="23392" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" Line="577">
+    <parameter Name="USARTx" TI="24222" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" Line="577" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="USART_SendData" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" Line="560">
+    <parameter Name="USARTx" TI="24222" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" Line="560" Addr="0x0" Param="Yes"/>
+    <parameter Name="Data" TI="23392" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" Line="560" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="USART_Cmd" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" Line="320">
+    <parameter Name="USARTx" TI="24222" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" Line="320" Addr="0x0" Param="Yes"/>
+    <parameter Name="NewState" TI="23539" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" Line="320" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="USART_Init" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" Line="166">
+    <parameter Name="USARTx" TI="24222" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" Line="166" Addr="0x0" Param="Yes"/>
+    <parameter Name="USART_InitStruct" TI="24088" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" Line="166" Addr="0x1" Param="Yes"/>
+    <variable Name="tmpreg" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" Line="167" Addr="0x3" TI="23417"/>
+    <variable Name="apbclock" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" Line="167" Addr="0x3" TI="23417"/>
+    <variable Name="integerdivider" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" Line="168" Addr="0x2" TI="23417"/>
+    <variable Name="RCC_ClocksStatus" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" Line="171" Addr="0x34000004" TI="23860"/>
+   </function >
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c" >
+   <type Family="Base" Name="signed char" ID="25896"/>
+   <type Family="Base" Name="unsigned char" ID="25914"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="25903" toTI="25914"/>
+   <type Family="Base" Name="short int" ID="25921"/>
+   <type Family="Base" Name="short unsigned int" ID="25928"/>
+   <type Family="Base" Name="long int" ID="25935"/>
+   <type Family="Base" Name="long unsigned int" ID="25953"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="25942" toTI="25953"/>
+   <type Family="Base" Name="long long int" ID="25960"/>
+   <type Family="Base" Name="long long unsigned int" ID="25967"/>
+   <type Family="Base" Name="int" ID="25974"/>
+   <type Family="Base" Name="unsigned int" ID="25981"/>
+   <type Family="ComponentList" Line="135" ID="25988">
+   <type Family="array" ID="26190" toTI="25942"/>
+    <Component Name="ISER" TI="25997" Line="136" Offs="0"/>
+   <type Family="array" ID="26214" toTI="25942"/>
+    <Component Name="RESERVED0" TI="26011" Line="137" Offs="32"/>
+    <Component Name="ICER" TI="26025" Line="138" Offs="128"/>
+    <Component Name="RSERVED1" TI="26040" Line="139" Offs="160"/>
+    <Component Name="ISPR" TI="26055" Line="140" Offs="256"/>
+    <Component Name="RESERVED2" TI="26070" Line="141" Offs="288"/>
+    <Component Name="ICPR" TI="26085" Line="142" Offs="384"/>
+    <Component Name="RESERVED3" TI="26100" Line="143" Offs="416"/>
+    <Component Name="IABR" TI="26115" Line="144" Offs="512"/>
+   <type Family="array" ID="26250" toTI="25942"/>
+    <Component Name="RESERVED4" TI="26130" Line="145" Offs="544"/>
+   <type Family="array" ID="26266" toTI="25903"/>
+    <Component Name="IP" TI="26145" Line="146" Offs="768"/>
+   <type Family="array" ID="26287" toTI="25942"/>
+    <Component Name="RESERVED5" TI="26159" Line="147" Offs="1008"/>
+    <Component Name="STIR" TI="26174" Line="148" Offs="3584"/>
+   </type>
+   <type Family="ComponentList" Line="154" ID="26309">
+    <Component Name="CPUID" TI="26317" Line="155" Offs="0"/>
+    <Component Name="ICSR" TI="26331" Line="156" Offs="4"/>
+    <Component Name="VTOR" TI="26345" Line="157" Offs="8"/>
+    <Component Name="AIRCR" TI="26359" Line="158" Offs="12"/>
+    <Component Name="SCR" TI="26373" Line="159" Offs="16"/>
+    <Component Name="CCR" TI="26387" Line="160" Offs="20"/>
+   <type Family="array" ID="26589" toTI="25903"/>
+    <Component Name="SHP" TI="26401" Line="161" Offs="24"/>
+    <Component Name="SHCSR" TI="26415" Line="162" Offs="36"/>
+    <Component Name="CFSR" TI="26429" Line="163" Offs="40"/>
+    <Component Name="HFSR" TI="26443" Line="164" Offs="44"/>
+    <Component Name="DFSR" TI="26457" Line="165" Offs="48"/>
+    <Component Name="MMFAR" TI="26471" Line="166" Offs="52"/>
+    <Component Name="BFAR" TI="26485" Line="167" Offs="56"/>
+    <Component Name="AFSR" TI="26499" Line="168" Offs="60"/>
+   <type Family="array" ID="26610" toTI="25942"/>
+    <Component Name="PFR" TI="26513" Line="169" Offs="64"/>
+    <Component Name="DFR" TI="26527" Line="170" Offs="72"/>
+    <Component Name="ADR" TI="26541" Line="171" Offs="76"/>
+   <type Family="array" ID="26636" toTI="25942"/>
+    <Component Name="MMFR" TI="26555" Line="172" Offs="80"/>
+   <type Family="array" ID="26662" toTI="25942"/>
+    <Component Name="ISAR" TI="26569" Line="173" Offs="96"/>
+   </type>
+   <type Family="ComponentList" Line="179" ID="26688">
+    <Component Name="CTRL" TI="26696" Line="180" Offs="0"/>
+    <Component Name="LOAD" TI="26710" Line="181" Offs="4"/>
+    <Component Name="VAL" TI="26724" Line="182" Offs="8"/>
+    <Component Name="CALIB" TI="26738" Line="183" Offs="12"/>
+   </type>
+   <type Family="typedef" Name="FunctionalState" Line="354" ID="26775" toTI="26753"/>
+   <type Family="ComponentList" Line="50" ID="26787">
+    <Component Name="NVIC_IRQChannel" TI="26795" Line="51" Offs="0"/>
+    <Component Name="NVIC_IRQChannelPreemptionPriority" TI="26809" Line="56" Offs="1"/>
+    <Component Name="NVIC_IRQChannelSubPriority" TI="26823" Line="60" Offs="2"/>
+    <Component Name="NVIC_IRQChannelCmd" TI="26837" Line="64" Offs="3"/>
+   </type>
+   <type Family="typedef" Name="NVIC_InitTypeDef" Line="67" ID="26852" toTI="26787"/>
+   <function Name="NVIC_SetVectorTable" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c" Line="155">
+    <parameter Name="NVIC_VectTab" TI="25942" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c" Line="155" Addr="0x0" Param="Yes"/>
+    <parameter Name="Offset" TI="25942" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c" Line="155" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="NVIC_Init" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c" Line="112">
+   <type Family="Pointer" TI="27094" toTI="26852"/>
+    <parameter Name="NVIC_InitStruct" TI="27094" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c" Line="112" Addr="0x0" Param="Yes"/>
+    <variable Name="tmppriority" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c" Line="113" Addr="0x2" TI="25942"/>
+   </function >
+   <function Name="NVIC_PriorityGroupConfig" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c" Line="96">
+    <parameter Name="NVIC_PriorityGroup" TI="25942" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c" Line="96" Addr="0x0" Param="Yes"/>
+   </function >
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c" >
+   <type Family="Base" Name="signed char" ID="27175"/>
+   <type Family="Base" Name="unsigned char" ID="27182"/>
+   <type Family="Base" Name="short int" ID="27189"/>
+   <type Family="Base" Name="short unsigned int" ID="27207"/>
+   <type Family="typedef" Name="uint16_t" Line="58" ID="27196" toTI="27207"/>
+   <type Family="Base" Name="long int" ID="27214"/>
+   <type Family="Base" Name="long unsigned int" ID="27232"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="27221" toTI="27232"/>
+   <type Family="Base" Name="long long int" ID="27239"/>
+   <type Family="Base" Name="long long unsigned int" ID="27246"/>
+   <type Family="Base" Name="int" ID="27253"/>
+   <type Family="Base" Name="unsigned int" ID="27260"/>
+   <type Family="typedef" Name="FlagStatus" Line="352" ID="27297" toTI="27275"/>
+   <type Family="typedef" Name="ITStatus" Line="352" ID="27309" toTI="27275"/>
+   <type Family="typedef" Name="FunctionalState" Line="354" ID="27343" toTI="27321"/>
+   <type Family="ComponentList" Line="611" ID="27355">
+    <Component Name="CCR" TI="27364" Line="612" Offs="0"/>
+    <Component Name="CNDTR" TI="27379" Line="613" Offs="4"/>
+    <Component Name="CPAR" TI="27394" Line="614" Offs="8"/>
+    <Component Name="CMAR" TI="27409" Line="615" Offs="12"/>
+   </type>
+   <type Family="typedef" Name="DMA_Channel_TypeDef" Line="616" ID="27425" toTI="27355"/>
+   <type Family="ComponentList" Line="619" ID="27437">
+    <Component Name="ISR" TI="27446" Line="620" Offs="0"/>
+    <Component Name="IFCR" TI="27461" Line="621" Offs="4"/>
+   </type>
+   <type Family="ComponentList" Line="50" ID="27477">
+    <Component Name="DMA_PeripheralBaseAddr" TI="27485" Line="51" Offs="0"/>
+    <Component Name="DMA_MemoryBaseAddr" TI="27499" Line="53" Offs="4"/>
+    <Component Name="DMA_DIR" TI="27513" Line="55" Offs="8"/>
+    <Component Name="DMA_BufferSize" TI="27527" Line="58" Offs="12"/>
+    <Component Name="DMA_PeripheralInc" TI="27541" Line="62" Offs="16"/>
+    <Component Name="DMA_MemoryInc" TI="27555" Line="65" Offs="20"/>
+    <Component Name="DMA_PeripheralDataSize" TI="27569" Line="68" Offs="24"/>
+    <Component Name="DMA_MemoryDataSize" TI="27583" Line="71" Offs="28"/>
+    <Component Name="DMA_Mode" TI="27597" Line="74" Offs="32"/>
+    <Component Name="DMA_Priority" TI="27611" Line="79" Offs="36"/>
+    <Component Name="DMA_M2M" TI="27625" Line="82" Offs="40"/>
+   </type>
+   <type Family="typedef" Name="DMA_InitTypeDef" Line="84" ID="27640" toTI="27477"/>
+   <type Family="Pointer" TI="27690" toTI="27640"/>
+   <function Name="DMA_ClearFlag" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c" Line="504">
+    <parameter Name="DMA_FLAG" TI="27221" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c" Line="504" Addr="0x0" Param="Yes"/>
+   </function >
+   <type Family="Pointer" TI="27975" toTI="27425"/>
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c" >
+   <type Family="Base" Name="signed char" ID="28261"/>
+   <type Family="Base" Name="unsigned char" ID="28268"/>
+   <type Family="Base" Name="short int" ID="28275"/>
+   <type Family="Base" Name="short unsigned int" ID="28282"/>
+   <type Family="Base" Name="long int" ID="28289"/>
+   <type Family="Base" Name="long unsigned int" ID="28307"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="28296" toTI="28307"/>
+   <type Family="Base" Name="long long int" ID="28314"/>
+   <type Family="Base" Name="long long unsigned int" ID="28321"/>
+   <type Family="Base" Name="int" ID="28328"/>
+   <type Family="Base" Name="unsigned int" ID="28335"/>
+   <type Family="typedef" Name="FlagStatus" Line="352" ID="28372" toTI="28350"/>
+   <type Family="typedef" Name="ITStatus" Line="352" ID="28384" toTI="28350"/>
+   <type Family="typedef" Name="FunctionalState" Line="354" ID="28418" toTI="28396"/>
+   <type Family="ComponentList" Line="700" ID="28430">
+    <Component Name="IMR" TI="28439" Line="701" Offs="0"/>
+    <Component Name="EMR" TI="28454" Line="702" Offs="4"/>
+    <Component Name="RTSR" TI="28469" Line="703" Offs="8"/>
+    <Component Name="FTSR" TI="28484" Line="704" Offs="12"/>
+    <Component Name="SWIER" TI="28499" Line="705" Offs="16"/>
+    <Component Name="PR" TI="28514" Line="706" Offs="20"/>
+   </type>
+   <type Family="typedef" Name="EXTIMode_TypeDef" Line="53" ID="28550" toTI="28529"/>
+   <type Family="typedef" Name="EXTITrigger_TypeDef" Line="66" ID="28588" toTI="28561"/>
+   <type Family="ComponentList" Line="76" ID="28599">
+    <Component Name="EXTI_Line" TI="28607" Line="77" Offs="0"/>
+    <Component Name="EXTI_Mode" TI="28621" Line="80" Offs="4"/>
+    <Component Name="EXTI_Trigger" TI="28635" Line="83" Offs="5"/>
+    <Component Name="EXTI_LineCmd" TI="28649" Line="86" Offs="6"/>
+   </type>
+   <type Family="typedef" Name="EXTI_InitTypeDef" Line="88" ID="28664" toTI="28599"/>
+   <type Family="Pointer" TI="28731" toTI="28664"/>
+   <function Name="EXTI_ClearITPendingBit" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c" Line="249">
+    <parameter Name="EXTI_Line" TI="28296" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c" Line="249" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="EXTI_GetITStatus" TI="28384" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c" Line="224">
+    <parameter Name="EXTI_Line" TI="28296" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c" Line="224" Addr="0x0" Param="Yes"/>
+    <variable Name="bitstatus" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c" Line="225" Addr="0x0" TI="28384"/>
+   </function >
+   <function Name="EXTI_Init" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c" Line="101">
+    <parameter Name="EXTI_InitStruct" TI="28731" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c" Line="101" Addr="0x0" Param="Yes"/>
+   </function >
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" >
+   <type Family="Base" Name="signed char" ID="29073"/>
+   <type Family="Base" Name="unsigned char" ID="29091"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="29080" toTI="29091"/>
+   <type Family="Base" Name="short int" ID="29098"/>
+   <type Family="Base" Name="short unsigned int" ID="29116"/>
+   <type Family="typedef" Name="uint16_t" Line="58" ID="29105" toTI="29116"/>
+   <type Family="Base" Name="long int" ID="29123"/>
+   <type Family="Base" Name="long unsigned int" ID="29141"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="29130" toTI="29141"/>
+   <type Family="Base" Name="long long int" ID="29148"/>
+   <type Family="Base" Name="long long unsigned int" ID="29155"/>
+   <type Family="Base" Name="int" ID="29162"/>
+   <type Family="Base" Name="unsigned int" ID="29169"/>
+   <type Family="array" ID="29184" toTI="29130"/>
+   <type Family="typedef" Name="FunctionalState" Line="354" ID="29222" toTI="29200"/>
+   <type Family="ComponentList" Line="806" ID="29234">
+    <Component Name="CRL" TI="29243" Line="807" Offs="0"/>
+    <Component Name="CRH" TI="29258" Line="808" Offs="4"/>
+    <Component Name="IDR" TI="29273" Line="809" Offs="8"/>
+    <Component Name="ODR" TI="29288" Line="810" Offs="12"/>
+    <Component Name="BSRR" TI="29303" Line="811" Offs="16"/>
+    <Component Name="BRR" TI="29318" Line="812" Offs="20"/>
+    <Component Name="LCKR" TI="29333" Line="813" Offs="24"/>
+   </type>
+   <type Family="typedef" Name="GPIO_TypeDef" Line="814" ID="29349" toTI="29234"/>
+   <type Family="ComponentList" Line="821" ID="29361">
+    <Component Name="EVCR" TI="29370" Line="822" Offs="0"/>
+    <Component Name="MAPR" TI="29385" Line="823" Offs="4"/>
+    <Component Name="EXTICR" TI="29400" Line="824" Offs="8"/>
+   </type>
+   <type Family="typedef" Name="GPIOSpeed_TypeDef" Line="62" ID="29448" toTI="29421"/>
+   <type Family="typedef" Name="GPIOMode_TypeDef" Line="79" ID="29517" toTI="29459"/>
+   <type Family="ComponentList" Line="91" ID="29528">
+    <Component Name="GPIO_Pin" TI="29536" Line="92" Offs="0"/>
+    <Component Name="GPIO_Speed" TI="29550" Line="95" Offs="2"/>
+    <Component Name="GPIO_Mode" TI="29564" Line="98" Offs="3"/>
+   </type>
+   <type Family="typedef" Name="GPIO_InitTypeDef" Line="100" ID="29579" toTI="29528"/>
+   <type Family="typedef" Name="BitAction" Line="110" ID="29611" toTI="29590"/>
+   <type Family="Pointer" TI="29661" toTI="29579"/>
+   <function Name="GPIO_EXTILineConfig" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="577">
+    <parameter Name="GPIO_PortSource" TI="29080" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="577" Addr="0x0" Param="Yes"/>
+    <parameter Name="GPIO_PinSource" TI="29080" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="577" Addr="0x1" Param="Yes"/>
+   </function >
+   <type Family="Pointer" TI="30087" toTI="29349"/>
+   <function Name="GPIO_Write" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="417">
+    <parameter Name="GPIOx" TI="30087" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="417" Addr="0x0" Param="Yes"/>
+    <parameter Name="PortVal" TI="29105" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="417" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="GPIO_WriteBit" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="394">
+    <parameter Name="GPIOx" TI="30087" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="394" Addr="0x0" Param="Yes"/>
+    <parameter Name="GPIO_Pin" TI="29105" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="394" Addr="0x1" Param="Yes"/>
+    <parameter Name="BitVal" TI="29611" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="394" Addr="0x2" Param="Yes"/>
+   </function >
+   <function Name="GPIO_ResetBits" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="374">
+    <parameter Name="GPIOx" TI="30087" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="374" Addr="0x0" Param="Yes"/>
+    <parameter Name="GPIO_Pin" TI="29105" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="374" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="GPIO_SetBits" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="358">
+    <parameter Name="GPIOx" TI="30087" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="358" Addr="0x0" Param="Yes"/>
+    <parameter Name="GPIO_Pin" TI="29105" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="358" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="GPIO_ReadInputDataBit" TI="29080" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="281">
+    <parameter Name="GPIOx" TI="30087" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="281" Addr="0x0" Param="Yes"/>
+    <parameter Name="GPIO_Pin" TI="29105" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="281" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="GPIO_Init" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="173">
+    <parameter Name="GPIOx" TI="30087" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="173" Addr="0x0" Param="Yes"/>
+    <parameter Name="GPIO_InitStruct" TI="29661" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="173" Addr="0x1" Param="Yes"/>
+    <variable Name="currentmode" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="174" Addr="0x7" TI="29130"/>
+    <variable Name="currentpin" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="174" Addr="0x1" TI="29130"/>
+    <variable Name="pinpos" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="174" Addr="0x0" TI="29130"/>
+    <variable Name="pos" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="174" Addr="0x3" TI="29130"/>
+    <variable Name="tmpreg" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" Line="175" Addr="0x6" TI="29130"/>
+   </function >
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c" >
+   <type Family="Base" Name="signed char" ID="30823"/>
+   <type Family="Base" Name="unsigned char" ID="30841"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="30830" toTI="30841"/>
+   <type Family="Base" Name="short int" ID="30848"/>
+   <type Family="Base" Name="short unsigned int" ID="30855"/>
+   <type Family="Base" Name="long int" ID="30862"/>
+   <type Family="Base" Name="long unsigned int" ID="30880"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="30869" toTI="30880"/>
+   <type Family="Base" Name="long long int" ID="30887"/>
+   <type Family="Base" Name="long long unsigned int" ID="30894"/>
+   <type Family="Base" Name="int" ID="30901"/>
+   <type Family="Base" Name="unsigned int" ID="30908"/>
+   <type Family="typedef" Name="FlagStatus" Line="352" ID="30945" toTI="30923"/>
+   <type Family="typedef" Name="FunctionalState" Line="354" ID="30979" toTI="30957"/>
+   <type Family="ComponentList" Line="869" ID="30991">
+    <Component Name="CR" TI="31000" Line="870" Offs="0"/>
+    <Component Name="CSR" TI="31014" Line="871" Offs="4"/>
+   </type>
+   <function Name="__WFI" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\CMSIS\Core\CM3\core_cm3.h" Line="797">
+   </function >
+   <function Name="PWR_EnterSTOPMode" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c" Line="205">
+    <parameter Name="PWR_Regulator" TI="30869" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c" Line="205" Addr="0x0" Param="Yes"/>
+    <parameter Name="PWR_STOPEntry" TI="30830" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c" Line="205" Addr="0x1" Param="Yes"/>
+    <variable Name="tmpreg" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c" Line="206" Addr="0x3" TI="30869"/>
+   </function >
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" >
+   <type Family="Base" Name="signed char" ID="31502"/>
+   <type Family="Base" Name="unsigned char" ID="31520"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="31509" toTI="31520"/>
+   <type Family="Base" Name="short int" ID="31527"/>
+   <type Family="Base" Name="short unsigned int" ID="31534"/>
+   <type Family="Base" Name="long int" ID="31541"/>
+   <type Family="Base" Name="long unsigned int" ID="31559"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="31548" toTI="31559"/>
+   <type Family="Base" Name="long long int" ID="31566"/>
+   <type Family="Base" Name="long long unsigned int" ID="31573"/>
+   <type Family="Base" Name="int" ID="31580"/>
+   <type Family="Base" Name="unsigned int" ID="31587"/>
+   <type Family="typedef" Name="FlagStatus" Line="352" ID="31624" toTI="31602"/>
+   <type Family="typedef" Name="ITStatus" Line="352" ID="31636" toTI="31602"/>
+   <type Family="typedef" Name="FunctionalState" Line="354" ID="31670" toTI="31648"/>
+   <type Family="typedef" Name="ErrorStatus" Line="357" ID="31704" toTI="31682"/>
+   <type Family="ComponentList" Line="879" ID="31716">
+    <Component Name="CR" TI="31725" Line="880" Offs="0"/>
+    <Component Name="CFGR" TI="31739" Line="881" Offs="4"/>
+    <Component Name="CIR" TI="31754" Line="882" Offs="8"/>
+    <Component Name="APB2RSTR" TI="31769" Line="883" Offs="12"/>
+    <Component Name="APB1RSTR" TI="31784" Line="884" Offs="16"/>
+    <Component Name="AHBENR" TI="31799" Line="885" Offs="20"/>
+    <Component Name="APB2ENR" TI="31814" Line="886" Offs="24"/>
+    <Component Name="APB1ENR" TI="31829" Line="887" Offs="28"/>
+    <Component Name="BDCR" TI="31844" Line="888" Offs="32"/>
+    <Component Name="CSR" TI="31859" Line="889" Offs="36"/>
+   </type>
+   <type Family="ComponentList" Line="46" ID="31875">
+    <Component Name="SYSCLK_Frequency" TI="31883" Line="47" Offs="0"/>
+    <Component Name="HCLK_Frequency" TI="31897" Line="48" Offs="4"/>
+    <Component Name="PCLK1_Frequency" TI="31911" Line="49" Offs="8"/>
+    <Component Name="PCLK2_Frequency" TI="31925" Line="50" Offs="12"/>
+    <Component Name="ADCCLK_Frequency" TI="31939" Line="51" Offs="16"/>
+   </type>
+   <type Family="typedef" Name="RCC_ClocksTypeDef" Line="52" ID="31954" toTI="31875"/>
+   <function Name="RCC_GetSYSCLKSource" TI="31509" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="584">
+   </function >
+   <function Name="RCC_GetClocksFreq" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="903">
+   <type Family="Pointer" TI="32107" toTI="31954"/>
+    <parameter Name="RCC_Clocks" TI="32107" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="903" Addr="0x0" Param="Yes"/>
+    <variable Name="tmp" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="904" Addr="0x3" TI="31548"/>
+    <variable Name="pllmull" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="904" Addr="0x1" TI="31548"/>
+   </function >
+   <function Name="RCC_GetFlagStatus" TI="31624" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="1304">
+    <parameter Name="RCC_FLAG" TI="31509" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="1304" Addr="0x0" Param="Yes"/>
+    <variable Name="tmp" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="1305" Addr="0x3" TI="31548"/>
+    <variable Name="statusreg" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="1306" Addr="0x3" TI="31548"/>
+   </function >
+   <function Name="RCC_WaitForHSEStartUp" TI="31704" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="305">
+    <variable Name="StartUpCounter" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="306" Addr="0x34000014" TI="31597"/>
+   </function >
+   <function Name="RCC_APB1PeriphClockCmd" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="1107">
+    <parameter Name="RCC_APB1Periph" TI="31548" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="1107" Addr="0x0" Param="Yes"/>
+    <parameter Name="NewState" TI="31670" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="1107" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="RCC_APB2PeriphClockCmd" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="1077">
+    <parameter Name="RCC_APB2Periph" TI="31548" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="1077" Addr="0x0" Param="Yes"/>
+    <parameter Name="NewState" TI="31670" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="1077" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="RCC_AHBPeriphClockCmd" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="1048">
+    <parameter Name="RCC_AHBPeriph" TI="31548" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="1048" Addr="0x0" Param="Yes"/>
+    <parameter Name="NewState" TI="31670" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="1048" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="RCC_USBCLKConfig" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="725">
+    <parameter Name="RCC_USBCLKSource" TI="31548" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="725" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="RCC_SYSCLKConfig" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="561">
+    <parameter Name="RCC_SYSCLKSource" TI="31548" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="561" Addr="0x0" Param="Yes"/>
+    <variable Name="tmpreg" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="562" Addr="0x3" TI="31548"/>
+   </function >
+   <function Name="RCC_PLLCmd" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="402">
+    <parameter Name="NewState" TI="31670" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="402" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="RCC_HSEConfig" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="271">
+    <parameter Name="RCC_HSE" TI="31548" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="271" Addr="0x0" Param="Yes"/>
+   </function >
+   <type Family="array" ID="33641" toTI="31509"/>
+   <variable Name="APBAHBPrescTable" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="200" Addr="0x20000390" TI="33674"/>
+   <type Family="array" ID="33684" toTI="31509"/>
+   <variable Name="ADCPrescTable" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" Line="201" Addr="0x200003A0" TI="33717"/>
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c" >
+   <type Family="Base" Name="signed char" ID="33765"/>
+   <type Family="Base" Name="unsigned char" ID="33783"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="33772" toTI="33783"/>
+   <type Family="Base" Name="short int" ID="33790"/>
+   <type Family="Base" Name="short unsigned int" ID="33808"/>
+   <type Family="typedef" Name="uint16_t" Line="58" ID="33797" toTI="33808"/>
+   <type Family="Base" Name="long int" ID="33815"/>
+   <type Family="Base" Name="long unsigned int" ID="33833"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="33822" toTI="33833"/>
+   <type Family="Base" Name="long long int" ID="33840"/>
+   <type Family="Base" Name="long long unsigned int" ID="33847"/>
+   <type Family="Base" Name="int" ID="33854"/>
+   <type Family="Base" Name="unsigned int" ID="33861"/>
+   <type Family="typedef" Name="FlagStatus" Line="352" ID="33898" toTI="33876"/>
+   <type Family="typedef" Name="ITStatus" Line="352" ID="33910" toTI="33876"/>
+   <type Family="typedef" Name="FunctionalState" Line="354" ID="33944" toTI="33922"/>
+   <type Family="ComponentList" Line="957" ID="33956">
+    <Component Name="CR1" TI="33965" Line="958" Offs="0"/>
+    <Component Name="RESERVED0" TI="33980" Line="959" Offs="2"/>
+    <Component Name="CR2" TI="33995" Line="960" Offs="4"/>
+    <Component Name="RESERVED1" TI="34010" Line="961" Offs="6"/>
+    <Component Name="SR" TI="34025" Line="962" Offs="8"/>
+    <Component Name="RESERVED2" TI="34039" Line="963" Offs="10"/>
+    <Component Name="DR" TI="34054" Line="964" Offs="12"/>
+    <Component Name="RESERVED3" TI="34068" Line="965" Offs="14"/>
+    <Component Name="CRCPR" TI="34083" Line="966" Offs="16"/>
+    <Component Name="RESERVED4" TI="34098" Line="967" Offs="18"/>
+    <Component Name="RXCRCR" TI="34113" Line="968" Offs="20"/>
+    <Component Name="RESERVED5" TI="34128" Line="969" Offs="22"/>
+    <Component Name="TXCRCR" TI="34143" Line="970" Offs="24"/>
+    <Component Name="RESERVED6" TI="34158" Line="971" Offs="26"/>
+    <Component Name="I2SCFGR" TI="34173" Line="972" Offs="28"/>
+    <Component Name="RESERVED7" TI="34188" Line="973" Offs="30"/>
+    <Component Name="I2SPR" TI="34203" Line="974" Offs="32"/>
+    <Component Name="RESERVED8" TI="34218" Line="975" Offs="34"/>
+   </type>
+   <type Family="typedef" Name="SPI_TypeDef" Line="976" ID="34234" toTI="33956"/>
+   <type Family="ComponentList" Line="46" ID="34246">
+    <Component Name="SYSCLK_Frequency" TI="34254" Line="47" Offs="0"/>
+    <Component Name="HCLK_Frequency" TI="34268" Line="48" Offs="4"/>
+    <Component Name="PCLK1_Frequency" TI="34282" Line="49" Offs="8"/>
+    <Component Name="PCLK2_Frequency" TI="34296" Line="50" Offs="12"/>
+    <Component Name="ADCCLK_Frequency" TI="34310" Line="51" Offs="16"/>
+   </type>
+   <type Family="typedef" Name="RCC_ClocksTypeDef" Line="52" ID="34325" toTI="34246"/>
+   <type Family="ComponentList" Line="50" ID="34336">
+    <Component Name="SPI_Direction" TI="34344" Line="51" Offs="0"/>
+    <Component Name="SPI_Mode" TI="34358" Line="54" Offs="2"/>
+    <Component Name="SPI_DataSize" TI="34372" Line="57" Offs="4"/>
+    <Component Name="SPI_CPOL" TI="34386" Line="60" Offs="6"/>
+    <Component Name="SPI_CPHA" TI="34400" Line="63" Offs="8"/>
+    <Component Name="SPI_NSS" TI="34414" Line="66" Offs="10"/>
+    <Component Name="SPI_BaudRatePrescaler" TI="34428" Line="70" Offs="12"/>
+    <Component Name="SPI_FirstBit" TI="34442" Line="76" Offs="14"/>
+    <Component Name="SPI_CRCPolynomial" TI="34456" Line="79" Offs="16"/>
+   </type>
+   <type Family="typedef" Name="SPI_InitTypeDef" Line="80" ID="34471" toTI="34336"/>
+   <type Family="ComponentList" Line="87" ID="34482">
+    <Component Name="I2S_Mode" TI="34490" Line="89" Offs="0"/>
+    <Component Name="I2S_Standard" TI="34504" Line="92" Offs="2"/>
+    <Component Name="I2S_DataFormat" TI="34518" Line="95" Offs="4"/>
+    <Component Name="I2S_MCLKOutput" TI="34532" Line="98" Offs="6"/>
+    <Component Name="I2S_AudioFreq" TI="34546" Line="101" Offs="8"/>
+    <Component Name="I2S_CPOL" TI="34560" Line="104" Offs="12"/>
+   </type>
+   <type Family="typedef" Name="I2S_InitTypeDef" Line="106" ID="34575" toTI="34482"/>
+   <type Family="Pointer" TI="34625" toTI="34471"/>
+   <type Family="Pointer" TI="34670" toTI="34575"/>
+   <type Family="Pointer" TI="34747" toTI="34234"/>
+   <function Name="SPI_I2S_GetFlagStatus" TI="33898" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c" Line="766">
+    <parameter Name="SPIx" TI="34747" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c" Line="766" Addr="0x0" Param="Yes"/>
+    <parameter Name="SPI_I2S_FLAG" TI="33797" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c" Line="766" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="SPI_I2S_ReceiveData" TI="33797" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c" Line="563">
+    <parameter Name="SPIx" TI="34747" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c" Line="563" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="SPI_I2S_SendData" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c" Line="547">
+    <parameter Name="SPIx" TI="34747" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c" Line="547" Addr="0x0" Param="Yes"/>
+    <parameter Name="Data" TI="33797" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c" Line="547" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="SPI_Cmd" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c" Line="427">
+    <parameter Name="SPIx" TI="34747" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c" Line="427" Addr="0x0" Param="Yes"/>
+    <parameter Name="NewState" TI="33944" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c" Line="427" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="SPI_Init" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c" Line="158">
+    <parameter Name="SPIx" TI="34747" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c" Line="158" Addr="0x0" Param="Yes"/>
+    <parameter Name="SPI_InitStruct" TI="34625" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c" Line="158" Addr="0x1" Param="Yes"/>
+    <variable Name="tmpreg" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c" Line="159" Addr="0x1" TI="33797"/>
+   </function >
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c" >
+   <type Family="Base" Name="signed char" ID="36170"/>
+   <type Family="Base" Name="unsigned char" ID="36188"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="36177" toTI="36188"/>
+   <type Family="Base" Name="short int" ID="36195"/>
+   <type Family="Base" Name="short unsigned int" ID="36213"/>
+   <type Family="typedef" Name="uint16_t" Line="58" ID="36202" toTI="36213"/>
+   <type Family="Base" Name="long int" ID="36220"/>
+   <type Family="Base" Name="long unsigned int" ID="36238"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="36227" toTI="36238"/>
+   <type Family="Base" Name="long long int" ID="36245"/>
+   <type Family="Base" Name="long long unsigned int" ID="36252"/>
+   <type Family="Base" Name="int" ID="36259"/>
+   <type Family="Base" Name="unsigned int" ID="36266"/>
+   <type Family="typedef" Name="FlagStatus" Line="352" ID="36303" toTI="36281"/>
+   <type Family="typedef" Name="ITStatus" Line="352" ID="36315" toTI="36281"/>
+   <type Family="typedef" Name="FunctionalState" Line="354" ID="36349" toTI="36327"/>
+   <type Family="ComponentList" Line="372" ID="36361">
+    <Component Name="SR" TI="36370" Line="373" Offs="0"/>
+    <Component Name="CR1" TI="36384" Line="374" Offs="4"/>
+    <Component Name="CR2" TI="36399" Line="375" Offs="8"/>
+    <Component Name="SMPR1" TI="36414" Line="376" Offs="12"/>
+    <Component Name="SMPR2" TI="36429" Line="377" Offs="16"/>
+    <Component Name="JOFR1" TI="36444" Line="378" Offs="20"/>
+    <Component Name="JOFR2" TI="36459" Line="379" Offs="24"/>
+    <Component Name="JOFR3" TI="36474" Line="380" Offs="28"/>
+    <Component Name="JOFR4" TI="36489" Line="381" Offs="32"/>
+    <Component Name="HTR" TI="36504" Line="382" Offs="36"/>
+    <Component Name="LTR" TI="36519" Line="383" Offs="40"/>
+    <Component Name="SQR1" TI="36534" Line="384" Offs="44"/>
+    <Component Name="SQR2" TI="36549" Line="385" Offs="48"/>
+    <Component Name="SQR3" TI="36564" Line="386" Offs="52"/>
+    <Component Name="JSQR" TI="36579" Line="387" Offs="56"/>
+    <Component Name="JDR1" TI="36594" Line="388" Offs="60"/>
+    <Component Name="JDR2" TI="36609" Line="389" Offs="64"/>
+    <Component Name="JDR3" TI="36624" Line="390" Offs="68"/>
+    <Component Name="JDR4" TI="36639" Line="391" Offs="72"/>
+    <Component Name="DR" TI="36654" Line="392" Offs="76"/>
+   </type>
+   <type Family="typedef" Name="ADC_TypeDef" Line="393" ID="36669" toTI="36361"/>
+   <type Family="ComponentList" Line="50" ID="36681">
+    <Component Name="ADC_Mode" TI="36689" Line="51" Offs="0"/>
+    <Component Name="ADC_ScanConvMode" TI="36703" Line="55" Offs="4"/>
+    <Component Name="ADC_ContinuousConvMode" TI="36717" Line="59" Offs="5"/>
+    <Component Name="ADC_ExternalTrigConv" TI="36731" Line="63" Offs="8"/>
+    <Component Name="ADC_DataAlign" TI="36745" Line="67" Offs="12"/>
+    <Component Name="ADC_NbrOfChannel" TI="36759" Line="70" Offs="16"/>
+   </type>
+   <type Family="typedef" Name="ADC_InitTypeDef" Line="73" ID="36774" toTI="36681"/>
+   <type Family="Pointer" TI="36824" toTI="36774"/>
+   <type Family="Pointer" TI="36925" toTI="36669"/>
+   <function Name="ADC_SoftwareStartConvCmd" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c" Line="457">
+    <parameter Name="ADCx" TI="36925" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c" Line="457" Addr="0x0" Param="Yes"/>
+    <parameter Name="NewState" TI="36349" FileName="D:\WkPjt.Src\MStory3.0\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c" Line="457" Addr="0x1" Param="Yes"/>
+   </function >
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\util.c" >
+   <type Family="Base" Name="signed char" ID="39241"/>
+   <type Family="Base" Name="unsigned char" ID="39259"/>
+   <type Family="typedef" Name="uint8" Line="22" ID="39248" toTI="39259"/>
+   <type Family="Base" Name="short int" ID="39266"/>
+   <type Family="Base" Name="short unsigned int" ID="39273"/>
+   <type Family="Base" Name="long int" ID="39291"/>
+   <type Family="typedef" Name="int32" Line="27" ID="39280" toTI="39291"/>
+   <type Family="Base" Name="long unsigned int" ID="39298"/>
+   <type Family="Base" Name="char" ID="39316"/>
+   <type Family="Pointer" TI="39305" toTI="39311"/>
+   <type Family="Base" Name="long long int" ID="39323"/>
+   <type Family="Base" Name="long long unsigned int" ID="39330"/>
+   <type Family="Base" Name="int" ID="39337"/>
+   <type Family="Base" Name="unsigned int" ID="39344"/>
+   <type Family="Pointer" TI="39530" toTI="39316"/>
+   <function Name="min" TI="39248" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\util.c" Line="118">
+    <parameter Name="v1" TI="39248" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\util.c" Line="118" Addr="0x0" Param="Yes"/>
+    <parameter Name="v2" TI="39248" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\util.c" Line="118" Addr="0x1" Param="Yes"/>
+   </function >
+   <type Family="Pointer" TI="39674" toTI="39248"/>
+   <type Family="array" ID="39680" toTI="39316"/>
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" >
+   <type Family="Base" Name="signed char" ID="39730"/>
+   <type Family="Base" Name="unsigned char" ID="39737"/>
+   <type Family="Base" Name="short int" ID="39744"/>
+   <type Family="Base" Name="short unsigned int" ID="39751"/>
+   <type Family="Base" Name="long int" ID="39758"/>
+   <type Family="Base" Name="long unsigned int" ID="39765"/>
+   <type Family="Base" Name="long long int" ID="39772"/>
+   <type Family="Base" Name="long long unsigned int" ID="39779"/>
+   <type Family="Base" Name="int" ID="39786"/>
+   <type Family="Base" Name="unsigned int" ID="39793"/>
+   <type Family="Base" Name="char" ID="39847"/>
+   <type Family="typedef" Name="int8" Line="21" ID="39854" toTI="39730"/>
+   <type Family="typedef" Name="uint8" Line="22" ID="39865" toTI="39737"/>
+   <type Family="typedef" Name="int16" Line="24" ID="39876" toTI="39744"/>
+   <type Family="typedef" Name="uint16" Line="25" ID="39887" toTI="39751"/>
+   <type Family="typedef" Name="uint32" Line="28" ID="39898" toTI="39765"/>
+   <type Family="ComponentList" Line="58" ID="39909">
+    <Component Name="myAddr" TI="39917" Line="59" Offs="0"/>
+    <Component Name="panId" TI="39931" Line="60" Offs="2"/>
+    <Component Name="channel" TI="39945" Line="61" Offs="4"/>
+    <Component Name="ackRequest" TI="39959" Line="62" Offs="5"/>
+   </type>
+   <type Family="typedef" Name="basicRfCfg_t" Line="67" ID="39974" toTI="39909"/>
+   <type Family="ComponentList" Line="87" ID="39985">
+    <Component Name="seqNumber" TI="39993" Line="88" Offs="0"/>
+    <Component Name="srcAddr" TI="40007" Line="89" Offs="2"/>
+    <Component Name="srcPanId" TI="40021" Line="90" Offs="4"/>
+    <Component Name="length" TI="40035" Line="91" Offs="6"/>
+   <type Family="Pointer" TI="40120" toTI="39865"/>
+    <Component Name="pPayload" TI="40049" Line="92" Offs="8"/>
+    <Component Name="ackRequest" TI="40063" Line="93" Offs="12"/>
+    <Component Name="rssi" TI="40077" Line="94" Offs="13"/>
+    <Component Name="isReady" TI="40091" Line="95" Offs="14"/>
+    <Component Name="status" TI="40105" Line="96" Offs="15"/>
+   </type>
+   <type Family="typedef" Name="basicRfRxInfo_t" Line="97" ID="40131" toTI="39985"/>
+   <type Family="ComponentList" Line="100" ID="40142">
+    <Component Name="txSeqNumber" TI="40150" Line="101" Offs="0"/>
+    <Component Name="ackReceived" TI="40164" Line="102" Offs="1"/>
+    <Component Name="receiveOn" TI="40178" Line="103" Offs="2"/>
+    <Component Name="frameCounter" TI="40192" Line="104" Offs="4"/>
+   </type>
+   <type Family="typedef" Name="basicRfTxState_t" Line="105" ID="40207" toTI="40142"/>
+   <type Family="ComponentList" Line="109" ID="40218">
+    <Component Name="packetLength" TI="40226" Line="110" Offs="0"/>
+    <Component Name="fcf0" TI="40240" Line="111" Offs="1"/>
+    <Component Name="fcf1" TI="40254" Line="112" Offs="2"/>
+    <Component Name="seqNumber" TI="40268" Line="113" Offs="3"/>
+    <Component Name="panId" TI="40282" Line="114" Offs="4"/>
+    <Component Name="destAddr" TI="40296" Line="115" Offs="6"/>
+    <Component Name="srcAddr" TI="40310" Line="116" Offs="8"/>
+   </type>
+   <type Family="typedef" Name="basicRfPktHdr_t" Line="121" ID="40325" toTI="40218"/>
+   <function Name="basicRfPacketIsReady" TI="39865" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="518">
+   </function >
+   <function Name="basicRfReceiveOff" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="611">
+   <type Family="array" ID="41052" toTI="39847"/>
+    <variable Name="__FUNCTION__" FileName="" Line="0" Addr="0x800A063" TI="41094"/>
+   </function >
+   <function Name="basicRfReceiveOn" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="594">
+   <type Family="array" ID="41073" toTI="39847"/>
+    <variable Name="__FUNCTION__" FileName="" Line="0" Addr="0x800A075" TI="41089"/>
+   </function >
+   <function Name="basicRfGetRssi" TI="39854" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="566">
+   </function >
+   <function Name="basicRfReceive" TI="39865" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="537">
+    <parameter Name="pRxData" TI="40120" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="537" Addr="0x0" Param="Yes"/>
+    <parameter Name="len" TI="39865" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="537" Addr="0x1" Param="Yes"/>
+   <type Family="Pointer" TI="40551" toTI="39876"/>
+    <parameter Name="pRssi" TI="40551" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="537" Addr="0x2" Param="Yes"/>
+   </function >
+   <type Family="Pointer" TI="40701" toTI="40325"/>
+   <function Name="basicRfSendPacket" TI="39865" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="424">
+    <parameter Name="destAddr" TI="39887" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="424" Addr="0x0" Param="Yes"/>
+    <parameter Name="pPayload" TI="40120" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="424" Addr="0x1" Param="Yes"/>
+    <parameter Name="length" TI="39865" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="424" Addr="0x2" Param="Yes"/>
+    <variable Name="status" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="426" Addr="0x4" TI="39865"/>
+    <variable Name="pHdr" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="157" Addr="0x1" TI="0"/>
+    <variable Name="fcf" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="158" Addr="0x3" TI="0"/>
+    <variable Name="__FUNCTION__" FileName="" Line="0" Addr="0x800A086" TI="41068"/>
+   </function >
+   <function Name="basicRfInit" TI="39865" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="370">
+   <type Family="Pointer" TI="40992" toTI="39974"/>
+    <parameter Name="pRfConfig" TI="40992" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="370" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="basicRfRxFrmDoneIsr" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="236">
+    <variable Name="pHdr" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="237" Addr="0x6" TI="40701"/>
+    <variable Name="pStatusWord" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="238" Addr="0x1" TI="40120"/>
+   </function >
+   <variable Name="rxi" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="127" Addr="0x200003A4" TI="40131"/>
+   <variable Name="txState" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="128" Addr="0x200009D0" TI="40207"/>
+   <variable Name="pConfig" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="130" Addr="0x20000A4C" TI="40992"/>
+   <type Family="array" ID="41150" toTI="39865"/>
+   <variable Name="txMpdu" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="131" Addr="0x200009D8" TI="41150"/>
+   <variable Name="rxMpdu" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\basic_rf.c" Line="132" Addr="0x20000A50" TI="41150"/>
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\cc2520_mango_porting.c" >
+   <type Family="Base" Name="signed char" ID="41557"/>
+   <type Family="Base" Name="unsigned char" ID="41575"/>
+   <type Family="typedef" Name="uint8_t" Line="46" ID="41564" toTI="41575"/>
+   <type Family="Base" Name="short int" ID="41582"/>
+   <type Family="Base" Name="short unsigned int" ID="41600"/>
+   <type Family="typedef" Name="uint16_t" Line="58" ID="41589" toTI="41600"/>
+   <type Family="Base" Name="long int" ID="41607"/>
+   <type Family="Base" Name="long unsigned int" ID="41625"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="41614" toTI="41625"/>
+   <type Family="Base" Name="long long int" ID="41632"/>
+   <type Family="Base" Name="long long unsigned int" ID="41639"/>
+   <type Family="Base" Name="int" ID="41646"/>
+   <type Family="Base" Name="unsigned int" ID="41653"/>
+   <type Family="typedef" Name="u8" Line="334" ID="41673" toTI="41564"/>
+   <type Family="typedef" Name="FunctionalState" Line="354" ID="41728" toTI="41706"/>
+   <type Family="ComponentList" Line="806" ID="41740">
+    <Component Name="CRL" TI="41749" Line="807" Offs="0"/>
+    <Component Name="CRH" TI="41764" Line="808" Offs="4"/>
+    <Component Name="IDR" TI="41779" Line="809" Offs="8"/>
+    <Component Name="ODR" TI="41794" Line="810" Offs="12"/>
+    <Component Name="BSRR" TI="41809" Line="811" Offs="16"/>
+    <Component Name="BRR" TI="41824" Line="812" Offs="20"/>
+    <Component Name="LCKR" TI="41839" Line="813" Offs="24"/>
+   </type>
+   <type Family="ComponentList" Line="957" ID="41855">
+    <Component Name="CR1" TI="41864" Line="958" Offs="0"/>
+    <Component Name="RESERVED0" TI="41879" Line="959" Offs="2"/>
+    <Component Name="CR2" TI="41894" Line="960" Offs="4"/>
+    <Component Name="RESERVED1" TI="41909" Line="961" Offs="6"/>
+    <Component Name="SR" TI="41924" Line="962" Offs="8"/>
+    <Component Name="RESERVED2" TI="41938" Line="963" Offs="10"/>
+    <Component Name="DR" TI="41953" Line="964" Offs="12"/>
+    <Component Name="RESERVED3" TI="41967" Line="965" Offs="14"/>
+    <Component Name="CRCPR" TI="41982" Line="966" Offs="16"/>
+    <Component Name="RESERVED4" TI="41997" Line="967" Offs="18"/>
+    <Component Name="RXCRCR" TI="42012" Line="968" Offs="20"/>
+    <Component Name="RESERVED5" TI="42027" Line="969" Offs="22"/>
+    <Component Name="TXCRCR" TI="42042" Line="970" Offs="24"/>
+    <Component Name="RESERVED6" TI="42057" Line="971" Offs="26"/>
+    <Component Name="I2SCFGR" TI="42072" Line="972" Offs="28"/>
+    <Component Name="RESERVED7" TI="42087" Line="973" Offs="30"/>
+    <Component Name="I2SPR" TI="42102" Line="974" Offs="32"/>
+    <Component Name="RESERVED8" TI="42117" Line="975" Offs="34"/>
+   </type>
+   <type Family="typedef" Name="EXTIMode_TypeDef" Line="53" ID="42154" toTI="42133"/>
+   <type Family="typedef" Name="EXTITrigger_TypeDef" Line="66" ID="42192" toTI="42165"/>
+   <type Family="ComponentList" Line="76" ID="42203">
+    <Component Name="EXTI_Line" TI="42211" Line="77" Offs="0"/>
+    <Component Name="EXTI_Mode" TI="42225" Line="80" Offs="4"/>
+    <Component Name="EXTI_Trigger" TI="42239" Line="83" Offs="5"/>
+    <Component Name="EXTI_LineCmd" TI="42253" Line="86" Offs="6"/>
+   </type>
+   <type Family="typedef" Name="EXTI_InitTypeDef" Line="88" ID="42268" toTI="42203"/>
+   <type Family="ComponentList" Line="50" ID="42279">
+    <Component Name="NVIC_IRQChannel" TI="42287" Line="51" Offs="0"/>
+    <Component Name="NVIC_IRQChannelPreemptionPriority" TI="42301" Line="56" Offs="1"/>
+    <Component Name="NVIC_IRQChannelSubPriority" TI="42315" Line="60" Offs="2"/>
+    <Component Name="NVIC_IRQChannelCmd" TI="42329" Line="64" Offs="3"/>
+   </type>
+   <type Family="typedef" Name="NVIC_InitTypeDef" Line="67" ID="42344" toTI="42279"/>
+   <type Family="Base" Name="char" ID="42355"/>
+   <function Name="CC2520_SPI_WAIT_RXRDY" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\cc2520_mango_porting.c" Line="86">
+   </function >
+   <function Name="CC2520_SPI_RX" TI="41673" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\cc2520_mango_porting.c" Line="81">
+   </function >
+   <function Name="CC2520_SPI_TX" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\cc2520_mango_porting.c" Line="73">
+    <parameter Name="data" TI="41673" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\cc2520_mango_porting.c" Line="73" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="CC2520_VREG_EN_OPIN" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\cc2520_mango_porting.c" Line="54">
+    <parameter Name="data" TI="41673" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\cc2520_mango_porting.c" Line="54" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="CC2520_RESET_OPIN" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\cc2520_mango_porting.c" Line="42">
+    <parameter Name="data" TI="41673" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\cc2520_mango_porting.c" Line="42" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="CC2520_GPIO_0_Interrupt_Setting" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\cc2520_mango_porting.c" Line="11">
+    <parameter Name="fStateE" TI="41728" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\cc2520_mango_porting.c" Line="11" Addr="0x0" Param="Yes"/>
+    <variable Name="NVIC_InitStructure" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\cc2520_mango_porting.c" Line="12" Addr="0x3400000C" TI="42344"/>
+    <variable Name="EXTI_InitStructure" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\cc2520_mango_porting.c" Line="13" Addr="0x34000004" TI="42268"/>
+   </function >
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" >
+   <type Family="Base" Name="signed char" ID="42634"/>
+   <type Family="Base" Name="unsigned char" ID="42652"/>
+   <type Family="typedef" Name="uint8" Line="22" ID="42641" toTI="42652"/>
+   <type Family="Base" Name="short int" ID="42659"/>
+   <type Family="Base" Name="short unsigned int" ID="42677"/>
+   <type Family="typedef" Name="uint16" Line="25" ID="42666" toTI="42677"/>
+   <type Family="Base" Name="long int" ID="42684"/>
+   <type Family="Base" Name="long unsigned int" ID="42702"/>
+   <type Family="typedef" Name="uint32" Line="28" ID="42691" toTI="42702"/>
+   <type Family="typedef" Name="BYTE" Line="55" ID="42709" toTI="42652"/>
+   <type Family="typedef" Name="WORD" Line="56" ID="42720" toTI="42677"/>
+   <type Family="typedef" Name="DWORD" Line="57" ID="42731" toTI="42702"/>
+   <type Family="ComponentList" Line="75" ID="42742">
+    <Component Name="b0" TI="42750" Line="76" Offs="0"/>
+    <Component Name="b1" TI="42763" Line="77" Offs="1"/>
+   </type>
+   <type Family="ComponentList" Line="73" ID="42777">
+    <Component Name="w" TI="42785" Line="74" Offs="0"/>
+    <Component Name="b" TI="42794" Line="78" Offs="0"/>
+   </type>
+   <type Family="typedef" Name="EWORD" Line="79" ID="42804" toTI="42777"/>
+   <type Family="ComponentList" Line="82" ID="42815">
+    <Component Name="b0" TI="42823" Line="83" Offs="0"/>
+    <Component Name="b1" TI="42836" Line="84" Offs="1"/>
+    <Component Name="b2" TI="42849" Line="85" Offs="2"/>
+    <Component Name="b3" TI="42862" Line="86" Offs="3"/>
+   </type>
+   <type Family="ComponentList" Line="80" ID="42876">
+    <Component Name="dw" TI="42884" Line="81" Offs="0"/>
+    <Component Name="b" TI="42894" Line="87" Offs="0"/>
+   </type>
+   <type Family="typedef" Name="EDWORD" Line="88" ID="42904" toTI="42876"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="42915" toTI="42702"/>
+   <type Family="Base" Name="long long int" ID="42926"/>
+   <type Family="Base" Name="long long unsigned int" ID="42933"/>
+   <type Family="Base" Name="int" ID="42940"/>
+   <type Family="Base" Name="unsigned int" ID="42947"/>
+   <type Family="ComponentList" Line="806" ID="42962">
+    <Component Name="CRL" TI="42971" Line="807" Offs="0"/>
+    <Component Name="CRH" TI="42986" Line="808" Offs="4"/>
+    <Component Name="IDR" TI="43001" Line="809" Offs="8"/>
+    <Component Name="ODR" TI="43016" Line="810" Offs="12"/>
+    <Component Name="BSRR" TI="43031" Line="811" Offs="16"/>
+    <Component Name="BRR" TI="43046" Line="812" Offs="20"/>
+    <Component Name="LCKR" TI="43061" Line="813" Offs="24"/>
+   </type>
+   <type Family="Base" Name="char" ID="43077"/>
+   <function Name="CC2520_INS_WR_ARRAY" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="169">
+    <parameter Name="count" TI="42666" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="169" Addr="0x0" Param="Yes"/>
+   <type Family="Pointer" TI="43140" toTI="42641"/>
+    <parameter Name="pData" TI="43140" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="169" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="CC2520_SPI_TXRX" TI="42641" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="36">
+    <parameter Name="x" TI="42641" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="36" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="CC2520_REGWR8" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="1576">
+    <parameter Name="addr" TI="42641" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="1576" Addr="0x0" Param="Yes"/>
+    <parameter Name="value" TI="42641" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="1576" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="CC2520_REGRD8" TI="42641" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="1489">
+    <parameter Name="addr" TI="42641" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="1489" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="CC2520_BCLR" TI="42641" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="1114">
+    <parameter Name="bitAddr" TI="42641" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="1114" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="CC2520_TXBUF" TI="42641" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="823">
+    <parameter Name="count" TI="42641" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="823" Addr="0x0" Param="Yes"/>
+    <parameter Name="pData" TI="43140" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="823" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="CC2520_MEMWR16" TI="42641" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="638">
+    <parameter Name="addr" TI="42666" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="638" Addr="0x0" Param="Yes"/>
+    <parameter Name="value" TI="42666" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="638" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="CC2520_MEMWR8" TI="42641" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="616">
+    <parameter Name="addr" TI="42666" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="616" Addr="0x0" Param="Yes"/>
+    <parameter Name="value" TI="42641" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="616" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="CC2520_MEMRD8" TI="42641" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="525">
+    <parameter Name="addr" TI="42666" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="525" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="CC2520_INS_STROBE" TI="42641" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="188">
+    <parameter Name="strobe" TI="42641" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="188" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="CC2520_INS_RD_ARRAY" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="115">
+    <parameter Name="count" TI="42666" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="115" Addr="0x0" Param="Yes"/>
+    <parameter Name="pData" TI="43140" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="115" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="CC2520_RXBUF" TI="42641" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="685">
+    <parameter Name="count" TI="42641" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="685" Addr="0x0" Param="Yes"/>
+    <parameter Name="pData" TI="43140" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_cc2520.c" Line="685" Addr="0x1" Param="Yes"/>
+   </function >
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_int.c" >
+   <type Family="Base" Name="signed char" ID="47947"/>
+   <type Family="Base" Name="unsigned char" ID="47954"/>
+   <type Family="Base" Name="short int" ID="47961"/>
+   <type Family="Base" Name="short unsigned int" ID="47979"/>
+   <type Family="typedef" Name="uint16" Line="25" ID="47968" toTI="47979"/>
+   <type Family="Base" Name="long int" ID="47986"/>
+   <type Family="Base" Name="long unsigned int" ID="47993"/>
+   <type Family="Base" Name="long long int" ID="48000"/>
+   <type Family="Base" Name="long long unsigned int" ID="48007"/>
+   <type Family="Base" Name="int" ID="48014"/>
+   <type Family="Base" Name="unsigned int" ID="48021"/>
+   <type Family="Base" Name="char" ID="48031"/>
+   <function Name="halIntOn" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_int.c" Line="29">
+   </function >
+   <function Name="halIntOff" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_int.c" Line="44">
+   </function >
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" >
+   <type Family="Base" Name="signed char" ID="48170"/>
+   <type Family="Base" Name="unsigned char" ID="48188"/>
+   <type Family="typedef" Name="uint8" Line="22" ID="48177" toTI="48188"/>
+   <type Family="Base" Name="short int" ID="48195"/>
+   <type Family="Base" Name="short unsigned int" ID="48213"/>
+   <type Family="typedef" Name="uint16" Line="25" ID="48202" toTI="48213"/>
+   <type Family="Base" Name="long int" ID="48220"/>
+   <type Family="Base" Name="long unsigned int" ID="48227"/>
+   <type Family="Pointer" TI="48245" toTI="48251"/>
+   <type Family="typedef" Name="ISR_FUNC_PTR" Line="31" ID="48234" toTI="48245"/>
+   <type Family="Pointer" TI="48245" toTI="48251"/>
+   <type Family="typedef" Name="uint32_t" Line="84" ID="48253" toTI="48227"/>
+   <type Family="Base" Name="long long int" ID="48264"/>
+   <type Family="Base" Name="long long unsigned int" ID="48271"/>
+   <type Family="Base" Name="int" ID="48278"/>
+   <type Family="Base" Name="unsigned int" ID="48285"/>
+   <type Family="ComponentList" Line="806" ID="48322">
+    <Component Name="CRL" TI="48331" Line="807" Offs="0"/>
+    <Component Name="CRH" TI="48346" Line="808" Offs="4"/>
+    <Component Name="IDR" TI="48361" Line="809" Offs="8"/>
+    <Component Name="ODR" TI="48376" Line="810" Offs="12"/>
+    <Component Name="BSRR" TI="48391" Line="811" Offs="16"/>
+    <Component Name="BRR" TI="48406" Line="812" Offs="20"/>
+    <Component Name="LCKR" TI="48421" Line="813" Offs="24"/>
+   </type>
+   <type Family="Base" Name="char" ID="48437"/>
+   <type Family="ComponentList" Line="90" ID="48444">
+    <Component Name="reg" TI="48452" Line="91" Offs="0"/>
+    <Component Name="val" TI="48466" Line="92" Offs="1"/>
+   </type>
+   <type Family="typedef" Name="regVal_t" Line="93" ID="48481" toTI="48444"/>
+   <function Name="halRfGetRssiOffset" TI="48177" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="291">
+   </function >
+   <function Name="halRfWaitTransceiverReady" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="590">
+   </function >
+   <function Name="halRfEnableRxInterrupt" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="550">
+   </function >
+   <function Name="halRfDisableRxInterrupt" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="527">
+   </function >
+   <function Name="halRfReceiveOff" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="512">
+   </function >
+   <function Name="halRfReceiveOn" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="498">
+   </function >
+   <function Name="halRfSetChannel" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="307">
+    <parameter Name="channel" TI="48177" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="307" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="halRfTransmit" TI="48177" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="439">
+    <variable Name="timeout" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="440" Addr="0x4" TI="48202"/>
+    <variable Name="status" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="441" Addr="0x4" TI="48177"/>
+   <type Family="array" ID="49256" toTI="48437"/>
+    <variable Name="__FUNCTION__" FileName="" Line="0" Addr="0x800A098" TI="49272"/>
+   </function >
+   <function Name="halRfReadRxBuf" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="424">
+   <type Family="Pointer" TI="48946" toTI="48177"/>
+    <parameter Name="data" TI="48946" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="424" Addr="0x0" Param="Yes"/>
+    <parameter Name="length" TI="48177" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="424" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="halRfWriteTxBuf" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="407">
+    <parameter Name="data" TI="48946" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="407" Addr="0x0" Param="Yes"/>
+    <parameter Name="length" TI="48177" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="407" Addr="0x1" Param="Yes"/>
+   </function >
+   <function Name="halRfSetPanId" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="337">
+    <parameter Name="panId" TI="48202" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="337" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="halRfSetShortAddr" TI="0" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="322">
+    <parameter Name="shortAddr" TI="48202" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="322" Addr="0x0" Param="Yes"/>
+   </function >
+   <function Name="halRfGetChipVer" TI="48177" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="259">
+   </function >
+   <function Name="halRfGetChipId" TI="48177" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="244">
+   </function >
+   <function Name="halRfInit" TI="48177" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="177">
+   <type Family="Pointer" TI="49229" toTI="48481"/>
+   <type Family="array" ID="49235" toTI="48437"/>
+    <variable Name="__FUNCTION__" FileName="" Line="0" Addr="0x800A0A6" TI="49251"/>
+   </function >
+   <type Family="array" ID="49277" toTI="48481"/>
+   <variable Name="regval" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="101" Addr="0x200003B5" TI="49277"/>
+   <variable Name="rssiOffset" FileName="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf.c" Line="149" Addr="0x200003B4" TI="48177"/>
+  </module>
+  <module Name="D:\WkPjt.Src\MStory3.0\Unit_0\BaseProgram\cc2520\hal_rf_security.c" >
+   <type Family="Base" Name="signed char" ID="49365"/>
+   <type Family="Base" Name="unsigned char" ID="49383"/>
+   <type Family="typedef" Name="uint8" Line="22" ID="49372" toTI="49383"/>
+   <type Family="Base" Name="short int" ID="49390"/>
+   <type Family="Base" Name="short unsigned int" ID="49397"/>
+   <type Family="Base" Name="long int" ID="49404"/>
+   <type Family="Base" Name="long unsigned int" ID="49411"/>
+   <type Family="Base" Name="long long int" ID="49418"/>
+   <type Family="Base" Name="long long unsigned int" ID="49425"/>
+   <type Family="Base" Name="int" ID="49432"/>
+   <type Family="Base" Name="unsigned int" ID="49439"/>
+   <type Family="Base" Name="char" ID="49449"/>
+   <type Family="Pointer" TI="49607" toTI="49372"/>
+   <type Family="array" ID="49798" toTI="49449"/>
+  </module>
+ </modulelist>
+</aoffile>
+

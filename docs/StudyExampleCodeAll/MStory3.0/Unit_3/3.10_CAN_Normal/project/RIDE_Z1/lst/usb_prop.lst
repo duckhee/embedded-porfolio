@@ -1,0 +1,679 @@
+
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_Z1\obj\usb_prop.o:     file format elf32-littlearm
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\project\RIDE_Z1\obj\usb_prop.o
+
+Disassembly of section .text.CustomHID_SetDeviceAddress:
+
+00000000 <CustomHID_SetDeviceAddress>:
+CustomHID_SetDeviceAddress():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:199
+* Output         : None.
+* Return         : None.
+*******************************************************************************/
+void CustomHID_SetDeviceAddress (void)
+{
+  bDeviceState = ADDRESSED;
+   0:	4b01      	ldr	r3, [pc, #4]	(8 <CustomHID_SetDeviceAddress+0x8>)
+   2:	2204      	movs	r2, #4
+   4:	601a      	str	r2, [r3, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:200
+}
+   6:	4770      	bx	lr
+   8:	00000000 	.word	0x00000000
+Disassembly of section .text.CustomHID_Status_In:
+
+00000000 <CustomHID_Status_In>:
+CustomHID_Status_In():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:210
+* Output         : None.
+* Return         : None.
+*******************************************************************************/
+void CustomHID_Status_In(void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CustomHID_Status_Out:
+
+00000000 <CustomHID_Status_Out>:
+CustomHID_Status_Out():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:221
+* Output         : None.
+* Return         : None.
+*******************************************************************************/
+void CustomHID_Status_Out (void)
+{
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			(mov r8, r8)
+Disassembly of section .text.CustomHID_Data_Setup:
+
+00000000 <CustomHID_Data_Setup>:
+CustomHID_Data_Setup():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:236
+{
+  uint8_t *(*CopyRoutine)(uint16_t);
+
+  CopyRoutine = NULL;
+
+  if ((RequestNo == GET_DESCRIPTOR)
+   0:	2806      	cmp	r0, #6
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:231
+* Input          : Request Nb.
+* Output         : None.
+* Return         : USB_UNSUPPORT or USB_SUCCESS.
+*******************************************************************************/
+RESULT CustomHID_Data_Setup(uint8_t RequestNo)
+{
+   2:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:236
+  uint8_t *(*CopyRoutine)(uint16_t);
+
+  CopyRoutine = NULL;
+
+  if ((RequestNo == GET_DESCRIPTOR)
+   4:	d111      	bne.n	2a <CustomHID_Data_Setup+0x2a>
+   6:	4b14      	ldr	r3, [pc, #80]	(58 <CustomHID_Data_Setup+0x58>)
+   8:	681a      	ldr	r2, [r3, #0]
+   a:	7813      	ldrb	r3, [r2, #0]
+   c:	f003 037f 	and.w	r3, r3, #127	; 0x7f
+  10:	2b01      	cmp	r3, #1
+  12:	d10a      	bne.n	2a <CustomHID_Data_Setup+0x2a>
+  14:	7953      	ldrb	r3, [r2, #5]
+  16:	b943      	cbnz	r3, 2a <CustomHID_Data_Setup+0x2a>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:241
+      && (Type_Recipient == (STANDARD_REQUEST | INTERFACE_RECIPIENT))
+      && (pInformation->USBwIndex0 == 0))
+  {
+
+    if (pInformation->USBwValue1 == REPORT_DESCRIPTOR)
+  18:	7893      	ldrb	r3, [r2, #2]
+  1a:	2b22      	cmp	r3, #34
+  1c:	d101      	bne.n	22 <CustomHID_Data_Setup+0x22>
+  1e:	4a0f      	ldr	r2, [pc, #60]	(5c <CustomHID_Data_Setup+0x5c>)
+  20:	e00d      	b.n	3e <CustomHID_Data_Setup+0x3e>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:245
+    {
+      CopyRoutine = CustomHID_GetReportDescriptor;
+    }
+    else if (pInformation->USBwValue1 == HID_DESCRIPTOR_TYPE)
+  22:	2b21      	cmp	r3, #33
+  24:	d115      	bne.n	52 <CustomHID_Data_Setup+0x52>
+  26:	4a0e      	ldr	r2, [pc, #56]	(60 <CustomHID_Data_Setup+0x60>)
+  28:	e009      	b.n	3e <CustomHID_Data_Setup+0x3e>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:253
+    }
+
+  } /* End of GET_DESCRIPTOR */
+
+  /*** GET_PROTOCOL ***/
+  else if ((Type_Recipient == (CLASS_REQUEST | INTERFACE_RECIPIENT))
+  2a:	4b0b      	ldr	r3, [pc, #44]	(58 <CustomHID_Data_Setup+0x58>)
+  2c:	681b      	ldr	r3, [r3, #0]
+  2e:	781b      	ldrb	r3, [r3, #0]
+  30:	f003 037f 	and.w	r3, r3, #127	; 0x7f
+  34:	2b21      	cmp	r3, #33
+  36:	d10c      	bne.n	52 <CustomHID_Data_Setup+0x52>
+  38:	2803      	cmp	r0, #3
+  3a:	d10a      	bne.n	52 <CustomHID_Data_Setup+0x52>
+  3c:	4a09      	ldr	r2, [pc, #36]	(64 <CustomHID_Data_Setup+0x64>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:264
+  if (CopyRoutine == NULL)
+  {
+    return USB_UNSUPPORT;
+  }
+
+  pInformation->Ctrl_Info.CopyData = CopyRoutine;
+  3e:	4b06      	ldr	r3, [pc, #24]	(58 <CustomHID_Data_Setup+0x58>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:265
+  pInformation->Ctrl_Info.Usb_wOffset = 0;
+  40:	f04f 0100 	mov.w	r1, #0	; 0x0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:264
+  if (CopyRoutine == NULL)
+  {
+    return USB_UNSUPPORT;
+  }
+
+  pInformation->Ctrl_Info.CopyData = CopyRoutine;
+  44:	681b      	ldr	r3, [r3, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:266
+  pInformation->Ctrl_Info.Usb_wOffset = 0;
+  (*CopyRoutine)(0);
+  46:	2000      	movs	r0, #0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:264
+  if (CopyRoutine == NULL)
+  {
+    return USB_UNSUPPORT;
+  }
+
+  pInformation->Ctrl_Info.CopyData = CopyRoutine;
+  48:	619a      	str	r2, [r3, #24]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:265
+  pInformation->Ctrl_Info.Usb_wOffset = 0;
+  4a:	8259      	strh	r1, [r3, #18]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:266
+  (*CopyRoutine)(0);
+  4c:	4790      	blx	r2
+  4e:	2000      	movs	r0, #0
+  50:	e000      	b.n	54 <CustomHID_Data_Setup+0x54>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:268
+
+  return USB_SUCCESS;
+  52:	2002      	movs	r0, #2
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:269
+}
+  54:	bd10      	pop	{r4, pc}
+  56:	46c0      	nop			(mov r8, r8)
+	...
+Disassembly of section .text.CustomHID_Get_Interface_Setting:
+
+00000000 <CustomHID_Get_Interface_Setting>:
+CustomHID_Get_Interface_Setting():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:370
+* Output         : None.
+* Return         : USB_SUCCESS or USB_UNSUPPORT.
+*******************************************************************************/
+RESULT CustomHID_Get_Interface_Setting(uint8_t Interface, uint8_t AlternateSetting)
+{
+  if (AlternateSetting > 0)
+   0:	b901      	cbnz	r1, 4 <CustomHID_Get_Interface_Setting+0x4>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:374
+  {
+    return USB_UNSUPPORT;
+  }
+  else if (Interface > 0)
+   2:	b100      	cbz	r0, 6 <CustomHID_Get_Interface_Setting+0x6>
+   4:	2002      	movs	r0, #2
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:380
+  {
+    return USB_UNSUPPORT;
+  }
+
+  return USB_SUCCESS;
+}
+   6:	4770      	bx	lr
+Disassembly of section .text.CustomHID_SetProtocol:
+
+00000000 <CustomHID_SetProtocol>:
+CustomHID_SetProtocol():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:392
+* Return         : USB SUCCESS.
+*******************************************************************************/
+RESULT CustomHID_SetProtocol(void)
+{
+  uint8_t wValue0 = pInformation->USBwValue0;
+  ProtocolValue = wValue0;
+   0:	4b03      	ldr	r3, [pc, #12]	(10 <CustomHID_SetProtocol+0x10>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:394
+  return USB_SUCCESS;
+}
+   2:	2000      	movs	r0, #0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:392
+* Return         : USB SUCCESS.
+*******************************************************************************/
+RESULT CustomHID_SetProtocol(void)
+{
+  uint8_t wValue0 = pInformation->USBwValue0;
+  ProtocolValue = wValue0;
+   4:	681b      	ldr	r3, [r3, #0]
+   6:	78da      	ldrb	r2, [r3, #3]
+   8:	4b02      	ldr	r3, [pc, #8]	(14 <CustomHID_SetProtocol+0x14>)
+   a:	601a      	str	r2, [r3, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:394
+  return USB_SUCCESS;
+}
+   c:	4770      	bx	lr
+   e:	46c0      	nop			(mov r8, r8)
+	...
+Disassembly of section .text.CustomHID_NoData_Setup:
+
+00000000 <CustomHID_NoData_Setup>:
+CustomHID_NoData_Setup():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:279
+* Input          : Request Nb.
+* Output         : None.
+* Return         : USB_UNSUPPORT or USB_SUCCESS.
+*******************************************************************************/
+RESULT CustomHID_NoData_Setup(uint8_t RequestNo)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:280
+  if ((Type_Recipient == (CLASS_REQUEST | INTERFACE_RECIPIENT))
+   2:	4b07      	ldr	r3, [pc, #28]	(20 <CustomHID_NoData_Setup+0x20>)
+   4:	681b      	ldr	r3, [r3, #0]
+   6:	781b      	ldrb	r3, [r3, #0]
+   8:	f003 037f 	and.w	r3, r3, #127	; 0x7f
+   c:	2b21      	cmp	r3, #33
+   e:	d104      	bne.n	1a <CustomHID_NoData_Setup+0x1a>
+  10:	280b      	cmp	r0, #11
+  12:	d102      	bne.n	1a <CustomHID_NoData_Setup+0x1a>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:283
+      && (RequestNo == SET_PROTOCOL))
+  {
+    return CustomHID_SetProtocol();
+  14:	f7ff fffe 	bl	0 <CustomHID_NoData_Setup>
+  18:	e000      	b.n	1c <CustomHID_NoData_Setup+0x1c>
+  1a:	2002      	movs	r0, #2
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:289
+  }
+  else
+  {
+    return USB_UNSUPPORT;
+  }
+}
+  1c:	bd10      	pop	{r4, pc}
+  1e:	46c0      	nop			(mov r8, r8)
+  20:	00000000 	.word	0x00000000
+Disassembly of section .text.CustomHID_GetProtocolValue:
+
+00000000 <CustomHID_GetProtocolValue>:
+CustomHID_GetProtocolValue():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:405
+* Output         : None.
+* Return         : address of the protcol value.
+*******************************************************************************/
+uint8_t *CustomHID_GetProtocolValue(uint16_t Length)
+{
+  if (Length == 0)
+   0:	b928      	cbnz	r0, e <CustomHID_GetProtocolValue+0xe>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:407
+  {
+    pInformation->Ctrl_Info.Usb_wLength = 1;
+   2:	4b04      	ldr	r3, [pc, #16]	(14 <CustomHID_GetProtocolValue+0x14>)
+   4:	f04f 0101 	mov.w	r1, #1	; 0x1
+   8:	681b      	ldr	r3, [r3, #0]
+   a:	8219      	strh	r1, [r3, #16]
+   c:	e000      	b.n	10 <CustomHID_GetProtocolValue+0x10>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:412
+    return NULL;
+  }
+  else
+  {
+    return (uint8_t *)(&ProtocolValue);
+   e:	4802      	ldr	r0, [pc, #8]	(18 <CustomHID_GetProtocolValue+0x18>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:414
+  }
+}
+  10:	4770      	bx	lr
+  12:	46c0      	nop			(mov r8, r8)
+	...
+Disassembly of section .text.CustomHID_GetHIDDescriptor:
+
+00000000 <CustomHID_GetHIDDescriptor>:
+CustomHID_GetHIDDescriptor():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:355
+* Input          : Length
+* Output         : None.
+* Return         : The address of the configuration descriptor.
+*******************************************************************************/
+uint8_t *CustomHID_GetHIDDescriptor(uint16_t Length)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:356
+  return Standard_GetDescriptorData(Length, &CustomHID_Hid_Descriptor);
+   2:	4902      	ldr	r1, [pc, #8]	(c <CustomHID_GetHIDDescriptor+0xc>)
+   4:	f7ff fffe 	bl	0 <Standard_GetDescriptorData>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:357
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+   c:	00000000 	.word	0x00000000
+Disassembly of section .text.CustomHID_GetReportDescriptor:
+
+00000000 <CustomHID_GetReportDescriptor>:
+CustomHID_GetReportDescriptor():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:343
+* Input          : Length
+* Output         : None.
+* Return         : The address of the configuration descriptor.
+*******************************************************************************/
+uint8_t *CustomHID_GetReportDescriptor(uint16_t Length)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:344
+  return Standard_GetDescriptorData(Length, &CustomHID_Report_Descriptor);
+   2:	4902      	ldr	r1, [pc, #8]	(c <CustomHID_GetReportDescriptor+0xc>)
+   4:	f7ff fffe 	bl	0 <Standard_GetDescriptorData>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:345
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+   c:	00000008 	.word	0x00000008
+Disassembly of section .text.CustomHID_GetStringDescriptor:
+
+00000000 <CustomHID_GetStringDescriptor>:
+CustomHID_GetStringDescriptor():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:323
+* Input          : Length
+* Output         : None.
+* Return         : The address of the string descriptors.
+*******************************************************************************/
+uint8_t *CustomHID_GetStringDescriptor(uint16_t Length)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:324
+  uint8_t wValue0 = pInformation->USBwValue0;
+   2:	4b06      	ldr	r3, [pc, #24]	(1c <CustomHID_GetStringDescriptor+0x1c>)
+   4:	681b      	ldr	r3, [r3, #0]
+   6:	78db      	ldrb	r3, [r3, #3]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:325
+  if (wValue0 > 4)
+   8:	2b04      	cmp	r3, #4
+   a:	d901      	bls.n	10 <CustomHID_GetStringDescriptor+0x10>
+   c:	2000      	movs	r0, #0
+   e:	e004      	b.n	1a <CustomHID_GetStringDescriptor+0x1a>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:331
+  {
+    return NULL;
+  }
+  else 
+  {
+    return Standard_GetDescriptorData(Length, &String_Descriptor[wValue0]);
+  10:	4903      	ldr	r1, [pc, #12]	(20 <CustomHID_GetStringDescriptor+0x20>)
+  12:	eb01 01c3 	add.w	r1, r1, r3, lsl #3
+  16:	f7ff fffe 	bl	0 <Standard_GetDescriptorData>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:333
+  }
+}
+  1a:	bd10      	pop	{r4, pc}
+  1c:	00000000 	.word	0x00000000
+  20:	00000010 	.word	0x00000010
+Disassembly of section .text.CustomHID_GetConfigDescriptor:
+
+00000000 <CustomHID_GetConfigDescriptor>:
+CustomHID_GetConfigDescriptor():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:311
+* Input          : Length
+* Output         : None.
+* Return         : The address of the configuration descriptor.
+*******************************************************************************/
+uint8_t *CustomHID_GetConfigDescriptor(uint16_t Length)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:312
+  return Standard_GetDescriptorData(Length, &Config_Descriptor);
+   2:	4902      	ldr	r1, [pc, #8]	(c <CustomHID_GetConfigDescriptor+0xc>)
+   4:	f7ff fffe 	bl	0 <Standard_GetDescriptorData>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:313
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+   c:	00000030 	.word	0x00000030
+Disassembly of section .text.CustomHID_GetDeviceDescriptor:
+
+00000000 <CustomHID_GetDeviceDescriptor>:
+CustomHID_GetDeviceDescriptor():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:299
+* Input          : Length
+* Output         : None.
+* Return         : The address of the device descriptor.
+*******************************************************************************/
+uint8_t *CustomHID_GetDeviceDescriptor(uint16_t Length)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:300
+  return Standard_GetDescriptorData(Length, &Device_Descriptor);
+   2:	4902      	ldr	r1, [pc, #8]	(c <CustomHID_GetDeviceDescriptor+0xc>)
+   4:	f7ff fffe 	bl	0 <Standard_GetDescriptorData>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:301
+}
+   8:	bd10      	pop	{r4, pc}
+   a:	46c0      	nop			(mov r8, r8)
+   c:	00000038 	.word	0x00000038
+Disassembly of section .text.CustomHID_SetConfiguration:
+
+00000000 <CustomHID_SetConfiguration>:
+CustomHID_SetConfiguration():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:180
+* Input          : None.
+* Output         : None.
+* Return         : None.
+*******************************************************************************/
+void CustomHID_SetConfiguration(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:181
+  if (pInformation->Current_Configuration != 0)
+   2:	4b06      	ldr	r3, [pc, #24]	(1c <CustomHID_SetConfiguration+0x1c>)
+   4:	681b      	ldr	r3, [r3, #0]
+   6:	7a9b      	ldrb	r3, [r3, #10]
+   8:	b133      	cbz	r3, 18 <CustomHID_SetConfiguration+0x18>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:184
+  {
+    /* Device configured */
+    bDeviceState = CONFIGURED;
+   a:	4b05      	ldr	r3, [pc, #20]	(20 <CustomHID_SetConfiguration+0x20>)
+   c:	2205      	movs	r2, #5
+   e:	601a      	str	r2, [r3, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:187
+    
+    /* Start ADC1 Software Conversion */ 
+    ADC_SoftwareStartConvCmd(ADC1, ENABLE);
+  10:	4804      	ldr	r0, [pc, #16]	(24 <CustomHID_SetConfiguration+0x24>)
+  12:	2101      	movs	r1, #1
+  14:	f7ff fffe 	bl	0 <ADC_SoftwareStartConvCmd>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:189
+  }
+}
+  18:	bd10      	pop	{r4, pc}
+  1a:	46c0      	nop			(mov r8, r8)
+	...
+  24:	40012400 	.word	0x40012400
+Disassembly of section .text.CustomHID_Reset:
+
+00000000 <CustomHID_Reset>:
+CustomHID_Reset():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:140
+* Return         : None.
+*******************************************************************************/
+void CustomHID_Reset(void)
+{
+  /* Set Joystick_DEVICE as not configured */
+  pInformation->Current_Configuration = 0;
+   0:	4b27      	ldr	r3, [pc, #156]	(a0 <CustomHID_Reset+0xa0>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:138
+* Input          : None.
+* Output         : None.
+* Return         : None.
+*******************************************************************************/
+void CustomHID_Reset(void)
+{
+   2:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:140
+  /* Set Joystick_DEVICE as not configured */
+  pInformation->Current_Configuration = 0;
+   4:	681a      	ldr	r2, [r3, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:144
+  pInformation->Current_Interface = 0;/*the default Interface*/
+  
+  /* Current Feature initialization */
+  pInformation->Current_Feature = CustomHID_ConfigDescriptor[7];
+   6:	4b27      	ldr	r3, [pc, #156]	(a4 <CustomHID_Reset+0xa4>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:140
+* Return         : None.
+*******************************************************************************/
+void CustomHID_Reset(void)
+{
+  /* Set Joystick_DEVICE as not configured */
+  pInformation->Current_Configuration = 0;
+   8:	2400      	movs	r4, #0
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:144
+  pInformation->Current_Interface = 0;/*the default Interface*/
+  
+  /* Current Feature initialization */
+  pInformation->Current_Feature = CustomHID_ConfigDescriptor[7];
+   a:	79db      	ldrb	r3, [r3, #7]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:140
+* Return         : None.
+*******************************************************************************/
+void CustomHID_Reset(void)
+{
+  /* Set Joystick_DEVICE as not configured */
+  pInformation->Current_Configuration = 0;
+   c:	7294      	strb	r4, [r2, #10]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:141
+  pInformation->Current_Interface = 0;/*the default Interface*/
+   e:	72d4      	strb	r4, [r2, #11]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:144
+  
+  /* Current Feature initialization */
+  pInformation->Current_Feature = CustomHID_ConfigDescriptor[7];
+  10:	7253      	strb	r3, [r2, #9]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:146
+  
+  SetBTABLE(BTABLE_ADDRESS);
+  12:	4620      	mov	r0, r4
+  14:	f7ff fffe 	bl	0 <SetBTABLE>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:149
+
+  /* Initialize Endpoint 0 */
+  SetEPType(ENDP0, EP_CONTROL);
+  18:	4620      	mov	r0, r4
+  1a:	f44f 7100 	mov.w	r1, #512	; 0x200
+  1e:	f7ff fffe 	bl	0 <SetEPType>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:150
+  SetEPTxStatus(ENDP0, EP_TX_STALL);
+  22:	4620      	mov	r0, r4
+  24:	2110      	movs	r1, #16
+  26:	f7ff fffe 	bl	0 <SetEPTxStatus>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:151
+  SetEPRxAddr(ENDP0, ENDP0_RXADDR);
+  2a:	4620      	mov	r0, r4
+  2c:	2118      	movs	r1, #24
+  2e:	f7ff fffe 	bl	0 <SetEPRxAddr>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:152
+  SetEPTxAddr(ENDP0, ENDP0_TXADDR);
+  32:	2158      	movs	r1, #88
+  34:	4620      	mov	r0, r4
+  36:	f7ff fffe 	bl	0 <SetEPTxAddr>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:153
+  Clear_Status_Out(ENDP0);
+  3a:	4620      	mov	r0, r4
+  3c:	f7ff fffe 	bl	0 <Clear_Status_Out>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:154
+  SetEPRxCount(ENDP0, Device_Property.MaxPacketSize);
+  40:	4b19      	ldr	r3, [pc, #100]	(a8 <CustomHID_Reset+0xa8>)
+  42:	4620      	mov	r0, r4
+  44:	f893 106c 	ldrb.w	r1, [r3, #108]
+  48:	f7ff fffe 	bl	0 <SetEPRxCount>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:155
+  SetEPRxValid(ENDP0);
+  4c:	4620      	mov	r0, r4
+  4e:	f7ff fffe 	bl	0 <SetEPRxValid>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:158
+
+  /* Initialize Endpoint 1 */
+  SetEPType(ENDP1, EP_INTERRUPT);
+  52:	2001      	movs	r0, #1
+  54:	f44f 61c0 	mov.w	r1, #1536	; 0x600
+  58:	f7ff fffe 	bl	0 <SetEPType>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:159
+  SetEPTxAddr(ENDP1, ENDP1_TXADDR);
+  5c:	2001      	movs	r0, #1
+  5e:	f44f 7180 	mov.w	r1, #256	; 0x100
+  62:	f7ff fffe 	bl	0 <SetEPTxAddr>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:160
+  SetEPRxAddr(ENDP1, ENDP1_RXADDR);
+  66:	2001      	movs	r0, #1
+  68:	f44f 7182 	mov.w	r1, #260	; 0x104
+  6c:	f7ff fffe 	bl	0 <SetEPRxAddr>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:161
+  SetEPTxCount(ENDP1, 2);
+  70:	2001      	movs	r0, #1
+  72:	2102      	movs	r1, #2
+  74:	f7ff fffe 	bl	0 <SetEPTxCount>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:162
+  SetEPRxCount(ENDP1, 2);
+  78:	2001      	movs	r0, #1
+  7a:	2102      	movs	r1, #2
+  7c:	f7ff fffe 	bl	0 <SetEPRxCount>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:163
+  SetEPRxStatus(ENDP1, EP_RX_VALID);
+  80:	2001      	movs	r0, #1
+  82:	f44f 5140 	mov.w	r1, #12288	; 0x3000
+  86:	f7ff fffe 	bl	0 <SetEPRxStatus>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:164
+  SetEPTxStatus(ENDP1, EP_TX_NAK);
+  8a:	2001      	movs	r0, #1
+  8c:	2120      	movs	r1, #32
+  8e:	f7ff fffe 	bl	0 <SetEPTxStatus>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:166
+
+  bDeviceState = ATTACHED;
+  92:	4b06      	ldr	r3, [pc, #24]	(ac <CustomHID_Reset+0xac>)
+  94:	2201      	movs	r2, #1
+  96:	601a      	str	r2, [r3, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:169
+  
+  /* Set this device to response on default address */
+  SetDeviceAddress(0);
+  98:	4620      	mov	r0, r4
+  9a:	f7ff fffe 	bl	0 <SetDeviceAddress>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:170
+}
+  9e:	bd10      	pop	{r4, pc}
+	...
+Disassembly of section .text.CustomHID_init:
+
+00000000 <CustomHID_init>:
+CustomHID_init():
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:114
+* Input          : None.
+* Output         : None.
+* Return         : None.
+*******************************************************************************/
+void CustomHID_init(void)
+{
+   0:	b510      	push	{r4, lr}
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:117
+  /* Update the serial number string descriptor with the data from the unique 
+  ID*/
+  Get_SerialNum();
+   2:	f7ff fffe 	bl	0 <Get_SerialNum>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:119
+    
+  pInformation->Current_Configuration = 0;
+   6:	4b08      	ldr	r3, [pc, #32]	(28 <CustomHID_init+0x28>)
+   8:	2400      	movs	r4, #0
+   a:	681b      	ldr	r3, [r3, #0]
+   c:	729c      	strb	r4, [r3, #10]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:121
+  /* Connect the device */
+  PowerOn();
+   e:	f7ff fffe 	bl	0 <PowerOn>
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:123
+  /* USB interrupts initialization */
+  _SetISTR(0);               /* clear pending interrupts */
+  12:	4b06      	ldr	r3, [pc, #24]	(2c <CustomHID_init+0x2c>)
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:124
+  wInterrupt_Mask = IMR_MSK;
+  14:	f44f 423f 	mov.w	r2, #48896	; 0xbf00
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:123
+    
+  pInformation->Current_Configuration = 0;
+  /* Connect the device */
+  PowerOn();
+  /* USB interrupts initialization */
+  _SetISTR(0);               /* clear pending interrupts */
+  18:	601c      	str	r4, [r3, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:124
+  wInterrupt_Mask = IMR_MSK;
+  1a:	4b05      	ldr	r3, [pc, #20]	(30 <CustomHID_init+0x30>)
+  1c:	801a      	strh	r2, [r3, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:125
+  _SetCNTR(wInterrupt_Mask); /* set interrupts mask */
+  1e:	4b05      	ldr	r3, [pc, #20]	(34 <CustomHID_init+0x34>)
+  20:	601a      	str	r2, [r3, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:127
+
+  bDeviceState = UNCONNECTED;
+  22:	4b05      	ldr	r3, [pc, #20]	(38 <CustomHID_init+0x38>)
+  24:	601c      	str	r4, [r3, #0]
+D:\Wk\Wk.Src\MStory3.0\Unit_3\3.10_CAN_Normal\src/usb_prop.c:128
+}
+  26:	bd10      	pop	{r4, pc}
+  28:	00000000 	.word	0x00000000
+  2c:	40005c44 	.word	0x40005c44
+  30:	00000000 	.word	0x00000000
+  34:	40005c40 	.word	0x40005c40
+  38:	00000000 	.word	0x00000000
