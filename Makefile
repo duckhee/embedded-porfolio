@@ -58,6 +58,7 @@ sinclude $(addsuffix /Makefile, $(SUB_DIRS))
 
 # float printf add libs nano.spec
 # linker lib add float library add -spec=nano.spec -u_printf_float not use system file syscall file _write _read _getpid _close
+#LD_LIBS = -lc -lm -lnosys -specs=rdimon.specs -u _printf_float -u _scanf_float -static
 LD_LIBS = -lc -lm -lnosys -specs=nano.specs -u _printf_float -u _scanf_float -static
 # Linker script add setting
 LDFLAGS = $(MCU) $(LD_LIBS) -Wl,-Map=$(OUT_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
